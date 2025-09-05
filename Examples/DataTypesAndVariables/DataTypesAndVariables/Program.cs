@@ -13,9 +13,16 @@ namespace DataTypesAndVariables
             double firstValue = 5d;
             decimal total = 42.45m;
 
-
             char symbol = '7';
             int charCode = 81;
+
+            //Constants (don't change, read only)
+
+            const decimal TAXRATE = 0.06m;
+
+            //firstNumber = 7; // varibles can change 
+            //TAXRATE = 0.09m; // contants can not change
+
 
             //print the ascii code to the console
             //Console.WriteLine((int)symbol);
