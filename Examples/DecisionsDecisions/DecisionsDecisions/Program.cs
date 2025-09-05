@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            int theNumber = 5;
+
+            if (theNumber == 5)
+            {
+                Console.WriteLine("my number is 5");
+            }
+
+                //pause
+                Console.Read();
         }
     }
 }
