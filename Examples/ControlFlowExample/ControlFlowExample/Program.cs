@@ -14,7 +14,15 @@
             Console.WriteLine("Please Enter a Whole Number");
             userInput = Console.ReadLine();
             Console.WriteLine($"You Entered: {userInput}");
-            firstNumber = int.Parse(userInput);
+
+            try
+            {
+                firstNumber = int.Parse(userInput);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"{userInput} is not a number!");
+            }
 
 
             //pause
