@@ -26,7 +26,7 @@
                 }
                 catch (Exception)
                 {
-                    //This code runs if somthing in the Try crashes the program
+                    //This code runs if something in the Try crashes the program
                     if (userInput == "Q")
                     {
                         //if the user quits nice message and let them leave
