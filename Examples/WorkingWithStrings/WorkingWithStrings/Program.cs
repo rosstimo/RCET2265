@@ -7,10 +7,7 @@
             string theString = "Hello, World!";
 
             theString = theString.ToLower();
-
-
             Console.WriteLine(theString);
-
 
             for (int i = 0; i < 15; i++)
             {
