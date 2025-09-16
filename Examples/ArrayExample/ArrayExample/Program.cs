@@ -6,6 +6,8 @@
         {
             //single dimensional arrays 
             int[] fruit = new int[5];
+            int[] rolls = new int[6];
+
             string[] weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
             //multi-dimensional arrays
@@ -52,6 +54,48 @@
             grid[2, 4] = 23;
 
 
+            //check randomness
+            Random roll = new Random();
+            
+            for (int i = 0; i < 1000000; i++)
+            {
+                
+                switch (roll.Next(0, 6))
+                {
+                    case 0:
+                        rolls[0]++;
+                        break;
+
+                    case 1:
+                        rolls[1]++;
+                        break;
+
+                    case 2:
+                        rolls[2]++;
+                        break;
+
+                    case 3:
+                        rolls[3]++;
+                        break;
+
+                    case 4:
+                        rolls[4]++;
+                        break;
+
+                    case 5:
+                        rolls[5]++;
+                        break;
+
+                    default:
+                        Console.WriteLine("out of bounds");
+                        break;
+                }
+            }
+
+            foreach (int count in rolls)
+            {
+                Console.WriteLine(count);
+            }
 
 
             //pause
