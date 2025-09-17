@@ -49,7 +49,6 @@
             myLuckyNumber++;
             Console.WriteLine(myLuckyNumber);
         }
-
         static int CalculateSum(int firstNumber, int secondNumber)
         {
             int result = firstNumber + secondNumber;
