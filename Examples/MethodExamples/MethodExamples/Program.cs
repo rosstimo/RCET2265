@@ -12,13 +12,15 @@
             //PrintSum( 5, 5);
 
 
-            Console.WriteLine(myLuckyNumber);
+            //Console.WriteLine(myLuckyNumber);
             //LuckyNumber();
             //OtherLuckyNumber(myLuckyNumber);
             //NotSoLuckyNumber(ref myLuckyNumber);   
+            //Console.WriteLine(myLuckyNumber);
+
+            Console.WriteLine(CalculateSum(5, 3));
+            myLuckyNumber = CalculateSum(5, 2);
             Console.WriteLine(myLuckyNumber);
-
-
             //pause
             Console.Read();
         }
@@ -28,13 +30,10 @@
         {
             Console.WriteLine("Hello!");
         }
-
-
         static void PrintSum(int firstNumber, int secondNumber)
         {
             Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
         }
-
         static void LuckyNumber()
         {
             int myLuckyNumber = 7;
@@ -50,5 +49,12 @@
             myLuckyNumber++;
             Console.WriteLine(myLuckyNumber);
         }
+
+        static int CalculateSum(int firstNumber, int secondNumber)
+        {
+            int result = firstNumber + secondNumber;
+            return result;
+        }
+
     }
 }
