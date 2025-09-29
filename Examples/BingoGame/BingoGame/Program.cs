@@ -1,4 +1,5 @@
-﻿using System.Net.NetworkInformation;
+﻿using System.Dynamic;
+using System.Net.NetworkInformation;
 
 namespace BingoGame
 {
@@ -25,17 +26,33 @@ namespace BingoGame
 
         static void DrawBall()
         {
+            int column = 0;
+            int row = 0;
+
             //get random column
+            column = RandomNumberBetween(0, 4);
+
             //get random row
+            row = RandomNumberBetween(0, 14);
+
             //check if drawn already
             //yes: draw another
             //no: success! mark as drawn
 
             //make on ball drawn for testing
-            ballCage[5,2] = true;
-            ballCage[0,0] = true;
-            ballCage[14,4] = true;
+            ballCage[row, column] = true;
+            //ballCage[5,2] = true;
+            //ballCage[0,0] = true;
+            //ballCage[14,4] = true;
         }
+
+        //get random number in a range max/min inclusive
+        static int RandomNumberBetween(int min, int max)
+        {
+            Random RandomNumber = new Random();
+            return RandomNumber.Next(min, max + 1);
+        }
+
 
         static void Main(string[] args)
         {
