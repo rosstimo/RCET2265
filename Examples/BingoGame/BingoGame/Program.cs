@@ -4,7 +4,7 @@ namespace BingoGame
 {
     internal class Program
     {
-        private static bool[,] ballCage = new bool[14, 4];
+        private static bool[,] ballCage = new bool[15, 5];
 
         //get the drawn/not drawn status of a specific ball
         static bool BallIsDrawn(int row, int column)
@@ -33,6 +33,8 @@ namespace BingoGame
 
             //make on ball drawn for testing
             ballCage[5,2] = true;
+            ballCage[0,0] = true;
+            ballCage[14,4] = true;
         }
 
         static void Main(string[] args)
@@ -70,7 +72,7 @@ namespace BingoGame
                     //need to check each possible ball and display those already drawn
                     if (BallIsDrawn(row, column))
                     {
-                        currentLocation = "00"; //TODO resolve actual number
+                        currentLocation = ((column * 15) + row +1).ToString();
                     }
                     else
                     {
