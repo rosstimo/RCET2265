@@ -29,21 +29,20 @@ namespace BingoGame
             int column = 0;
             int row = 0;
 
-            //get random column
-            column = RandomNumberBetween(0, 4);
-
-            //get random row
-            row = RandomNumberBetween(0, 14);
-
+            //draw random ball
             //check if drawn already
             //yes: draw another
             //no: success! mark as drawn
+            do
+            {
+                //get random column
+                column = RandomNumberBetween(0, 4);
 
-            //make on ball drawn for testing
+                //get random row
+                row = RandomNumberBetween(0, 14);
+
+            } while (ballCage[row, column] == true);
             ballCage[row, column] = true;
-            //ballCage[5,2] = true;
-            //ballCage[0,0] = true;
-            //ballCage[14,4] = true;
         }
 
         //get random number in a range max/min inclusive
@@ -56,8 +55,25 @@ namespace BingoGame
 
         static void Main(string[] args)
         {
-            DrawBall();
-            DisplayGrid(); // test display
+            string userInput = "";
+            bool userQuit = false;
+
+            //friendly start message
+            //display w' instructions
+            //draw balls, update display, until all balls drawn or user quits
+            //new game/start over options clears draws and update display
+            //when user quits confirmation then friendly message
+
+            do
+            {
+                userInput = Console.ReadLine();
+                Console.Clear();
+                DrawBall();
+                DisplayGrid(); // test display
+            } while (userQuit == false);
+
+
+
 
             Console.Read();
         }
