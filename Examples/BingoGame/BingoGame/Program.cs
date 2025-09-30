@@ -57,23 +57,71 @@ namespace BingoGame
         {
             string userInput = "";
             bool userQuit = false;
+            int count = 0;
 
             //friendly start message
             //display w' instructions
             //draw balls, update display, until all balls drawn or user quits
             //new game/start over options clears draws and update display
             //when user quits confirmation then friendly message
+            //remove duplicate code, refactor
+            //make prettier
+            //message accumulator
 
             do
             {
                 userInput = Console.ReadLine();
-                Console.Clear();
-                DrawBall();
-                DisplayGrid(); // test display
+
+                if (userInput == "Q" || userInput == "q")
+                { 
+                    userQuit = true;
+                }
+                else if (userInput == "C" || userInput == "c")
+                {
+                    //restart
+                }
+                else
+                {
+                    if (count >= 75)
+                    {
+                        Console.Clear();
+                        DisplayGrid();
+                        Console.WriteLine("All Balls Have Been Drawn");//BUG: not showing due to next Display()
+                    }
+                    else
+                    {
+                        DrawBall();
+                        count++;
+                    }
+                }
+
+                if (userQuit)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Are you sure you want to quit? y/n");
+                    userInput = Console.ReadLine();
+                    if (userInput == "n")
+                    {
+                        userQuit=false;
+                        Console.Clear();
+                        DisplayGrid();
+                    }
+                }
+                else
+                {
+                    //update display
+                    Console.Clear();
+                    DisplayGrid();
+                    Console.WriteLine($"The count is: {count}");
+                }
+
             } while (userQuit == false);
 
 
 
+            // say bye
+            Console.Clear();
+            Console.WriteLine("Have a nice day!");
 
             Console.Read();
         }
