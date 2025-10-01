@@ -52,6 +52,18 @@ namespace BingoGame
             return RandomNumber.Next(min, max + 1);
         }
 
+        static void NewGame()
+        {
+            // iterate through the entire array and mark everything false
+            for (int i = ballCage.GetLowerBound(0);  i <= ballCage.GetUpperBound(0); i++)
+            {
+                for (int j = ballCage.GetLowerBound(1); j <= ballCage.GetUpperBound(1); j++)
+                {
+                    ballCage[i, j] = false;
+                }
+            }
+
+        }
 
         static void Main(string[] args)
         {
@@ -78,7 +90,7 @@ namespace BingoGame
                 }
                 else if (userInput == "C" || userInput == "c")
                 {
-                    //restart
+                    NewGame();
                 }
                 else
                 {
