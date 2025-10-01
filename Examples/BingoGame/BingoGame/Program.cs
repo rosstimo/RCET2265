@@ -6,6 +6,7 @@ namespace BingoGame
     internal class Program
     {
         private static bool[,] ballCage = new bool[15, 5];
+        private static string message = "fake message";
 
         //get the drawn/not drawn status of a specific ball
         static bool BallIsDrawn(int row, int column)
@@ -87,33 +88,36 @@ namespace BingoGame
             //make prettier
             //message accumulator
 
+            //start message here
             do
             {
                 userInput = Console.ReadLine();
 
                 if (userInput == "Q" || userInput == "q")
                 { 
-                    userQuit = true;
+                    userQuit = true; // set flag for user quitting
                 }
                 else if (userInput == "C" || userInput == "c")
                 {
-                    NewGame();
+                    NewGame(); // clear ball tracker
+                    count = 0; // reset count
                 }
                 else
                 {
-                    if (count >= 75)
+                    if (count >= 75) 
                     {
-                        Console.Clear();
-                        DisplayGrid();
-                        Console.WriteLine("All Balls Have Been Drawn");//BUG: not showing due to next Display()
+                        // update message and don't draw if all balls drawn
+                        message = "All Balls Have Been Drawn";
                     }
                     else
                     {
+                        // draw new ball and increment counter
                         DrawBall();
                         count++;
                     }
                 }
 
+                // if user quits confirm
                 if (userQuit)
                 {
                     Console.Clear();
@@ -121,18 +125,11 @@ namespace BingoGame
                     userInput = Console.ReadLine();
                     if (userInput == "n")
                     {
+                        //if they changed their mind don't quit
                         userQuit=false;
-                        Console.Clear();
-                        DisplayGrid();
                     }
                 }
-                else
-                {
-                    //update display
-                    Console.Clear();
-                    DisplayGrid();
-                    Console.WriteLine($"The count is: {count}");
-                }
+                DisplayGrid();
 
             } while (userQuit == false);
 
@@ -154,6 +151,7 @@ namespace BingoGame
             int totalWidth = 5 * (padding + vDivider.Length); //calculate total width
             string hDivider = new string('-', totalWidth); //dynamic length horizontal divider
 
+            Console.Clear(); //clear console for fresh display
             //print header row
             foreach (string letter in header)
             {
@@ -182,6 +180,7 @@ namespace BingoGame
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine(message);
         }
     }
 }
