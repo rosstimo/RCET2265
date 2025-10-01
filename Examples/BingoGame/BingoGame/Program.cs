@@ -54,14 +54,21 @@ namespace BingoGame
 
         static void NewGame()
         {
+            // this works if default values are what you want
+            // create a local array that has same type, dimensions, size
+            bool[,] empty = new bool[15, 5];
+            // overwrite the tracker array with the default contents of the temp array
+            ballCage = empty;
+
+            // this always works but take longer/more steps
             // iterate through the entire array and mark everything false
-            for (int i = ballCage.GetLowerBound(0);  i <= ballCage.GetUpperBound(0); i++)
-            {
-                for (int j = ballCage.GetLowerBound(1); j <= ballCage.GetUpperBound(1); j++)
-                {
-                    ballCage[i, j] = false;
-                }
-            }
+            //for (int i = ballCage.GetLowerBound(0);  i <= ballCage.GetUpperBound(0); i++)
+            //{
+            //    for (int j = ballCage.GetLowerBound(1); j <= ballCage.GetUpperBound(1); j++)
+            //    {
+            //        ballCage[i, j] = false;
+            //    }
+            //}
 
         }
 
