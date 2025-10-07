@@ -8,27 +8,42 @@
 
             // open/create a new file to write text
             // overwrites existing content!!
-            using (StreamWriter testFile = File.CreateText(path))
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    testFile.WriteLine("this is a line of text");
-                }
-            }
+            //using (StreamWriter testFile = File.CreateText(path))
+            //{
+            //    for (int i = 0; i < 10; i++)
+            //    {
+            //        testFile.WriteLine("this is a line of text");
+            //    }
+            //}
 
             // open/create a new file to append text
             // Appends text to existing file content
-            using (StreamWriter testFile = File.AppendText(path))
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    testFile.WriteLine("Append this line of text");
-                }
-            }
+            //using (StreamWriter testFile = File.AppendText(path))
+            //{
+            //    for (int i = 0; i < 10; i++)
+            //    {
+            //        testFile.WriteLine("Append this line of text");
+            //    }
+            //}
 
             using (StreamReader testFile = new StreamReader(path))
             {
-                Console.WriteLine(testFile.ReadLine());
+
+                // returns empty line if reading past end of file
+                //for (int i = 0; i < 100; i++)
+                //{
+                //    Console.WriteLine(testFile.ReadLine());
+
+                //}
+
+                //stops when it reaches the end of file
+                do
+                {
+                    Console.WriteLine(testFile.ReadLine());
+                } while (testFile.EndOfStream == false);
+
+    
+                
             }
            
 
