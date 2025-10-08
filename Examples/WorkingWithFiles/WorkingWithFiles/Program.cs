@@ -60,8 +60,8 @@ namespace WorkingWithFiles
             string path = "..\\..\\..\\email.txt";
             string customer = "";
             string[] temp;
-
-            //ReadFile(path);
+            string formatedRecord = "";
+            
 
             using (StreamReader testFile = new StreamReader(path))
             {
@@ -69,14 +69,18 @@ namespace WorkingWithFiles
                 {
                     customer = testFile.ReadLine();
                     temp = customer.Split(",");
-                    foreach (var record in temp)
+                    foreach (string record in temp)
                     {
-                        Console.Write(record.PadRight(15));
+                        formatedRecord = record;
+
+                        formatedRecord = formatedRecord.Replace('"', '$');
+                        //formatedRecord = formatedRecord.Replace('"'.ToString(), "");
+                        formatedRecord = formatedRecord.Replace("$", "");
+                        Console.Write(formatedRecord.PadRight(15));
                     }
                     Console.WriteLine();
                 } while (testFile.EndOfStream == false);
             }
-
 
             Console.Read();
         }
