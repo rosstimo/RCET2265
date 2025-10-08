@@ -61,7 +61,7 @@ namespace WorkingWithFiles
             string customer = "";
             string[] temp;
             string formatedRecord = "";
-            
+            int counter = 0;
 
             using (StreamReader testFile = new StreamReader(path))
             {
@@ -69,6 +69,7 @@ namespace WorkingWithFiles
                 {
                     customer = testFile.ReadLine();
                     temp = customer.Split(",");
+                    //Console.Write($"Length: {temp.Length}".PadRight(15)); TODO filter bad records
                     foreach (string record in temp)
                     {
                         formatedRecord = record;
@@ -79,7 +80,9 @@ namespace WorkingWithFiles
                         Console.Write(formatedRecord.PadRight(15));
                     }
                     Console.WriteLine();
+                    counter++;
                 } while (testFile.EndOfStream == false);
+                Console.WriteLine($"Read {counter} lines from {path}");
             }
 
             Console.Read();
