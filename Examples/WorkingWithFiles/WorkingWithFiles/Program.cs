@@ -52,6 +52,32 @@ namespace WorkingWithFiles
             }
         }
 
+        static void AddCustomer(string path, string[] customerData)
+        {
+            string _customerData = "";
+
+            using (StreamWriter customerDataFile = File.AppendText(path))
+            {
+
+                //foreach (string customerRecord in customerData)
+                //{
+                //    _customerData += customerRecord;
+                //}
+                try
+                {
+                    //TODO: add customer number, address, zip, state, phone
+                    _customerData = $"{customerData[0]},{customerData[1]},{customerData[2]},{customerData[3]}";
+                    customerDataFile.WriteLine(_customerData);
+                }
+                catch (Exception ex)
+                {
+                    //log record and error description to log file
+                    //get exception message
+                    Console.WriteLine($"{ex.StackTrace}\n\n{customerData.Length}");
+                }
+
+            }
+        }
 
 
         static void Main(string[] args)
@@ -69,20 +95,31 @@ namespace WorkingWithFiles
                 {
                     customer = testFile.ReadLine();
                     temp = customer.Split(",");
-                    //Console.Write($"Length: {temp.Length}".PadRight(15)); TODO filter bad records
-                    foreach (string record in temp)
-                    {
-                        formatedRecord = record;
 
-                        formatedRecord = formatedRecord.Replace('"', '$');
-                        //formatedRecord = formatedRecord.Replace('"'.ToString(), "");
-                        formatedRecord = formatedRecord.Replace("$", "");
-                        Console.Write(formatedRecord.PadRight(15));
+                    //Console.Write($"Length: {temp.Length}".PadRight(15)); TODO filter bad records
+                    
+                    for (int i = 0; i < temp.GetUpperBound(0); i++)
+                    {
+                        temp[i] = temp[i].Replace('"', '$');
+                        temp[i] = temp[i].Replace("$", "");
+                        //Console.WriteLine(i + ": " + temp[i]);
                     }
-                    Console.WriteLine();
-                    counter++;
+                    AddCustomer("..\\..\\..\\CustomerDB.txt",temp);
+
+                //    foreach (string record in temp)
+                //    {
+                //        formatedRecord = record;
+
+                //        formatedRecord = formatedRecord.Replace('"', '$');
+                //        //formatedRecord = formatedRecord.Replace('"'.ToString(), "");
+                //        formatedRecord = formatedRecord.Replace("$", "");
+                //        //Console.Write(formatedRecord.PadRight(15));
+                //       //Console.WriteLine(record.Count());
+                //    }
+                //    //Console.WriteLine();
+                //    counter++;
                 } while (testFile.EndOfStream == false);
-                Console.WriteLine($"Read {counter} lines from {path}");
+                //Console.WriteLine($"Read {counter} lines from {path}");
             }
 
             Console.Read();
