@@ -14,7 +14,7 @@ namespace WinFormsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.Text = "hello";
+            this.Text = FirstNameTextBox.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)
