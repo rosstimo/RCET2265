@@ -57,8 +57,6 @@ namespace WinFormsExample
 
         }
 
-
-
         // Event Handlers -----------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -70,14 +68,5 @@ namespace WinFormsExample
             DisplayContent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
