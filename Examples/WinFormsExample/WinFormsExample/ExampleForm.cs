@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic;
+using System.Windows.Forms;
 
 namespace WinFormsExample
 {
@@ -10,22 +11,24 @@ namespace WinFormsExample
         }
         // Program Logic ------------------------------------------------------
 
-        static void DisplayContent()
+        void DisplayContent()
         {
-
+            if (EvaluateFields() != "") // no news is good news
+            {
+                MessageBox.Show(EvaluateFields());
+            }
+            else
+            {
+                DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\nAge: {AgeTextBox.Text}\nPhone: {PhoneTextBox.Text}";
+            }
         }
 
-
-        // Event Handlers -----------------------------------------------------
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void SubmitButton_Click(object sender, EventArgs e)
+        string EvaluateFields()
         {
             string message = "";
 
+            //test in reverse order for correct focus in tab order
+            // Use distinct if statements to ensure all fields are checked
             if (PhoneTextBox.Text == "")
             {
                 PhoneTextBox.Focus();
@@ -50,15 +53,21 @@ namespace WinFormsExample
                 message += "First Name is Required";
             }
 
-            if (message != "")
-            {
-                MessageBox.Show(message);
-            }
-            else
-            {
-                DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\nAge: {AgeTextBox.Text}\nPhone: {PhoneTextBox.Text}";
-            }
+            return message;
 
+        }
+
+
+
+        // Event Handlers -----------------------------------------------------
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            DisplayContent();
         }
 
         private void label1_Click(object sender, EventArgs e)
