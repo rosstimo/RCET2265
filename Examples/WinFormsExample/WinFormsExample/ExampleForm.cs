@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace WinFormsExample
 {
     public partial class ExampleForm : Form
@@ -6,7 +8,15 @@ namespace WinFormsExample
         {
             InitializeComponent();
         }
+        // Program Logic ------------------------------------------------------
 
+        static void DisplayContent()
+        {
+
+        }
+
+
+        // Event Handlers -----------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -14,8 +24,40 @@ namespace WinFormsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            //this.Text = FirstNameTextBox.Text;
-            DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\nAge: {AgeTextBox.Text}\nPhone: {PhoneTextBox.Text}";
+            string message = "";
+
+            if (PhoneTextBox.Text == "")
+            {
+                PhoneTextBox.Focus();
+                message += "Phone Number is Required\n";
+            }
+
+            if (AgeTextBox.Text == "")
+            {
+                AgeTextBox.Focus();
+                message += "Age is Required\n";
+            }
+
+            if (LastNameTextBox.Text == "")
+            {
+                LastNameTextBox.Focus();
+                message += "Last Name is Required\n";
+            }
+
+            if (FirstNameTextBox.Text == "")
+            {
+                FirstNameTextBox.Focus();
+                message += "First Name is Required";
+            }
+
+            if (message != "")
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                DisplayLabel.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\nAge: {AgeTextBox.Text}\nPhone: {PhoneTextBox.Text}";
+            }
 
         }
 

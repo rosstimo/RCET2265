@@ -46,7 +46,7 @@
             SubmitButton.Location = new Point(344, 262);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(167, 111);
-            SubmitButton.TabIndex = 0;
+            SubmitButton.TabIndex = 4;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
@@ -56,7 +56,7 @@
             ExitButton.Location = new Point(517, 262);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(167, 111);
-            ExitButton.TabIndex = 1;
+            ExitButton.TabIndex = 5;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
@@ -76,14 +76,14 @@
             FirstNameTextBox.Location = new Point(131, 71);
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(175, 35);
-            FirstNameTextBox.TabIndex = 3;
+            FirstNameTextBox.TabIndex = 0;
             // 
             // LastNameTextBox
             // 
             LastNameTextBox.Location = new Point(131, 112);
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(175, 35);
-            LastNameTextBox.TabIndex = 5;
+            LastNameTextBox.TabIndex = 1;
             // 
             // LastNameLabel
             // 
@@ -99,7 +99,7 @@
             AgeTextBox.Location = new Point(131, 153);
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(175, 35);
-            AgeTextBox.TabIndex = 7;
+            AgeTextBox.TabIndex = 2;
             // 
             // AgeLabel
             // 
@@ -115,7 +115,7 @@
             PhoneTextBox.Location = new Point(131, 194);
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(175, 35);
-            PhoneTextBox.TabIndex = 9;
+            PhoneTextBox.TabIndex = 3;
             // 
             // PhoneLabel
             // 
@@ -128,11 +128,11 @@
             // 
             // DisplayLabel
             // 
-            DisplayLabel.BorderStyle = BorderStyle.Fixed3D;
+            DisplayLabel.BorderStyle = BorderStyle.FixedSingle;
             DisplayLabel.Font = new Font("Times New Roman", 14.1428576F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(334, 65);
+            DisplayLabel.Location = new Point(344, 65);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(350, 188);
+            DisplayLabel.Size = new Size(340, 188);
             DisplayLabel.TabIndex = 10;
             DisplayLabel.Click += label1_Click_1;
             // 
