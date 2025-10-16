@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             SubmitButton = new Button();
             ExitButton = new Button();
             FirstNameLabel = new Label();
@@ -39,6 +40,7 @@
             PhoneTextBox = new TextBox();
             PhoneLabel = new Label();
             DisplayLabel = new Label();
+            ToolTip = new ToolTip(components);
             SuspendLayout();
             // 
             // SubmitButton
@@ -48,6 +50,7 @@
             SubmitButton.Size = new Size(167, 111);
             SubmitButton.TabIndex = 4;
             SubmitButton.Text = "&Submit";
+            ToolTip.SetToolTip(SubmitButton, "Display Label\r\nEnter\r\nALT+s\r\n");
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -58,6 +61,7 @@
             ExitButton.Size = new Size(167, 111);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "E&xit";
+            ToolTip.SetToolTip(ExitButton, "Close Program\r\nESC\r\nALT+x");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -69,6 +73,7 @@
             FirstNameLabel.Size = new Size(113, 30);
             FirstNameLabel.TabIndex = 2;
             FirstNameLabel.Text = "First Name";
+            ToolTip.SetToolTip(FirstNameLabel, "First Name");
             // 
             // FirstNameTextBox
             // 
@@ -92,6 +97,7 @@
             LastNameLabel.Size = new Size(112, 30);
             LastNameLabel.TabIndex = 4;
             LastNameLabel.Text = "Last Name";
+            ToolTip.SetToolTip(LastNameLabel, "Last Name");
             // 
             // AgeTextBox
             // 
@@ -108,6 +114,7 @@
             AgeLabel.Size = new Size(50, 30);
             AgeLabel.TabIndex = 6;
             AgeLabel.Text = "Age";
+            ToolTip.SetToolTip(AgeLabel, "Age\r\nMust be a number");
             // 
             // PhoneTextBox
             // 
@@ -124,6 +131,7 @@
             PhoneLabel.Size = new Size(72, 30);
             PhoneLabel.TabIndex = 8;
             PhoneLabel.Text = "Phone";
+            ToolTip.SetToolTip(PhoneLabel, "Phone Number");
             // 
             // DisplayLabel
             // 
@@ -133,6 +141,7 @@
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(340, 188);
             DisplayLabel.TabIndex = 10;
+            ToolTip.SetToolTip(DisplayLabel, "Final Result Shows Here");
             // 
             // ExampleForm
             // 
@@ -171,5 +180,6 @@
         private TextBox PhoneTextBox;
         private Label PhoneLabel;
         private Label DisplayLabel;
+        private ToolTip ToolTip;
     }
 }
