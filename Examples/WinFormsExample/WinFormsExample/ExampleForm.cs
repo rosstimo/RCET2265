@@ -35,10 +35,15 @@ namespace WinFormsExample
                 message += "Phone Number is Required\n";
             }
 
-            if (AgeTextBox.Text == "")
+            // verifies if field is not empty and is a number
+            try
+            {
+                int.Parse(AgeTextBox.Text);
+            }
+            catch (Exception)
             {
                 AgeTextBox.Focus();
-                message += "Age is Required\n";
+                message += "Valid Age is Required\n";
             }
 
             if (LastNameTextBox.Text == "")
@@ -67,6 +72,5 @@ namespace WinFormsExample
         {
             DisplayContent();
         }
-
     }
 }

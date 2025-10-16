@@ -69,7 +69,6 @@
             FirstNameLabel.Size = new Size(113, 30);
             FirstNameLabel.TabIndex = 2;
             FirstNameLabel.Text = "First Name";
-            
             // 
             // FirstNameTextBox
             // 
@@ -134,7 +133,6 @@
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(340, 188);
             DisplayLabel.TabIndex = 10;
-            
             // 
             // ExampleForm
             // 
