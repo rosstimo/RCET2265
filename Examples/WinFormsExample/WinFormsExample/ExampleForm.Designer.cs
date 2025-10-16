@@ -47,7 +47,7 @@
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(167, 111);
             SubmitButton.TabIndex = 4;
-            SubmitButton.Text = "Submit";
+            SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -57,7 +57,7 @@
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(167, 111);
             ExitButton.TabIndex = 5;
-            ExitButton.Text = "Exit";
+            ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -136,8 +136,10 @@
             // 
             // ExampleForm
             // 
+            AcceptButton = SubmitButton;
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = ExitButton;
             ClientSize = new Size(696, 386);
             Controls.Add(DisplayLabel);
             Controls.Add(PhoneTextBox);
