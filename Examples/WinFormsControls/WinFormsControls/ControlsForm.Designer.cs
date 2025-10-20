@@ -1,6 +1,6 @@
 ﻿namespace WinFormsControls
 {
-    partial class Form1
+    partial class ControlsForm
     {
         /// <summary>
         ///  Required designer variable.
