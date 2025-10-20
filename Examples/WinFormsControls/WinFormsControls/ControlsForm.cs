@@ -5,6 +5,7 @@ namespace WinFormsControls
         public ControlsForm()
         {
             InitializeComponent();
+            SetDefaults(); // set defaults when form loads
         }
 
         //Program Logic -------------------------------------------------------
