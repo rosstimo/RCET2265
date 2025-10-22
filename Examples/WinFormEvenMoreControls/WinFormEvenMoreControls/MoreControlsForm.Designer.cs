@@ -42,6 +42,7 @@
             submitToolStripMenuItem1 = new ToolStripMenuItem();
             clearToolStripMenuItem1 = new ToolStripMenuItem();
             exitToolStripMenuItem1 = new ToolStripMenuItem();
+            DisplayListBox = new ListBox();
             TopMenuStrip.SuspendLayout();
             ContextMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -138,12 +139,23 @@
             exitToolStripMenuItem1.Size = new Size(151, 36);
             exitToolStripMenuItem1.Text = "Exit";
             // 
+            // DisplayListBox
+            // 
+            DisplayListBox.ContextMenuStrip = ContextMenuStrip;
+            DisplayListBox.FormattingEnabled = true;
+            DisplayListBox.ItemHeight = 30;
+            DisplayListBox.Location = new Point(12, 41);
+            DisplayListBox.Name = "DisplayListBox";
+            DisplayListBox.Size = new Size(776, 274);
+            DisplayListBox.TabIndex = 4;
+            // 
             // MoreControlsForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ContextMenuStrip = ContextMenuStrip;
+            Controls.Add(DisplayListBox);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
@@ -174,5 +186,6 @@
         private ToolStripMenuItem submitToolStripMenuItem1;
         private ToolStripMenuItem clearToolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem1;
+        private ListBox DisplayListBox;
     }
 }
