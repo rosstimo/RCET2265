@@ -38,12 +38,12 @@
             SubmitTopMenuItem = new ToolStripMenuItem();
             ClearTopMenuItem = new ToolStripMenuItem();
             ExitTopMenuItem = new ToolStripMenuItem();
+            submitToolStripMenuItem2 = new ToolStripMenuItem();
             ContextMenuStrip = new ContextMenuStrip(components);
             SubmitContextMenuItem = new ToolStripMenuItem();
             CLearContextMenuItem = new ToolStripMenuItem();
             ExitContextMenuItem = new ToolStripMenuItem();
             DisplayListBox = new ListBox();
-            submitToolStripMenuItem2 = new ToolStripMenuItem();
             TopMenuStrip.SuspendLayout();
             ContextMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -56,6 +56,7 @@
             SubmitButton.TabIndex = 0;
             SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // ClearButton
             // 
@@ -65,6 +66,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
@@ -101,21 +103,29 @@
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(315, 40);
+            SubmitTopMenuItem.Size = new Size(196, 40);
             SubmitTopMenuItem.Text = "&Submit";
+            SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(315, 40);
+            ClearTopMenuItem.Size = new Size(196, 40);
             ClearTopMenuItem.Text = "&Clear";
+            ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(315, 40);
+            ExitTopMenuItem.Size = new Size(196, 40);
             ExitTopMenuItem.Text = "E&xit";
             ExitTopMenuItem.Click += ExitButton_Click;
+            // 
+            // submitToolStripMenuItem2
+            // 
+            submitToolStripMenuItem2.Name = "submitToolStripMenuItem2";
+            submitToolStripMenuItem2.Size = new Size(196, 40);
+            submitToolStripMenuItem2.Text = "&Submit";
             // 
             // ContextMenuStrip
             // 
@@ -127,19 +137,21 @@
             // SubmitContextMenuItem
             // 
             SubmitContextMenuItem.Name = "SubmitContextMenuItem";
-            SubmitContextMenuItem.Size = new Size(270, 36);
+            SubmitContextMenuItem.Size = new Size(151, 36);
             SubmitContextMenuItem.Text = "Submit";
+            SubmitContextMenuItem.Click += SubmitButton_Click;
             // 
             // CLearContextMenuItem
             // 
             CLearContextMenuItem.Name = "CLearContextMenuItem";
-            CLearContextMenuItem.Size = new Size(270, 36);
+            CLearContextMenuItem.Size = new Size(151, 36);
             CLearContextMenuItem.Text = "Clear";
+            CLearContextMenuItem.Click += ClearButton_Click;
             // 
             // ExitContextMenuItem
             // 
             ExitContextMenuItem.Name = "ExitContextMenuItem";
-            ExitContextMenuItem.Size = new Size(270, 36);
+            ExitContextMenuItem.Size = new Size(151, 36);
             ExitContextMenuItem.Text = "Exit";
             ExitContextMenuItem.Click += ExitButton_Click;
             // 
@@ -152,12 +164,6 @@
             DisplayListBox.Name = "DisplayListBox";
             DisplayListBox.Size = new Size(776, 274);
             DisplayListBox.TabIndex = 4;
-            // 
-            // submitToolStripMenuItem2
-            // 
-            submitToolStripMenuItem2.Name = "submitToolStripMenuItem2";
-            submitToolStripMenuItem2.Size = new Size(315, 40);
-            submitToolStripMenuItem2.Text = "&Submit";
             // 
             // MoreControlsForm
             // 

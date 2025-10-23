@@ -11,5 +11,15 @@ namespace WinFormEvenMoreControls
         {
             this.Close();
         }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            this.Text = "Clear";
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            this.Text = "Submit";
+        }
     }
 }
