@@ -5,6 +5,8 @@ namespace WinFormControlFeatures
         public ControlFeaturesForm()
         {
             InitializeComponent();
+
+            SetDefaults(); // after initialize
         }
 
         // Program Logic ------------------------------------------------------
@@ -21,6 +23,14 @@ namespace WinFormControlFeatures
             checkBox2.Checked = false;
             // output
 
+            //Buttons
+            SubmitButton.Enabled = ValidateInputFields();
+
+        }
+
+        bool ValidateInputFields()
+        {
+            return false;
         }
 
 
