@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             InfoGroupBox = new GroupBox();
-            OutputGroupBox = new GroupBox();
-            ButtonsGroupBox = new GroupBox();
-            OptionsGroupBox = new GroupBox();
-            NameLabel = new Label();
-            NameTextBox = new TextBox();
-            AgeTextBox = new TextBox();
-            AgeLabel = new Label();
             PhoneTextBox = new TextBox();
             label2 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            SubmitButton = new Button();
-            ClearButton = new Button();
+            AgeTextBox = new TextBox();
+            AgeLabel = new Label();
+            NameTextBox = new TextBox();
+            NameLabel = new Label();
+            OutputGroupBox = new GroupBox();
+            ButtonsGroupBox = new GroupBox();
             ExitButton = new Button();
+            ClearButton = new Button();
+            SubmitButton = new Button();
+            OptionsGroupBox = new GroupBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             InfoGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
             OptionsGroupBox.SuspendLayout();
@@ -64,7 +64,55 @@
             InfoGroupBox.Size = new Size(433, 272);
             InfoGroupBox.TabIndex = 0;
             InfoGroupBox.TabStop = false;
-            InfoGroupBox.Text = "Client Inormation";
+            InfoGroupBox.Text = "Client Information";
+            // 
+            // PhoneTextBox
+            // 
+            PhoneTextBox.Location = new Point(86, 126);
+            PhoneTextBox.Name = "PhoneTextBox";
+            PhoneTextBox.Size = new Size(264, 35);
+            PhoneTextBox.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 126);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 30);
+            label2.TabIndex = 4;
+            label2.Text = "Phone";
+            // 
+            // AgeTextBox
+            // 
+            AgeTextBox.Location = new Point(86, 85);
+            AgeTextBox.Name = "AgeTextBox";
+            AgeTextBox.Size = new Size(264, 35);
+            AgeTextBox.TabIndex = 3;
+            // 
+            // AgeLabel
+            // 
+            AgeLabel.AutoSize = true;
+            AgeLabel.Location = new Point(6, 82);
+            AgeLabel.Name = "AgeLabel";
+            AgeLabel.Size = new Size(50, 30);
+            AgeLabel.TabIndex = 2;
+            AgeLabel.Text = "Age";
+            // 
+            // NameTextBox
+            // 
+            NameTextBox.Location = new Point(86, 44);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(264, 35);
+            NameTextBox.TabIndex = 1;
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Location = new Point(6, 44);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(69, 30);
+            NameLabel.TabIndex = 0;
+            NameLabel.Text = "Name";
             // 
             // OutputGroupBox
             // 
@@ -86,6 +134,33 @@
             ButtonsGroupBox.TabIndex = 3;
             ButtonsGroupBox.TabStop = false;
             // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(344, 135);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(131, 77);
+            ExitButton.TabIndex = 2;
+            ExitButton.Text = "E&xit";
+            ExitButton.UseVisualStyleBackColor = true;
+            // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(207, 135);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(131, 77);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "&Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            // 
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(70, 135);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(131, 77);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "&Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            // 
             // OptionsGroupBox
             // 
             OptionsGroupBox.Controls.Add(checkBox2);
@@ -100,75 +175,25 @@
             OptionsGroupBox.TabStop = false;
             OptionsGroupBox.Text = "Options";
             // 
-            // NameLabel
+            // checkBox2
             // 
-            NameLabel.AutoSize = true;
-            NameLabel.Location = new Point(0, 58);
-            NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(69, 30);
-            NameLabel.TabIndex = 0;
-            NameLabel.Text = "Name";
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(207, 75);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(137, 34);
+            checkBox2.TabIndex = 4;
+            checkBox2.Text = "checkBox2";
+            checkBox2.UseVisualStyleBackColor = true;
             // 
-            // NameTextBox
+            // checkBox1
             // 
-            NameTextBox.Location = new Point(80, 58);
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(264, 35);
-            NameTextBox.TabIndex = 1;
-            // 
-            // AgeTextBox
-            // 
-            AgeTextBox.Location = new Point(80, 99);
-            AgeTextBox.Name = "AgeTextBox";
-            AgeTextBox.Size = new Size(264, 35);
-            AgeTextBox.TabIndex = 3;
-            // 
-            // AgeLabel
-            // 
-            AgeLabel.AutoSize = true;
-            AgeLabel.Location = new Point(0, 99);
-            AgeLabel.Name = "AgeLabel";
-            AgeLabel.Size = new Size(50, 30);
-            AgeLabel.TabIndex = 2;
-            AgeLabel.Text = "Age";
-            // 
-            // PhoneTextBox
-            // 
-            PhoneTextBox.Location = new Point(80, 140);
-            PhoneTextBox.Name = "PhoneTextBox";
-            PhoneTextBox.Size = new Size(264, 35);
-            PhoneTextBox.TabIndex = 5;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(0, 140);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 30);
-            label2.TabIndex = 4;
-            label2.Text = "Phone";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 34);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(158, 34);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(6, 74);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(158, 34);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(207, 35);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(137, 34);
+            checkBox1.TabIndex = 3;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
@@ -181,52 +206,27 @@
             radioButton3.Text = "radioButton3";
             radioButton3.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // radioButton2
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(207, 35);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(137, 34);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(6, 74);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(158, 34);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // radioButton1
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(207, 75);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(137, 34);
-            checkBox2.TabIndex = 4;
-            checkBox2.Text = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // SubmitButton
-            // 
-            SubmitButton.Location = new Point(70, 135);
-            SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(131, 77);
-            SubmitButton.TabIndex = 0;
-            SubmitButton.Text = "&Submit";
-            SubmitButton.UseVisualStyleBackColor = true;
-            // 
-            // ClearButton
-            // 
-            ClearButton.Location = new Point(207, 135);
-            ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(131, 77);
-            ClearButton.TabIndex = 1;
-            ClearButton.Text = "&Clear";
-            ClearButton.UseVisualStyleBackColor = true;
-            // 
-            // ExitButton
-            // 
-            ExitButton.Location = new Point(344, 135);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(131, 77);
-            ExitButton.TabIndex = 2;
-            ExitButton.Text = "E&xit";
-            ExitButton.UseVisualStyleBackColor = true;
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(6, 34);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(158, 34);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // ControlFeaturesForm
             // 
