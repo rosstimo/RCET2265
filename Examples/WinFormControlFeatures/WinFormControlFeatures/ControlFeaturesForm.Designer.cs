@@ -43,9 +43,9 @@
             OptionsGroupBox = new GroupBox();
             checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            ReverseRadioButton = new RadioButton();
+            LowerRadioButton = new RadioButton();
+            UpperRadioButton = new RadioButton();
             InfoGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
             OptionsGroupBox.SuspendLayout();
@@ -142,6 +142,7 @@
             ExitButton.TabIndex = 2;
             ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // ClearButton
             // 
@@ -151,6 +152,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // SubmitButton
             // 
@@ -160,14 +162,15 @@
             SubmitButton.TabIndex = 0;
             SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // OptionsGroupBox
             // 
             OptionsGroupBox.Controls.Add(checkBox2);
             OptionsGroupBox.Controls.Add(checkBox1);
-            OptionsGroupBox.Controls.Add(radioButton3);
-            OptionsGroupBox.Controls.Add(radioButton2);
-            OptionsGroupBox.Controls.Add(radioButton1);
+            OptionsGroupBox.Controls.Add(ReverseRadioButton);
+            OptionsGroupBox.Controls.Add(LowerRadioButton);
+            OptionsGroupBox.Controls.Add(UpperRadioButton);
             OptionsGroupBox.Location = new Point(12, 290);
             OptionsGroupBox.Name = "OptionsGroupBox";
             OptionsGroupBox.Size = new Size(433, 218);
@@ -195,38 +198,38 @@
             checkBox1.Text = "checkBox1";
             checkBox1.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // ReverseRadioButton
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(6, 114);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(158, 34);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            ReverseRadioButton.AutoSize = true;
+            ReverseRadioButton.Location = new Point(6, 114);
+            ReverseRadioButton.Name = "ReverseRadioButton";
+            ReverseRadioButton.Size = new Size(109, 34);
+            ReverseRadioButton.TabIndex = 2;
+            ReverseRadioButton.TabStop = true;
+            ReverseRadioButton.Text = "Reverse";
+            ReverseRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // LowerRadioButton
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(6, 74);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(158, 34);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            LowerRadioButton.AutoSize = true;
+            LowerRadioButton.Location = new Point(6, 74);
+            LowerRadioButton.Name = "LowerRadioButton";
+            LowerRadioButton.Size = new Size(143, 34);
+            LowerRadioButton.TabIndex = 1;
+            LowerRadioButton.TabStop = true;
+            LowerRadioButton.Text = "Lower Case";
+            LowerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // UpperRadioButton
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 34);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(158, 34);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            UpperRadioButton.AutoSize = true;
+            UpperRadioButton.Location = new Point(6, 34);
+            UpperRadioButton.Name = "UpperRadioButton";
+            UpperRadioButton.Size = new Size(144, 34);
+            UpperRadioButton.TabIndex = 0;
+            UpperRadioButton.TabStop = true;
+            UpperRadioButton.Text = "Upper Case";
+            UpperRadioButton.UseVisualStyleBackColor = true;
             // 
             // ControlFeaturesForm
             // 
@@ -260,9 +263,9 @@
         private Label label2;
         private TextBox AgeTextBox;
         private Label AgeLabel;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton ReverseRadioButton;
+        private RadioButton LowerRadioButton;
+        private RadioButton UpperRadioButton;
         private Button ExitButton;
         private Button ClearButton;
         private Button SubmitButton;
