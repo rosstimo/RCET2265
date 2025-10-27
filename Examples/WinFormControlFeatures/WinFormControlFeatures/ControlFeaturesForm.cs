@@ -1,8 +1,8 @@
 namespace WinFormControlFeatures
 {
-    public partial class Form1 : Form
+    public partial class ControlFeaturesForm : Form
     {
-        public Form1()
+        public ControlFeaturesForm()
         {
             InitializeComponent();
         }
