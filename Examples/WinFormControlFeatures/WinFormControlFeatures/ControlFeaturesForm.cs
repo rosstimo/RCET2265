@@ -23,14 +23,48 @@ namespace WinFormControlFeatures
             checkBox2.Checked = false;
             // output
 
-            //Buttons
-            SubmitButton.Enabled = ValidateInputFields();
+            ValidateInputFields();
 
         }
 
         bool ValidateInputFields()
         {
-            return false;
+            bool allFieldsAreValid = true;
+            NameTextBox.BackColor = Color.White;
+            AgeTextBox.BackColor = Color.White;
+            PhoneTextBox.BackColor = Color.White;
+            int _age = 0;
+            //actual validation here
+
+            try
+            {
+                _age = int.Parse(AgeTextBox.Text);
+                if (_age <=0 || _age >= 50)
+                {
+                    allFieldsAreValid = false;
+                    AgeTextBox.BackColor = Color.LightYellow;
+                }
+            }
+            catch (Exception)
+            {
+                allFieldsAreValid = false;
+                AgeTextBox.BackColor = Color.LightYellow;
+                //AgeTextBox.Focus();
+            }
+
+            // name should not be empty
+            if (NameTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                NameTextBox.BackColor = Color.LightYellow;
+                //NameTextBox.Focus();
+            }
+
+
+
+
+                SubmitButton.Enabled = allFieldsAreValid;
+                return allFieldsAreValid;
         }
 
 
@@ -49,6 +83,11 @@ namespace WinFormControlFeatures
         private void SubmitButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Text_Changed(object sender, EventArgs e)
+        {
+            ValidateInputFields();
         }
     }
 }
