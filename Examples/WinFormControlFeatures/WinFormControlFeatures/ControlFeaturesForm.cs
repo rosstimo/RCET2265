@@ -34,7 +34,12 @@ namespace WinFormControlFeatures
             AgeTextBox.BackColor = Color.White;
             PhoneTextBox.BackColor = Color.White;
             int _age = 0;
-            //actual validation here
+            
+            if (PhoneTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                PhoneTextBox.BackColor = Color.LightYellow;
+            }
 
             try
             {
