@@ -46,7 +46,9 @@
             ReverseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             UpperRadioButton = new RadioButton();
+            ResultListBox = new ListBox();
             InfoGroupBox.SuspendLayout();
+            OutputGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
             OptionsGroupBox.SuspendLayout();
             SuspendLayout();
@@ -72,6 +74,7 @@
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(264, 35);
             PhoneTextBox.TabIndex = 5;
+            PhoneTextBox.TextChanged += Text_Changed;
             // 
             // label2
             // 
@@ -118,6 +121,7 @@
             // 
             // OutputGroupBox
             // 
+            OutputGroupBox.Controls.Add(ResultListBox);
             OutputGroupBox.Location = new Point(451, 12);
             OutputGroupBox.Name = "OutputGroupBox";
             OutputGroupBox.Size = new Size(481, 272);
@@ -233,6 +237,15 @@
             UpperRadioButton.Text = "Upper Case";
             UpperRadioButton.UseVisualStyleBackColor = true;
             // 
+            // ResultListBox
+            // 
+            ResultListBox.FormattingEnabled = true;
+            ResultListBox.ItemHeight = 30;
+            ResultListBox.Location = new Point(6, 56);
+            ResultListBox.Name = "ResultListBox";
+            ResultListBox.Size = new Size(469, 184);
+            ResultListBox.TabIndex = 0;
+            // 
             // ControlFeaturesForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -247,6 +260,7 @@
             Text = "Control Features";
             InfoGroupBox.ResumeLayout(false);
             InfoGroupBox.PerformLayout();
+            OutputGroupBox.ResumeLayout(false);
             ButtonsGroupBox.ResumeLayout(false);
             OptionsGroupBox.ResumeLayout(false);
             OptionsGroupBox.PerformLayout();
@@ -273,5 +287,6 @@
         private Button SubmitButton;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private ListBox ResultListBox;
     }
 }

@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace WinFormControlFeatures
 {
     public partial class ControlFeaturesForm : Form
@@ -22,6 +24,7 @@ namespace WinFormControlFeatures
             checkBox1.Checked = false;
             checkBox2.Checked = false;
             // output
+            ResultListBox.Items.Clear();
 
             ValidateInputFields();
 
@@ -71,7 +74,39 @@ namespace WinFormControlFeatures
                 SubmitButton.Enabled = allFieldsAreValid;
                 return allFieldsAreValid;
         }
+        
+        string FormatName()
+        {
+            string _name = NameTextBox.Text;
+            
+            if (UpperRadioButton.Checked)
+            {
+                _name = _name.ToUpper();
+            }
+            else if(LowerRadioButton.Checked)
+            {
+                _name = _name.ToLower();
+            }
+            else
+            {
+               // _name = (string)_name.Reverse();
+                char[] chars = _name.ToCharArray();
+                _name = "";
+              for (int i = chars.GetUpperBound(0); i >= 0; i--)
+              {
+                _name += chars[i];
+              }
 
+            }
+
+
+                return _name;
+        }
+
+        void DisplayResult()
+        {
+            ResultListBox.Items.Add(FormatName());
+        }
 
         // Event Handlers------------------------------------------------------
 
@@ -87,7 +122,7 @@ namespace WinFormControlFeatures
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
+            DisplayResult();
         }
 
         private void Text_Changed(object sender, EventArgs e)
