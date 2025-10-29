@@ -103,9 +103,20 @@ namespace WinFormControlFeatures
                 return _name;
         }
 
+        int GetMaxHeartRate()
+        {
+            int maxHR = 0;
+            
+            // calculate max heart rate
+            maxHR = 220 - int.Parse(AgeTextBox.Text);
+
+            return maxHR;
+        }
+
         void DisplayResult()
         {
             ResultListBox.Items.Add(FormatName());
+            ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
         }
 
         // Event Handlers------------------------------------------------------
