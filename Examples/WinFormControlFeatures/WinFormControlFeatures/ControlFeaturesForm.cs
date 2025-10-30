@@ -4,6 +4,16 @@ namespace WinFormControlFeatures
 {
     public partial class ControlFeaturesForm : Form
     {
+        /*TODO
+            [ ] Save client info in a data structure. (array, list, etc)
+            [ ] Use list box to display single client record
+            [ ] Use combobox to select existing client record
+            [ ] When selected populate text fields and listbox with client details
+            [ ] Submit will update client record or create it if it doesn't exist
+            [ ] May need a unique id number for each client to avoid duplicates
+            [ ] Save and restore clients using a file
+            [ ] File dialogue controls
+        */
         public ControlFeaturesForm()
         {
             InitializeComponent();
