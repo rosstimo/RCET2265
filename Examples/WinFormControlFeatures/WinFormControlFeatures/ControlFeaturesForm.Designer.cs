@@ -36,6 +36,7 @@
             NameTextBox = new TextBox();
             NameLabel = new Label();
             OutputGroupBox = new GroupBox();
+            ClientComboBox = new ComboBox();
             ResultListBox = new ListBox();
             ButtonsGroupBox = new GroupBox();
             ExitButton = new Button();
@@ -121,6 +122,7 @@
             // 
             // OutputGroupBox
             // 
+            OutputGroupBox.Controls.Add(ClientComboBox);
             OutputGroupBox.Controls.Add(ResultListBox);
             OutputGroupBox.Location = new Point(451, 12);
             OutputGroupBox.Name = "OutputGroupBox";
@@ -129,11 +131,19 @@
             OutputGroupBox.TabStop = false;
             OutputGroupBox.Text = "Result";
             // 
+            // ClientComboBox
+            // 
+            ClientComboBox.FormattingEnabled = true;
+            ClientComboBox.Location = new Point(263, 34);
+            ClientComboBox.Name = "ClientComboBox";
+            ClientComboBox.Size = new Size(212, 38);
+            ClientComboBox.TabIndex = 1;
+            // 
             // ResultListBox
             // 
             ResultListBox.FormattingEnabled = true;
             ResultListBox.ItemHeight = 30;
-            ResultListBox.Location = new Point(6, 56);
+            ResultListBox.Location = new Point(6, 82);
             ResultListBox.Name = "ResultListBox";
             ResultListBox.Size = new Size(469, 184);
             ResultListBox.TabIndex = 0;
@@ -288,5 +298,6 @@
         private CheckBox EmailCheckBox;
         private CheckBox FormatCheckBox;
         private ListBox ResultListBox;
+        private ComboBox ClientComboBox;
     }
 }

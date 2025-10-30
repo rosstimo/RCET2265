@@ -25,6 +25,7 @@ namespace WinFormControlFeatures
             EmailCheckBox.Checked = false;
             // output
             ResultListBox.Items.Clear();
+            ClientComboBox.Items.Clear();
 
             ValidateInputFields();
 
@@ -128,6 +129,7 @@ namespace WinFormControlFeatures
 
         void DisplayResult()
         {
+            ClientComboBox.Items.Add(FormatName());
             ResultListBox.Items.Add(FormatName());
             ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
             if (EmailCheckBox.Checked)
