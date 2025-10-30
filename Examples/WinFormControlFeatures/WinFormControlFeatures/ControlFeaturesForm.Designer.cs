@@ -36,17 +36,17 @@
             NameTextBox = new TextBox();
             NameLabel = new Label();
             OutputGroupBox = new GroupBox();
+            ResultListBox = new ListBox();
             ButtonsGroupBox = new GroupBox();
             ExitButton = new Button();
             ClearButton = new Button();
             SubmitButton = new Button();
             OptionsGroupBox = new GroupBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            EmailCheckBox = new CheckBox();
+            FormatCheckBox = new CheckBox();
             ReverseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             UpperRadioButton = new RadioButton();
-            ResultListBox = new ListBox();
             InfoGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
@@ -129,6 +129,15 @@
             OutputGroupBox.TabStop = false;
             OutputGroupBox.Text = "Result";
             // 
+            // ResultListBox
+            // 
+            ResultListBox.FormattingEnabled = true;
+            ResultListBox.ItemHeight = 30;
+            ResultListBox.Location = new Point(6, 56);
+            ResultListBox.Name = "ResultListBox";
+            ResultListBox.Size = new Size(469, 184);
+            ResultListBox.TabIndex = 0;
+            // 
             // ButtonsGroupBox
             // 
             ButtonsGroupBox.Controls.Add(ExitButton);
@@ -172,8 +181,8 @@
             // 
             // OptionsGroupBox
             // 
-            OptionsGroupBox.Controls.Add(checkBox2);
-            OptionsGroupBox.Controls.Add(checkBox1);
+            OptionsGroupBox.Controls.Add(EmailCheckBox);
+            OptionsGroupBox.Controls.Add(FormatCheckBox);
             OptionsGroupBox.Controls.Add(ReverseRadioButton);
             OptionsGroupBox.Controls.Add(LowerRadioButton);
             OptionsGroupBox.Controls.Add(UpperRadioButton);
@@ -184,25 +193,25 @@
             OptionsGroupBox.TabStop = false;
             OptionsGroupBox.Text = "Options";
             // 
-            // checkBox2
+            // EmailCheckBox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(207, 75);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(137, 34);
-            checkBox2.TabIndex = 4;
-            checkBox2.Text = "checkBox2";
-            checkBox2.UseVisualStyleBackColor = true;
+            EmailCheckBox.AutoSize = true;
+            EmailCheckBox.Location = new Point(207, 75);
+            EmailCheckBox.Name = "EmailCheckBox";
+            EmailCheckBox.Size = new Size(155, 34);
+            EmailCheckBox.TabIndex = 4;
+            EmailCheckBox.Text = "Create Email";
+            EmailCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // FormatCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(207, 35);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(137, 34);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
+            FormatCheckBox.AutoSize = true;
+            FormatCheckBox.Location = new Point(207, 35);
+            FormatCheckBox.Name = "FormatCheckBox";
+            FormatCheckBox.Size = new Size(163, 34);
+            FormatCheckBox.TabIndex = 3;
+            FormatCheckBox.Text = "Apply Format";
+            FormatCheckBox.UseVisualStyleBackColor = true;
             // 
             // ReverseRadioButton
             // 
@@ -236,15 +245,6 @@
             UpperRadioButton.TabStop = true;
             UpperRadioButton.Text = "Upper Case";
             UpperRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // ResultListBox
-            // 
-            ResultListBox.FormattingEnabled = true;
-            ResultListBox.ItemHeight = 30;
-            ResultListBox.Location = new Point(6, 56);
-            ResultListBox.Name = "ResultListBox";
-            ResultListBox.Size = new Size(469, 184);
-            ResultListBox.TabIndex = 0;
             // 
             // ControlFeaturesForm
             // 
@@ -285,8 +285,8 @@
         private Button ExitButton;
         private Button ClearButton;
         private Button SubmitButton;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
+        private CheckBox EmailCheckBox;
+        private CheckBox FormatCheckBox;
         private ListBox ResultListBox;
     }
 }

@@ -21,8 +21,8 @@ namespace WinFormControlFeatures
             PhoneTextBox.Text = "";
             //options
             UpperRadioButton.Checked = true;
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
+            FormatCheckBox.Checked = false;
+            EmailCheckBox.Checked = false;
             // output
             ResultListBox.Items.Clear();
 
@@ -89,7 +89,6 @@ namespace WinFormControlFeatures
             }
             else
             {
-               // _name = (string)_name.Reverse();
                 char[] chars = _name.ToCharArray();
                 _name = "";
               for (int i = chars.GetUpperBound(0); i >= 0; i--)
@@ -99,8 +98,14 @@ namespace WinFormControlFeatures
 
             }
 
-
+            if (FormatCheckBox.Checked)
+            {
                 return _name;
+            }
+            else
+            {
+                return NameTextBox.Text;
+            }
         }
 
         int GetMaxHeartRate()
@@ -113,10 +118,23 @@ namespace WinFormControlFeatures
             return maxHR;
         }
 
+        string CreateEmail()
+        {
+            string _email = FormatName();
+            _email = _email.Replace(" ", ".");
+            _email = $"{_email}@acme.com";
+            return _email;
+        }
+
         void DisplayResult()
         {
             ResultListBox.Items.Add(FormatName());
             ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
+            if (EmailCheckBox.Checked)
+            {
+                ResultListBox.Items.Add(CreateEmail());
+            }
+
         }
 
         // Event Handlers------------------------------------------------------
