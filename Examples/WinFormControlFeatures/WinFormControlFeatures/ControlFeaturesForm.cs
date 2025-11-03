@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+using System.CodeDom.Compiler;
 using System.Diagnostics.Eventing.Reader;
 
 namespace WinFormControlFeatures
@@ -6,14 +8,17 @@ namespace WinFormControlFeatures
     {
         /*TODO
             [ ] Save client info in a data structure. (array, list, etc)
-            [ ] Use list box to display single client record
             [ ] Use combobox to select existing client record
+            [ ] Use list box to display single client record
             [ ] When selected populate text fields and listbox with client details
             [ ] Submit will update client record or create it if it doesn't exist
             [ ] May need a unique id number for each client to avoid duplicates
             [ ] Save and restore clients using a file
             [ ] File dialogue controls
         */
+
+        List<string> clientData = new();
+
         public ControlFeaturesForm()
         {
             InitializeComponent();
@@ -137,9 +142,27 @@ namespace WinFormControlFeatures
             return _email;
         }
 
+        void UpdateClientData()
+        {
+            this.clientData.Add($"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}");
+            UpdateClientComboBox();
+        }
+
+        void UpdateClientComboBox()
+        {
+
+            string[] temp;
+            ClientComboBox.Items.Clear();
+            foreach (string thing in this.clientData)
+            {
+                temp = thing.Split("$$");
+                ClientComboBox.Items.Add(temp[0]);
+            }
+        }
+
         void DisplayResult()
         {
-            ClientComboBox.Items.Add(FormatName());
+            //ClientComboBox.Items.Add(FormatName());
             ResultListBox.Items.Add(FormatName());
             ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
             if (EmailCheckBox.Checked)
@@ -163,7 +186,8 @@ namespace WinFormControlFeatures
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            DisplayResult();
+            //DisplayResult();
+            UpdateClientData();
         }
 
         private void Text_Changed(object sender, EventArgs e)
