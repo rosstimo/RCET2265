@@ -148,7 +148,11 @@ namespace WinFormControlFeatures
 
         void UpdateClientData()
         {
-            this.clientData.Add($"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}");
+            string currentRecord =$"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}";
+            if (!this.clientData.Contains(currentRecord)) 
+            {
+                this.clientData.Add(currentRecord);
+            }
             UpdateClientComboBox();
         }
 
