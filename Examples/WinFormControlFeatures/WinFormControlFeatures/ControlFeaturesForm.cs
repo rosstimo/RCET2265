@@ -7,10 +7,10 @@ namespace WinFormControlFeatures
     public partial class ControlFeaturesForm : Form
     {
         /*TODO
-            [ ] Save client info in a data structure. (array, list, etc)
-            [ ] Use combobox to select existing client record
-            [ ] Use list box to display single client record
-            [ ] When selected populate text fields and listbox with client details
+            [x] Save client info in a data structure. (array, list, etc)
+            [x] Use combobox to select existing client record
+            [x] Use list box to display single client record
+            [x] When selected populate text fields and listbox with client details
             [ ] Submit will update client record or create it if it doesn't exist
             [ ] May need a unique id number for each client to avoid duplicates
             [ ] Save and restore clients using a file
@@ -29,6 +29,11 @@ namespace WinFormControlFeatures
         // Program Logic ------------------------------------------------------
         void SetDefaults()
         {
+            // output
+            if (ClientComboBox.Items.Count > 0)
+            {
+                ClientComboBox.SelectedIndex = 0;
+            }
             // information fields
             NameTextBox.Text = "";
             NameTextBox.Focus();
@@ -38,9 +43,8 @@ namespace WinFormControlFeatures
             UpperRadioButton.Checked = true;
             FormatCheckBox.Checked = false;
             EmailCheckBox.Checked = false;
-            // output
+
             ResultListBox.Items.Clear();
-            ClientComboBox.Items.Clear();
 
             ValidateInputFields();
 
@@ -53,7 +57,7 @@ namespace WinFormControlFeatures
             AgeTextBox.BackColor = Color.White;
             PhoneTextBox.BackColor = Color.White;
             int _age = 0;
-            
+
             if (PhoneTextBox.Text == "")
             {
                 allFieldsAreValid = false;
@@ -63,7 +67,7 @@ namespace WinFormControlFeatures
             try
             {
                 _age = int.Parse(AgeTextBox.Text);
-                if (_age <=0 || _age >= 50)
+                if (_age <= 0 || _age >= 50)
                 {
                     allFieldsAreValid = false;
                     AgeTextBox.BackColor = Color.LightYellow;
@@ -87,19 +91,19 @@ namespace WinFormControlFeatures
 
 
 
-                SubmitButton.Enabled = allFieldsAreValid;
-                return allFieldsAreValid;
+            SubmitButton.Enabled = allFieldsAreValid;
+            return allFieldsAreValid;
         }
-        
+
         string FormatName()
         {
             string _name = NameTextBox.Text;
-            
+
             if (UpperRadioButton.Checked)
             {
                 _name = _name.ToUpper();
             }
-            else if(LowerRadioButton.Checked)
+            else if (LowerRadioButton.Checked)
             {
                 _name = _name.ToLower();
             }
@@ -107,10 +111,10 @@ namespace WinFormControlFeatures
             {
                 char[] chars = _name.ToCharArray();
                 _name = "";
-              for (int i = chars.GetUpperBound(0); i >= 0; i--)
-              {
-                _name += chars[i];
-              }
+                for (int i = chars.GetUpperBound(0); i >= 0; i--)
+                {
+                    _name += chars[i];
+                }
 
             }
 
@@ -127,7 +131,7 @@ namespace WinFormControlFeatures
         int GetMaxHeartRate()
         {
             int maxHR = 0;
-            
+
             // calculate max heart rate
             maxHR = 220 - int.Parse(AgeTextBox.Text);
 
@@ -150,7 +154,8 @@ namespace WinFormControlFeatures
 
         void UpdateClientComboBox()
         {
-
+            // make combobox content match content of clientData List
+            // add names only
             string[] temp;
             ClientComboBox.Items.Clear();
             foreach (string thing in this.clientData)
@@ -162,7 +167,7 @@ namespace WinFormControlFeatures
 
         void DisplayResult()
         {
-            //ClientComboBox.Items.Add(FormatName());
+            ResultListBox.Items.Clear();
             ResultListBox.Items.Add(FormatName());
             ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
             if (EmailCheckBox.Checked)
@@ -193,6 +198,23 @@ namespace WinFormControlFeatures
         private void Text_Changed(object sender, EventArgs e)
         {
             ValidateInputFields();
+        }
+
+        private void ClientComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] temp;
+            this.Text = ClientComboBox.SelectedIndex.ToString();
+            //get the value from this.clientData at index pointed to by combobox selection
+            //ResultListBox.Items.Add(this.clientData[ClientComboBox.SelectedIndex]);
+            temp = this.clientData[ClientComboBox.SelectedIndex].Split("$$");
+            NameTextBox.Text = temp[0];
+            AgeTextBox.Text = temp[1];
+            PhoneTextBox.Text = temp[2];
+            DisplayResult();
+
+
+
+
         }
     }
 }

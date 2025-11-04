@@ -138,6 +138,7 @@
             ClientComboBox.Name = "ClientComboBox";
             ClientComboBox.Size = new Size(212, 38);
             ClientComboBox.TabIndex = 1;
+            ClientComboBox.SelectedIndexChanged += ClientComboBox_SelectedIndexChanged;
             // 
             // ResultListBox
             // 
