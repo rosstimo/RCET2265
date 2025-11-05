@@ -11,8 +11,8 @@ namespace WinFormControlFeatures
             [x] Use combobox to select existing client record
             [x] Use list box to display single client record
             [x] When selected populate text fields and listbox with client details
-            [ ] Submit will update client record or create it if it doesn't exist
-            [ ] May need a unique id number for each client to avoid duplicates
+            [x] Submit will update client record or create it if it doesn't exist
+            [x] May need a unique id number for each client to avoid duplicates
             [ ] Save and restore clients using a file
             [ ] File dialogue controls
         */
@@ -23,6 +23,7 @@ namespace WinFormControlFeatures
         {
             InitializeComponent();
 
+            clientData.Add("$$$$");
             SetDefaults(); // after initialize
         }
 
@@ -30,6 +31,7 @@ namespace WinFormControlFeatures
         void SetDefaults()
         {
             // output
+            UpdateClientComboBox();
             if (ClientComboBox.Items.Count > 0)
             {
                 ClientComboBox.SelectedIndex = 0;
@@ -151,32 +153,56 @@ namespace WinFormControlFeatures
             string currentRecord =$"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}";
             if (!this.clientData.Contains(currentRecord)) 
             {
-                this.clientData.Add(currentRecord);
+
+                if (ClientComboBox.SelectedIndex >= 1)
+                {
+                    this.clientData.RemoveAt(ClientComboBox.SelectedIndex);
+                    this.clientData.Insert(ClientComboBox.SelectedIndex, currentRecord);
+                }
+                else
+                {
+                    this.clientData.Add(currentRecord); // only if combobox selection is 0
+                }
+
+
             }
             UpdateClientComboBox();
         }
 
         void UpdateClientComboBox()
         {
-            // make combobox content match content of clientData List
-            // add names only
             string[] temp;
             ClientComboBox.Items.Clear();
+
+            // make combobox content match content of clientData List
+            // add names only
             foreach (string thing in this.clientData)
             {
                 temp = thing.Split("$$");
-                ClientComboBox.Items.Add(temp[0]);
+                if (temp[0] == "")
+                {
+                    ClientComboBox.Items.Add("New");
+                }
+                else
+                {
+                    ClientComboBox.Items.Add(temp[0]);
+                }
             }
+            ClientComboBox.SelectedIndex = 0;
+            DisplayResult();
         }
 
         void DisplayResult()
         {
-            ResultListBox.Items.Clear();
-            ResultListBox.Items.Add(FormatName());
-            ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
-            if (EmailCheckBox.Checked)
+            if (ValidateInputFields())
             {
-                ResultListBox.Items.Add(CreateEmail());
+                ResultListBox.Items.Clear();
+                ResultListBox.Items.Add(FormatName());
+                ResultListBox.Items.Add($"Max Heart Rate: {GetMaxHeartRate()} bpm");
+                if (EmailCheckBox.Checked)
+                {
+                    ResultListBox.Items.Add(CreateEmail());
+                }
             }
 
         }
@@ -214,7 +240,9 @@ namespace WinFormControlFeatures
             NameTextBox.Text = temp[0];
             AgeTextBox.Text = temp[1];
             PhoneTextBox.Text = temp[2];
+            ResultListBox.Items.Clear(); // make sure list box is clear when "New" is selected
             DisplayResult();
+           
 
 
 
