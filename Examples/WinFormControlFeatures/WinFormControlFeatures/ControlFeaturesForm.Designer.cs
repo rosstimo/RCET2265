@@ -49,10 +49,14 @@
             LowerRadioButton = new RadioButton();
             UpperRadioButton = new RadioButton();
             OpenFileDialog = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            OpenTopStripMenuItem = new ToolStripMenuItem();
             InfoGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
             OptionsGroupBox.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // InfoGroupBox
@@ -63,9 +67,9 @@
             InfoGroupBox.Controls.Add(AgeLabel);
             InfoGroupBox.Controls.Add(NameTextBox);
             InfoGroupBox.Controls.Add(NameLabel);
-            InfoGroupBox.Location = new Point(12, 12);
+            InfoGroupBox.Location = new Point(12, 41);
             InfoGroupBox.Name = "InfoGroupBox";
-            InfoGroupBox.Size = new Size(433, 272);
+            InfoGroupBox.Size = new Size(433, 243);
             InfoGroupBox.TabIndex = 0;
             InfoGroupBox.TabStop = false;
             InfoGroupBox.Text = "Client Information";
@@ -125,9 +129,9 @@
             // 
             OutputGroupBox.Controls.Add(ClientComboBox);
             OutputGroupBox.Controls.Add(ResultListBox);
-            OutputGroupBox.Location = new Point(451, 12);
+            OutputGroupBox.Location = new Point(451, 41);
             OutputGroupBox.Name = "OutputGroupBox";
-            OutputGroupBox.Size = new Size(481, 272);
+            OutputGroupBox.Size = new Size(481, 243);
             OutputGroupBox.TabIndex = 1;
             OutputGroupBox.TabStop = false;
             OutputGroupBox.Text = "Result";
@@ -135,7 +139,7 @@
             // ClientComboBox
             // 
             ClientComboBox.FormattingEnabled = true;
-            ClientComboBox.Location = new Point(263, 34);
+            ClientComboBox.Location = new Point(251, 17);
             ClientComboBox.Name = "ClientComboBox";
             ClientComboBox.Size = new Size(212, 38);
             ClientComboBox.TabIndex = 1;
@@ -145,9 +149,9 @@
             // 
             ResultListBox.FormattingEnabled = true;
             ResultListBox.ItemHeight = 30;
-            ResultListBox.Location = new Point(6, 82);
+            ResultListBox.Location = new Point(19, 61);
             ResultListBox.Name = "ResultListBox";
-            ResultListBox.Size = new Size(469, 184);
+            ResultListBox.Size = new Size(444, 154);
             ResultListBox.TabIndex = 0;
             // 
             // ButtonsGroupBox
@@ -262,6 +266,29 @@
             // 
             OpenFileDialog.FileName = "openFileDialog1";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(28, 28);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(944, 38);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { OpenTopStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(62, 34);
+            fileToolStripMenuItem.Text = "&File";
+            // 
+            // OpenTopStripMenuItem
+            // 
+            OpenTopStripMenuItem.Name = "OpenTopStripMenuItem";
+            OpenTopStripMenuItem.Size = new Size(315, 40);
+            OpenTopStripMenuItem.Text = "&Open";
+            // 
             // ControlFeaturesForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -271,6 +298,8 @@
             Controls.Add(OptionsGroupBox);
             Controls.Add(OutputGroupBox);
             Controls.Add(InfoGroupBox);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "ControlFeaturesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Control Features";
@@ -280,7 +309,10 @@
             ButtonsGroupBox.ResumeLayout(false);
             OptionsGroupBox.ResumeLayout(false);
             OptionsGroupBox.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -306,5 +338,8 @@
         private ListBox ResultListBox;
         private ComboBox ClientComboBox;
         private OpenFileDialog OpenFileDialog;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem OpenTopStripMenuItem;
     }
 }
