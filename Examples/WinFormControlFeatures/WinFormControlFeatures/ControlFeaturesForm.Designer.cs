@@ -48,7 +48,7 @@
             ReverseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             UpperRadioButton = new RadioButton();
-            OpenFileDialog = new OpenFileDialog();
+            OpenFileDialog1 = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             OpenTopStripMenuItem = new ToolStripMenuItem();
@@ -262,9 +262,9 @@
             UpperRadioButton.Text = "Upper Case";
             UpperRadioButton.UseVisualStyleBackColor = true;
             // 
-            // OpenFileDialog
+            // OpenFileDialog1
             // 
-            OpenFileDialog.FileName = "openFileDialog1";
+            OpenFileDialog1.FileName = "openFileDialog1";
             // 
             // menuStrip1
             // 
@@ -288,6 +288,7 @@
             OpenTopStripMenuItem.Name = "OpenTopStripMenuItem";
             OpenTopStripMenuItem.Size = new Size(315, 40);
             OpenTopStripMenuItem.Text = "&Open";
+            OpenTopStripMenuItem.Click += OpenTopStripMenuItem_Click;
             // 
             // ControlFeaturesForm
             // 
@@ -337,7 +338,7 @@
         private CheckBox FormatCheckBox;
         private ListBox ResultListBox;
         private ComboBox ClientComboBox;
-        private OpenFileDialog OpenFileDialog;
+        private OpenFileDialog OpenFileDialog1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem OpenTopStripMenuItem;

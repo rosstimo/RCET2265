@@ -1,6 +1,8 @@
 using Microsoft.VisualBasic;
 using System.CodeDom.Compiler;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
+using System.Windows.Forms;
 
 namespace WinFormControlFeatures
 {
@@ -18,6 +20,7 @@ namespace WinFormControlFeatures
         */
 
         List<string> clientData = new();
+        string currentDBFilePath = "";
 
         public ControlFeaturesForm()
         {
@@ -150,8 +153,8 @@ namespace WinFormControlFeatures
 
         void UpdateClientData()
         {
-            string currentRecord =$"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}";
-            if (!this.clientData.Contains(currentRecord)) 
+            string currentRecord = $"{NameTextBox.Text}$${AgeTextBox.Text}$${PhoneTextBox.Text}";
+            if (!this.clientData.Contains(currentRecord))
             {
 
                 if (ClientComboBox.SelectedIndex >= 1)
@@ -167,6 +170,7 @@ namespace WinFormControlFeatures
 
             }
             UpdateClientComboBox();
+            UpdateClientDBFile();
         }
 
         void UpdateClientComboBox()
@@ -207,6 +211,36 @@ namespace WinFormControlFeatures
 
         }
 
+        void OpenClientDBFile(string FilePath)
+        {
+            using (StreamReader testFile = new StreamReader(FilePath))
+            {
+
+                //stops when it reaches the end of file
+                do
+                {
+                    Console.WriteLine(testFile.ReadLine());
+                } while (testFile.EndOfStream == false);
+
+            }
+            this.currentDBFilePath = FilePath;
+            MessageBox.Show(FilePath);
+        }
+
+        void UpdateClientDBFile()
+        {
+            // open/create a new file to write text
+            // overwrites existing content!!
+            using (StreamWriter dbFile = File.CreateText(this.currentDBFilePath))
+            {
+                foreach (string thing in this.clientData)
+                {
+                    dbFile.WriteLine(thing);
+                }
+             }
+            
+        }
+
         // Event Handlers------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -242,10 +276,30 @@ namespace WinFormControlFeatures
             PhoneTextBox.Text = temp[2];
             ResultListBox.Items.Clear(); // make sure list box is clear when "New" is selected
             DisplayResult();
-           
 
 
 
+
+
+        }
+
+        private void OpenTopStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult choice = DialogResult.Cancel;
+            //OpenFileDialog1.InitialDirectory = "c:\\";
+            OpenFileDialog1.FileName = "";
+            OpenFileDialog1.Filter = "Client Data|*.cdb|Documents (*.pdf)|*.pdf|All files (*.*)|*.*";
+            choice = OpenFileDialog1.ShowDialog();
+
+            if (choice == DialogResult.OK)
+            {
+                //open file
+                OpenClientDBFile(OpenFileDialog1.FileName);
+            }
+            else
+            {
+                MessageBox.Show("Cancel");
+            }
 
         }
     }
