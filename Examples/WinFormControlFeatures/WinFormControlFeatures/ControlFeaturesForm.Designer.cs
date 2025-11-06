@@ -48,6 +48,7 @@
             ReverseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             UpperRadioButton = new RadioButton();
+            OpenFileDialog = new OpenFileDialog();
             InfoGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             ButtonsGroupBox.SuspendLayout();
@@ -257,6 +258,10 @@
             UpperRadioButton.Text = "Upper Case";
             UpperRadioButton.UseVisualStyleBackColor = true;
             // 
+            // OpenFileDialog
+            // 
+            OpenFileDialog.FileName = "openFileDialog1";
+            // 
             // ControlFeaturesForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -300,5 +305,6 @@
         private CheckBox FormatCheckBox;
         private ListBox ResultListBox;
         private ComboBox ClientComboBox;
+        private OpenFileDialog OpenFileDialog;
     }
 }
