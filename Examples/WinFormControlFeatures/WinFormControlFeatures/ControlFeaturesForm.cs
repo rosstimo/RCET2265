@@ -26,7 +26,14 @@ namespace WinFormControlFeatures
         {
             InitializeComponent();
 
-            clientData.Add("$$$$");
+            SelectClientDBFile();
+
+            if (clientData.Count == 0)
+            {
+                clientData.Add("$$$$");
+                this.currentDBFilePath = $"..\\..\\..\\clientDB_{DateTime.Now.ToString("yyMMdd")}.cdb";
+            }
+
             SetDefaults(); // after initialize
         }
 
@@ -211,20 +218,41 @@ namespace WinFormControlFeatures
 
         }
 
+        void SelectClientDBFile()
+        {
+            DialogResult choice = DialogResult.Cancel;
+            //OpenFileDialog1.InitialDirectory = "c:\\";
+            OpenFileDialog1.FileName = "";
+            OpenFileDialog1.Filter = "Client Data|*.cdb|Documents (*.pdf)|*.pdf|All files (*.*)|*.*";
+            choice = OpenFileDialog1.ShowDialog();
+
+            if (choice == DialogResult.OK)
+            {
+                //open file
+                this.currentDBFilePath = OpenFileDialog1.FileName;
+                OpenClientDBFile(OpenFileDialog1.FileName);
+
+            }
+            else
+            {
+                //MessageBox.Show("Cancel");
+            }
+        }
         void OpenClientDBFile(string FilePath)
         {
             using (StreamReader testFile = new StreamReader(FilePath))
             {
 
+                   this.clientData.Clear();
                 //stops when it reaches the end of file
                 do
                 {
-                    Console.WriteLine(testFile.ReadLine());
+                    // Console.WriteLine(testFile.ReadLine());
+                    this.clientData.Add(testFile.ReadLine());
                 } while (testFile.EndOfStream == false);
 
             }
-            this.currentDBFilePath = FilePath;
-            MessageBox.Show(FilePath);
+            //MessageBox.Show(FilePath);
         }
 
         void UpdateClientDBFile()
@@ -285,21 +313,8 @@ namespace WinFormControlFeatures
 
         private void OpenTopStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult choice = DialogResult.Cancel;
-            //OpenFileDialog1.InitialDirectory = "c:\\";
-            OpenFileDialog1.FileName = "";
-            OpenFileDialog1.Filter = "Client Data|*.cdb|Documents (*.pdf)|*.pdf|All files (*.*)|*.*";
-            choice = OpenFileDialog1.ShowDialog();
-
-            if (choice == DialogResult.OK)
-            {
-                //open file
-                OpenClientDBFile(OpenFileDialog1.FileName);
-            }
-            else
-            {
-                MessageBox.Show("Cancel");
-            }
+            SelectClientDBFile();
+            SetDefaults();
 
         }
     }
