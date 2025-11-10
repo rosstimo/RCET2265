@@ -15,7 +15,7 @@ namespace WinFormControlFeatures
             [x] When selected populate text fields and listbox with client details
             [x] Submit will update client record or create it if it doesn't exist
             [x] May need a unique id number for each client to avoid duplicates
-            [ ] Save and restore clients using a file
+            [x] Save and restore clients using a file
             [ ] File dialogue controls
         */
 
