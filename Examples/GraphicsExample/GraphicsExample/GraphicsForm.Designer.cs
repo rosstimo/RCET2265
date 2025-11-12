@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            DrawButton = new Button();
+            SuspendLayout();
+            // 
+            // DrawButton
+            // 
+            DrawButton.Location = new Point(492, 347);
+            DrawButton.Name = "DrawButton";
+            DrawButton.Size = new Size(131, 71);
+            DrawButton.TabIndex = 0;
+            DrawButton.Text = "&Draw";
+            DrawButton.UseVisualStyleBackColor = true;
+            DrawButton.Click += DrawButton_Click;
+            // 
+            // GraphicsForm
+            // 
+            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(DrawButton);
+            Name = "GraphicsForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Form1";
+            Load += GraphicsForm_Load;
+            MouseMove += GraphicsForm_MouseMove;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button DrawButton;
     }
 }
