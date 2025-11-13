@@ -5,10 +5,13 @@ namespace GraphicsExample
         int oldX;
         int oldY;
         Color foreGround = Color.Black;
+        int penWidth = 1;
 
         public GraphicsForm()
         {
             InitializeComponent();
+
+            UpdateStatusLabel();
         }
         // Program logic  -------------------------------------------------------------
         void DrawLine()
@@ -81,7 +84,7 @@ namespace GraphicsExample
         void MouseDraw(int x, int y)
         {
             Graphics g = this.CreateGraphics();
-            Pen thePen = new Pen(this.foreGround, 1);
+            Pen thePen = new Pen(this.foreGround, this.penWidth);
 
             //if (oldX == 0 && oldY == 0)
             //{
@@ -101,12 +104,21 @@ namespace GraphicsExample
         {
             colorDialog1.ShowDialog();
             this.foreGround = colorDialog1.Color;
+            UpdateStatusLabel();
         }
+
+        void UpdateStatusLabel()
+        {
+            StatusLabel.Text = $"Color: {this.foreGround.Name} Width: {this.penWidth}";
+
+        }
+
+
 
         // Event handlers -------------------------------------------------------------
         private void GraphicsForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void DrawButton_Click(object sender, EventArgs e)
@@ -131,6 +143,26 @@ namespace GraphicsExample
             {
                 ChooseColor();
             }
+            
+        }
+
+        private void GraphicsForm_MouseWheel(object sender, MouseEventArgs e)
+        {
+            this.Text = e.Delta.ToString();
+
+            if (this.penWidth > 1 && e.Delta < 0)
+            {
+                --this.penWidth;
+            }
+            else if ( e.Delta > 0)
+            {
+                ++this.penWidth;
+            }
+            else
+            {
+                //pass
+            }
+            UpdateStatusLabel();
         }
     }
 }

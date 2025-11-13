@@ -30,11 +30,14 @@
         {
             DrawButton = new Button();
             colorDialog1 = new ColorDialog();
+            statusStrip1 = new StatusStrip();
+            StatusLabel = new ToolStripStatusLabel();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // DrawButton
             // 
-            DrawButton.Location = new Point(657, 367);
+            DrawButton.Location = new Point(582, 265);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(131, 71);
             DrawButton.TabIndex = 0;
@@ -42,24 +45,47 @@
             DrawButton.UseVisualStyleBackColor = true;
             DrawButton.Click += DrawButton_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(28, 28);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { StatusLabel });
+            statusStrip1.Location = new Point(0, 411);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 39);
+            statusStrip1.TabIndex = 1;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            StatusLabel.Name = "StatusLabel";
+            StatusLabel.Size = new Size(206, 30);
+            StatusLabel.Text = "toolStripStatusLabel1";
+            // 
             // GraphicsForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
             Controls.Add(DrawButton);
             Name = "GraphicsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += GraphicsForm_Load;
-            MouseMove += GraphicsForm_MouseMove;
             MouseDown += GraphicsForm_MouseMove;
+            MouseMove += GraphicsForm_MouseMove;
+            MouseWheel += GraphicsForm_MouseWheel;
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button DrawButton;
         private ColorDialog colorDialog1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel StatusLabel;
     }
 }
