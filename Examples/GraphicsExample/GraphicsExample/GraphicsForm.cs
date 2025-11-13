@@ -2,6 +2,9 @@ namespace GraphicsExample
 {
     public partial class GraphicsForm : Form
     {
+        int oldX;
+        int oldY;
+
         public GraphicsForm()
         {
             InitializeComponent();
@@ -74,6 +77,25 @@ namespace GraphicsExample
             drawBrush.Dispose();
         }
 
+        void MouseDraw(int x, int y)
+        {
+            Graphics g = this.CreateGraphics();
+            Pen thePen = new Pen(Color.Black, 1);
+
+            if (oldX == 0 && oldY == 0)
+            {
+                this.oldX = x;
+                this.oldY = y;
+            }
+
+            g.DrawLine(thePen, this.oldX, this.oldY, x, y);
+            this.oldX = x;
+            this.oldY = y;
+
+            g.Dispose();
+            thePen.Dispose();
+        }
+
         // Event handlers -------------------------------------------------------------
         private void GraphicsForm_Load(object sender, EventArgs e)
         {
@@ -91,6 +113,8 @@ namespace GraphicsExample
         private void GraphicsForm_MouseMove(object sender, MouseEventArgs e)
         {
             this.Text = $"({e.X.ToString()},{e.Y.ToString()})";
+
+            MouseDraw(e.X, e.Y);
         }
     }
 }

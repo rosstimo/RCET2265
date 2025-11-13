@@ -33,7 +33,7 @@
             // 
             // DrawButton
             // 
-            DrawButton.Location = new Point(492, 347);
+            DrawButton.Location = new Point(657, 367);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(131, 71);
             DrawButton.TabIndex = 0;
