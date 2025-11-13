@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DrawButton = new Button();
+            colorDialog1 = new ColorDialog();
             SuspendLayout();
             // 
             // DrawButton
@@ -52,11 +53,13 @@
             Text = "Form1";
             Load += GraphicsForm_Load;
             MouseMove += GraphicsForm_MouseMove;
+            MouseDown += GraphicsForm_MouseMove;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button DrawButton;
+        private ColorDialog colorDialog1;
     }
 }

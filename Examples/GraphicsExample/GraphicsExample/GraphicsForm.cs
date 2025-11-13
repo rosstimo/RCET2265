@@ -4,6 +4,7 @@ namespace GraphicsExample
     {
         int oldX;
         int oldY;
+        Color foreGround = Color.Black;
 
         public GraphicsForm()
         {
@@ -80,7 +81,7 @@ namespace GraphicsExample
         void MouseDraw(int x, int y)
         {
             Graphics g = this.CreateGraphics();
-            Pen thePen = new Pen(Color.Black, 1);
+            Pen thePen = new Pen(this.foreGround, 1);
 
             //if (oldX == 0 && oldY == 0)
             //{
@@ -94,6 +95,12 @@ namespace GraphicsExample
 
             g.Dispose();
             thePen.Dispose();
+        }
+
+        void ChooseColor()
+        {
+            colorDialog1.ShowDialog();
+            this.foreGround = colorDialog1.Color;
         }
 
         // Event handlers -------------------------------------------------------------
@@ -120,6 +127,10 @@ namespace GraphicsExample
             }
             this.oldX = e.X;
             this.oldY = e.Y;
+            if (e.Button == MouseButtons.Middle)
+            {
+                ChooseColor();
+            }
         }
     }
 }
