@@ -21,9 +21,9 @@ namespace GraphicsExample
 
             UpdateStatusLabel();
 
-            
-            
-            
+
+
+
         }
         // Program logic  -------------------------------------------------------------
         void DrawLine()
@@ -37,7 +37,7 @@ namespace GraphicsExample
             thePen.Dispose();
         }
 
-        void DrawEllipse() 
+        void DrawEllipse()
         {
             Graphics g = this.CreateGraphics();
             Pen thePen = new Pen(Color.Red, 3);
@@ -130,7 +130,7 @@ namespace GraphicsExample
         // Event handlers -------------------------------------------------------------
         private void GraphicsForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void DrawButton_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace GraphicsExample
             {
                 ChooseColor();
             }
-            
+
         }
 
         private void GraphicsForm_MouseWheel(object sender, MouseEventArgs e)
@@ -166,7 +166,7 @@ namespace GraphicsExample
             {
                 --this.penWidth;
             }
-            else if ( e.Delta > 0)
+            else if (e.Delta > 0)
             {
                 ++this.penWidth;
             }
@@ -175,6 +175,13 @@ namespace GraphicsExample
                 //pass
             }
             UpdateStatusLabel();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            AboutForm ab = new AboutForm(); 
+            ab.Show();
         }
     }
 }
