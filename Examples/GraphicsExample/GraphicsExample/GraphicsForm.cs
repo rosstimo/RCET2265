@@ -1,3 +1,4 @@
+
 namespace GraphicsExample
 {
     public partial class GraphicsForm : Form
@@ -6,12 +7,23 @@ namespace GraphicsExample
         int oldY;
         Color foreGround = Color.Black;
         int penWidth = 1;
+        SplashForm sf = new SplashForm();
 
         public GraphicsForm()
         {
+
+            sf.Show();// Show the splash screen form
+            //System.Threading.Thread.Sleep(3000); //fully qualified name
+            Thread.Sleep(3000); //short name. 3 second blocking delay
+            sf.Hide(); // hide the splash screen form after delay
+
             InitializeComponent();
 
             UpdateStatusLabel();
+
+            
+            
+            
         }
         // Program logic  -------------------------------------------------------------
         void DrawLine()

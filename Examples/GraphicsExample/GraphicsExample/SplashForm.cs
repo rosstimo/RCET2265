@@ -15,6 +15,9 @@ namespace GraphicsExample
         public SplashForm()
         {
             InitializeComponent();
+            
         }
+
+        // code here
     }
 }
