@@ -10,7 +10,7 @@ See [Project Setup Instructions](./ProjectSetup.md) for detailed steps on how to
 
 Create a Windows Forms application for Stan's Grocery search. Your program should:
 
-- Load item data from a disk file (e.g., "Grocery.txt") into a global array or suitable data structure when the program starts.
+- Load item data from a disk file [Resources/Grocery.txt](../Resources/Grocery.txt) into a global array or suitable data structure when the program starts.
 - Allow customers to search for items by:
   - Typing the item’s name in a text box
   - Selecting the item from a combo box
