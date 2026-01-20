@@ -23,16 +23,31 @@
             //Console.WriteLine(5 >= 2);
             //Console.WriteLine(5 <= 2);
 
-            // compund operators
-            int a = 5; //assign 5 to variable a
-            //a = a + 9;
-            a += 9; //compound asignment of a + 9
-            Console.WriteLine(a);
+            //// compund operators
+            //int a = 5; //assign 5 to variable a
+            ////a = a + 9;
+            //a += 9; //compound asignment of a + 9
+            //Console.WriteLine(a);
 
-            Console.WriteLine(++a); // incriment then print
-            Console.WriteLine(a);
-            Console.WriteLine(a++); // print then increment
-            Console.WriteLine(a);
+            //Console.WriteLine(++a); // incriment then print
+            //Console.WriteLine(a);
+            //Console.WriteLine(a++); // print then increment
+            //Console.WriteLine(a);
+
+            int firstNumber = 13;
+            int secondNumber = 5;
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+            Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+            Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+            Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+            Console.WriteLine($"{firstNumber} % {secondNumber} = {firstNumber % secondNumber}");
+            //Console.WriteLine(5 - 3);
+            //Console.WriteLine(5 * 5);
+            //Console.WriteLine(13 / 5); // integer division
+            //Console.WriteLine(13 % 5); // remainder
+
+
+
 
             //pause
             Console.Read();
