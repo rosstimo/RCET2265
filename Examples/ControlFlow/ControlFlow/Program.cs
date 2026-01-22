@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            int score = 60;
+            if (score >= 90)
+            {
+                Console.WriteLine("Excellent! You got an A.");
+            }
+
+            //pause
+            Console.Read();
         }
     }
 }
