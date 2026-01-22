@@ -5,7 +5,12 @@
         static void Main(string[] args)
         {
 
-            int score = 69;
+            int score = 101;
+            if (score >= 100)
+            {
+                Console.WriteLine("Ace!");
+            }
+
             if (score >= 90)
             {
                 Console.WriteLine("Excellent! You got an A.");
