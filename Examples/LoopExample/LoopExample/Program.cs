@@ -14,22 +14,29 @@
             //    Console.WriteLine($"Count: {i}");
             //}
 
-            int number = 1;
+            //int number = 1;
 
-            //only runs if condition is true
-            while (number <= 3)
+            ////only runs if condition is true
+            //while (number <= 3)
+            //{
+            //    Console.WriteLine($"In While Loop Number: {number}");
+            //    number++;
+            //}
+
+            ////always runs at least one time
+            //do
+            //{
+            //    Console.WriteLine($"In Do Loop Number: {number}");
+            //    number++;
+            //} while (number <= 3);
+
+            string userInput = "";
+            Console.WriteLine("The password is 12345 just like my luggage");
+
+            while (Console.ReadLine() != "12345");
             {
-                Console.WriteLine($"In While Loop Number: {number}");
-                number++;
+                Console.WriteLine("All my secrets");
             }
-
-            //always runs at least one time
-            do
-            {
-                Console.WriteLine($"In Do Loop Number: {number}");
-                number++;
-            } while (number <= 3);
-
 
 
             //pause
