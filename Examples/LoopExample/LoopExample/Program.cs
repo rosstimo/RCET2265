@@ -4,7 +4,18 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"Count: {i}");
+            }
+
+            for (int i = 5; i >= -5; i--)
+            {
+                Console.WriteLine($"Count: {i}");
+            }
+
+            //pause
+            Console.Read();
         }
     }
 }
