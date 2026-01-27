@@ -1,4 +1,6 @@
-﻿namespace LoopExample
+﻿using System.Security.Cryptography;
+
+namespace LoopExample
 {
     internal class Program
     {
@@ -13,6 +15,17 @@
             //{
             //    Console.WriteLine($"Count: {i}");
             //}
+
+            // nested loop and string padding
+            for (int row = 0; row < 10; row++)
+            {
+                for (int column = 0; column < 10; column++)
+                {
+                    Console.Write((row + column).ToString().PadLeft(3));
+                }
+                Console.WriteLine();
+            }
+
 
             //int number = 1;
 
@@ -30,13 +43,13 @@
             //    number++;
             //} while (number <= 3);
 
-            string userInput = "";
-            Console.WriteLine("The password is 12345 just like my luggage");
+            //string userInput = "";
+            //Console.WriteLine("The password is 12345 just like my luggage");
 
-            while (Console.ReadLine() != "12345");
-            {
-                Console.WriteLine("All my secrets");
-            }
+            //while (Console.ReadLine() != "12345");
+            //{
+            //    Console.WriteLine("All my secrets");
+            //}
 
 
             //pause
