@@ -41,11 +41,11 @@ namespace ControlFlowSequence
                     }
                    
                 }
-            } while (validResponse == false || userQuit == false);
-
+            } while (validResponse == false && userQuit == false);
+            Console.WriteLine("end first loop");
             validResponse = false; //reset flag
             //second number
-            while (validResponse == false && userQuit == false);
+            while (validResponse == false && userQuit == false)
             {
                 Console.WriteLine("please enter a number");
                 userInput = Console.ReadLine();
@@ -67,9 +67,9 @@ namespace ControlFlowSequence
 
                 }
             }
-
+            Console.WriteLine("end second loop");
             // operation chioce
-            while (validResponse == false && userQuit == false);
+            while (validResponse == false && userQuit == false)
             {
                 validResponse = true; //reset flag
                 Console.WriteLine("Please make a choice:\n 1. Option 1\n2. Option 2\n3. Option 3\n");
@@ -98,8 +98,8 @@ namespace ControlFlowSequence
                         break;
                 }
             }
+            Console.WriteLine("end third loop");
 
-            
 
             // pause
             Console.Read();
