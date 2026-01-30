@@ -21,6 +21,7 @@ namespace ControlFlowSequence
             string userInput = "";
             do
             {
+                Console.Clear();
                 //first number
                 do
                 {
@@ -46,7 +47,7 @@ namespace ControlFlowSequence
                 } while (validResponse == false && userQuit == false);
                 Console.WriteLine("end first loop");
                 validResponse = false; //reset flag
-                                       //second number
+                //second number
                 while (validResponse == false && userQuit == false)
                 {
                     Console.WriteLine("please enter a number");
@@ -75,7 +76,7 @@ namespace ControlFlowSequence
                 while (validResponse == false && userQuit == false)
                 {
                     validResponse = true; //reset flag
-                    Console.WriteLine("Please make a choice:\n 1. Option 1\n2. Option 2\n3. Option 3\n");
+                    Console.WriteLine("Please make a choice:\n1. Option 1\n2. Option 2\n3. Option 3\n");
                     userInput = Console.ReadLine();
 
                     switch (userInput)
@@ -105,9 +106,10 @@ namespace ControlFlowSequence
 
 
             } while (userQuit == false);
+            Console.Clear();
             Console.WriteLine("Have a nice day!");
-                // pause
-                Console.Read();
+            // pause
+            Console.Read();
         } 
     }
 }
