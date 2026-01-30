@@ -12,7 +12,9 @@ namespace MethodExamples
             //AddNumbers();
             //AddNumbers();
             //SayHello();
-            ShowCount();
+            //ShowCount();
+            Console.WriteLine(count);
+            count = SumOf(5, 7);
             Console.WriteLine(count);
             //pause
             Console.Read();
@@ -33,6 +35,11 @@ namespace MethodExamples
         {
             int count = 7;
             Console.WriteLine(count);
+        }
+
+        static int SumOf(int firstNumber, int secondNumber)
+        {
+            return firstNumber + secondNumber;
         }
 
     }
