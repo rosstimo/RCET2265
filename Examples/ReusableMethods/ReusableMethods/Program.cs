@@ -8,20 +8,45 @@ namespace ReusableMethods
         static void Main(string[] args)
         {
             //TestRandomNumber();
-            for (int i = 0; i < 10; i++)
-            {
-                RunningTotal(5);
-
-            }
-
-            Console.WriteLine(RunningTotal());
-            RunningTotal(0,true);
-            Console.WriteLine(RunningTotal());
-
+            TestRunningTotal();
             //pause
             Console.Read();
         }
+        
+        static void TestRunningTotal()
+        {
+            string userInput = "";
 
+            do
+            {
+            Console.WriteLine("Enter a number to add to running total" +
+                "\nenter c to clear\nenter q to quit");
+            userInput = Console.ReadLine();
+                try
+                {
+                    RunningTotal(int.Parse(userInput));
+                }
+                catch (Exception)
+                {
+                    switch (userInput)
+                    {
+                        case "c":
+                            RunningTotal(0, true);
+                            break;
+                        case "C":
+                            RunningTotal(0, true);
+                            break;
+                         default:
+                            break;
+                    }
+                }
+                Console.WriteLine($"You entered {userInput}");
+                Console.WriteLine($"The current total is: {RunningTotal()}");
+            } while (userInput != "Q" && userInput != "q");
+
+            Console.WriteLine("Have a nice day!");
+
+        }
         // [x] keep track of a running total
         // [x] optionally add the integer passed in as an argument to the total
         // [x] return the running total
