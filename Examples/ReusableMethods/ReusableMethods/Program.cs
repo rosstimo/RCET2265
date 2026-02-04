@@ -8,7 +8,7 @@ namespace ReusableMethods
         static void Main(string[] args)
         {
             //TestRandomNumber();
-            TestRunningTotal();
+            //TestRunningTotal();
             //pause
             Console.Read();
         }
