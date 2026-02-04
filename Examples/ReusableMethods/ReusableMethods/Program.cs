@@ -13,21 +13,25 @@ namespace ReusableMethods
             Console.Read();
         }
         
+        //provide a way to test the RunningTotal method
         static void TestRunningTotal()
         {
             string userInput = "";
-
+            //run until user quits
             do
             {
+            //prompt user for a number or action
             Console.WriteLine("Enter a number to add to running total" +
                 "\nenter c to clear\nenter q to quit");
             userInput = Console.ReadLine();
                 try
                 {
+                    //test if it is a number
                     RunningTotal(int.Parse(userInput));
                 }
                 catch (Exception)
                 {
+                    //check if the user wants to clear the running total
                     switch (userInput)
                     {
                         case "c":
@@ -40,6 +44,7 @@ namespace ReusableMethods
                             break;
                     }
                 }
+                //show the user the current status
                 Console.WriteLine($"You entered {userInput}");
                 Console.WriteLine($"The current total is: {RunningTotal()}");
             } while (userInput != "Q" && userInput != "q");
