@@ -12,17 +12,23 @@
 */
 
 
+using System.Data;
 using System.Globalization;
 
 namespace BingoGame
 {
     internal class Program
     {
+        //make this global so it can be accessed by all methods
+        static bool[,] drawnBalls = new bool[5, 15];
         static void Main(string[] args)
         {
-            bool[,] drawnBalls = new bool[5, 15];
 
             drawnBalls[1,0] = true;
+            drawnBalls[4,5] = true;
+            drawnBalls[3,6] = true;
+            drawnBalls[2,13] = true;
+            drawnBalls[0,11] = true;
 
             Display();
             //pause
@@ -32,19 +38,37 @@ namespace BingoGame
 
         static void Display()
         {
-            int padding = 3;
+            int padding = 4;
+            int prettyNumber = 0;
+            string placeHolder = "";
+            string columnSeperator = " |";
+            string currentRow = "";
             //print heading row
             string[] heading = { "B", "I", "N", "G", "O" };
             foreach (string thing in heading)
             {
-                Console.Write(thing.PadLeft(padding) + " |");
+                Console.Write(thing.PadLeft(padding) + columnSeperator);
             }
             Console.WriteLine();
 
             // print the rest of the rows
-            for (int letter = 0; letter < 5; letter++)
+            for (int number = 1; number <= 15; number++)
             {
-                Console.Write(letter.ToString().PadLeft(padding) + " |");
+                //assemble the row
+                for (int letter = 0; letter < 5; letter++)
+                {
+                    if (drawnBalls[letter, number - 1])
+                    {
+                        prettyNumber = number + (letter * 15); //offset the number by the letter column
+                        currentRow += prettyNumber.ToString().PadLeft(padding) + columnSeperator;
+                    }
+                    else
+                    {
+                        currentRow += placeHolder.PadLeft(padding) + columnSeperator;
+                    }
+                }
+                Console.WriteLine(currentRow);
+                currentRow = ""; //reset 
             }
         }
     }
