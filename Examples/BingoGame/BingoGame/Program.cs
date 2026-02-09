@@ -36,6 +36,7 @@ namespace BingoGame
                 DrawBall();
                 Display();
                 Console.Read();
+
             } while (true);
 
             //pause
@@ -81,6 +82,7 @@ namespace BingoGame
 
         static void DrawBall()
         {
+            //drawing two balls every time???
             int letter = 0 , number = 0;
             do
             {
