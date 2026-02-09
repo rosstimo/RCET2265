@@ -1,13 +1,13 @@
 ﻿/*
  * TODO:
- * [ ] Track bingo balls drawn in a two dimensional array
+ * [x] Track bingo balls drawn in a two dimensional array
  * [x] Display status of all balls on the console
  * [ ] Clear all drawn balls to start a new game
- * [ ] Let the user quit
- * [ ] Draw a random ball
- * [ ] get a random number to determine ball letter
- * [ ] get a random number to determine ball number
- * [ ] check if ball has already been drawn. no: mark as drawn, yes: draw another
+ * [x] Let the user quit
+ * [x] Draw a random ball
+ * [x] get a random number to determine ball letter
+ * [x] get a random number to determine ball number
+ * [x] check if ball has already been drawn. no: mark as drawn, yes: draw another
  
 */
 
@@ -23,22 +23,17 @@ namespace BingoGame
         static bool[,] drawnBalls = new bool[5, 15];
         static void Main(string[] args)
         {
-
-            //drawnBalls[1,0] = true;
-            //drawnBalls[4,5] = true;
-            //drawnBalls[3,6] = true;
-            //drawnBalls[2,13] = true;
-            //drawnBalls[0,11] = true;
-
+            string userInput = "";
             do
             {
                 Console.Clear();
                 DrawBall();
                 Display();
-                Console.ReadLine(); //fixed double draw
+                userInput = Console.ReadLine(); //fixed double draw
 
-            } while (true);
-
+            } while (userInput != "Q" && userInput != "q");
+            Console.Clear();
+            Console.WriteLine("Have a nice day!");
             //pause
             Console.Read();
         }
@@ -82,7 +77,6 @@ namespace BingoGame
 
         static void DrawBall()
         {
-            //drawing two balls every time???
             int letter = 0 , number = 0;
             do
             {
