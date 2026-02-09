@@ -32,10 +32,10 @@ namespace BingoGame
 
             do
             {
+                Console.Clear();
                 DrawBall();
                 Display();
                 Console.Read();
-                Console.Clear();
             } while (true);
 
             //pause
@@ -81,10 +81,15 @@ namespace BingoGame
 
         static void DrawBall()
         {
-            int letter, number;
-            letter = RandomNumberZeroTo(4);
-            number = RandomNumberZeroTo(14);
+            int letter = 0 , number = 0;
+            do
+            {
+                letter = RandomNumberZeroTo(4);
+                number = RandomNumberZeroTo(14);
+            } while (drawnBalls[letter, number]);
+
             drawnBalls[letter, number] = true;
+
         }
 /// <summary>
 /// Get a random integer from 0 to max inclusive.
