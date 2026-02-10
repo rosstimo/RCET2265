@@ -30,15 +30,16 @@ namespace BingoGame
                 DrawBall();
                 Display();
                 userInput = Console.ReadLine(); //fixed double draw
-
+                if (userInput == "c" || userInput == "C")
+                {
+                    ClearDrawnBalls();
+                }
             } while (userInput != "Q" && userInput != "q");
             Console.Clear();
             Console.WriteLine("Have a nice day!");
             //pause
             Console.Read();
         }
-
-
         static void Display()
         {
             int padding = 4;
@@ -74,7 +75,6 @@ namespace BingoGame
                 currentRow = ""; //reset 
             }
         }
-
         static void DrawBall()
         {
             int letter = 0 , number = 0;
@@ -86,6 +86,16 @@ namespace BingoGame
 
             drawnBalls[letter, number] = true;
 
+        }
+        static void ClearDrawnBalls()
+        {
+           for( int i = 0; i <= 4; i++)
+           {
+                for(int j = 0; j <= 14; j++)
+                {
+                    drawnBalls[i, j] = false;
+                }
+           }
         }
 /// <summary>
 /// Get a random integer from 0 to max inclusive.
