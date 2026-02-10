@@ -24,15 +24,22 @@ namespace BingoGame
         static void Main(string[] args)
         {
             string userInput = "";
+            int ballCount = 0;
             do
             {
                 Console.Clear();
-                DrawBall();
+                if (ballCount < 75)
+                {
+                    DrawBall();
+                    ballCount++;
+                }
+                Console.WriteLine(ballCount);
                 Display();
                 userInput = Console.ReadLine(); //fixed double draw
                 if (userInput == "c" || userInput == "C")
                 {
                     ClearDrawnBalls();
+                    ballCount = 0;
                 }
             } while (userInput != "Q" && userInput != "q");
             Console.Clear();
