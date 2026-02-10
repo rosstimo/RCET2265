@@ -2,13 +2,14 @@
  * TODO:
  * [x] Track bingo balls drawn in a two dimensional array
  * [x] Display status of all balls on the console
- * [ ] Clear all drawn balls to start a new game
+ * [x] Clear all drawn balls to start a new game
  * [x] Let the user quit
  * [x] Draw a random ball
  * [x] get a random number to determine ball letter
  * [x] get a random number to determine ball number
  * [x] check if ball has already been drawn. no: mark as drawn, yes: draw another
- 
+ * [ ] usability
+ * [ ] fix intro, wait to draw first ball
 */
 
 
@@ -25,16 +26,30 @@ namespace BingoGame
         {
             string userInput = "";
             int ballCount = 0;
+            string userPrompt = "";
             do
             {
+                userPrompt = "Press Enter to draw a ball\n"
+                + "Press C to start a new game\n"
+                + "Press Q to quit";
                 Console.Clear();
-                if (ballCount < 75)
+                if (ballCount == 0)
+                {
+                    userPrompt = "Press Enter to start a new game";
+                }
+                else if (ballCount < 75)
                 {
                     DrawBall();
                     ballCount++;
                 }
-                Console.WriteLine(ballCount);
+                else
+                {
+                    userPrompt = "All balls have been drawn\n"
+                    + "Press C to start a new game\n"
+                    + "Press Q to quit";
+                }
                 Display();
+                Console.WriteLine(userPrompt);
                 userInput = Console.ReadLine(); //fixed double draw
                 if (userInput == "c" || userInput == "C")
                 {
