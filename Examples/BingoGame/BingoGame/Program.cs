@@ -114,13 +114,7 @@ namespace BingoGame
         }
         static void ClearDrawnBalls()
         {
-           for( int i = 0; i <= 4; i++)
-           {
-                for(int j = 0; j <= 14; j++)
-                {
-                    drawnBalls[i, j] = false;
-                }
-           }
+            drawnBalls = new bool[5, 15];
         }
 /// <summary>
 /// Get a random integer from 0 to max inclusive.
