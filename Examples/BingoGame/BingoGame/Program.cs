@@ -26,21 +26,23 @@ namespace BingoGame
         {
             string userInput = "";
             int ballCount = 0;
+            bool firstRun = true;
             string userPrompt = "";
             do
             {
-                userPrompt = "Press Enter to draw a ball\n"
-                + "Press C to start a new game\n"
-                + "Press Q to quit";
                 Console.Clear();
-                if (ballCount == 0)
+                if (ballCount < 75 && !firstRun)
                 {
-                    userPrompt = "Press Enter to start a new game";
-                }
-                else if (ballCount < 75)
-                {
+                    userPrompt = "Press Enter to draw a ball\n"
+                    + "Press C to start a new game\n"
+                    + "Press Q to quit";
                     DrawBall();
                     ballCount++;
+                }
+                else if (firstRun) 
+                {
+                    userPrompt = "Press Enter to start game";
+                    firstRun = false;
                 }
                 else
                 {
@@ -55,6 +57,7 @@ namespace BingoGame
                 {
                     ClearDrawnBalls();
                     ballCount = 0;
+                    firstRun = true;
                 }
             } while (userInput != "Q" && userInput != "q");
             Console.Clear();
