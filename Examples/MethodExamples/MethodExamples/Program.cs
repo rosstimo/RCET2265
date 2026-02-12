@@ -52,6 +52,13 @@ namespace MethodExamples
             Console.WriteLine(theNumber);
         }
 
+        static bool ConvertToInt(string input, out int result)
+        {
+            bool successful = false;
+            result = 0; //out requires an assignment no matter what
 
+
+            return successful;
+        }
     }
 }
