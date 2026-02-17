@@ -9,7 +9,8 @@ namespace FileIOExample
 
             //WriteToFile();
             //AppendToFile();
-            ReadFile();
+            //ReadFile();
+            ReadEntireFile("..\\..\\..\\TestFile.txt");
             //pause
             Console.Read();
         }
@@ -36,6 +37,19 @@ namespace FileIOExample
             {
                 Console.WriteLine(testFile.ReadLine());
                 Console.WriteLine(testFile.ReadLine());
+
+            }
+        }
+
+        static void ReadEntireFile(string filePath)
+        {
+            using (StreamReader testFile = new StreamReader(filePath))
+            {
+                do
+                {
+                    Console.WriteLine(testFile.ReadLine());
+
+                } while (!testFile.EndOfStream);
 
             }
         }
