@@ -6,12 +6,15 @@ namespace FileIOExample
     {
         static void Main(string[] args)
         {
+            string path = "..\\..\\..\\email.txt";
+            string[,] customerInfo;
 
             //WriteToFile();
             //AppendToFile();
             //ReadFile();
             //ReadEntireFile("..\\..\\..\\email.txt");
-            FileToArray("..\\..\\..\\email.txt"); //TODO: add display array method
+            customerInfo = FileToArray(path); //TODO: add display array method
+            DisplayData(customerInfo);
             //pause
             Console.Read();
         }
@@ -93,6 +96,26 @@ namespace FileIOExample
                 } while (!testFile.EndOfStream);
             }
             return customerData;
+        }
+
+        static void DisplayData(string[,] data)
+        {
+            string formattedRow = "";
+            for (int row = 0; row < data.GetLength(1); row++)
+            {
+                for (int column = 0; column < data.GetLength(0); column++)
+                {
+                    if (data[column, row] != null)
+                    {
+                        formattedRow += data[column, row].PadRight(14);
+                    }
+                }
+                if (formattedRow != "")
+                {
+                    Console.WriteLine(formattedRow);
+                }
+                formattedRow = "";
+            }
         }
 
     }
