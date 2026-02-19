@@ -11,7 +11,7 @@ namespace FileIOExample
             //AppendToFile();
             //ReadFile();
             //ReadEntireFile("..\\..\\..\\email.txt");
-            FileToArray("..\\..\\..\\email.txt");
+            FileToArray("..\\..\\..\\email.txt"); //TODO: add display array method
             //pause
             Console.Read();
         }
@@ -88,16 +88,10 @@ namespace FileIOExample
                         customerData[1, counter] = temp[1];
                         customerData[2, counter] = temp[2];
                         customerData[3, counter] = temp[3];
-                        //customerData[4, counter] = temp[4];
-                        Console.WriteLine(temp[3]);
                     }
-
                     counter++;
                 } while (!testFile.EndOfStream);
-
             }
-
-
             return customerData;
         }
 
