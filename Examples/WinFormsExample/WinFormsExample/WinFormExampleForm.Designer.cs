@@ -30,6 +30,8 @@
         {
             SubmitButton = new Button();
             ExitButton = new Button();
+            NameLabel = new Label();
+            NameTextBox = new TextBox();
             SuspendLayout();
             // 
             // SubmitButton
@@ -52,22 +54,43 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Location = new Point(12, 52);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(59, 25);
+            NameLabel.TabIndex = 2;
+            NameLabel.Text = "Name";
+            NameLabel.Click += label1_Click;
+            // 
+            // NameTextBox
+            // 
+            NameTextBox.Location = new Point(77, 46);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(272, 31);
+            NameTextBox.TabIndex = 3;
+            // 
             // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(NameTextBox);
+            Controls.Add(NameLabel);
             Controls.Add(ExitButton);
             Controls.Add(SubmitButton);
             Name = "WinFormExampleForm";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button SubmitButton;
         private Button ExitButton;
+        private TextBox NameTextBox;
+        protected Label NameLabel;
     }
 }

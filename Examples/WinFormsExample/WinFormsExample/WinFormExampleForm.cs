@@ -7,10 +7,7 @@ namespace WinFormsExample
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -19,7 +16,12 @@ namespace WinFormsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.Text = "Hello";
+            this.Text = NameTextBox.Text;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
