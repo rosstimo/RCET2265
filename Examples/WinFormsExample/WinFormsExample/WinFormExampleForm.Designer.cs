@@ -62,7 +62,6 @@
             NameLabel.Size = new Size(59, 25);
             NameLabel.TabIndex = 2;
             NameLabel.Text = "Name";
-            NameLabel.Click += label1_Click;
             // 
             // NameTextBox
             // 
