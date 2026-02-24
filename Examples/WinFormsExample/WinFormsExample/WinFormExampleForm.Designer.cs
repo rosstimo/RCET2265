@@ -151,6 +151,7 @@
             ClearButton.TabStop = false;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ButtonGroupBox
             // 
