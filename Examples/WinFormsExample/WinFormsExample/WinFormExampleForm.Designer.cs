@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             SubmitButton = new Button();
             ExitButton = new Button();
             NameLabel = new Label();
@@ -52,6 +53,7 @@
             ReverseRadioButton = new RadioButton();
             UpperCaseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
+            ToolTip = new ToolTip(components);
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -64,6 +66,7 @@
             SubmitButton.Size = new Size(124, 75);
             SubmitButton.TabIndex = 4;
             SubmitButton.Text = "&Submit";
+            ToolTip.SetToolTip(SubmitButton, "ALT+s");
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -75,6 +78,7 @@
             ExitButton.TabIndex = 6;
             ExitButton.TabStop = false;
             ExitButton.Text = "E&xit";
+            ToolTip.SetToolTip(ExitButton, "ALT+x");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -150,6 +154,7 @@
             ClearButton.TabIndex = 5;
             ClearButton.TabStop = false;
             ClearButton.Text = "&Clear";
+            ToolTip.SetToolTip(ClearButton, "ALT+c");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -194,6 +199,7 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            ToolTip.SetToolTip(groupBox1, "These Are Controls");
             // 
             // radioButton6
             // 
@@ -289,6 +295,7 @@
             UpperCaseRadioButton.TabIndex = 1;
             UpperCaseRadioButton.TabStop = true;
             UpperCaseRadioButton.Text = "Upper";
+            ToolTip.SetToolTip(UpperCaseRadioButton, "Make Upper Case");
             UpperCaseRadioButton.UseVisualStyleBackColor = true;
             // 
             // LowerRadioButton
@@ -304,8 +311,10 @@
             // 
             // WinFormExampleForm
             // 
+            AcceptButton = SubmitButton;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
             Controls.Add(LowerRadioButton);
             Controls.Add(ReverseRadioButton);
@@ -316,7 +325,8 @@
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
             Name = "WinFormExampleForm";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Example Form";
             ButtonGroupBox.ResumeLayout(false);
             UserInfoGroupBox.ResumeLayout(false);
             UserInfoGroupBox.PerformLayout();
@@ -352,5 +362,6 @@
         private RadioButton ReverseRadioButton;
         private RadioButton UpperCaseRadioButton;
         private RadioButton LowerRadioButton;
+        private ToolTip ToolTip;
     }
 }
