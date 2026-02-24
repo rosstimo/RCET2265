@@ -39,11 +39,16 @@
             CityTextBox = new TextBox();
             CityLabel = new Label();
             ClearButton = new Button();
+            ButtonGroupBox = new GroupBox();
+            UserInfoGroupBox = new GroupBox();
+            groupBox1 = new GroupBox();
+            ButtonGroupBox.SuspendLayout();
+            UserInfoGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(404, 363);
+            SubmitButton.Location = new Point(17, 30);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(124, 75);
             SubmitButton.TabIndex = 4;
@@ -53,7 +58,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(664, 363);
+            ExitButton.Location = new Point(277, 30);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(124, 75);
             ExitButton.TabIndex = 6;
@@ -65,7 +70,7 @@
             // NameLabel
             // 
             NameLabel.AutoSize = true;
-            NameLabel.Location = new Point(12, 52);
+            NameLabel.Location = new Point(17, 27);
             NameLabel.Name = "NameLabel";
             NameLabel.Size = new Size(59, 25);
             NameLabel.TabIndex = 2;
@@ -73,14 +78,14 @@
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(77, 46);
+            NameTextBox.Location = new Point(82, 21);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(272, 31);
             NameTextBox.TabIndex = 0;
             // 
             // AgeTextBox
             // 
-            AgeTextBox.Location = new Point(77, 83);
+            AgeTextBox.Location = new Point(82, 58);
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(272, 31);
             AgeTextBox.TabIndex = 1;
@@ -88,7 +93,7 @@
             // AgeLabel
             // 
             AgeLabel.AutoSize = true;
-            AgeLabel.Location = new Point(12, 89);
+            AgeLabel.Location = new Point(17, 64);
             AgeLabel.Name = "AgeLabel";
             AgeLabel.Size = new Size(44, 25);
             AgeLabel.TabIndex = 4;
@@ -96,7 +101,7 @@
             // 
             // PhoneTextBox
             // 
-            PhoneTextBox.Location = new Point(77, 120);
+            PhoneTextBox.Location = new Point(82, 95);
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(272, 31);
             PhoneTextBox.TabIndex = 2;
@@ -104,7 +109,7 @@
             // PhoneLabel
             // 
             PhoneLabel.AutoSize = true;
-            PhoneLabel.Location = new Point(12, 126);
+            PhoneLabel.Location = new Point(17, 101);
             PhoneLabel.Name = "PhoneLabel";
             PhoneLabel.Size = new Size(62, 25);
             PhoneLabel.TabIndex = 8;
@@ -112,7 +117,7 @@
             // 
             // CityTextBox
             // 
-            CityTextBox.Location = new Point(77, 157);
+            CityTextBox.Location = new Point(82, 132);
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(272, 31);
             CityTextBox.TabIndex = 3;
@@ -120,7 +125,7 @@
             // CityLabel
             // 
             CityLabel.AutoSize = true;
-            CityLabel.Location = new Point(12, 163);
+            CityLabel.Location = new Point(17, 138);
             CityLabel.Name = "CityLabel";
             CityLabel.Size = new Size(42, 25);
             CityLabel.TabIndex = 6;
@@ -128,7 +133,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(534, 363);
+            ClearButton.Location = new Point(147, 30);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(124, 75);
             ClearButton.TabIndex = 5;
@@ -136,26 +141,57 @@
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
             // 
+            // ButtonGroupBox
+            // 
+            ButtonGroupBox.Controls.Add(SubmitButton);
+            ButtonGroupBox.Controls.Add(ClearButton);
+            ButtonGroupBox.Controls.Add(ExitButton);
+            ButtonGroupBox.Location = new Point(369, 314);
+            ButtonGroupBox.Name = "ButtonGroupBox";
+            ButtonGroupBox.Size = new Size(419, 124);
+            ButtonGroupBox.TabIndex = 9;
+            ButtonGroupBox.TabStop = false;
+            // 
+            // UserInfoGroupBox
+            // 
+            UserInfoGroupBox.Controls.Add(NameTextBox);
+            UserInfoGroupBox.Controls.Add(NameLabel);
+            UserInfoGroupBox.Controls.Add(PhoneTextBox);
+            UserInfoGroupBox.Controls.Add(AgeLabel);
+            UserInfoGroupBox.Controls.Add(PhoneLabel);
+            UserInfoGroupBox.Controls.Add(AgeTextBox);
+            UserInfoGroupBox.Controls.Add(CityTextBox);
+            UserInfoGroupBox.Controls.Add(CityLabel);
+            UserInfoGroupBox.Location = new Point(12, 40);
+            UserInfoGroupBox.Name = "UserInfoGroupBox";
+            UserInfoGroupBox.Size = new Size(370, 191);
+            UserInfoGroupBox.TabIndex = 10;
+            UserInfoGroupBox.TabStop = false;
+            UserInfoGroupBox.Text = "User Info";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(388, 40);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(400, 298);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
             // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(ClearButton);
-            Controls.Add(PhoneTextBox);
-            Controls.Add(PhoneLabel);
-            Controls.Add(CityTextBox);
-            Controls.Add(CityLabel);
-            Controls.Add(AgeTextBox);
-            Controls.Add(AgeLabel);
-            Controls.Add(NameTextBox);
-            Controls.Add(NameLabel);
-            Controls.Add(ExitButton);
-            Controls.Add(SubmitButton);
+            Controls.Add(groupBox1);
+            Controls.Add(UserInfoGroupBox);
+            Controls.Add(ButtonGroupBox);
             Name = "WinFormExampleForm";
             Text = "Form1";
+            ButtonGroupBox.ResumeLayout(false);
+            UserInfoGroupBox.ResumeLayout(false);
+            UserInfoGroupBox.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -171,5 +207,8 @@
         private TextBox CityTextBox;
         protected Label CityLabel;
         private Button ClearButton;
+        private GroupBox ButtonGroupBox;
+        private GroupBox UserInfoGroupBox;
+        private GroupBox groupBox1;
     }
 }
