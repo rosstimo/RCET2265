@@ -97,6 +97,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(272, 31);
             NameTextBox.TabIndex = 0;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // AgeTextBox
             // 
@@ -335,6 +336,7 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
 
