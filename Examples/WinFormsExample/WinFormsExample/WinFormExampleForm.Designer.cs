@@ -105,6 +105,8 @@
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(272, 31);
             AgeTextBox.TabIndex = 1;
+            AgeTextBox.TextChanged += AgeTextBox_TextChanged;
+            
             // 
             // AgeLabel
             // 
@@ -336,6 +338,8 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
 
         #endregion
