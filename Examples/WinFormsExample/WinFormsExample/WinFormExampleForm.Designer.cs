@@ -238,6 +238,7 @@
             // 
             // DisplayLabel
             // 
+            DisplayLabel.Cursor = Cursors.Hand;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DisplayLabel.Location = new Point(404, 54);
             DisplayLabel.Name = "DisplayLabel";

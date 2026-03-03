@@ -54,19 +54,37 @@ namespace WinFormsExample
             }
             return valid;
         }
-
-        private void UpperCase()
+        private string LowerCase(string toLower)
+        {
+            if (LowerRadioButton.Checked)
+            {
+                return toLower.ToLower();
+            }
+            else
+            {
+                return toLower;
+            }
+        }
+        private string UpperCase(string toUpper)
         {
             if (UpperCaseRadioButton.Checked)
             {
-                NameTextBox.Text = NameTextBox.Text.ToUpper();
+               return toUpper.ToUpper();
+            }
+            else
+            {
+                return toUpper;
             }
         }
-        private void Reverse()
+        private string Reverse(string reverseThis)
         {
             if (ReverseRadioButton.Checked)
             {
-                NameTextBox.Text = new string(NameTextBox.Text.Reverse().ToArray());
+                return new string(reverseThis.Reverse().ToArray());
+            }
+            else
+            {
+                return reverseThis;
             }
         }
                    
@@ -81,8 +99,12 @@ namespace WinFormsExample
             if (ValidateFields())
             {
                 //this.Text = NameTextBox.Text;
-                UpperCase();
-                Reverse();
+                //UpperCase();
+                //Reverse();
+                DisplayLabel.Text = Reverse(UpperCase(LowerCase( NameTextBox.Text + "\n" +
+                    AgeTextBox.Text + "\n" +
+                    PhoneTextBox.Text + "\n" +
+                    CityTextBox.Text)));
             }
         }
 
