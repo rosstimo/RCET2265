@@ -23,8 +23,9 @@ namespace WinFormsExample
             SubmitButton.Enabled = false;
         }
 
-        private void ValidateFields()
+        private bool ValidateFields()
         {
+            bool valid = true;
             string message = "";
             if (CityTextBox.Text == "")
             {
@@ -48,11 +49,28 @@ namespace WinFormsExample
             }
             if (message != "")
             {
+                valid = false;
                 MessageBox.Show(message);
             }
+            return valid;
         }
 
-        // Event Handlers Below
+        private void UpperCase()
+        {
+            if (UpperCaseRadioButton.Checked)
+            {
+                NameTextBox.Text = NameTextBox.Text.ToUpper();
+            }
+        }
+        private void Reverse()
+        {
+            if (ReverseRadioButton.Checked)
+            {
+                NameTextBox.Text = new string(NameTextBox.Text.Reverse().ToArray());
+            }
+        }
+                   
+        // Event Handlers Below -----------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,8 +78,12 @@ namespace WinFormsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            ValidateFields();
-            //this.Text = NameTextBox.Text;
+            if (ValidateFields())
+            {
+                //this.Text = NameTextBox.Text;
+                UpperCase();
+                Reverse();
+            }
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
