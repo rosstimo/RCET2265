@@ -49,8 +49,13 @@
             LowerRadioButton = new RadioButton();
             ToolTip = new ToolTip(components);
             DisplayLabel = new Label();
+            TopMenuStrip = new MenuStrip();
+            FileTopMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
+            AboutTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
+            TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
@@ -240,10 +245,39 @@
             // 
             DisplayLabel.Cursor = Cursors.Hand;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(404, 54);
+            DisplayLabel.Location = new Point(404, 61);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(384, 257);
+            DisplayLabel.Size = new Size(384, 250);
             DisplayLabel.TabIndex = 17;
+            // 
+            // TopMenuStrip
+            // 
+            TopMenuStrip.ImageScalingSize = new Size(24, 24);
+            TopMenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, HelpTopMenuItem });
+            TopMenuStrip.Location = new Point(0, 0);
+            TopMenuStrip.Name = "TopMenuStrip";
+            TopMenuStrip.Size = new Size(800, 33);
+            TopMenuStrip.TabIndex = 18;
+            TopMenuStrip.Text = "menuStrip1";
+            // 
+            // FileTopMenuItem
+            // 
+            FileTopMenuItem.Name = "FileTopMenuItem";
+            FileTopMenuItem.Size = new Size(54, 29);
+            FileTopMenuItem.Text = "&File";
+            // 
+            // HelpTopMenuItem
+            // 
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
+            HelpTopMenuItem.Name = "HelpTopMenuItem";
+            HelpTopMenuItem.Size = new Size(65, 29);
+            HelpTopMenuItem.Text = "&Help";
+            // 
+            // AboutTopMenuItem
+            // 
+            AboutTopMenuItem.Name = "AboutTopMenuItem";
+            AboutTopMenuItem.Size = new Size(270, 34);
+            AboutTopMenuItem.Text = "&About";
             // 
             // WinFormExampleForm
             // 
@@ -260,12 +294,16 @@
             Controls.Add(checkBox2);
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
+            Controls.Add(TopMenuStrip);
+            MainMenuStrip = TopMenuStrip;
             Name = "WinFormExampleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Example Form";
             ButtonGroupBox.ResumeLayout(false);
             UserInfoGroupBox.ResumeLayout(false);
             UserInfoGroupBox.PerformLayout();
+            TopMenuStrip.ResumeLayout(false);
+            TopMenuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -295,5 +333,9 @@
         private RadioButton LowerRadioButton;
         private ToolTip ToolTip;
         private Label DisplayLabel;
+        private MenuStrip TopMenuStrip;
+        private ToolStripMenuItem FileTopMenuItem;
+        private ToolStripMenuItem HelpTopMenuItem;
+        private ToolStripMenuItem AboutTopMenuItem;
     }
 }
