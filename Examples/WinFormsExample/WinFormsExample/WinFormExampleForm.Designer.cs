@@ -48,6 +48,7 @@
             UpperCaseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             ToolTip = new ToolTip(components);
+            DisplayLabel = new Label();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             SuspendLayout();
@@ -235,6 +236,14 @@
             LowerRadioButton.Text = "Lower";
             LowerRadioButton.UseVisualStyleBackColor = true;
             // 
+            // DisplayLabel
+            // 
+            DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DisplayLabel.Location = new Point(404, 54);
+            DisplayLabel.Name = "DisplayLabel";
+            DisplayLabel.Size = new Size(384, 257);
+            DisplayLabel.TabIndex = 17;
+            // 
             // WinFormExampleForm
             // 
             AcceptButton = SubmitButton;
@@ -242,6 +251,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
+            Controls.Add(DisplayLabel);
             Controls.Add(LowerRadioButton);
             Controls.Add(ReverseRadioButton);
             Controls.Add(UpperCaseRadioButton);
@@ -283,5 +293,6 @@
         private RadioButton UpperCaseRadioButton;
         private RadioButton LowerRadioButton;
         private ToolTip ToolTip;
+        private Label DisplayLabel;
     }
 }
