@@ -5,7 +5,7 @@ namespace WinFormsExample
         public WinFormExampleForm()
         {
             InitializeComponent();
-           
+
 
             SetDefaults();
         }
@@ -21,6 +21,7 @@ namespace WinFormsExample
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
+            SubmitTopMenuItem.Enabled = false;
         }
 
         private bool ValidateFields()
@@ -69,7 +70,7 @@ namespace WinFormsExample
         {
             if (UpperCaseRadioButton.Checked)
             {
-               return toUpper.ToUpper();
+                return toUpper.ToUpper();
             }
             else
             {
@@ -87,7 +88,7 @@ namespace WinFormsExample
                 return reverseThis;
             }
         }
-                   
+
         // Event Handlers Below -----------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -101,7 +102,7 @@ namespace WinFormsExample
                 //this.Text = NameTextBox.Text;
                 //UpperCase();
                 //Reverse();
-                DisplayLabel.Text = Reverse(UpperCase(LowerCase( NameTextBox.Text + "\n" +
+                DisplayLabel.Text = Reverse(UpperCase(LowerCase(NameTextBox.Text + "\n" +
                     AgeTextBox.Text + "\n" +
                     PhoneTextBox.Text + "\n" +
                     CityTextBox.Text)));
@@ -124,11 +125,13 @@ namespace WinFormsExample
             {
                 NameTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
+                SubmitTopMenuItem.Enabled = true;
             }
             else
             {
                 NameTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
+                SubmitTopMenuItem.Enabled = false;
             }
         }
         private void AgeTextBox_TextChanged(object sender, EventArgs e)
@@ -137,12 +140,19 @@ namespace WinFormsExample
             {
                 AgeTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
+                SubmitTopMenuItem.Enabled = true;
             }
             else
             {
                 AgeTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
+                SubmitTopMenuItem.Enabled= false;
             }
+        }
+
+        private void AboutTopMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("No help available");
         }
     }
 }

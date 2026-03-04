@@ -51,11 +51,11 @@
             DisplayLabel = new Label();
             TopMenuStrip = new MenuStrip();
             FileTopMenuItem = new ToolStripMenuItem();
-            HelpTopMenuItem = new ToolStripMenuItem();
-            AboutTopMenuItem = new ToolStripMenuItem();
             SubmitTopMenuItem = new ToolStripMenuItem();
             ClearTopMenuItem = new ToolStripMenuItem();
             ExitTopMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
+            AboutTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             TopMenuStrip.SuspendLayout();
@@ -270,6 +270,27 @@
             FileTopMenuItem.Size = new Size(54, 29);
             FileTopMenuItem.Text = "&File";
             // 
+            // SubmitTopMenuItem
+            // 
+            SubmitTopMenuItem.Name = "SubmitTopMenuItem";
+            SubmitTopMenuItem.Size = new Size(171, 34);
+            SubmitTopMenuItem.Text = "&Submit";
+            SubmitTopMenuItem.Click += SubmitButton_Click;
+            // 
+            // ClearTopMenuItem
+            // 
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(171, 34);
+            ClearTopMenuItem.Text = "&Clear";
+            ClearTopMenuItem.Click += ClearButton_Click;
+            // 
+            // ExitTopMenuItem
+            // 
+            ExitTopMenuItem.Name = "ExitTopMenuItem";
+            ExitTopMenuItem.Size = new Size(171, 34);
+            ExitTopMenuItem.Text = "E&xit";
+            ExitTopMenuItem.Click += ExitButton_Click;
+            // 
             // HelpTopMenuItem
             // 
             HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
@@ -282,24 +303,7 @@
             AboutTopMenuItem.Name = "AboutTopMenuItem";
             AboutTopMenuItem.Size = new Size(270, 34);
             AboutTopMenuItem.Text = "&About";
-            // 
-            // SubmitTopMenuItem
-            // 
-            SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(171, 34);
-            SubmitTopMenuItem.Text = "&Submit";
-            // 
-            // ClearTopMenuItem
-            // 
-            ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(171, 34);
-            ClearTopMenuItem.Text = "&Clear";
-            // 
-            // ExitTopMenuItem
-            // 
-            ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(171, 34);
-            ExitTopMenuItem.Text = "E&xit";
+            AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
             // WinFormExampleForm
             // 
