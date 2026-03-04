@@ -56,9 +56,11 @@
             ExitTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
+            FormatGroupBox = new GroupBox();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             TopMenuStrip.SuspendLayout();
+            FormatGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
@@ -192,7 +194,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(206, 289);
+            checkBox2.Location = new Point(183, 65);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(121, 29);
             checkBox2.TabIndex = 2;
@@ -203,7 +205,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(206, 324);
+            checkBox4.Location = new Point(183, 100);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(121, 29);
             checkBox4.TabIndex = 3;
@@ -213,7 +215,7 @@
             // ReverseRadioButton
             // 
             ReverseRadioButton.AutoSize = true;
-            ReverseRadioButton.Location = new Point(29, 323);
+            ReverseRadioButton.Location = new Point(6, 99);
             ReverseRadioButton.Name = "ReverseRadioButton";
             ReverseRadioButton.Size = new Size(97, 29);
             ReverseRadioButton.TabIndex = 16;
@@ -224,7 +226,7 @@
             // UpperCaseRadioButton
             // 
             UpperCaseRadioButton.AutoSize = true;
-            UpperCaseRadioButton.Location = new Point(29, 254);
+            UpperCaseRadioButton.Location = new Point(6, 30);
             UpperCaseRadioButton.Name = "UpperCaseRadioButton";
             UpperCaseRadioButton.Size = new Size(86, 29);
             UpperCaseRadioButton.TabIndex = 1;
@@ -236,7 +238,7 @@
             // LowerRadioButton
             // 
             LowerRadioButton.AutoSize = true;
-            LowerRadioButton.Location = new Point(29, 289);
+            LowerRadioButton.Location = new Point(6, 65);
             LowerRadioButton.Name = "LowerRadioButton";
             LowerRadioButton.Size = new Size(84, 29);
             LowerRadioButton.TabIndex = 16;
@@ -273,21 +275,21 @@
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(171, 34);
+            SubmitTopMenuItem.Size = new Size(270, 34);
             SubmitTopMenuItem.Text = "&Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(171, 34);
+            ClearTopMenuItem.Size = new Size(270, 34);
             ClearTopMenuItem.Text = "&Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(171, 34);
+            ExitTopMenuItem.Size = new Size(270, 34);
             ExitTopMenuItem.Text = "E&xit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 
@@ -305,6 +307,21 @@
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
+            // FormatGroupBox
+            // 
+            FormatGroupBox.Controls.Add(UpperCaseRadioButton);
+            FormatGroupBox.Controls.Add(checkBox2);
+            FormatGroupBox.Controls.Add(LowerRadioButton);
+            FormatGroupBox.Controls.Add(checkBox4);
+            FormatGroupBox.Controls.Add(ReverseRadioButton);
+            FormatGroupBox.Location = new Point(12, 237);
+            FormatGroupBox.Name = "FormatGroupBox";
+            FormatGroupBox.Size = new Size(327, 201);
+            FormatGroupBox.TabIndex = 19;
+            FormatGroupBox.TabStop = false;
+            FormatGroupBox.Text = "Format Options";
+            ToolTip.SetToolTip(FormatGroupBox, "Select Text Formmatting Options");
+            // 
             // WinFormExampleForm
             // 
             AcceptButton = SubmitButton;
@@ -312,12 +329,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
+            Controls.Add(FormatGroupBox);
             Controls.Add(DisplayLabel);
-            Controls.Add(LowerRadioButton);
-            Controls.Add(ReverseRadioButton);
-            Controls.Add(UpperCaseRadioButton);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox2);
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
             Controls.Add(TopMenuStrip);
@@ -330,6 +343,8 @@
             UserInfoGroupBox.PerformLayout();
             TopMenuStrip.ResumeLayout(false);
             TopMenuStrip.PerformLayout();
+            FormatGroupBox.ResumeLayout(false);
+            FormatGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -366,5 +381,6 @@
         private ToolStripMenuItem SubmitTopMenuItem;
         private ToolStripMenuItem ClearTopMenuItem;
         private ToolStripMenuItem ExitTopMenuItem;
+        private GroupBox FormatGroupBox;
     }
 }
