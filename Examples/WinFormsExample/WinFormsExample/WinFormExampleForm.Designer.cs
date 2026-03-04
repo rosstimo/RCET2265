@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormExampleForm));
             SubmitButton = new Button();
             ExitButton = new Button();
             NameLabel = new Label();
@@ -61,11 +62,13 @@
             ExitTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
+            DisplayPictureBox = new PictureBox();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             FormatGroupBox.SuspendLayout();
             FormatContextMenuStrip.SuspendLayout();
             TopMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
             // SubmitButton
@@ -299,10 +302,11 @@
             // 
             DisplayLabel.Cursor = Cursors.Hand;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(386, 61);
+            DisplayLabel.Location = new Point(388, 61);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(384, 250);
+            DisplayLabel.Size = new Size(196, 250);
             DisplayLabel.TabIndex = 17;
+            ToolTip.SetToolTip(DisplayLabel, "Formatted output displayed here");
             // 
             // TopMenuStrip
             // 
@@ -356,6 +360,16 @@
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
+            // DisplayPictureBox
+            // 
+            DisplayPictureBox.BackgroundImage = (Image)resources.GetObject("DisplayPictureBox.BackgroundImage");
+            DisplayPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
+            DisplayPictureBox.Location = new Point(602, 61);
+            DisplayPictureBox.Name = "DisplayPictureBox";
+            DisplayPictureBox.Size = new Size(180, 250);
+            DisplayPictureBox.TabIndex = 20;
+            DisplayPictureBox.TabStop = false;
+            // 
             // WinFormExampleForm
             // 
             AcceptButton = SubmitButton;
@@ -363,6 +377,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
+            Controls.Add(DisplayPictureBox);
             Controls.Add(FormatGroupBox);
             Controls.Add(DisplayLabel);
             Controls.Add(UserInfoGroupBox);
@@ -380,6 +395,7 @@
             FormatContextMenuStrip.ResumeLayout(false);
             TopMenuStrip.ResumeLayout(false);
             TopMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -421,5 +437,6 @@
         private ToolStripMenuItem UpperContextMenuItem;
         private ToolStripMenuItem LowerContextMenuItem;
         private ToolStripMenuItem ReverseContextMenuItem;
+        private PictureBox DisplayPictureBox;
     }
 }
