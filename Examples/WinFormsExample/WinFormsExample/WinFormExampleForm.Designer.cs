@@ -53,6 +53,9 @@
             FileTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
+            SubmitTopMenuItem = new ToolStripMenuItem();
+            ClearTopMenuItem = new ToolStripMenuItem();
+            ExitTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             TopMenuStrip.SuspendLayout();
@@ -245,7 +248,7 @@
             // 
             DisplayLabel.Cursor = Cursors.Hand;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(404, 61);
+            DisplayLabel.Location = new Point(386, 61);
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(384, 250);
             DisplayLabel.TabIndex = 17;
@@ -262,6 +265,7 @@
             // 
             // FileTopMenuItem
             // 
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
             FileTopMenuItem.Name = "FileTopMenuItem";
             FileTopMenuItem.Size = new Size(54, 29);
             FileTopMenuItem.Text = "&File";
@@ -278,6 +282,24 @@
             AboutTopMenuItem.Name = "AboutTopMenuItem";
             AboutTopMenuItem.Size = new Size(270, 34);
             AboutTopMenuItem.Text = "&About";
+            // 
+            // SubmitTopMenuItem
+            // 
+            SubmitTopMenuItem.Name = "SubmitTopMenuItem";
+            SubmitTopMenuItem.Size = new Size(171, 34);
+            SubmitTopMenuItem.Text = "&Submit";
+            // 
+            // ClearTopMenuItem
+            // 
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(171, 34);
+            ClearTopMenuItem.Text = "&Clear";
+            // 
+            // ExitTopMenuItem
+            // 
+            ExitTopMenuItem.Name = "ExitTopMenuItem";
+            ExitTopMenuItem.Size = new Size(171, 34);
+            ExitTopMenuItem.Text = "E&xit";
             // 
             // WinFormExampleForm
             // 
@@ -337,5 +359,8 @@
         private ToolStripMenuItem FileTopMenuItem;
         private ToolStripMenuItem HelpTopMenuItem;
         private ToolStripMenuItem AboutTopMenuItem;
+        private ToolStripMenuItem SubmitTopMenuItem;
+        private ToolStripMenuItem ClearTopMenuItem;
+        private ToolStripMenuItem ExitTopMenuItem;
     }
 }
