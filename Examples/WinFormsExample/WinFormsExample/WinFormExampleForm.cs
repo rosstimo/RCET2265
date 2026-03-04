@@ -147,13 +147,28 @@ namespace WinFormsExample
             {
                 AgeTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
-                SubmitTopMenuItem.Enabled= false;
+                SubmitTopMenuItem.Enabled = false;
             }
         }
 
         private void AboutTopMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("No help available");
+        }
+
+        private void UpperContextMenuItem_Click(object sender, EventArgs e)
+        {
+            UpperCaseRadioButton.Checked = true;
+        }
+
+        private void LowerContextMenuItem_Click(object sender, EventArgs e)
+        {
+            LowerRadioButton.Checked = true;
+        }
+
+        private void ReverseContextMenuItem_Click(object sender, EventArgs e)
+        {
+            ReverseRadioButton.Checked = true;
         }
     }
 }

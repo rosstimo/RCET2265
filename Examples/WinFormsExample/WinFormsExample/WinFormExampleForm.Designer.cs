@@ -48,6 +48,11 @@
             UpperCaseRadioButton = new RadioButton();
             LowerRadioButton = new RadioButton();
             ToolTip = new ToolTip(components);
+            FormatGroupBox = new GroupBox();
+            FormatContextMenuStrip = new ContextMenuStrip(components);
+            UpperContextMenuItem = new ToolStripMenuItem();
+            LowerContextMenuItem = new ToolStripMenuItem();
+            ReverseContextMenuItem = new ToolStripMenuItem();
             DisplayLabel = new Label();
             TopMenuStrip = new MenuStrip();
             FileTopMenuItem = new ToolStripMenuItem();
@@ -56,11 +61,11 @@
             ExitTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
-            FormatGroupBox = new GroupBox();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
-            TopMenuStrip.SuspendLayout();
             FormatGroupBox.SuspendLayout();
+            FormatContextMenuStrip.SuspendLayout();
+            TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
@@ -246,6 +251,50 @@
             LowerRadioButton.Text = "Lower";
             LowerRadioButton.UseVisualStyleBackColor = true;
             // 
+            // FormatGroupBox
+            // 
+            FormatGroupBox.ContextMenuStrip = FormatContextMenuStrip;
+            FormatGroupBox.Controls.Add(UpperCaseRadioButton);
+            FormatGroupBox.Controls.Add(checkBox2);
+            FormatGroupBox.Controls.Add(LowerRadioButton);
+            FormatGroupBox.Controls.Add(checkBox4);
+            FormatGroupBox.Controls.Add(ReverseRadioButton);
+            FormatGroupBox.Location = new Point(12, 237);
+            FormatGroupBox.Name = "FormatGroupBox";
+            FormatGroupBox.Size = new Size(327, 201);
+            FormatGroupBox.TabIndex = 19;
+            FormatGroupBox.TabStop = false;
+            FormatGroupBox.Text = "Format Options";
+            ToolTip.SetToolTip(FormatGroupBox, "Select Text Formmatting Options");
+            // 
+            // FormatContextMenuStrip
+            // 
+            FormatContextMenuStrip.ImageScalingSize = new Size(24, 24);
+            FormatContextMenuStrip.Items.AddRange(new ToolStripItem[] { UpperContextMenuItem, LowerContextMenuItem, ReverseContextMenuItem });
+            FormatContextMenuStrip.Name = "FormatContextMenuStrip";
+            FormatContextMenuStrip.Size = new Size(176, 100);
+            // 
+            // UpperContextMenuItem
+            // 
+            UpperContextMenuItem.Name = "UpperContextMenuItem";
+            UpperContextMenuItem.Size = new Size(175, 32);
+            UpperContextMenuItem.Text = "Upper Case";
+            UpperContextMenuItem.Click += UpperContextMenuItem_Click;
+            // 
+            // LowerContextMenuItem
+            // 
+            LowerContextMenuItem.Name = "LowerContextMenuItem";
+            LowerContextMenuItem.Size = new Size(175, 32);
+            LowerContextMenuItem.Text = "Lower Case";
+            LowerContextMenuItem.Click += LowerContextMenuItem_Click;
+            // 
+            // ReverseContextMenuItem
+            // 
+            ReverseContextMenuItem.Name = "ReverseContextMenuItem";
+            ReverseContextMenuItem.Size = new Size(175, 32);
+            ReverseContextMenuItem.Text = "Reverse";
+            ReverseContextMenuItem.Click += ReverseContextMenuItem_Click;
+            // 
             // DisplayLabel
             // 
             DisplayLabel.Cursor = Cursors.Hand;
@@ -275,21 +324,21 @@
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(270, 34);
+            SubmitTopMenuItem.Size = new Size(171, 34);
             SubmitTopMenuItem.Text = "&Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(270, 34);
+            ClearTopMenuItem.Size = new Size(171, 34);
             ClearTopMenuItem.Text = "&Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(270, 34);
+            ExitTopMenuItem.Size = new Size(171, 34);
             ExitTopMenuItem.Text = "E&xit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 
@@ -303,24 +352,9 @@
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(270, 34);
+            AboutTopMenuItem.Size = new Size(164, 34);
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
-            // 
-            // FormatGroupBox
-            // 
-            FormatGroupBox.Controls.Add(UpperCaseRadioButton);
-            FormatGroupBox.Controls.Add(checkBox2);
-            FormatGroupBox.Controls.Add(LowerRadioButton);
-            FormatGroupBox.Controls.Add(checkBox4);
-            FormatGroupBox.Controls.Add(ReverseRadioButton);
-            FormatGroupBox.Location = new Point(12, 237);
-            FormatGroupBox.Name = "FormatGroupBox";
-            FormatGroupBox.Size = new Size(327, 201);
-            FormatGroupBox.TabIndex = 19;
-            FormatGroupBox.TabStop = false;
-            FormatGroupBox.Text = "Format Options";
-            ToolTip.SetToolTip(FormatGroupBox, "Select Text Formmatting Options");
             // 
             // WinFormExampleForm
             // 
@@ -341,10 +375,11 @@
             ButtonGroupBox.ResumeLayout(false);
             UserInfoGroupBox.ResumeLayout(false);
             UserInfoGroupBox.PerformLayout();
-            TopMenuStrip.ResumeLayout(false);
-            TopMenuStrip.PerformLayout();
             FormatGroupBox.ResumeLayout(false);
             FormatGroupBox.PerformLayout();
+            FormatContextMenuStrip.ResumeLayout(false);
+            TopMenuStrip.ResumeLayout(false);
+            TopMenuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -382,5 +417,9 @@
         private ToolStripMenuItem ClearTopMenuItem;
         private ToolStripMenuItem ExitTopMenuItem;
         private GroupBox FormatGroupBox;
+        private ContextMenuStrip FormatContextMenuStrip;
+        private ToolStripMenuItem UpperContextMenuItem;
+        private ToolStripMenuItem LowerContextMenuItem;
+        private ToolStripMenuItem ReverseContextMenuItem;
     }
 }
