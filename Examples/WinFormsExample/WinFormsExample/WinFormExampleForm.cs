@@ -18,6 +18,7 @@ namespace WinFormsExample
             AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
             PhoneTextBox.Text = "";
+            DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
