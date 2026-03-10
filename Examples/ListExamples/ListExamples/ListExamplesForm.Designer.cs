@@ -38,7 +38,11 @@
             LastNameTextBox = new TextBox();
             CompanyLabel = new Label();
             CompanyTextBox = new TextBox();
+            OutputGroupBox = new GroupBox();
+            comboBox1 = new ComboBox();
+            listBox1 = new ListBox();
             InfoGroupBox.SuspendLayout();
+            OutputGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // ExitButton
@@ -131,11 +135,38 @@
             CompanyTextBox.Size = new Size(167, 31);
             CompanyTextBox.TabIndex = 4;
             // 
+            // OutputGroupBox
+            // 
+            OutputGroupBox.Controls.Add(listBox1);
+            OutputGroupBox.Controls.Add(comboBox1);
+            OutputGroupBox.Location = new Point(318, 27);
+            OutputGroupBox.Name = "OutputGroupBox";
+            OutputGroupBox.Size = new Size(470, 338);
+            OutputGroupBox.TabIndex = 4;
+            OutputGroupBox.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(6, 19);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(6, 58);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(450, 279);
+            listBox1.TabIndex = 1;
+            // 
             // ListExamplesForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(OutputGroupBox);
             Controls.Add(InfoGroupBox);
             Controls.Add(ClearButton);
             Controls.Add(SubmitButton);
@@ -144,6 +175,7 @@
             Text = "Form1";
             InfoGroupBox.ResumeLayout(false);
             InfoGroupBox.PerformLayout();
+            OutputGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -159,5 +191,8 @@
         private TextBox CompanyTextBox;
         private Label LastNameLabel;
         private TextBox LastNameTextBox;
+        private GroupBox OutputGroupBox;
+        private ListBox listBox1;
+        private ComboBox comboBox1;
     }
 }
