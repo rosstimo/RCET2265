@@ -63,6 +63,7 @@
             SubmitButton.TabIndex = 1;
             SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // ClearButton
             // 
@@ -72,6 +73,7 @@
             ClearButton.TabIndex = 2;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // InfoGroupBox
             // 
