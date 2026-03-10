@@ -1,6 +1,6 @@
 ﻿namespace ListExamples
 {
-    partial class Form1
+    partial class ListExamplesForm
     {
         /// <summary>
         ///  Required designer variable.

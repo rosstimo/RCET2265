@@ -1,10 +1,11 @@
 namespace ListExamples
 {
-    public partial class Form1 : Form
+    public partial class ListExamplesForm : Form
     {
-        public Form1()
+        public ListExamplesForm()
         {
             InitializeComponent();
         }
+
     }
 }
