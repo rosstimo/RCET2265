@@ -39,8 +39,8 @@
             FirstNameLabel = new Label();
             FirstNameTextBox = new TextBox();
             OutputGroupBox = new GroupBox();
-            listBox1 = new ListBox();
-            comboBox1 = new ComboBox();
+            DisplayListBox = new ListBox();
+            SelectionComboBox = new ComboBox();
             InfoGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             SuspendLayout();
@@ -139,29 +139,30 @@
             // 
             // OutputGroupBox
             // 
-            OutputGroupBox.Controls.Add(listBox1);
-            OutputGroupBox.Controls.Add(comboBox1);
+            OutputGroupBox.Controls.Add(DisplayListBox);
+            OutputGroupBox.Controls.Add(SelectionComboBox);
             OutputGroupBox.Location = new Point(318, 27);
             OutputGroupBox.Name = "OutputGroupBox";
             OutputGroupBox.Size = new Size(470, 338);
             OutputGroupBox.TabIndex = 4;
             OutputGroupBox.TabStop = false;
             // 
-            // listBox1
+            // DisplayListBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(6, 58);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(450, 279);
-            listBox1.TabIndex = 1;
+            DisplayListBox.FormattingEnabled = true;
+            DisplayListBox.Location = new Point(6, 53);
+            DisplayListBox.Name = "DisplayListBox";
+            DisplayListBox.Size = new Size(450, 279);
+            DisplayListBox.TabIndex = 1;
+            DisplayListBox.SelectedIndexChanged += DisplayListBox_SelectedIndexChanged;
             // 
-            // comboBox1
+            // SelectionComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(6, 19);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(182, 33);
-            comboBox1.TabIndex = 0;
+            SelectionComboBox.FormattingEnabled = true;
+            SelectionComboBox.Location = new Point(6, 19);
+            SelectionComboBox.Name = "SelectionComboBox";
+            SelectionComboBox.Size = new Size(182, 33);
+            SelectionComboBox.TabIndex = 0;
             // 
             // ListExamplesForm
             // 
@@ -195,7 +196,7 @@
         private Label LastNameLabel;
         private TextBox LastNameTextBox;
         private GroupBox OutputGroupBox;
-        private ListBox listBox1;
-        private ComboBox comboBox1;
+        private ListBox DisplayListBox;
+        private ComboBox SelectionComboBox;
     }
 }

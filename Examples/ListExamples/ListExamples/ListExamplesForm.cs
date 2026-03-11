@@ -19,6 +19,11 @@ namespace ListExamples
             this.Text = names.Count.ToString();
         }
 
+        void AddItemToListBox()
+        {
+            DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
+        }
+
 
 
         //Event handlers below here -------------------------------------------
@@ -31,12 +36,26 @@ namespace ListExamples
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            ListExampleMethod();
+            //ListExampleMethod();
+            AddItemToListBox();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //isolate company
+            string[] temp = DisplayListBox.SelectedItem.ToString().Split(" ");
+            CompanyTextBox.Text = temp[1];
+            temp = temp[0].Split(",");
+            FirstNameTextBox.Text = temp[1];
+            LastNameTextBox.Text = temp[0];
+
+            //this.Text = DisplayListBox.SelectedIndex.ToString();
+            //FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString();
         }
     }
 }
