@@ -50,12 +50,10 @@ namespace ListExamples
             //isolate company
             string[] temp = DisplayListBox.SelectedItem.ToString().Split(" ");
             CompanyTextBox.Text = temp[1];
+            //isolate lastName, firstName
             temp = temp[0].Split(",");
             FirstNameTextBox.Text = temp[1];
             LastNameTextBox.Text = temp[0];
-
-            //this.Text = DisplayListBox.SelectedIndex.ToString();
-            //FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString();
         }
     }
 }
