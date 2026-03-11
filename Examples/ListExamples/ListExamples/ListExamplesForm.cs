@@ -24,6 +24,15 @@ namespace ListExamples
             DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
         }
 
+        void AddItemToComboBox()
+        {
+            SelectionComboBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text}");
+            if (SelectionComboBox.Items.Count > 0)
+            {
+                SelectionComboBox.SelectedIndex = 0;
+            }
+        }
+
 
 
         //Event handlers below here -------------------------------------------
@@ -38,6 +47,7 @@ namespace ListExamples
         {
             //ListExampleMethod();
             AddItemToListBox();
+            AddItemToComboBox();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -54,6 +64,12 @@ namespace ListExamples
             temp = temp[0].Split(",");
             FirstNameTextBox.Text = temp[1];
             LastNameTextBox.Text = temp[0];
+        }
+
+        private void SelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //select the corosponding entry in the list box
+            DisplayListBox.SelectedIndex = SelectionComboBox.SelectedIndex;
         }
     }
 }

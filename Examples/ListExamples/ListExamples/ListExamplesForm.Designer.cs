@@ -163,6 +163,7 @@
             SelectionComboBox.Name = "SelectionComboBox";
             SelectionComboBox.Size = new Size(182, 33);
             SelectionComboBox.TabIndex = 0;
+            SelectionComboBox.SelectedIndexChanged += SelectionComboBox_SelectedIndexChanged;
             // 
             // ListExamplesForm
             // 
