@@ -104,6 +104,7 @@
             CompanyTextBox.Name = "CompanyTextBox";
             CompanyTextBox.Size = new Size(167, 31);
             CompanyTextBox.TabIndex = 4;
+            CompanyTextBox.TextChanged += Any_TextChange;
             // 
             // LastNameLabel
             // 
@@ -119,7 +120,9 @@
             LastNameTextBox.Location = new Point(101, 58);
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(167, 31);
-            LastNameTextBox.TabIndex = 2;
+            LastNameTextBox.TabIndex = 2; 
+            LastNameTextBox.TextChanged += Any_TextChange;
+
             // 
             // FirstNameLabel
             // 
@@ -129,6 +132,7 @@
             FirstNameLabel.Size = new Size(45, 25);
             FirstNameLabel.TabIndex = 1;
             FirstNameLabel.Text = "First";
+
             // 
             // FirstNameTextBox
             // 
@@ -136,6 +140,7 @@
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(167, 31);
             FirstNameTextBox.TabIndex = 0;
+            FirstNameTextBox.TextChanged += Any_TextChange;
             // 
             // OutputGroupBox
             // 
@@ -183,6 +188,7 @@
             OutputGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
+
 
         #endregion
 

@@ -46,10 +46,6 @@ namespace ListExamples
             FirstNameTextBox.Text = "";
             LastNameTextBox.Text = "";
             CompanyTextBox.Text = "";
-            //set initial back color
-            FirstNameTextBox.BackColor = Color.LightYellow;
-            LastNameTextBox.BackColor = Color.LightYellow;
-            CompanyTextBox.BackColor = Color.LightYellow;
             
             // reset combo box and list box selections
             if (SelectionComboBox.Items.Count > 0 & DisplayListBox.Items.Count > 0)
@@ -61,8 +57,28 @@ namespace ListExamples
         }
         bool ValidateFeilds()
         {
-
-            return false;
+            bool allAreValid = true;
+            //set initial back color
+            FirstNameTextBox.BackColor = Color.White;
+            LastNameTextBox.BackColor = Color.White;
+            CompanyTextBox.BackColor = Color.White;
+            if (FirstNameTextBox.Text == "")
+            {
+                allAreValid = false;
+                FirstNameTextBox.BackColor = Color.LightYellow;
+            }
+            if (LastNameTextBox.Text == "")
+            { 
+                allAreValid = false;
+                LastNameTextBox.BackColor = Color.LightYellow;
+            }
+            if (CompanyTextBox.Text == "")
+            {
+                allAreValid = false;
+                CompanyTextBox.BackColor = Color.LightYellow;
+            }
+            SubmitButton.Enabled = allAreValid;
+            return allAreValid;
         }
         void AddItemToListBox()
         {
@@ -81,7 +97,10 @@ namespace ListExamples
 
 
         //Event handlers below here -------------------------------------------
-
+        private void Any_TextChange(object sender, EventArgs e)
+        {
+            ValidateFeilds();
+        }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
