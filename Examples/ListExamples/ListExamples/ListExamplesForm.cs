@@ -6,6 +6,7 @@ namespace ListExamples
         {
             InitializeComponent();
             LoadTestData();
+            SetDefaults();
         }
         //Custom Methods below here -------------------------------------------
         void ListExampleMethod()
@@ -20,15 +21,15 @@ namespace ListExamples
             this.Text = names.Count.ToString();
         }
         /*TODO
-        [ ] Set defaults method. call on startup and Clear Button
-            [ ] clear text boxes
-            [ ] set focus to first name
-            [ ] select index 0 of the combo box
+        [x] Set defaults method. call on startup and Clear Button
+            [x] clear text boxes
+            [x] set focus to first name
+            [x] select index 0 of the combo box
         [ ] validate text boxes. blank light yellow, not blank white as you type
         [ ] submit button disabled unless all text boxes are valid. try a single validate method
         [ ] clear the text boxes on submit.
         [ ] Edit and/or remove selected item
-        [ ] Optional: populate at least three list entries for testing
+        [x] Optional: populate at least three list entries for testing
         */
         void LoadTestData()
         {
@@ -56,9 +57,11 @@ namespace ListExamples
                 SelectionComboBox.SelectedIndex = 0;
                 DisplayListBox.SelectedIndex = 0;
             }
+            FirstNameTextBox.Select();
         }
         bool ValidateFeilds()
         {
+
             return false;
         }
         void AddItemToListBox()
@@ -94,7 +97,7 @@ namespace ListExamples
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            SetDefaults();
         }
 
         private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
