@@ -31,7 +31,21 @@ namespace ListExamples
         */
         void SetDefaults()
         {
-
+            //clear all text boxes
+            FirstNameTextBox.Text = "";
+            LastNameTextBox.Text = "";
+            CompanyTextBox.Text = "";
+            //set initial back color
+            FirstNameTextBox.BackColor = Color.LightYellow;
+            LastNameTextBox.BackColor = Color.LightYellow;
+            CompanyTextBox.BackColor = Color.LightYellow;
+            
+            // reset combo box and list box selections
+            if (SelectionComboBox.Items.Count > 0 & DisplayListBox.Items.Count > 0)
+            {
+                SelectionComboBox.SelectedIndex = 0;
+                DisplayListBox.SelectedIndex = 0;
+            }
         }
         bool ValidateFeilds()
         {
