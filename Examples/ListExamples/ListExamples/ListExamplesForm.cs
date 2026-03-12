@@ -5,6 +5,7 @@ namespace ListExamples
         public ListExamplesForm()
         {
             InitializeComponent();
+            LoadTestData();
         }
         //Custom Methods below here -------------------------------------------
         void ListExampleMethod()
@@ -34,6 +35,9 @@ namespace ListExamples
             DisplayListBox.Items.Add("Fudd,Elmer Acme");
             DisplayListBox.Items.Add("Blow,Joe Bazooka");
             DisplayListBox.Items.Add("Jane,Mary LastDanceStudio");
+            SelectionComboBox.Items.Add("Fudd,Elmer");
+            SelectionComboBox.Items.Add("Blow,Joe");
+            SelectionComboBox.Items.Add("Jane,Mary");
         }
         void SetDefaults()
         {
