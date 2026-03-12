@@ -26,9 +26,17 @@ namespace ListExamples
         [ ] validate text boxes. blank light yellow, not blank white as you type
         [ ] submit button disabled unless all text boxes are valid. try a single validate method
         [ ] clear the text boxes on submit.
-        [ ] 
+        [ ] Edit and/or remove selected item
+        [ ] Optional: populate at least three list entries for testing
         */
+        void SetDefaults()
+        {
 
+        }
+        bool ValidateFeilds()
+        {
+            return false;
+        }
         void AddItemToListBox()
         {
             DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
