@@ -18,6 +18,16 @@ namespace ListExamples
             names.Remove("Bob");
             this.Text = names.Count.ToString();
         }
+        /*TODO
+        [ ] Set defaults method. call on startup and Clear Button
+            [ ] clear text boxes
+            [ ] set focus to first name
+            [ ] select index 0 of the combo box
+        [ ] validate text boxes. blank light yellow, not blank white as you type
+        [ ] submit button disabled unless all text boxes are valid. try a single validate method
+        [ ] clear the text boxes on submit.
+        [ ] 
+        */
 
         void AddItemToListBox()
         {
