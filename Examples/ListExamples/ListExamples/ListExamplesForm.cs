@@ -29,6 +29,12 @@ namespace ListExamples
         [ ] Edit and/or remove selected item
         [ ] Optional: populate at least three list entries for testing
         */
+        void LoadTestData()
+        {
+            DisplayListBox.Items.Add("Fudd,Elmer Acme");
+            DisplayListBox.Items.Add("Blow,Joe Bazooka");
+            DisplayListBox.Items.Add("Jane,Mary LastDanceStudio");
+        }
         void SetDefaults()
         {
             //clear all text boxes
