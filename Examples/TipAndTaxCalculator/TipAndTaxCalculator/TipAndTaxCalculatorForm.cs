@@ -1,8 +1,8 @@
 namespace TipAndTaxCalculator
 {
-    public partial class Form1 : Form
+    public partial class TipAndTaxCalculatorForm : Form
     {
-        public Form1()
+        public TipAndTaxCalculatorForm()
         {
             InitializeComponent();
         }
