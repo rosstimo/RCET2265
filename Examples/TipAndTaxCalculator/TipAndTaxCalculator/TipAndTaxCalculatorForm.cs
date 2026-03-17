@@ -5,6 +5,7 @@ namespace TipAndTaxCalculator
         public TipAndTaxCalculatorForm()
         {
             InitializeComponent();
+            SetDefaults();
         }
         /*
          TODO:
@@ -16,7 +17,18 @@ namespace TipAndTaxCalculator
         */
 
         // custom methods -----------------------------------------------------
+        void SetDefaults()
+        {
+            DollarAmountTextBox.Text = "";
+            Tip15RadioButton.Checked = true;
+            TipCustomTextBox.Text = "";
+            TipCustomTextBox.Enabled = false;
+            DiscountAAACheckBox.Checked = false;
+            DiscountDCCheckBox.Checked = false;
+            DisplayLabel.Text = "";
+            DollarAmountTextBox.Select();
 
+        }
 
         // Event handlers below here ------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
@@ -26,7 +38,7 @@ namespace TipAndTaxCalculator
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            //TODO
+            SetDefaults();
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
