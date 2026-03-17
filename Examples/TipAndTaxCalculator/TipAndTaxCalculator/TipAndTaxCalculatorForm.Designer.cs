@@ -53,6 +53,7 @@
             CalculateButton.TabIndex = 0;
             CalculateButton.Text = "&Calculate";
             CalculateButton.UseVisualStyleBackColor = true;
+            CalculateButton.Click += CalculateButton_Click;
             // 
             // ClearButton
             // 
@@ -62,6 +63,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "C&lear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
