@@ -120,9 +120,8 @@
             LastNameTextBox.Location = new Point(101, 58);
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(167, 31);
-            LastNameTextBox.TabIndex = 2; 
+            LastNameTextBox.TabIndex = 2;
             LastNameTextBox.TextChanged += Any_TextChange;
-
             // 
             // FirstNameLabel
             // 
@@ -132,7 +131,6 @@
             FirstNameLabel.Size = new Size(45, 25);
             FirstNameLabel.TabIndex = 1;
             FirstNameLabel.Text = "First";
-
             // 
             // FirstNameTextBox
             // 
@@ -154,10 +152,11 @@
             // 
             // DisplayListBox
             // 
+            DisplayListBox.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
             DisplayListBox.Location = new Point(6, 53);
             DisplayListBox.Name = "DisplayListBox";
-            DisplayListBox.Size = new Size(450, 279);
+            DisplayListBox.Size = new Size(450, 268);
             DisplayListBox.TabIndex = 1;
             DisplayListBox.SelectedIndexChanged += DisplayListBox_SelectedIndexChanged;
             // 
