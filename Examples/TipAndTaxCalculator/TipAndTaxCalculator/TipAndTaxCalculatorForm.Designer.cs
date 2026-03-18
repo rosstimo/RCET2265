@@ -38,7 +38,7 @@
             Tip18RadioButton = new RadioButton();
             Tip20RadioButton = new RadioButton();
             TipLabel = new Label();
-            TipCustom = new RadioButton();
+            TipCustomRadioButton = new RadioButton();
             DiscountAAACheckBox = new CheckBox();
             DiscountDCCheckBox = new CheckBox();
             DiscountLabel = new Label();
@@ -142,16 +142,16 @@
             TipLabel.TabIndex = 9;
             TipLabel.Text = "Tip Amount";
             // 
-            // TipCustom
+            // TipCustomRadioButton
             // 
-            TipCustom.AutoSize = true;
-            TipCustom.Location = new Point(147, 172);
-            TipCustom.Name = "TipCustom";
-            TipCustom.Size = new Size(99, 29);
-            TipCustom.TabIndex = 10;
-            TipCustom.TabStop = true;
-            TipCustom.Text = "Custom";
-            TipCustom.UseVisualStyleBackColor = true;
+            TipCustomRadioButton.AutoSize = true;
+            TipCustomRadioButton.Location = new Point(147, 172);
+            TipCustomRadioButton.Name = "TipCustomRadioButton";
+            TipCustomRadioButton.Size = new Size(99, 29);
+            TipCustomRadioButton.TabIndex = 10;
+            TipCustomRadioButton.TabStop = true;
+            TipCustomRadioButton.Text = "Custom";
+            TipCustomRadioButton.UseVisualStyleBackColor = true;
             // 
             // DiscountAAACheckBox
             // 
@@ -199,7 +199,7 @@
             Controls.Add(DiscountLabel);
             Controls.Add(DiscountDCCheckBox);
             Controls.Add(DiscountAAACheckBox);
-            Controls.Add(TipCustom);
+            Controls.Add(TipCustomRadioButton);
             Controls.Add(TipLabel);
             Controls.Add(Tip20RadioButton);
             Controls.Add(Tip18RadioButton);
@@ -229,7 +229,7 @@
         private RadioButton Tip18RadioButton;
         private RadioButton Tip20RadioButton;
         private Label TipLabel;
-        private RadioButton TipCustom;
+        private RadioButton TipCustomRadioButton;
         private CheckBox DiscountAAACheckBox;
         private CheckBox DiscountDCCheckBox;
         private Label DiscountLabel;

@@ -9,7 +9,7 @@ namespace TipAndTaxCalculator
         }
         /*
          TODO:
-         [ ] Set defaults
+         [x] Set defaults
          [ ] Tip amount after discount exclude tax
          [ ] calculate state tax amount after discount exclude tip
          [ ] calculate discount amounts / total discount
@@ -17,6 +17,12 @@ namespace TipAndTaxCalculator
         */
 
         // custom methods -----------------------------------------------------
+
+        /// <summary>
+        /// Resets all input fields and controls to their default values.
+        /// </summary>
+        /// <remarks>Use this method to clear user input and restore the initial state of the form. This
+        /// is typically called when starting a new calculation or after completing an operation.</remarks>
         void SetDefaults()
         {
             DollarAmountTextBox.Text = "";
@@ -28,6 +34,37 @@ namespace TipAndTaxCalculator
             DisplayLabel.Text = "";
             DollarAmountTextBox.Select();
 
+        }
+
+        /// <summary>
+        /// Calculates the tip amount based on the specified subtotal and the currently selected tip percentage option.
+        /// </summary>
+        /// <remarks>The tip percentage is determined by the selected radio button (15%, 18%, 20%, or a
+        /// custom value). If no valid option is selected, the method returns 0.</remarks>
+        /// <param name="thisAmount">The subtotal amount on which to calculate the tip. Must be a non-negative value.</param>
+        /// <returns>The calculated tip amount as a decimal value. Returns 0 if no valid tip percentage option is selected.</returns>
+        decimal CalculateTipOn(decimal thisAmount)
+        {
+            decimal subTotal = 0;
+            switch (true)
+            {
+                case bool when Tip15RadioButton.Checked:
+                    subTotal = thisAmount * 0.15m;
+                    break;
+                case bool when Tip18RadioButton.Checked:
+                    subTotal = thisAmount * 0.18m;
+                    break;
+                case bool when Tip20RadioButton.Checked:
+                    subTotal = thisAmount * 0.20m;
+                    break;
+                case bool when TipCustomRadioButton.Checked:
+                    //TODO
+                    break;
+                default:
+                    MessageBox.Show("This tip should never happen!");
+                    break;
+            }
+            return subTotal;
         }
 
         // Event handlers below here ------------------------------------------
