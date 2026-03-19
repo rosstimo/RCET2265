@@ -10,9 +10,9 @@ namespace TipAndTaxCalculator
         /*
          TODO:
          [x] Set defaults
-         [ ] Tip amount after discount include tax
-         [ ] calculate state tax amount after discount exclude tip
-         [ ] calculate discount amounts / total discount
+         [x] Tip amount after discount include tax
+         [x] calculate state tax amount after discount exclude tip
+         [x] calculate discount amounts / total discount
          [ ] display original, discounts, tip, tax, amount due formatted as currency
         */
 
