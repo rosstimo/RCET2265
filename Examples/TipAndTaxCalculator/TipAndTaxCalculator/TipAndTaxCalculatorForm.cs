@@ -40,6 +40,7 @@ namespace TipAndTaxCalculator
         bool AllFeildsValid()
         {
             bool _valid = true;
+            // validate dollar amount
             try
             {
                 decimal.Parse(DollarAmountTextBox.Text);
@@ -48,6 +49,17 @@ namespace TipAndTaxCalculator
             catch (Exception)
             {
                 DollarAmountTextBox.BackColor = Color.LightYellow;
+                _valid = false;
+            }
+            // validate custom tip amount
+            try
+            {
+                decimal.Parse(TipCustomTextBox.Text);
+                TipCustomTextBox.BackColor = Color.White;
+            }
+            catch (Exception)
+            {
+                TipCustomTextBox.BackColor = Color.LightYellow;
                 _valid = false;
             }
             return _valid;
