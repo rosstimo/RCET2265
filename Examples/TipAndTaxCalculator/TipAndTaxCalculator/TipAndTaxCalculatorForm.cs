@@ -64,6 +64,34 @@ namespace TipAndTaxCalculator
             }
             return _valid;
         }
+        
+        /// <summary>
+        /// Calculates the AAA membership discount for the specified amount.
+        /// </summary>
+        /// <param name="thisAmount">The original amount to which the AAA discount will be applied. Must be a non-negative value.</param>
+        /// <returns>The calculated discount amount, equal to 3 percent of the specified amount.</returns>
+        decimal CalculateAAADiscountOn(decimal thisAmount)
+        {
+            return thisAmount * 0.03m;
+        }
+        /// <summary>
+        /// Calculates the discount amount for a Diners Club card transaction based on the specified amount.
+        /// </summary>
+        /// <param name="thisAmount">The transaction amount on which to calculate the Diners Club card discount. Must be a non-negative value.</param>
+        /// <returns>The discount amount to be applied to the transaction. The value is 5% of the specified amount.</returns>
+        decimal CalculateDinersCardDiscountOn(decimal thisAmount)
+        {
+            return thisAmount * 0.05m;
+        }
+        /// <summary>
+        /// Calculates the tax amount for the specified monetary value using a fixed tax rate.
+        /// </summary>
+        /// <param name="thisAmount">The monetary amount on which to calculate tax. Must be a non-negative value.</param>
+        /// <returns>The calculated tax amount based on the specified value.</returns>
+        decimal CalculateTaxOn(decimal thisAmount)
+        { 
+            return thisAmount * 0.06m;
+        }
 
         /// <summary>
         /// Calculates the tip amount based on the specified subtotal and the currently selected tip percentage option.
@@ -72,7 +100,7 @@ namespace TipAndTaxCalculator
         /// custom value). If no valid option is selected, the method returns 0.</remarks>
         /// <param name="thisAmount">The subtotal amount on which to calculate the tip. Must be a non-negative value.</param>
         /// <returns>The calculated tip amount as a decimal value. Returns 0 if no valid tip percentage option is selected.</returns>
-        decimal CalculateTipOn(decimal thisAmount)
+        decimal CalculateTipOn(decimal thisAmount , decimal customTip = 0)
         {
             decimal subTotal = 0;
             switch (true)
@@ -87,7 +115,7 @@ namespace TipAndTaxCalculator
                     subTotal = thisAmount * 0.20m;
                     break;
                 case bool when TipCustomRadioButton.Checked:
-                    //TODO
+                    subTotal = customTip;
                     break;
                 default:
                     MessageBox.Show("This tip should never happen!");
@@ -109,7 +137,10 @@ namespace TipAndTaxCalculator
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            //TODO
+            if (AllFeildsValid())
+            {
+                //calculate stuff
+            }
         }
 
         private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
