@@ -10,7 +10,7 @@ namespace TipAndTaxCalculator
         /*
          TODO:
          [x] Set defaults
-         [ ] Tip amount after discount exclude tax
+         [ ] Tip amount after discount include tax
          [ ] calculate state tax amount after discount exclude tip
          [ ] calculate discount amounts / total discount
          [ ] display original, discounts, tip, tax, amount due formatted as currency
@@ -34,6 +34,22 @@ namespace TipAndTaxCalculator
             DisplayLabel.Text = "";
             DollarAmountTextBox.Select();
 
+        }
+        
+        bool AllFeildsValid()
+        {
+            bool _valid = true;
+            try
+            {
+                decimal.Parse(DollarAmountTextBox.Text);
+                DollarAmountTextBox.BackColor = Color.White;
+            }
+            catch (Exception)
+            {
+                DollarAmountTextBox.BackColor = Color.LightYellow;
+                _valid = false;
+            }
+            return _valid;
         }
 
         /// <summary>
