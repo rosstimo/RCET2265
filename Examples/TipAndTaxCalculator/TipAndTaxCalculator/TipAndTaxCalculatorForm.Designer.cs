@@ -81,6 +81,7 @@
             DollarAmountTextBox.Name = "DollarAmountTextBox";
             DollarAmountTextBox.Size = new Size(150, 31);
             DollarAmountTextBox.TabIndex = 3;
+            DollarAmountTextBox.TextChanged += DollarAmountTextBox_TextChanged;
             // 
             // AmountLabel
             // 
@@ -152,6 +153,7 @@
             TipCustomRadioButton.TabStop = true;
             TipCustomRadioButton.Text = "Custom";
             TipCustomRadioButton.UseVisualStyleBackColor = true;
+            TipCustomRadioButton.CheckedChanged += TipCustomRadioButton_CheckedChanged;
             // 
             // DiscountAAACheckBox
             // 

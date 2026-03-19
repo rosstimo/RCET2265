@@ -32,10 +32,11 @@ namespace TipAndTaxCalculator
             DiscountAAACheckBox.Checked = false;
             DiscountDCCheckBox.Checked = false;
             DisplayLabel.Text = "";
+            AllFeildsValid();
             DollarAmountTextBox.Select();
 
         }
-        
+
         bool AllFeildsValid()
         {
             bool _valid = true;
@@ -97,6 +98,24 @@ namespace TipAndTaxCalculator
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             //TODO
+        }
+
+        private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            AllFeildsValid();
+        }
+
+        private void TipCustomRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TipCustomRadioButton.Checked)
+            {
+                TipCustomTextBox.Enabled = true;
+            }
+            else
+            {
+                TipCustomTextBox.Text = "";
+                TipCustomTextBox.Enabled = false;
+            }
         }
     }
 }
