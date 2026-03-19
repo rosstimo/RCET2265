@@ -137,9 +137,19 @@ namespace TipAndTaxCalculator
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            decimal originalAmount = 0;
+            decimal totalDiscount = 0;
+            decimal tax = 0;
+            decimal tip = 0;
+            decimal amountDue = 0;
             if (AllFeildsValid())
             {
-                //calculate stuff
+                originalAmount = decimal.Parse(DollarAmountTextBox.Text);
+                totalDiscount += CalculateAAADiscountOn(originalAmount);
+                totalDiscount += CalculateDinersCardDiscountOn(originalAmount);
+                tax = CalculateTaxOn(originalAmount - totalDiscount);
+                tip = CalculateTipOn(originalAmount - totalDiscount + tax);
+                amountDue = originalAmount - totalDiscount + tax + tip;
             }
         }
 
