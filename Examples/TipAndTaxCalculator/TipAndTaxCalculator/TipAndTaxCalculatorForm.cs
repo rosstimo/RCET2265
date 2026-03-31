@@ -27,7 +27,7 @@ namespace TipAndTaxCalculator
         {
             DollarAmountTextBox.Text = "";
             Tip15RadioButton.Checked = true;
-            TipCustomTextBox.Text = "";
+            TipCustomTextBox.Text = "0";
             TipCustomTextBox.Enabled = false;
             DiscountAAACheckBox.Checked = false;
             DiscountDCCheckBox.Checked = false;
@@ -142,17 +142,24 @@ namespace TipAndTaxCalculator
             decimal tax = 0;
             decimal tip = 0;
             decimal amountDue = 0;
+            int padding = 15;
             if (AllFeildsValid())
             {
                 originalAmount = decimal.Parse(DollarAmountTextBox.Text);
-                totalDiscount += CalculateAAADiscountOn(originalAmount);
-                totalDiscount += CalculateDinersCardDiscountOn(originalAmount);
+                totalDiscount += CalculateAAADiscountOn(originalAmount);// TODO check checkbox
+                totalDiscount += CalculateDinersCardDiscountOn(originalAmount);// TODO check checkbox
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 tip = CalculateTipOn(originalAmount - totalDiscount + tax);
                 amountDue = originalAmount - totalDiscount + tax + tip;
+                //TODO refactor per Luke
+                DisplayLabel.Text = "Charges:".PadRight(padding) + $"{originalAmount.ToString("C")}\n" +
+                "Discount:".PadRight(padding) + $"{totalDiscount.ToString("C")}\n" +
+                "Sales Tax:".PadRight(padding) + $"{tax.ToString("C")}\n" +
+                "Subtotal:".PadRight(padding) + $"??\n" +
+                "Tip:".PadRight(padding) + $"{tip.ToString("C")}\n" +
+                "Total:".PadRight(padding) + $"{amountDue.ToString("C")}";
             }
         }
-
         private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
         {
             AllFeildsValid();
