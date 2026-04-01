@@ -123,19 +123,7 @@ namespace TipAndTaxCalculator
             }
             return subTotal;
         }
-
-        // Event handlers below here ------------------------------------------
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            SetDefaults();
-        }
-
-        private void CalculateButton_Click(object sender, EventArgs e)
+        void DisplayTransaction()
         {
             decimal originalAmount = 0;
             decimal totalDiscount = 0;
@@ -151,6 +139,7 @@ namespace TipAndTaxCalculator
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 tip = CalculateTipOn(originalAmount - totalDiscount + tax);
                 amountDue = originalAmount - totalDiscount + tax + tip;
+
                 //TODO refactor per Luke
                 DisplayLabel.Text = "Charges:".PadRight(padding) + $"{originalAmount.ToString("C")}\n" +
                 "Discount:".PadRight(padding) + $"{totalDiscount.ToString("C")}\n" +
@@ -159,6 +148,23 @@ namespace TipAndTaxCalculator
                 "Tip:".PadRight(padding) + $"{tip.ToString("C")}\n" +
                 "Total:".PadRight(padding) + $"{amountDue.ToString("C")}";
             }
+        
+
+        }
+        // Event handlers below here ------------------------------------------
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
+        }
+
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+            DisplayTransaction();
         }
         private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
         {
