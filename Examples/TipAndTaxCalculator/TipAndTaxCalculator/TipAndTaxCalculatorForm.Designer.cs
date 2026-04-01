@@ -43,6 +43,7 @@
             DiscountDCCheckBox = new CheckBox();
             DiscountLabel = new Label();
             TipCustomTextBox = new TextBox();
+            TipCurrancyLabel = new Label();
             SuspendLayout();
             // 
             // CalculateButton
@@ -199,18 +200,29 @@
             // 
             // TipCustomTextBox
             // 
-            TipCustomTextBox.Location = new Point(302, 204);
+            TipCustomTextBox.Location = new Point(312, 203);
             TipCustomTextBox.Margin = new Padding(4);
             TipCustomTextBox.Name = "TipCustomTextBox";
-            TipCustomTextBox.Size = new Size(96, 35);
+            TipCustomTextBox.Size = new Size(92, 35);
             TipCustomTextBox.TabIndex = 14;
             TipCustomTextBox.TabStop = false;
+            // 
+            // TipCurrancyLabel
+            // 
+            TipCurrancyLabel.AutoSize = true;
+            TipCurrancyLabel.Location = new Point(280, 208);
+            TipCurrancyLabel.Margin = new Padding(4, 0, 4, 0);
+            TipCurrancyLabel.Name = "TipCurrancyLabel";
+            TipCurrancyLabel.Size = new Size(24, 30);
+            TipCurrancyLabel.TabIndex = 15;
+            TipCurrancyLabel.Text = "$";
             // 
             // TipAndTaxCalculatorForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(960, 540);
+            Controls.Add(TipCurrancyLabel);
             Controls.Add(TipCustomTextBox);
             Controls.Add(DiscountLabel);
             Controls.Add(DiscountDCCheckBox);
@@ -251,5 +263,6 @@
         private CheckBox DiscountDCCheckBox;
         private Label DiscountLabel;
         private TextBox TipCustomTextBox;
+        private Label TipCurrancyLabel;
     }
 }

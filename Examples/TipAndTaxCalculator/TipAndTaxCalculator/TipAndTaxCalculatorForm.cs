@@ -149,7 +149,7 @@ namespace TipAndTaxCalculator
                 totalDiscount += CalculateDinersCardDiscountOn(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 subTotal = (originalAmount - totalDiscount) + tax;
-                tip = CalculateTipOn((originalAmount - totalDiscount) + tax);
+                tip = CalculateTipOn((originalAmount - totalDiscount) + tax, decimal.Parse(TipCustomTextBox.Text));
                 amountDue = originalAmount - totalDiscount + tax + tip;
 
                 DisplayLabel.Text = $"Charges:    {originalAmount:C}\n" +
