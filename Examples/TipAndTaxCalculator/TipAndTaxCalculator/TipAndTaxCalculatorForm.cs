@@ -72,7 +72,12 @@ namespace TipAndTaxCalculator
         /// <returns>The calculated discount amount, equal to 3 percent of the specified amount.</returns>
         decimal CalculateAAADiscountOn(decimal thisAmount)
         {
-            return thisAmount * 0.03m;
+            decimal discount = 0;
+            if (DiscountAAACheckBox.Checked)
+            {
+                discount = thisAmount * 0.03m;
+            }
+            return discount;
         }
         /// <summary>
         /// Calculates the discount amount for a Diners Club card transaction based on the specified amount.
@@ -81,7 +86,12 @@ namespace TipAndTaxCalculator
         /// <returns>The discount amount to be applied to the transaction. The value is 5% of the specified amount.</returns>
         decimal CalculateDinersCardDiscountOn(decimal thisAmount)
         {
-            return thisAmount * 0.05m;
+            decimal discount = 0;
+            if (DiscountDCCheckBox.Checked)
+            {
+                discount = thisAmount * 0.05m;
+            }
+            return discount;
         }
         /// <summary>
         /// Calculates the tax amount for the specified monetary value using a fixed tax rate.
@@ -128,22 +138,24 @@ namespace TipAndTaxCalculator
             decimal originalAmount = 0;
             decimal totalDiscount = 0;
             decimal tax = 0;
+            decimal subTotal = 0;
             decimal tip = 0;
             decimal amountDue = 0;
             int padding = 15;
             if (AllFeildsValid())
             {
                 originalAmount = decimal.Parse(DollarAmountTextBox.Text);
-                totalDiscount += CalculateAAADiscountOn(originalAmount);// TODO check checkbox
-                totalDiscount += CalculateDinersCardDiscountOn(originalAmount);// TODO check checkbox
+                totalDiscount += CalculateAAADiscountOn(originalAmount);
+                totalDiscount += CalculateDinersCardDiscountOn(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
-                tip = CalculateTipOn(originalAmount - totalDiscount + tax);
+                subTotal = (originalAmount - totalDiscount) + tax;
+                tip = CalculateTipOn((originalAmount - totalDiscount) + tax);
                 amountDue = originalAmount - totalDiscount + tax + tip;
 
                 DisplayLabel.Text = $"Charges:    {originalAmount:C}\n" +
                                     $"Discount:   {totalDiscount:C}\n" +
                                     $"Sales Tax:  {tax:C}\n" +
-                                    $"Subtotal:   ??\n" +
+                                    $"Subtotal:   {subTotal:C}\n" +
                                     $"Tip:        {tip:C}\n" +
                                     $"Total:      {amountDue:C}";
             }
