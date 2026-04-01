@@ -140,13 +140,12 @@ namespace TipAndTaxCalculator
                 tip = CalculateTipOn(originalAmount - totalDiscount + tax);
                 amountDue = originalAmount - totalDiscount + tax + tip;
 
-                //TODO refactor per Luke
-                DisplayLabel.Text = "Charges:".PadRight(padding) + $"{originalAmount.ToString("C")}\n" +
-                "Discount:".PadRight(padding) + $"{totalDiscount.ToString("C")}\n" +
-                "Sales Tax:".PadRight(padding) + $"{tax.ToString("C")}\n" +
-                "Subtotal:".PadRight(padding) + $"??\n" +
-                "Tip:".PadRight(padding) + $"{tip.ToString("C")}\n" +
-                "Total:".PadRight(padding) + $"{amountDue.ToString("C")}";
+                DisplayLabel.Text = $"Charges:    {originalAmount:C}\n" +
+                                    $"Discount:   {totalDiscount:C}\n" +
+                                    $"Sales Tax:  {tax:C}\n" +
+                                    $"Subtotal:   ??\n" +
+                                    $"Tip:        {tip:C}\n" +
+                                    $"Total:      {amountDue:C}";
             }
         
 

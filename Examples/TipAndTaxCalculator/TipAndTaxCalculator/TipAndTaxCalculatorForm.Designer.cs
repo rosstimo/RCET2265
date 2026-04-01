@@ -99,7 +99,7 @@
             // 
             // DisplayLabel
             // 
-            DisplayLabel.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayLabel.Font = new Font("Consolas", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayLabel.Location = new Point(528, 36);
             DisplayLabel.Margin = new Padding(4, 0, 4, 0);
             DisplayLabel.Name = "DisplayLabel";
