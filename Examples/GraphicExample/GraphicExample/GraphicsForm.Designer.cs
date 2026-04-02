@@ -28,12 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.BackColor = SystemColors.ActiveCaption;
+            pictureBox1.Location = new Point(20, 60);
+            pictureBox1.Margin = new Padding(5, 6, 5, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(971, 350);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // GraphicsForm
+            // 
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1016, 496);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(5, 6, 5, 6);
+            MinimumSize = new Size(400, 400);
+            Name = "GraphicsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
     }
 }
