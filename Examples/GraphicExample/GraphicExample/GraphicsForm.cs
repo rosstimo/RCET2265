@@ -1,8 +1,8 @@
 namespace GraphicExample
 {
-    public partial class Form1 : Form
+    public partial class GraphicsForm : Form
     {
-        public Form1()
+        public GraphicsForm()
         {
             InitializeComponent();
         }
