@@ -39,6 +39,14 @@ namespace GraphicExample
 
         }
 
+        //rectangle
+        
+        //text
+
+        //image
+
+
+
 
 
         //Event Handlers --------------------------------------------------------------
