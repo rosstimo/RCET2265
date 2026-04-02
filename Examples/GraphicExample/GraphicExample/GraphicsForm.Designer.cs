@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             DisplayPictureBox = new PictureBox();
+            DrawButton = new Button();
+            ExitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +45,33 @@
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
             // 
+            // DrawButton
+            // 
+            DrawButton.Location = new Point(736, 444);
+            DrawButton.Name = "DrawButton";
+            DrawButton.Size = new Size(131, 40);
+            DrawButton.TabIndex = 1;
+            DrawButton.Text = "&Draw";
+            DrawButton.UseVisualStyleBackColor = true;
+            DrawButton.Click += DrawButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(873, 444);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(131, 40);
+            ExitButton.TabIndex = 2;
+            ExitButton.Text = "E&xit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // GraphicsForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1016, 496);
+            Controls.Add(ExitButton);
+            Controls.Add(DrawButton);
             Controls.Add(DisplayPictureBox);
             Margin = new Padding(5, 6, 5, 6);
             MinimumSize = new Size(400, 400);
@@ -61,5 +85,7 @@
         #endregion
 
         private PictureBox DisplayPictureBox;
+        private Button DrawButton;
+        private Button ExitButton;
     }
 }
