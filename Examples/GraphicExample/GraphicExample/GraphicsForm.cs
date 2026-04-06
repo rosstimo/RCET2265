@@ -40,8 +40,60 @@ namespace GraphicExample
         }
 
         //rectangle
+        void DrawRectangle()
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            Pen thePen = new Pen(Color.Red);
+
+            g.DrawRectangle(thePen, 100, 100, 200, 200);
+
+            //free up resources
+            g.Dispose();
+            thePen.Dispose();
+        }
+
+        void DrawPie()
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            Pen thePen = new Pen(Color.Yellow);
+            SolidBrush theBrush = new SolidBrush(Color.Violet);
+            Rectangle bounds = new Rectangle(100, 100, 200, 200);
+
+            // g.DrawPie(thePen, bounds, 0, 45);
+            g.FillPie(theBrush, bounds, 0, 120);
+            theBrush.Color = Color.Blue;
+            g.FillPie(theBrush, bounds, 120, 120);
+            theBrush.Color = Color.Yellow;
+            g.FillPie(theBrush, bounds, 240, 120);
+
+            //free up resources
+            g.Dispose();
+            thePen.Dispose();
+        }
+
         
         //text
+        void DrawText()
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            SolidBrush theBrush = new SolidBrush(Color.Black);
+            Font theFont = new Font("Arial", 12);
+            Rectangle bounds = new Rectangle(300, 100, 200, 200);
+
+            //g.DrawString("Hello!",theFont, theBrush, 0, DisplayPictureBox.Height / 2);
+            g.DrawString("Hello!, Ladies and gentleman of the ages!!! This is a long line of text...",theFont, theBrush, bounds);
+
+            //free up resources
+            g.Dispose();
+            theBrush.Dispose();
+            theFont.Dispose();
+        }
 
         //image
 
@@ -59,6 +111,9 @@ namespace GraphicExample
         {
             DrawLine();
             DrawEllipse();
+            DrawRectangle();
+            DrawPie();
+            DrawText();
         }
     }
 }
