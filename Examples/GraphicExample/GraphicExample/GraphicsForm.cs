@@ -6,8 +6,27 @@ namespace GraphicExample
         public GraphicsForm()
         {
             InitializeComponent();
+            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
         }
         
+        int oldX, oldY;
+        void DrawLineSegment(int newX, int newY)
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            Pen thePen = new Pen(Color.Black);
+            //draw the line here
+            g.DrawLine(thePen, oldX, oldY, newX,newY);
+            oldX = newX;
+            oldY = newY;    
+
+            //free up resources
+            g.Dispose();
+            thePen.Dispose();
+
+        }
+
         void DrawLine()
         {
             //create a Graphics object named g that draws on the picture box
@@ -130,5 +149,11 @@ namespace GraphicExample
             DrawText();
             DrawImage();
         }
+        private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
+        {
+            this.Text = $"({e.X},{e.Y})";
+            DrawLineSegment(e.X,e.Y);
+        }
+        //TODO only draw when holding left mouse button
     }
 }
