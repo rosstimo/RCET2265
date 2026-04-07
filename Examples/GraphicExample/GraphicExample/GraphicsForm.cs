@@ -1,3 +1,4 @@
+using System.Drawing;
 namespace GraphicExample
 {
     public partial class GraphicsForm : Form
@@ -96,6 +97,19 @@ namespace GraphicExample
         }
 
         //image
+        void DrawImage()
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // Create image.
+            Image theImage = Image.FromFile("..\\..\\..\\grumpy_cat.png"); 
+            Rectangle bounds = new Rectangle(10, 10, theImage.Width/2, theImage.Height/2);
+            //g.DrawImage(theImage, 10,10 ); //Draw full size 
+            g.DrawImage(theImage, bounds); //Fills rectangle
+            //free up resources
+            g.Dispose();
+            theImage.Dispose();
+        }
 
 
 
@@ -114,6 +128,7 @@ namespace GraphicExample
             DrawRectangle();
             DrawPie();
             DrawText();
+            DrawImage();
         }
     }
 }
