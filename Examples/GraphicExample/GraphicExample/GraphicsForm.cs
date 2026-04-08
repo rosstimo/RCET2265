@@ -134,9 +134,6 @@ namespace GraphicExample
         }
 
 
-
-
-
         //Event Handlers --------------------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
