@@ -6,9 +6,13 @@ namespace GraphicExample
         public GraphicsForm()
         {
             InitializeComponent();
-            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
+            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
+            //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
+            DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
-        
+
+
+
         int oldX, oldY;
         void DrawLineSegment(int newX, int newY)
         {
@@ -18,8 +22,7 @@ namespace GraphicExample
             Pen thePen = new Pen(Color.Black);
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX,newY);
-            oldX = newX;
-            oldY = newY;    
+   
 
             //free up resources
             g.Dispose();
@@ -149,11 +152,36 @@ namespace GraphicExample
             DrawText();
             DrawImage();
         }
-        private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
+        private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
-            this.Text = $"({e.X},{e.Y})";
-            DrawLineSegment(e.X,e.Y);
+            this.Text = $"({e.X},{e.Y}) {e.Button}";
+            switch (e.Button)
+            {   
+                case MouseButtons.Left:
+                    DrawLineSegment(e.X,e.Y);
+                    break;
+                case MouseButtons.Right:
+                    // Save for context menu
+                    break;
+                case MouseButtons.Middle:
+                    //TODO open color picker dialogue
+                    PenColorDialog.ShowDialog();
+                    break;
+                default:
+                    //MessageBox.Show($"{e.Button}");
+                    break;
+            }
+                    //update last position on every move
+                    this.oldX = e.X;
+                    this.oldY = e.Y;
         }
         //TODO only draw when holding left mouse button
+        //private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
+        //{
+        //    this.Text += $"{e.Button}";
+
+        //    //PenColorDialog.ShowDialog();
+
+        //}
     }
 }
