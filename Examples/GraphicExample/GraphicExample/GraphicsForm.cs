@@ -140,6 +140,30 @@ namespace GraphicExample
 
         }
 
+        void DrawSinWave()
+        {
+            //create a Graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            // create a pen to draw with
+            Pen thePen = new Pen(Color.Blue);
+            int lastX = 0, lastY = 0, currentY = 0;
+            for (int currentX = 0; currentX < 360; currentX++)
+            {
+                //TODO convert degrees to radians
+                currentY = (int)(Math.Round(100 * Math.Sin(currentX))); //cast as int may be a problem here
+                g.DrawLine(thePen, lastX, lastY, currentX, currentY);
+                lastX = currentX;
+                lastY = currentY;
+                
+
+            }
+
+
+            //free up resources
+            g.Dispose();
+            thePen.Dispose();
+        }
+
         //Event Handlers --------------------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -148,12 +172,13 @@ namespace GraphicExample
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            DrawLine();
-            DrawEllipse();
-            DrawRectangle();
-            DrawPie();
-            DrawText();
-            DrawImage();
+            //DrawLine();
+            //DrawEllipse();
+            //DrawRectangle();
+            //DrawPie();
+            //DrawText();
+            //DrawImage();
+            DrawSinWave();
         }
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
