@@ -7,7 +7,6 @@ namespace GraphicExample
         {
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
-            //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
 
@@ -178,13 +177,5 @@ namespace GraphicExample
                     this.oldX = e.X;
                     this.oldY = e.Y;
         }
-        //TODO only draw when holding left mouse button
-        //private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
-        //{
-        //    this.Text += $"{e.Button}";
-
-        //    //PenColorDialog.ShowDialog();
-
-        //}
     }
 }
