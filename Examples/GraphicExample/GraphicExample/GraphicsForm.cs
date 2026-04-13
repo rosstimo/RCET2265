@@ -232,3 +232,8 @@ namespace GraphicExample
         }
     }
 }
+//TODO add clear button
+//anchor buttons
+//change background color
+//add top menu
+//add context menu
