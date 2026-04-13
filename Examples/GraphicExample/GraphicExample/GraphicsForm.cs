@@ -147,10 +147,17 @@ namespace GraphicExample
             // create a pen to draw with
             Pen thePen = new Pen(Color.Blue);
             int lastX = 0, lastY = 0, currentY = 0;
+            float scaleX = DisplayPictureBox.Width / 360F;
+            float scaleY = DisplayPictureBox.Height / 200F;
+
+            g.TranslateTransform(0, DisplayPictureBox.Height / 2);
+
+            g.ScaleTransform(scaleX, scaleY);
+
             for (int currentX = 0; currentX < 360; currentX++)
             {
                 //TODO convert degrees to radians
-                currentY = (int)(Math.Round(100 * Math.Sin(currentX))); //cast as int may be a problem here
+                currentY = (int)(Math.Round(100 * Math.Sin((Math.PI / 180) * currentX))); //cast as int may be a problem here
                 g.DrawLine(thePen, lastX, lastY, currentX, currentY);
                 lastX = currentX;
                 lastY = currentY;
