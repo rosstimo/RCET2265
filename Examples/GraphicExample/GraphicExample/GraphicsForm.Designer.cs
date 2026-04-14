@@ -32,7 +32,15 @@
             DrawButton = new Button();
             ExitButton = new Button();
             PenColorDialog = new ColorDialog();
+            TopMenuStrip = new MenuStrip();
+            FileTopMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
+            AboutTopMenuItem = new ToolStripMenuItem();
+            DrawTopMenuItem = new ToolStripMenuItem();
+            ClearTopMenuItem = new ToolStripMenuItem();
+            ExitTopMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
+            TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayPictureBox
@@ -66,6 +74,54 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // TopMenuStrip
+            // 
+            TopMenuStrip.ImageScalingSize = new Size(28, 28);
+            TopMenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, HelpTopMenuItem });
+            TopMenuStrip.Location = new Point(0, 0);
+            TopMenuStrip.Name = "TopMenuStrip";
+            TopMenuStrip.Size = new Size(1016, 38);
+            TopMenuStrip.TabIndex = 3;
+            TopMenuStrip.Text = "menuStrip1";
+            // 
+            // FileTopMenuItem
+            // 
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { DrawTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
+            FileTopMenuItem.Name = "FileTopMenuItem";
+            FileTopMenuItem.Size = new Size(62, 34);
+            FileTopMenuItem.Text = "&File";
+            // 
+            // HelpTopMenuItem
+            // 
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
+            HelpTopMenuItem.Name = "HelpTopMenuItem";
+            HelpTopMenuItem.Size = new Size(74, 34);
+            HelpTopMenuItem.Text = "&Help";
+            // 
+            // AboutTopMenuItem
+            // 
+            AboutTopMenuItem.Name = "AboutTopMenuItem";
+            AboutTopMenuItem.Size = new Size(315, 40);
+            AboutTopMenuItem.Text = "&About";
+            // 
+            // DrawTopMenuItem
+            // 
+            DrawTopMenuItem.Name = "DrawTopMenuItem";
+            DrawTopMenuItem.Size = new Size(315, 40);
+            DrawTopMenuItem.Text = "&Draw";
+            // 
+            // ClearTopMenuItem
+            // 
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(315, 40);
+            ClearTopMenuItem.Text = "&Clear";
+            // 
+            // ExitTopMenuItem
+            // 
+            ExitTopMenuItem.Name = "ExitTopMenuItem";
+            ExitTopMenuItem.Size = new Size(315, 40);
+            ExitTopMenuItem.Text = "E&xit";
+            // 
             // GraphicsForm
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -74,13 +130,18 @@
             Controls.Add(ExitButton);
             Controls.Add(DrawButton);
             Controls.Add(DisplayPictureBox);
+            Controls.Add(TopMenuStrip);
+            MainMenuStrip = TopMenuStrip;
             Margin = new Padding(5, 6, 5, 6);
             MinimumSize = new Size(400, 400);
             Name = "GraphicsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Graphics Example";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            TopMenuStrip.ResumeLayout(false);
+            TopMenuStrip.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -89,5 +150,12 @@
         private Button DrawButton;
         private Button ExitButton;
         private ColorDialog PenColorDialog;
+        private MenuStrip TopMenuStrip;
+        private ToolStripMenuItem FileTopMenuItem;
+        private ToolStripMenuItem DrawTopMenuItem;
+        private ToolStripMenuItem ClearTopMenuItem;
+        private ToolStripMenuItem ExitTopMenuItem;
+        private ToolStripMenuItem HelpTopMenuItem;
+        private ToolStripMenuItem AboutTopMenuItem;
     }
 }
