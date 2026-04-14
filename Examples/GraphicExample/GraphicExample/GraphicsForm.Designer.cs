@@ -32,7 +32,7 @@
             DisplayPictureBox = new PictureBox();
             DisplayContextMenuStrip = new ContextMenuStrip(components);
             drawContextMenuItem = new ToolStripMenuItem();
-            clearContextMenuItem = new ToolStripMenuItem();
+            ClearContextMenuItem = new ToolStripMenuItem();
             colorToolStripMenuItem = new ToolStripMenuItem();
             penContextMenuItem = new ToolStripMenuItem();
             backGroundContextMenuItem = new ToolStripMenuItem();
@@ -69,7 +69,7 @@
             // DisplayContextMenuStrip
             // 
             DisplayContextMenuStrip.ImageScalingSize = new Size(28, 28);
-            DisplayContextMenuStrip.Items.AddRange(new ToolStripItem[] { drawContextMenuItem, clearContextMenuItem, colorToolStripMenuItem, PenSizeContextMenuItem });
+            DisplayContextMenuStrip.Items.AddRange(new ToolStripItem[] { drawContextMenuItem, ClearContextMenuItem, colorToolStripMenuItem, PenSizeContextMenuItem });
             DisplayContextMenuStrip.Name = "DisplayContextMenuStrip";
             DisplayContextMenuStrip.Size = new Size(164, 148);
             // 
@@ -79,11 +79,11 @@
             drawContextMenuItem.Size = new Size(163, 36);
             drawContextMenuItem.Text = "Draw";
             // 
-            // clearContextMenuItem
+            // ClearContextMenuItem
             // 
-            clearContextMenuItem.Name = "clearContextMenuItem";
-            clearContextMenuItem.Size = new Size(163, 36);
-            clearContextMenuItem.Text = "Clear";
+            ClearContextMenuItem.Name = "ClearContextMenuItem";
+            ClearContextMenuItem.Size = new Size(163, 36);
+            ClearContextMenuItem.Text = "Clear";
             // 
             // colorToolStripMenuItem
             // 
@@ -195,6 +195,7 @@
             CLearButton.TabIndex = 4;
             CLearButton.Text = "&Clear";
             CLearButton.UseVisualStyleBackColor = true;
+            CLearButton.Click += Clear_Click;
             // 
             // GraphicsForm
             // 
@@ -235,7 +236,7 @@
         private ToolStripMenuItem AboutTopMenuItem;
         private ContextMenuStrip DisplayContextMenuStrip;
         private ToolStripMenuItem drawContextMenuItem;
-        private ToolStripMenuItem clearContextMenuItem;
+        private ToolStripMenuItem ClearContextMenuItem;
         private ToolStripMenuItem colorToolStripMenuItem;
         private ToolStripMenuItem penContextMenuItem;
         private ToolStripMenuItem backGroundContextMenuItem;

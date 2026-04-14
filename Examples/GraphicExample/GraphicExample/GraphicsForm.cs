@@ -8,6 +8,10 @@ namespace GraphicExample
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
+            ClearTopMenuItem.Click += Clear_Click;
+            ClearContextMenuItem.Click += Clear_Click;
+
+
         }
 
         int oldX, oldY;
@@ -18,7 +22,7 @@ namespace GraphicExample
             // create a pen to draw with
             Pen thePen = new Pen(this.PenColor);
             //draw the line here
-            g.DrawLine(thePen, oldX, oldY, newX,newY);
+            g.DrawLine(thePen, oldX, oldY, newX, newY);
 
             //free up resources
             g.Dispose();
@@ -34,7 +38,7 @@ namespace GraphicExample
             Pen thePen = new Pen(Color.Black);
             thePen.Width = 10;
             //draw the line here
-            g.DrawLine(thePen,0,0,DisplayPictureBox.Width,DisplayPictureBox.Height);
+            g.DrawLine(thePen, 0, 0, DisplayPictureBox.Width, DisplayPictureBox.Height);
 
             //free up resources
             g.Dispose();
@@ -49,7 +53,7 @@ namespace GraphicExample
             // create a pen to draw with
             Pen thePen = new Pen(Color.Lime);
             thePen.Width = 5;
-           
+
             g.DrawEllipse(thePen, 0, 0, 100, 100);
 
             //free up resources
@@ -94,7 +98,7 @@ namespace GraphicExample
             thePen.Dispose();
         }
 
-        
+
         //text
         void DrawText()
         {
@@ -106,7 +110,7 @@ namespace GraphicExample
             Rectangle bounds = new Rectangle(300, 100, 200, 200);
 
             //g.DrawString("Hello!",theFont, theBrush, 0, DisplayPictureBox.Height / 2);
-            g.DrawString("Hello!, Ladies and gentleman of the ages!!! This is a long line of text...",theFont, theBrush, bounds);
+            g.DrawString("Hello!, Ladies and gentleman of the ages!!! This is a long line of text...", theFont, theBrush, bounds);
 
             //free up resources
             g.Dispose();
@@ -120,8 +124,8 @@ namespace GraphicExample
             //create a Graphics object named g that draws on the picture box
             Graphics g = DisplayPictureBox.CreateGraphics();
             // Create image.
-            Image theImage = Image.FromFile("..\\..\\..\\grumpy_cat.png"); 
-            Rectangle bounds = new Rectangle(10, 10, theImage.Width/2, theImage.Height/2);
+            Image theImage = Image.FromFile("..\\..\\..\\grumpy_cat.png");
+            Rectangle bounds = new Rectangle(10, 10, theImage.Width / 2, theImage.Height / 2);
             //g.DrawImage(theImage, 10,10 ); //Draw full size 
             g.DrawImage(theImage, bounds); //Fills rectangle
             //free up resources
@@ -153,7 +157,7 @@ namespace GraphicExample
             for (int currentX = 0; currentX < 360; currentX++)
             {
                 //TODO convert degrees to radians
-                currentY = (int)(Math.Round(100 * Math.Sin((Math.PI / 180) * currentX))); 
+                currentY = (int)(Math.Round(100 * Math.Sin((Math.PI / 180) * currentX)));
                 g.DrawLine(thePen, lastX, lastY, currentX, currentY);
                 lastX = currentX;
                 lastY = currentY;
@@ -209,9 +213,9 @@ namespace GraphicExample
         {
             this.Text = $"({e.X},{e.Y}) {e.Button}";
             switch (e.Button)
-            {   
+            {
                 case MouseButtons.Left:
-                    DrawLineSegment(e.X,e.Y);
+                    DrawLineSegment(e.X, e.Y);
                     break;
                 case MouseButtons.Right:
                     // Save for context menu
@@ -223,17 +227,22 @@ namespace GraphicExample
                     //MessageBox.Show($"{e.Button}");
                     break;
             }
-                    //update last position on every move
-                    this.oldX = e.X;
-                    this.oldY = e.Y;
+            //update last position on every move
+            this.oldX = e.X;
+            this.oldY = e.Y;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+           DisplayPictureBox.Refresh();
         }
     }
 }
 //TODO
-//[ ] add clear button
-//[ ] anchor buttons
+//[x] add clear button
+//[x] anchor buttons
 //[ ] change background color
-//[ ] add top menu
-//[ ] add context menu
+//[x] add top menu
+//[x] add context menu
 //[ ] change pen size
 //[ ] display coords, color(s), size in status strip
