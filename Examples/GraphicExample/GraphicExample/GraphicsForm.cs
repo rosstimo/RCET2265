@@ -10,8 +10,6 @@ namespace GraphicExample
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
 
-
-
         int oldX, oldY;
         void DrawLineSegment(int newX, int newY)
         {
@@ -21,7 +19,6 @@ namespace GraphicExample
             Pen thePen = new Pen(this.PenColor);
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX,newY);
-   
 
             //free up resources
             g.Dispose();
