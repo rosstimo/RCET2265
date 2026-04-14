@@ -229,8 +229,11 @@ namespace GraphicExample
         }
     }
 }
-//TODO add clear button
-//anchor buttons
-//change background color
-//add top menu
-//add context menu
+//TODO
+//[ ] add clear button
+//[ ] anchor buttons
+//[ ] change background color
+//[ ] add top menu
+//[ ] add context menu
+//[ ] change pen size
+//[ ] display coords, color(s), size in status strip
