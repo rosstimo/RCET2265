@@ -119,7 +119,7 @@
             // DrawButton
             // 
             DrawButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DrawButton.Location = new Point(599, 444);
+            DrawButton.Location = new Point(586, 419);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(131, 40);
             DrawButton.TabIndex = 1;
@@ -130,7 +130,7 @@
             // ExitButton
             // 
             ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ExitButton.Location = new Point(873, 444);
+            ExitButton.Location = new Point(860, 419);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(131, 40);
             ExitButton.TabIndex = 2;
@@ -189,7 +189,7 @@
             // CLearButton
             // 
             CLearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            CLearButton.Location = new Point(736, 444);
+            CLearButton.Location = new Point(723, 419);
             CLearButton.Name = "CLearButton";
             CLearButton.Size = new Size(131, 40);
             CLearButton.TabIndex = 4;
@@ -208,7 +208,7 @@
             Controls.Add(TopMenuStrip);
             MainMenuStrip = TopMenuStrip;
             Margin = new Padding(5, 6, 5, 6);
-            MinimumSize = new Size(400, 400);
+            MinimumSize = new Size(500, 500);
             Name = "GraphicsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Graphics Example";
