@@ -14,13 +14,18 @@ namespace GraphicExample
 
         }
 
-        int oldX, oldY;
+        private Color PenColor = Color.Black;
+        private Color backGround = Color.White;
+        private int penSize = 1;
+        private int oldX, oldY;
+
         void DrawLineSegment(int newX, int newY)
         {
             //create a Graphics object named g that draws on the picture box
             Graphics g = DisplayPictureBox.CreateGraphics();
             // create a pen to draw with
             Pen thePen = new Pen(this.PenColor);
+            thePen.Width = this.penSize;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
 
@@ -133,7 +138,7 @@ namespace GraphicExample
             theImage.Dispose();
         }
 
-        private Color PenColor = Color.Black;
+        
         void UpdatePenColor()
         {
             PenColorDialog.ShowDialog();
