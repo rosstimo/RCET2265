@@ -243,7 +243,7 @@ namespace GraphicExample
         }
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
-            this.Text = $"({e.X},{e.Y}) {e.Button}";
+            DrawingStatusLabel.Text = $"({e.X.ToString().PadLeft(4)},{e.Y.ToString().PadLeft(4)}) | {e.Button} | Pen: {this.PenColor.Name.ToString()} | BG: {this.backGroundColor.Name.ToString()} | Size: {this.penSize}px";
             switch (e.Button)
             {
                 case MouseButtons.Left:
@@ -290,4 +290,6 @@ namespace GraphicExample
 //[x] add top menu
 //[x] add context menu
 //[x] change pen size
-//[ ] display coords, color(s), size in status strip
+//[x] display coords, color(s), size in status strip
+//[ ] add about form
+//[ ] add splash screen form
