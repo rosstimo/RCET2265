@@ -10,12 +10,14 @@ namespace GraphicExample
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
             ClearTopMenuItem.Click += Clear_Click;
             ClearContextMenuItem.Click += Clear_Click;
-
+            PenContextMenuItem.Click += PenColor_Click;
+            BackGroundContextMenuItem.Click += BackGroundContextMenuItem_Click;
 
         }
 
+
         private Color PenColor = Color.Black;
-        private Color backGround = Color.White;
+        private Color backGroundColor = Color.White;
         private int penSize = 1;
         private int oldX, oldY;
 
@@ -146,6 +148,14 @@ namespace GraphicExample
 
         }
 
+        void UpdateBackGroundColor()
+        {
+            PenColorDialog.ShowDialog();
+            this.backGroundColor = PenColorDialog.Color;
+            DisplayPictureBox.BackColor = this.backGroundColor;
+        }
+
+
         void DrawSinWave()
         {
             //create a Graphics object named g that draws on the picture box
@@ -241,12 +251,21 @@ namespace GraphicExample
         {
            DisplayPictureBox.Refresh();
         }
+        private void PenColor_Click(object? sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
+        private void BackGroundContextMenuItem_Click(object? sender, EventArgs e)
+        {
+            UpdateBackGroundColor();
+        }
+
     }
 }
 //TODO
 //[x] add clear button
 //[x] anchor buttons
-//[ ] change background color
+//[x] change background color
 //[x] add top menu
 //[x] add context menu
 //[ ] change pen size

@@ -34,8 +34,8 @@
             drawContextMenuItem = new ToolStripMenuItem();
             ClearContextMenuItem = new ToolStripMenuItem();
             colorToolStripMenuItem = new ToolStripMenuItem();
-            penContextMenuItem = new ToolStripMenuItem();
-            backGroundContextMenuItem = new ToolStripMenuItem();
+            PenContextMenuItem = new ToolStripMenuItem();
+            BackGroundContextMenuItem = new ToolStripMenuItem();
             PenSizeContextMenuItem = new ToolStripMenuItem();
             PenSizeComboBox = new ToolStripComboBox();
             DrawButton = new Button();
@@ -71,44 +71,44 @@
             DisplayContextMenuStrip.ImageScalingSize = new Size(28, 28);
             DisplayContextMenuStrip.Items.AddRange(new ToolStripItem[] { drawContextMenuItem, ClearContextMenuItem, colorToolStripMenuItem, PenSizeContextMenuItem });
             DisplayContextMenuStrip.Name = "DisplayContextMenuStrip";
-            DisplayContextMenuStrip.Size = new Size(164, 148);
+            DisplayContextMenuStrip.Size = new Size(271, 186);
             // 
             // drawContextMenuItem
             // 
             drawContextMenuItem.Name = "drawContextMenuItem";
-            drawContextMenuItem.Size = new Size(163, 36);
+            drawContextMenuItem.Size = new Size(270, 36);
             drawContextMenuItem.Text = "Draw";
             // 
             // ClearContextMenuItem
             // 
             ClearContextMenuItem.Name = "ClearContextMenuItem";
-            ClearContextMenuItem.Size = new Size(163, 36);
+            ClearContextMenuItem.Size = new Size(270, 36);
             ClearContextMenuItem.Text = "Clear";
             // 
             // colorToolStripMenuItem
             // 
-            colorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { penContextMenuItem, backGroundContextMenuItem });
+            colorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PenContextMenuItem, BackGroundContextMenuItem });
             colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            colorToolStripMenuItem.Size = new Size(163, 36);
+            colorToolStripMenuItem.Size = new Size(270, 36);
             colorToolStripMenuItem.Text = "Color";
             // 
-            // penContextMenuItem
+            // PenContextMenuItem
             // 
-            penContextMenuItem.Name = "penContextMenuItem";
-            penContextMenuItem.Size = new Size(243, 40);
-            penContextMenuItem.Text = "Pen";
+            PenContextMenuItem.Name = "PenContextMenuItem";
+            PenContextMenuItem.Size = new Size(315, 40);
+            PenContextMenuItem.Text = "Pen";
             // 
-            // backGroundContextMenuItem
+            // BackGroundContextMenuItem
             // 
-            backGroundContextMenuItem.Name = "backGroundContextMenuItem";
-            backGroundContextMenuItem.Size = new Size(243, 40);
-            backGroundContextMenuItem.Text = "BackGround";
+            BackGroundContextMenuItem.Name = "BackGroundContextMenuItem";
+            BackGroundContextMenuItem.Size = new Size(315, 40);
+            BackGroundContextMenuItem.Text = "BackGround";
             // 
             // PenSizeContextMenuItem
             // 
             PenSizeContextMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PenSizeComboBox });
             PenSizeContextMenuItem.Name = "PenSizeContextMenuItem";
-            PenSizeContextMenuItem.Size = new Size(163, 36);
+            PenSizeContextMenuItem.Size = new Size(270, 36);
             PenSizeContextMenuItem.Text = "Pen Size";
             // 
             // PenSizeComboBox
@@ -238,8 +238,8 @@
         private ToolStripMenuItem drawContextMenuItem;
         private ToolStripMenuItem ClearContextMenuItem;
         private ToolStripMenuItem colorToolStripMenuItem;
-        private ToolStripMenuItem penContextMenuItem;
-        private ToolStripMenuItem backGroundContextMenuItem;
+        private ToolStripMenuItem PenContextMenuItem;
+        private ToolStripMenuItem BackGroundContextMenuItem;
         private ToolStripMenuItem PenSizeContextMenuItem;
         private ToolStripComboBox PenSizeComboBox;
         private Button CLearButton;
