@@ -65,7 +65,7 @@
             DisplayPictureBox.Location = new Point(20, 48);
             DisplayPictureBox.Margin = new Padding(5);
             DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(971, 280);
+            DisplayPictureBox.Size = new Size(971, 296);
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
             // 
@@ -122,7 +122,7 @@
             // DrawButton
             // 
             DrawButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DrawButton.Location = new Point(586, 335);
+            DrawButton.Location = new Point(586, 351);
             DrawButton.Margin = new Padding(3, 2, 3, 2);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(131, 32);
@@ -134,7 +134,7 @@
             // ExitButton
             // 
             ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ExitButton.Location = new Point(860, 335);
+            ExitButton.Location = new Point(860, 351);
             ExitButton.Margin = new Padding(3, 2, 3, 2);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(131, 32);
@@ -194,7 +194,7 @@
             // CLearButton
             // 
             CLearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            CLearButton.Location = new Point(723, 335);
+            CLearButton.Location = new Point(723, 351);
             CLearButton.Margin = new Padding(3, 2, 3, 2);
             CLearButton.Name = "CLearButton";
             CLearButton.Size = new Size(131, 32);
@@ -208,7 +208,7 @@
             BottomStatusStrip.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BottomStatusStrip.ImageScalingSize = new Size(28, 28);
             BottomStatusStrip.Items.AddRange(new ToolStripItem[] { DrawingStatusLabel });
-            BottomStatusStrip.Location = new Point(0, 364);
+            BottomStatusStrip.Location = new Point(0, 399);
             BottomStatusStrip.Name = "BottomStatusStrip";
             BottomStatusStrip.Size = new Size(1016, 33);
             BottomStatusStrip.TabIndex = 5;
@@ -224,7 +224,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1016, 397);
+            ClientSize = new Size(1016, 432);
             Controls.Add(BottomStatusStrip);
             Controls.Add(CLearButton);
             Controls.Add(ExitButton);
