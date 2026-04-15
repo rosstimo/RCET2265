@@ -6,14 +6,23 @@ namespace GraphicExample
         public GraphicsForm()
         {
             InitializeComponent();
+            // map event handlers
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
             ClearTopMenuItem.Click += Clear_Click;
             ClearContextMenuItem.Click += Clear_Click;
             PenContextMenuItem.Click += PenColor_Click;
             BackGroundContextMenuItem.Click += BackGroundContextMenuItem_Click;
-
+            PenSizeComboBox.SelectedIndexChanged += PenSizeComboBox_SelectedIndexChanged;
+            //populate pen size combobox
+            PenSizeComboBox.Items.Add(1);
+            PenSizeComboBox.Items.Add(2);
+            PenSizeComboBox.Items.Add(3);
+            PenSizeComboBox.Items.Add(5);
+            PenSizeComboBox.Items.Add(10);
+            PenSizeComboBox.SelectedIndex = 0;
         }
+
 
 
         private Color PenColor = Color.Black;
@@ -155,6 +164,11 @@ namespace GraphicExample
             DisplayPictureBox.BackColor = this.backGroundColor;
         }
 
+        void UpdatePenSize()
+        {
+            this.penSize = int.Parse(PenSizeComboBox.SelectedItem.ToString());
+        }
+
 
         void DrawSinWave()
         {
@@ -187,6 +201,8 @@ namespace GraphicExample
             DisplayPictureBox.Refresh();
             Color oldColor = this.PenColor;
             this.PenColor = Color.Gray;
+            int oldPenSize = this.penSize;
+            this.penSize = 1;
             int xDiv = DisplayPictureBox.Width / 10;
             int yDiv = DisplayPictureBox.Height / 8;
 
@@ -205,6 +221,7 @@ namespace GraphicExample
                 DrawLineSegment(DisplayPictureBox.Width, y);
             }
             this.PenColor = oldColor;
+            this.penSize = oldPenSize;
         }
 
         //Event Handlers --------------------------------------------------------------
@@ -259,6 +276,10 @@ namespace GraphicExample
         {
             UpdateBackGroundColor();
         }
+        private void PenSizeComboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            UpdatePenSize();
+        }
 
     }
 }
@@ -268,5 +289,5 @@ namespace GraphicExample
 //[x] change background color
 //[x] add top menu
 //[x] add context menu
-//[ ] change pen size
+//[x] change pen size
 //[ ] display coords, color(s), size in status strip
