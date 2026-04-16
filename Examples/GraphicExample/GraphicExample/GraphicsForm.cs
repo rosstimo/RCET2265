@@ -5,7 +5,9 @@ namespace GraphicExample
     {
         public GraphicsForm()
         {
-            InitializeComponent();
+            ShowSplashForm(); // Show the splash form before initializing the main form
+            InitializeComponent(); // Initialize the main form components
+
             // map event handlers
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
@@ -29,6 +31,14 @@ namespace GraphicExample
         private Color backGroundColor = Color.White;
         private int penSize = 1;
         private int oldX, oldY;
+
+        private void ShowSplashForm()
+        {
+            SplashForm splashForm = new SplashForm(); // instantiate the splash form
+            splashForm.Show(); // show the splash form
+            System.Threading.Thread.Sleep(3000); // keep the splash form visible for 3 seconds (3000 milliseconds)
+            splashForm.Close(); // close the splash form after the delay
+        }
 
         void DrawLineSegment(int newX, int newY)
         {
