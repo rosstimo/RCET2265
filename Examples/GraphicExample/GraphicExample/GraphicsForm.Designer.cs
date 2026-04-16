@@ -188,8 +188,9 @@
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(188, 40);
+            AboutTopMenuItem.Size = new Size(315, 40);
             AboutTopMenuItem.Text = "&About";
+            AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
             // CLearButton
             // 

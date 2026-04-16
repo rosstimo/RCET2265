@@ -149,7 +149,7 @@ namespace GraphicExample
             theImage.Dispose();
         }
 
-        
+
         void UpdatePenColor()
         {
             PenColorDialog.ShowDialog();
@@ -266,7 +266,7 @@ namespace GraphicExample
 
         private void Clear_Click(object sender, EventArgs e)
         {
-           DisplayPictureBox.Refresh();
+            DisplayPictureBox.Refresh();
         }
         private void PenColor_Click(object? sender, EventArgs e)
         {
@@ -279,6 +279,19 @@ namespace GraphicExample
         private void PenSizeComboBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             UpdatePenSize();
+        }
+
+        private void AboutTopMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm(); //instantiate the about form 
+            aboutForm.FormClosed += AboutForm_FormClosed; //map the FormClosed event to a handler
+            aboutForm.Show(); //show the about form
+            this.Hide(); // hide the main form while the about form is open
+        }
+
+        private void AboutForm_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            this.Show(); // show the main form again when the about form is closed    
         }
 
     }
