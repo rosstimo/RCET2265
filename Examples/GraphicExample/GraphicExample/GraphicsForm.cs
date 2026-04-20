@@ -36,7 +36,7 @@ namespace GraphicExample
         {
             SplashForm splashForm = new SplashForm(); // instantiate the splash form
             splashForm.Show(); // show the splash form
-            System.Threading.Thread.Sleep(3000); // keep the splash form visible for 3 seconds (3000 milliseconds)
+            System.Threading.Thread.Sleep(1000); // keep the splash form visible for 3 seconds (3000 milliseconds)
             splashForm.Close(); // close the splash form after the delay
         }
 
@@ -234,6 +234,28 @@ namespace GraphicExample
             this.penSize = oldPenSize;
         }
 
+        private void shake()
+        {
+            Random rand = new Random();
+            int shakeAmount = 100; // Adjust this value to increase/decrease the shake intensity
+            int originalX = this.Location.X;
+            int originalY = this.Location.Y;
+            //play shaker.wav from resources folder
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer("..\\..\\..\\Resources\\shaker.wav");
+                player.Play();
+
+
+            for (int i = 0; i < 10; i++) // Shake for a short duration
+            {
+                int offsetX = rand.Next(-shakeAmount, shakeAmount);
+                int offsetY = rand.Next(-shakeAmount, shakeAmount);
+                this.Location = new Point(originalX + offsetX, originalY + offsetY);
+                System.Threading.Thread.Sleep(200); // Short delay between shakes
+            }
+            // Return to original position
+            this.Location = new Point(originalX, originalY);
+        }
+
         //Event Handlers --------------------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -276,6 +298,7 @@ namespace GraphicExample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            shake();
             DisplayPictureBox.Refresh();
         }
         private void PenColor_Click(object? sender, EventArgs e)

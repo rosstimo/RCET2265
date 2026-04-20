@@ -69,5 +69,15 @@ namespace GraphicExample.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] shaker {
+            get {
+                object obj = ResourceManager.GetObject("shaker", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

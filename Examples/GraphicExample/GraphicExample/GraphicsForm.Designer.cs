@@ -239,7 +239,6 @@
             Name = "GraphicsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Graphics Example";
-            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             DisplayContextMenuStrip.ResumeLayout(false);
             TopMenuStrip.ResumeLayout(false);
