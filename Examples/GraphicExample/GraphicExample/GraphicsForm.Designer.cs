@@ -188,7 +188,7 @@
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(315, 40);
+            AboutTopMenuItem.Size = new Size(188, 40);
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
@@ -239,6 +239,7 @@
             Name = "GraphicsForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Graphics Example";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             DisplayContextMenuStrip.ResumeLayout(false);
             TopMenuStrip.ResumeLayout(false);
