@@ -63,6 +63,8 @@
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
             DisplayPictureBox = new PictureBox();
+            MainOpenFileDialog = new OpenFileDialog();
+            OpenTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             FormatGroupBox.SuspendLayout();
@@ -73,9 +75,10 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(17, 30);
+            SubmitButton.Location = new Point(20, 36);
+            SubmitButton.Margin = new Padding(4, 4, 4, 4);
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(124, 75);
+            SubmitButton.Size = new Size(149, 90);
             SubmitButton.TabIndex = 4;
             SubmitButton.Text = "&Submit";
             ToolTip.SetToolTip(SubmitButton, "ALT+s");
@@ -84,9 +87,10 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(277, 30);
+            ExitButton.Location = new Point(332, 36);
+            ExitButton.Margin = new Padding(4, 4, 4, 4);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(124, 75);
+            ExitButton.Size = new Size(149, 90);
             ExitButton.TabIndex = 6;
             ExitButton.TabStop = false;
             ExitButton.Text = "E&xit";
@@ -97,73 +101,82 @@
             // NameLabel
             // 
             NameLabel.AutoSize = true;
-            NameLabel.Location = new Point(17, 27);
+            NameLabel.Location = new Point(20, 32);
+            NameLabel.Margin = new Padding(4, 0, 4, 0);
             NameLabel.Name = "NameLabel";
-            NameLabel.Size = new Size(59, 25);
+            NameLabel.Size = new Size(69, 30);
             NameLabel.TabIndex = 2;
             NameLabel.Text = "Name";
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(82, 21);
+            NameTextBox.Location = new Point(98, 25);
+            NameTextBox.Margin = new Padding(4, 4, 4, 4);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(272, 31);
+            NameTextBox.Size = new Size(326, 35);
             NameTextBox.TabIndex = 0;
             NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // AgeTextBox
             // 
-            AgeTextBox.Location = new Point(82, 58);
+            AgeTextBox.Location = new Point(98, 70);
+            AgeTextBox.Margin = new Padding(4, 4, 4, 4);
             AgeTextBox.Name = "AgeTextBox";
-            AgeTextBox.Size = new Size(272, 31);
+            AgeTextBox.Size = new Size(326, 35);
             AgeTextBox.TabIndex = 1;
             // 
             // AgeLabel
             // 
             AgeLabel.AutoSize = true;
-            AgeLabel.Location = new Point(17, 64);
+            AgeLabel.Location = new Point(20, 77);
+            AgeLabel.Margin = new Padding(4, 0, 4, 0);
             AgeLabel.Name = "AgeLabel";
-            AgeLabel.Size = new Size(44, 25);
+            AgeLabel.Size = new Size(50, 30);
             AgeLabel.TabIndex = 4;
             AgeLabel.Text = "Age";
             // 
             // PhoneTextBox
             // 
-            PhoneTextBox.Location = new Point(82, 95);
+            PhoneTextBox.Location = new Point(98, 114);
+            PhoneTextBox.Margin = new Padding(4, 4, 4, 4);
             PhoneTextBox.Name = "PhoneTextBox";
-            PhoneTextBox.Size = new Size(272, 31);
+            PhoneTextBox.Size = new Size(326, 35);
             PhoneTextBox.TabIndex = 2;
             // 
             // PhoneLabel
             // 
             PhoneLabel.AutoSize = true;
-            PhoneLabel.Location = new Point(17, 101);
+            PhoneLabel.Location = new Point(20, 121);
+            PhoneLabel.Margin = new Padding(4, 0, 4, 0);
             PhoneLabel.Name = "PhoneLabel";
-            PhoneLabel.Size = new Size(62, 25);
+            PhoneLabel.Size = new Size(72, 30);
             PhoneLabel.TabIndex = 8;
             PhoneLabel.Text = "Phone";
             // 
             // CityTextBox
             // 
-            CityTextBox.Location = new Point(82, 132);
+            CityTextBox.Location = new Point(98, 158);
+            CityTextBox.Margin = new Padding(4, 4, 4, 4);
             CityTextBox.Name = "CityTextBox";
-            CityTextBox.Size = new Size(272, 31);
+            CityTextBox.Size = new Size(326, 35);
             CityTextBox.TabIndex = 3;
             // 
             // CityLabel
             // 
             CityLabel.AutoSize = true;
-            CityLabel.Location = new Point(17, 138);
+            CityLabel.Location = new Point(20, 166);
+            CityLabel.Margin = new Padding(4, 0, 4, 0);
             CityLabel.Name = "CityLabel";
-            CityLabel.Size = new Size(42, 25);
+            CityLabel.Size = new Size(48, 30);
             CityLabel.TabIndex = 6;
             CityLabel.Text = "City";
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(147, 30);
+            ClearButton.Location = new Point(176, 36);
+            ClearButton.Margin = new Padding(4, 4, 4, 4);
             ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(124, 75);
+            ClearButton.Size = new Size(149, 90);
             ClearButton.TabIndex = 5;
             ClearButton.TabStop = false;
             ClearButton.Text = "&Clear";
@@ -176,9 +189,11 @@
             ButtonGroupBox.Controls.Add(SubmitButton);
             ButtonGroupBox.Controls.Add(ClearButton);
             ButtonGroupBox.Controls.Add(ExitButton);
-            ButtonGroupBox.Location = new Point(369, 314);
+            ButtonGroupBox.Location = new Point(443, 377);
+            ButtonGroupBox.Margin = new Padding(4, 4, 4, 4);
             ButtonGroupBox.Name = "ButtonGroupBox";
-            ButtonGroupBox.Size = new Size(419, 124);
+            ButtonGroupBox.Padding = new Padding(4, 4, 4, 4);
+            ButtonGroupBox.Size = new Size(503, 149);
             ButtonGroupBox.TabIndex = 5;
             ButtonGroupBox.TabStop = false;
             // 
@@ -192,9 +207,11 @@
             UserInfoGroupBox.Controls.Add(AgeTextBox);
             UserInfoGroupBox.Controls.Add(CityTextBox);
             UserInfoGroupBox.Controls.Add(CityLabel);
-            UserInfoGroupBox.Location = new Point(12, 40);
+            UserInfoGroupBox.Location = new Point(14, 48);
+            UserInfoGroupBox.Margin = new Padding(4, 4, 4, 4);
             UserInfoGroupBox.Name = "UserInfoGroupBox";
-            UserInfoGroupBox.Size = new Size(370, 191);
+            UserInfoGroupBox.Padding = new Padding(4, 4, 4, 4);
+            UserInfoGroupBox.Size = new Size(444, 229);
             UserInfoGroupBox.TabIndex = 0;
             UserInfoGroupBox.TabStop = false;
             UserInfoGroupBox.Text = "User Info";
@@ -202,9 +219,10 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(183, 65);
+            checkBox2.Location = new Point(220, 78);
+            checkBox2.Margin = new Padding(4, 4, 4, 4);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(121, 29);
+            checkBox2.Size = new Size(137, 34);
             checkBox2.TabIndex = 2;
             checkBox2.Text = "checkBox2";
             checkBox2.UseVisualStyleBackColor = true;
@@ -213,9 +231,10 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(183, 100);
+            checkBox4.Location = new Point(220, 120);
+            checkBox4.Margin = new Padding(4, 4, 4, 4);
             checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(121, 29);
+            checkBox4.Size = new Size(137, 34);
             checkBox4.TabIndex = 3;
             checkBox4.Text = "checkBox4";
             checkBox4.UseVisualStyleBackColor = true;
@@ -223,9 +242,10 @@
             // ReverseRadioButton
             // 
             ReverseRadioButton.AutoSize = true;
-            ReverseRadioButton.Location = new Point(6, 99);
+            ReverseRadioButton.Location = new Point(7, 119);
+            ReverseRadioButton.Margin = new Padding(4, 4, 4, 4);
             ReverseRadioButton.Name = "ReverseRadioButton";
-            ReverseRadioButton.Size = new Size(97, 29);
+            ReverseRadioButton.Size = new Size(109, 34);
             ReverseRadioButton.TabIndex = 16;
             ReverseRadioButton.TabStop = true;
             ReverseRadioButton.Text = "Reverse";
@@ -234,9 +254,10 @@
             // UpperCaseRadioButton
             // 
             UpperCaseRadioButton.AutoSize = true;
-            UpperCaseRadioButton.Location = new Point(6, 30);
+            UpperCaseRadioButton.Location = new Point(7, 36);
+            UpperCaseRadioButton.Margin = new Padding(4, 4, 4, 4);
             UpperCaseRadioButton.Name = "UpperCaseRadioButton";
-            UpperCaseRadioButton.Size = new Size(86, 29);
+            UpperCaseRadioButton.Size = new Size(94, 34);
             UpperCaseRadioButton.TabIndex = 1;
             UpperCaseRadioButton.TabStop = true;
             UpperCaseRadioButton.Text = "Upper";
@@ -246,9 +267,10 @@
             // LowerRadioButton
             // 
             LowerRadioButton.AutoSize = true;
-            LowerRadioButton.Location = new Point(6, 65);
+            LowerRadioButton.Location = new Point(7, 78);
+            LowerRadioButton.Margin = new Padding(4, 4, 4, 4);
             LowerRadioButton.Name = "LowerRadioButton";
-            LowerRadioButton.Size = new Size(84, 29);
+            LowerRadioButton.Size = new Size(93, 34);
             LowerRadioButton.TabIndex = 16;
             LowerRadioButton.TabStop = true;
             LowerRadioButton.Text = "Lower";
@@ -262,9 +284,11 @@
             FormatGroupBox.Controls.Add(LowerRadioButton);
             FormatGroupBox.Controls.Add(checkBox4);
             FormatGroupBox.Controls.Add(ReverseRadioButton);
-            FormatGroupBox.Location = new Point(12, 237);
+            FormatGroupBox.Location = new Point(14, 284);
+            FormatGroupBox.Margin = new Padding(4, 4, 4, 4);
             FormatGroupBox.Name = "FormatGroupBox";
-            FormatGroupBox.Size = new Size(327, 201);
+            FormatGroupBox.Padding = new Padding(4, 4, 4, 4);
+            FormatGroupBox.Size = new Size(392, 241);
             FormatGroupBox.TabIndex = 19;
             FormatGroupBox.TabStop = false;
             FormatGroupBox.Text = "Format Options";
@@ -275,26 +299,26 @@
             FormatContextMenuStrip.ImageScalingSize = new Size(24, 24);
             FormatContextMenuStrip.Items.AddRange(new ToolStripItem[] { UpperContextMenuItem, LowerContextMenuItem, ReverseContextMenuItem });
             FormatContextMenuStrip.Name = "FormatContextMenuStrip";
-            FormatContextMenuStrip.Size = new Size(176, 100);
+            FormatContextMenuStrip.Size = new Size(193, 112);
             // 
             // UpperContextMenuItem
             // 
             UpperContextMenuItem.Name = "UpperContextMenuItem";
-            UpperContextMenuItem.Size = new Size(175, 32);
+            UpperContextMenuItem.Size = new Size(192, 36);
             UpperContextMenuItem.Text = "Upper Case";
             UpperContextMenuItem.Click += UpperContextMenuItem_Click;
             // 
             // LowerContextMenuItem
             // 
             LowerContextMenuItem.Name = "LowerContextMenuItem";
-            LowerContextMenuItem.Size = new Size(175, 32);
+            LowerContextMenuItem.Size = new Size(192, 36);
             LowerContextMenuItem.Text = "Lower Case";
             LowerContextMenuItem.Click += LowerContextMenuItem_Click;
             // 
             // ReverseContextMenuItem
             // 
             ReverseContextMenuItem.Name = "ReverseContextMenuItem";
-            ReverseContextMenuItem.Size = new Size(175, 32);
+            ReverseContextMenuItem.Size = new Size(192, 36);
             ReverseContextMenuItem.Text = "Reverse";
             ReverseContextMenuItem.Click += ReverseContextMenuItem_Click;
             // 
@@ -302,9 +326,10 @@
             // 
             DisplayLabel.Cursor = Cursors.Hand;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(388, 61);
+            DisplayLabel.Location = new Point(466, 73);
+            DisplayLabel.Margin = new Padding(4, 0, 4, 0);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(196, 250);
+            DisplayLabel.Size = new Size(235, 300);
             DisplayLabel.TabIndex = 17;
             ToolTip.SetToolTip(DisplayLabel, "Formatted output displayed here");
             // 
@@ -314,35 +339,36 @@
             TopMenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, HelpTopMenuItem });
             TopMenuStrip.Location = new Point(0, 0);
             TopMenuStrip.Name = "TopMenuStrip";
-            TopMenuStrip.Size = new Size(800, 33);
+            TopMenuStrip.Padding = new Padding(7, 2, 0, 2);
+            TopMenuStrip.Size = new Size(960, 38);
             TopMenuStrip.TabIndex = 18;
             TopMenuStrip.Text = "menuStrip1";
             // 
             // FileTopMenuItem
             // 
-            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { OpenTopMenuItem, SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
             FileTopMenuItem.Name = "FileTopMenuItem";
-            FileTopMenuItem.Size = new Size(54, 29);
+            FileTopMenuItem.Size = new Size(62, 34);
             FileTopMenuItem.Text = "&File";
             // 
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(171, 34);
+            SubmitTopMenuItem.Size = new Size(315, 40);
             SubmitTopMenuItem.Text = "&Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(171, 34);
+            ClearTopMenuItem.Size = new Size(315, 40);
             ClearTopMenuItem.Text = "&Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(171, 34);
+            ExitTopMenuItem.Size = new Size(315, 40);
             ExitTopMenuItem.Text = "E&xit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 
@@ -350,13 +376,13 @@
             // 
             HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
             HelpTopMenuItem.Name = "HelpTopMenuItem";
-            HelpTopMenuItem.Size = new Size(65, 29);
+            HelpTopMenuItem.Size = new Size(74, 34);
             HelpTopMenuItem.Text = "&Help";
             // 
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(164, 34);
+            AboutTopMenuItem.Size = new Size(188, 40);
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
@@ -364,19 +390,31 @@
             // 
             DisplayPictureBox.BackgroundImage = (Image)resources.GetObject("DisplayPictureBox.BackgroundImage");
             DisplayPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            DisplayPictureBox.Location = new Point(602, 61);
+            DisplayPictureBox.Location = new Point(722, 73);
+            DisplayPictureBox.Margin = new Padding(4, 4, 4, 4);
             DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(180, 250);
+            DisplayPictureBox.Size = new Size(216, 300);
             DisplayPictureBox.TabIndex = 20;
             DisplayPictureBox.TabStop = false;
+            // 
+            // MainOpenFileDialog
+            // 
+            MainOpenFileDialog.FileName = "openFileDialog1";
+            // 
+            // OpenTopMenuItem
+            // 
+            OpenTopMenuItem.Name = "OpenTopMenuItem";
+            OpenTopMenuItem.Size = new Size(315, 40);
+            OpenTopMenuItem.Text = "&Open";
+            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
             // 
             // WinFormExampleForm
             // 
             AcceptButton = SubmitButton;
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(960, 540);
             Controls.Add(DisplayPictureBox);
             Controls.Add(FormatGroupBox);
             Controls.Add(DisplayLabel);
@@ -384,6 +422,7 @@
             Controls.Add(ButtonGroupBox);
             Controls.Add(TopMenuStrip);
             MainMenuStrip = TopMenuStrip;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "WinFormExampleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Example Form";
@@ -438,5 +477,7 @@
         private ToolStripMenuItem LowerContextMenuItem;
         private ToolStripMenuItem ReverseContextMenuItem;
         private PictureBox DisplayPictureBox;
+        private ToolStripMenuItem OpenTopMenuItem;
+        private OpenFileDialog MainOpenFileDialog;
     }
 }
