@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinFormExampleForm));
             SubmitButton = new Button();
             ExitButton = new Button();
             NameLabel = new Label();
@@ -54,29 +53,27 @@
             UpperContextMenuItem = new ToolStripMenuItem();
             LowerContextMenuItem = new ToolStripMenuItem();
             ReverseContextMenuItem = new ToolStripMenuItem();
-            DisplayLabel = new Label();
             TopMenuStrip = new MenuStrip();
             FileTopMenuItem = new ToolStripMenuItem();
+            OpenTopMenuItem = new ToolStripMenuItem();
             SubmitTopMenuItem = new ToolStripMenuItem();
             ClearTopMenuItem = new ToolStripMenuItem();
             ExitTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
-            DisplayPictureBox = new PictureBox();
             MainOpenFileDialog = new OpenFileDialog();
-            OpenTopMenuItem = new ToolStripMenuItem();
+            DisplayListBox = new ListBox();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             FormatGroupBox.SuspendLayout();
             FormatContextMenuStrip.SuspendLayout();
             TopMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
             // SubmitButton
             // 
             SubmitButton.Location = new Point(20, 36);
-            SubmitButton.Margin = new Padding(4, 4, 4, 4);
+            SubmitButton.Margin = new Padding(4);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(149, 90);
             SubmitButton.TabIndex = 4;
@@ -88,7 +85,7 @@
             // ExitButton
             // 
             ExitButton.Location = new Point(332, 36);
-            ExitButton.Margin = new Padding(4, 4, 4, 4);
+            ExitButton.Margin = new Padding(4);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(149, 90);
             ExitButton.TabIndex = 6;
@@ -111,7 +108,7 @@
             // NameTextBox
             // 
             NameTextBox.Location = new Point(98, 25);
-            NameTextBox.Margin = new Padding(4, 4, 4, 4);
+            NameTextBox.Margin = new Padding(4);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(326, 35);
             NameTextBox.TabIndex = 0;
@@ -120,7 +117,7 @@
             // AgeTextBox
             // 
             AgeTextBox.Location = new Point(98, 70);
-            AgeTextBox.Margin = new Padding(4, 4, 4, 4);
+            AgeTextBox.Margin = new Padding(4);
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(326, 35);
             AgeTextBox.TabIndex = 1;
@@ -138,7 +135,7 @@
             // PhoneTextBox
             // 
             PhoneTextBox.Location = new Point(98, 114);
-            PhoneTextBox.Margin = new Padding(4, 4, 4, 4);
+            PhoneTextBox.Margin = new Padding(4);
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(326, 35);
             PhoneTextBox.TabIndex = 2;
@@ -156,7 +153,7 @@
             // CityTextBox
             // 
             CityTextBox.Location = new Point(98, 158);
-            CityTextBox.Margin = new Padding(4, 4, 4, 4);
+            CityTextBox.Margin = new Padding(4);
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(326, 35);
             CityTextBox.TabIndex = 3;
@@ -174,7 +171,7 @@
             // ClearButton
             // 
             ClearButton.Location = new Point(176, 36);
-            ClearButton.Margin = new Padding(4, 4, 4, 4);
+            ClearButton.Margin = new Padding(4);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(149, 90);
             ClearButton.TabIndex = 5;
@@ -190,9 +187,9 @@
             ButtonGroupBox.Controls.Add(ClearButton);
             ButtonGroupBox.Controls.Add(ExitButton);
             ButtonGroupBox.Location = new Point(443, 377);
-            ButtonGroupBox.Margin = new Padding(4, 4, 4, 4);
+            ButtonGroupBox.Margin = new Padding(4);
             ButtonGroupBox.Name = "ButtonGroupBox";
-            ButtonGroupBox.Padding = new Padding(4, 4, 4, 4);
+            ButtonGroupBox.Padding = new Padding(4);
             ButtonGroupBox.Size = new Size(503, 149);
             ButtonGroupBox.TabIndex = 5;
             ButtonGroupBox.TabStop = false;
@@ -208,9 +205,9 @@
             UserInfoGroupBox.Controls.Add(CityTextBox);
             UserInfoGroupBox.Controls.Add(CityLabel);
             UserInfoGroupBox.Location = new Point(14, 48);
-            UserInfoGroupBox.Margin = new Padding(4, 4, 4, 4);
+            UserInfoGroupBox.Margin = new Padding(4);
             UserInfoGroupBox.Name = "UserInfoGroupBox";
-            UserInfoGroupBox.Padding = new Padding(4, 4, 4, 4);
+            UserInfoGroupBox.Padding = new Padding(4);
             UserInfoGroupBox.Size = new Size(444, 229);
             UserInfoGroupBox.TabIndex = 0;
             UserInfoGroupBox.TabStop = false;
@@ -220,7 +217,7 @@
             // 
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(220, 78);
-            checkBox2.Margin = new Padding(4, 4, 4, 4);
+            checkBox2.Margin = new Padding(4);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(137, 34);
             checkBox2.TabIndex = 2;
@@ -232,7 +229,7 @@
             // 
             checkBox4.AutoSize = true;
             checkBox4.Location = new Point(220, 120);
-            checkBox4.Margin = new Padding(4, 4, 4, 4);
+            checkBox4.Margin = new Padding(4);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(137, 34);
             checkBox4.TabIndex = 3;
@@ -243,7 +240,7 @@
             // 
             ReverseRadioButton.AutoSize = true;
             ReverseRadioButton.Location = new Point(7, 119);
-            ReverseRadioButton.Margin = new Padding(4, 4, 4, 4);
+            ReverseRadioButton.Margin = new Padding(4);
             ReverseRadioButton.Name = "ReverseRadioButton";
             ReverseRadioButton.Size = new Size(109, 34);
             ReverseRadioButton.TabIndex = 16;
@@ -255,7 +252,7 @@
             // 
             UpperCaseRadioButton.AutoSize = true;
             UpperCaseRadioButton.Location = new Point(7, 36);
-            UpperCaseRadioButton.Margin = new Padding(4, 4, 4, 4);
+            UpperCaseRadioButton.Margin = new Padding(4);
             UpperCaseRadioButton.Name = "UpperCaseRadioButton";
             UpperCaseRadioButton.Size = new Size(94, 34);
             UpperCaseRadioButton.TabIndex = 1;
@@ -268,7 +265,7 @@
             // 
             LowerRadioButton.AutoSize = true;
             LowerRadioButton.Location = new Point(7, 78);
-            LowerRadioButton.Margin = new Padding(4, 4, 4, 4);
+            LowerRadioButton.Margin = new Padding(4);
             LowerRadioButton.Name = "LowerRadioButton";
             LowerRadioButton.Size = new Size(93, 34);
             LowerRadioButton.TabIndex = 16;
@@ -285,9 +282,9 @@
             FormatGroupBox.Controls.Add(checkBox4);
             FormatGroupBox.Controls.Add(ReverseRadioButton);
             FormatGroupBox.Location = new Point(14, 284);
-            FormatGroupBox.Margin = new Padding(4, 4, 4, 4);
+            FormatGroupBox.Margin = new Padding(4);
             FormatGroupBox.Name = "FormatGroupBox";
-            FormatGroupBox.Padding = new Padding(4, 4, 4, 4);
+            FormatGroupBox.Padding = new Padding(4);
             FormatGroupBox.Size = new Size(392, 241);
             FormatGroupBox.TabIndex = 19;
             FormatGroupBox.TabStop = false;
@@ -322,17 +319,6 @@
             ReverseContextMenuItem.Text = "Reverse";
             ReverseContextMenuItem.Click += ReverseContextMenuItem_Click;
             // 
-            // DisplayLabel
-            // 
-            DisplayLabel.Cursor = Cursors.Hand;
-            DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(466, 73);
-            DisplayLabel.Margin = new Padding(4, 0, 4, 0);
-            DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(235, 300);
-            DisplayLabel.TabIndex = 17;
-            ToolTip.SetToolTip(DisplayLabel, "Formatted output displayed here");
-            // 
             // TopMenuStrip
             // 
             TopMenuStrip.ImageScalingSize = new Size(24, 24);
@@ -350,6 +336,13 @@
             FileTopMenuItem.Name = "FileTopMenuItem";
             FileTopMenuItem.Size = new Size(62, 34);
             FileTopMenuItem.Text = "&File";
+            // 
+            // OpenTopMenuItem
+            // 
+            OpenTopMenuItem.Name = "OpenTopMenuItem";
+            OpenTopMenuItem.Size = new Size(315, 40);
+            OpenTopMenuItem.Text = "&Open";
+            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
             // 
             // SubmitTopMenuItem
             // 
@@ -386,27 +379,17 @@
             AboutTopMenuItem.Text = "&About";
             AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
-            // DisplayPictureBox
-            // 
-            DisplayPictureBox.BackgroundImage = (Image)resources.GetObject("DisplayPictureBox.BackgroundImage");
-            DisplayPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            DisplayPictureBox.Location = new Point(722, 73);
-            DisplayPictureBox.Margin = new Padding(4, 4, 4, 4);
-            DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(216, 300);
-            DisplayPictureBox.TabIndex = 20;
-            DisplayPictureBox.TabStop = false;
-            // 
             // MainOpenFileDialog
             // 
             MainOpenFileDialog.FileName = "openFileDialog1";
             // 
-            // OpenTopMenuItem
+            // DisplayListBox
             // 
-            OpenTopMenuItem.Name = "OpenTopMenuItem";
-            OpenTopMenuItem.Size = new Size(315, 40);
-            OpenTopMenuItem.Text = "&Open";
-            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
+            DisplayListBox.FormattingEnabled = true;
+            DisplayListBox.Location = new Point(463, 73);
+            DisplayListBox.Name = "DisplayListBox";
+            DisplayListBox.Size = new Size(461, 334);
+            DisplayListBox.TabIndex = 20;
             // 
             // WinFormExampleForm
             // 
@@ -415,14 +398,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
             ClientSize = new Size(960, 540);
-            Controls.Add(DisplayPictureBox);
+            Controls.Add(DisplayListBox);
             Controls.Add(FormatGroupBox);
-            Controls.Add(DisplayLabel);
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
             Controls.Add(TopMenuStrip);
             MainMenuStrip = TopMenuStrip;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "WinFormExampleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Example Form";
@@ -434,7 +416,6 @@
             FormatContextMenuStrip.ResumeLayout(false);
             TopMenuStrip.ResumeLayout(false);
             TopMenuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -463,7 +444,6 @@
         private RadioButton UpperCaseRadioButton;
         private RadioButton LowerRadioButton;
         private ToolTip ToolTip;
-        private Label DisplayLabel;
         private MenuStrip TopMenuStrip;
         private ToolStripMenuItem FileTopMenuItem;
         private ToolStripMenuItem HelpTopMenuItem;
@@ -476,8 +456,8 @@
         private ToolStripMenuItem UpperContextMenuItem;
         private ToolStripMenuItem LowerContextMenuItem;
         private ToolStripMenuItem ReverseContextMenuItem;
-        private PictureBox DisplayPictureBox;
         private ToolStripMenuItem OpenTopMenuItem;
         private OpenFileDialog MainOpenFileDialog;
+        private ListBox DisplayListBox;
     }
 }
