@@ -91,7 +91,7 @@ namespace WinFormsExample
         }
 
 
-        static int CountOfLinesIn(string filePath)
+        int CountOfLinesIn(string filePath)
         {
             int count = 0;
             using (StreamReader testFile = new StreamReader(filePath))
@@ -105,7 +105,7 @@ namespace WinFormsExample
             return count;
         }
 
-        static string[,] FileToArray(string filePath)
+        string[,] FileToArray(string filePath)
         {
             string[,] customerData = new string[4, CountOfLinesIn(filePath)];
             string[] temp;
@@ -131,7 +131,7 @@ namespace WinFormsExample
             return customerData;
         }
 
-        static void DisplayData(string[,] data)
+        void DisplayData(string[,] data)
         {
             string formattedRow = "";
             for (int row = 0; row < data.GetLength(1); row++)
@@ -145,7 +145,7 @@ namespace WinFormsExample
                 }
                 if (formattedRow != "")
                 {
-                    //DisplayListBox.Items.Add(formattedRow);
+                    DisplayListBox.Items.Add(formattedRow);
                 }
                 formattedRow = "";
             }
