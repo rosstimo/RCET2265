@@ -340,28 +340,28 @@
             // OpenTopMenuItem
             // 
             OpenTopMenuItem.Name = "OpenTopMenuItem";
-            OpenTopMenuItem.Size = new Size(315, 40);
+            OpenTopMenuItem.Size = new Size(196, 40);
             OpenTopMenuItem.Text = "&Open";
             OpenTopMenuItem.Click += OpenTopMenuItem_Click;
             // 
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(315, 40);
+            SubmitTopMenuItem.Size = new Size(196, 40);
             SubmitTopMenuItem.Text = "&Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(315, 40);
+            ClearTopMenuItem.Size = new Size(196, 40);
             ClearTopMenuItem.Text = "&Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(315, 40);
+            ExitTopMenuItem.Size = new Size(196, 40);
             ExitTopMenuItem.Text = "E&xit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 

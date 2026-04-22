@@ -18,7 +18,7 @@ namespace WinFormsExample
             AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
             PhoneTextBox.Text = "";
-            DisplayLabel.Text = "";
+            //DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
@@ -145,7 +145,7 @@ namespace WinFormsExample
                 }
                 if (formattedRow != "")
                 {
-                    Console.WriteLine(formattedRow);
+                    //DisplayListBox.Items.Add(formattedRow);
                 }
                 formattedRow = "";
             }
@@ -165,10 +165,10 @@ namespace WinFormsExample
                 //this.Text = NameTextBox.Text;
                 //UpperCase();
                 //Reverse();
-                DisplayLabel.Text = Reverse(UpperCase(LowerCase(NameTextBox.Text + "\n" +
-                    AgeTextBox.Text + "\n" +
-                    PhoneTextBox.Text + "\n" +
-                    CityTextBox.Text)));
+                //DisplayLabel.Text = Reverse(UpperCase(LowerCase(NameTextBox.Text + "\n" +
+                //    AgeTextBox.Text + "\n" +
+                //    PhoneTextBox.Text + "\n" +
+                //    CityTextBox.Text)));
             }
         }
 
