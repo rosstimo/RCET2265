@@ -72,7 +72,7 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(20, 36);
+            SubmitButton.Location = new Point(8, 9);
             SubmitButton.Margin = new Padding(4);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(149, 90);
@@ -84,7 +84,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(332, 36);
+            ExitButton.Location = new Point(322, 9);
             ExitButton.Margin = new Padding(4);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(149, 90);
@@ -170,7 +170,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(176, 36);
+            ClearButton.Location = new Point(165, 9);
             ClearButton.Margin = new Padding(4);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(149, 90);
@@ -186,11 +186,11 @@
             ButtonGroupBox.Controls.Add(SubmitButton);
             ButtonGroupBox.Controls.Add(ClearButton);
             ButtonGroupBox.Controls.Add(ExitButton);
-            ButtonGroupBox.Location = new Point(443, 377);
+            ButtonGroupBox.Location = new Point(465, 417);
             ButtonGroupBox.Margin = new Padding(4);
             ButtonGroupBox.Name = "ButtonGroupBox";
             ButtonGroupBox.Padding = new Padding(4);
-            ButtonGroupBox.Size = new Size(503, 149);
+            ButtonGroupBox.Size = new Size(481, 109);
             ButtonGroupBox.TabIndex = 5;
             ButtonGroupBox.TabStop = false;
             // 
@@ -385,10 +385,11 @@
             // 
             // DisplayListBox
             // 
+            DisplayListBox.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
-            DisplayListBox.Location = new Point(463, 73);
+            DisplayListBox.Location = new Point(473, 85);
             DisplayListBox.Name = "DisplayListBox";
-            DisplayListBox.Size = new Size(461, 334);
+            DisplayListBox.Size = new Size(463, 284);
             DisplayListBox.TabIndex = 20;
             // 
             // WinFormExampleForm
