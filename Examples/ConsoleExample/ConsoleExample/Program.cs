@@ -4,10 +4,16 @@
     {
         static void Main(string[] args)
         {
+            string userInput = "";
+            //Console.Beep();
+            //Console.Beep(1000, 1000);
+
             //send a message to  user
-            Console.WriteLine();
+            Console.WriteLine("What is your favorite vegetable?");
             //get user input
-            Console.ReadLine();
+            userInput = Console.ReadLine();
+            Console.WriteLine("eww " + userInput + " is so gross!");
+
             //pause before close
             Console.ReadLine();
         }
