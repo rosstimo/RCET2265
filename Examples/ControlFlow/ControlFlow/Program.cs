@@ -6,6 +6,10 @@
         {
             int firstNumber = 7;
             string userInput = "";
+            string userPrompt = "Please Choose One of:\n" +
+                                "1. maybe\n" + 
+                                "2. could be\n" +
+                                "3. probably this one\n";
 
             //if (firstNumber > 1)
             //{
@@ -29,7 +33,7 @@
             //    Console.WriteLine("something else happened");
             //}
 
-            Console.WriteLine("Choose wisely 1, 2, or 3...");
+            Console.WriteLine(userPrompt);
             userInput = Console.ReadLine();
 
             if (userInput == "1")
