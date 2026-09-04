@@ -1,79 +1,38 @@
-# GDI+ Graphics (Etch-O-Sketch, etc) in C#
+# GDI+ Graphics in Windows Forms
 
-## Introduction
+Windows Forms exposes GDI+ drawing through `System.Drawing`. This is useful for simple custom graphics and assignments such as an Etch-A-Sketch-style application.
 
-GDI+ is Windows’ graphics engine for drawing on controls. It lets you create custom UIs, games, and drawing apps. Learning GDI+ helps you understand graphics, user interaction, and event-driven programming in C#.
+## Draw in a paint event
 
----
+Custom drawing should normally occur in a control's `Paint` event using the `Graphics` object supplied by the event arguments.
 
-**What is GDI+?**
-- Windows’ graphics engine for drawing on controls
-- Used for custom UI, games, drawing apps
+```csharp
+private void DrawingPanel_Paint(object? sender, PaintEventArgs e)
+{
+    using Pen pen = new(Color.Red, 2);
 
----
+    e.Graphics.DrawLine(pen, 10, 10, 100, 100);
+    e.Graphics.DrawRectangle(pen, 20, 20, 60, 40);
+    e.Graphics.DrawEllipse(pen, 50, 50, 30, 30);
+}
+```
 
-**Drawing Basics:**
-- Paint event: where custom drawing lives
-- `Graphics` object: `e.Graphics` in Paint event
-- Methods: `DrawLine`, `DrawRectangle`, `DrawEllipse`, `DrawString`
-- Pen and Brush: set color, thickness, fill
-- Example:
-  ```csharp
-  private void Form_Paint(object sender, PaintEventArgs e)
-  {
-      Pen pen = new Pen(Color.Red, 2);
-      e.Graphics.DrawLine(pen, 10, 10, 100, 100);
-      e.Graphics.DrawRectangle(pen, 20, 20, 60, 40);
-      e.Graphics.DrawEllipse(pen, 50, 50, 30, 30);
-      e.Graphics.DrawString("Hello", this.Font, Brushes.Black, 10, 120);
-  }
-  ```
+Objects such as `Pen` that own unmanaged drawing resources should be disposed. A `using` declaration handles that automatically.
 
----
+## Preserve drawing state
 
-**Drawing Surface:**
-- PictureBox or Panel for custom drawing area
-- Store “drawing state” (list of points, lines, or bitmap for persistence)
-- Double-buffering for smooth, flicker-free drawing
+Pixels drawn directly to a control are not your program's permanent drawing state. A repaint can erase them. Store the information needed to recreate the image, such as points, line segments, shapes, or a backing bitmap, and redraw it when the control repaints.
 
----
+## Interaction
 
-**User Interaction:**
-- Mouse events: `MouseDown`, `MouseMove`, `MouseUp` for drawing
-- Color picker: `ColorDialog` to let user select pen color
+Mouse events such as `MouseDown`, `MouseMove`, and `MouseUp` can update the stored drawing state. Call `Invalidate()` when the control needs to be repainted.
 
----
+## Animation
 
-**Animation & Sound:**
-- Use Timer for simple animations (e.g., “shake to erase”)
-- `Console.Beep` or SoundPlayer for feedback
-
----
-
-**Integration:**
-- Menus, context menus, tooltips, keyboard shortcuts for drawing actions
-- Partial classes: GUI designer code split from logic
-
----
-
-**Why it Matters:**
-- Unleash creativity, real interactive programming, fun as hell
-- Teaches UI, graphics, and event handling skills
-
----
-
-**Practical:**
-- Practice drawing lines, shapes, and text in a Paint event.
-- Try handling mouse events to let users draw.
-- Experiment with colors, animation, and sound.
-- Build a simple Etch-O-Sketch or drawing app for fun.
-
----
+A Windows Forms `Timer` can drive simple periodic updates. Change the model/state on the timer event, then repaint. Avoid putting an uncontrolled busy loop on the UI thread.
 
 ## References
-- [C# Programming Guide: Graphics](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/graphics-overview)
-- [C# Programming Guide: Drawing with GDI+](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/how-to-draw-with-gdi)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Overview of graphics in Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/overview-of-graphics)
+- [Getting started with graphics programming](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming)
+- [Windows Forms control events](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/events)

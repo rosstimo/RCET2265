@@ -1,74 +1,61 @@
-# Professionalism, Documentation & Habits in C#
+# Professionalism, Documentation & Habits
 
-## Introduction
+Readable code and a recoverable project history are part of the work, not decoration added after the program works.
 
-Professional habits and good documentation make your code easier to understand, maintain, and share. They help you avoid mistakes, get help faster, and succeed in your course and career. This section covers commenting, version control, assignment submission, rubrics, and how to ask for help.
+## Comments
 
----
+Use comments when they add information that is not obvious from the code. Good comments often explain intent, constraints, assumptions, or a reason for a non-obvious choice.
 
-**Commenting:**
-- Use comments to explain intent (the “why”), not the obvious (the “what”)
-- File headers: author, course, assignment, date
-- Method summaries (`/// <summary>...</summary>`)
-- Example:
-  ```csharp
-  // Author: Sheila
-  // Assignment: Hello World
-  // Date: 2025-07-23
-  /// <summary>
-  /// Prints a greeting to the console.
-  /// </summary>
-  void SayHello()
-  {
-      Console.WriteLine("Hello!");
-  }
-  ```
+Avoid comments that merely repeat the statement:
 
----
+```csharp
+count++; // increment count
+```
 
-**Git & Version Control:**
-- Commit early, commit often—don’t lose your work
-- Write clear commit messages: what changed and why
-- Push to GitHub as backup and for instructor review
+Course assignments may require file headers or XML documentation comments. Follow the assignment and [Commenting guide](../StyleGuide/Commenting.md).
 
----
+## Naming and formatting
 
-**Assignment Submission:**
-- Follow naming, file, and repo structure instructions exactly
-- Submit via Canvas/GitHub link as required
+Use descriptive names and consistent formatting. Course rules are documented in the Style Guide:
 
----
+- [Naming Conventions](../StyleGuide/NamingConventions.md)
+- [Code Formatting](../StyleGuide/CodeFormatting.md)
+- [Indentation and Spacing](../StyleGuide/IndentationAndSpacing.md)
 
-**Rubric Adherence:**
-- Read rubrics before you start coding
-- Double-check all requirements before submitting
+## Git
 
----
+Commit useful project states. Push regularly enough that loss of the local machine does not mean loss of the assignment.
 
-**Documentation & Help:**
-- Always check MSDN/docs for any new class/method
-- Ask for help the right way: show your error, what you tried, and what you expected
+Before committing:
 
----
+```text
+build -> test -> git status -> review changes -> commit
+```
 
-**Why it Matters:**
-- Pro skills = fewer lost assignments, faster help, happier instructor, better grades
-- Documentation is a lifesaver for future you and your team
+## Before submission
 
----
+- build from a clean state
+- test required behavior and edge cases
+- remove temporary/debug-only output
+- review repository contents
+- confirm naming and project structure
+- read the assignment/rubric again
+- push the final commit required for grading
 
-**Practical:**
-- Practice writing clear comments and method summaries.
-- Use version control (Git) for all your projects.
-- Check rubrics and requirements before submitting assignments.
-- Ask for help with clear, complete information.
+## Getting technical help
 
----
+When asking for help, provide:
+
+- the exact error or incorrect behavior
+- the relevant code
+- what you expected
+- what actually happened
+- what you already tested
+
+Use Microsoft Learn and the .NET API browser instead of relying on random copied snippets with no source context.
 
 ## References
-- [C# Programming Guide: Documentation Comments](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/Commenting.md](../StyleGuide/Commenting.md)
-- [StyleGuide/GitBestPractices.md](../StyleGuide/GitBestPractices.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [C# documentation](https://learn.microsoft.com/en-us/dotnet/csharp/)
+- [.NET API browser](https://learn.microsoft.com/en-us/dotnet/api/)
+- [Git Best Practices](../StyleGuide/GitBestPractices.md)

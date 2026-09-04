@@ -1,166 +1,74 @@
-# Object-Oriented Programming (OOP) in C#
+# Object-Oriented Programming in C#
 
-## Introduction
+Object-oriented programming groups data and behavior into types. For RCET 2265, the core ideas are classes, objects, fields, properties, methods, constructors, access control, and organizing a project across source files.
 
-Object-oriented programming (OOP) is a way to organize and structure your code using classes and objects. It helps you build real, maintainable, and understandable programs. This section covers the basics of classes, objects, inheritance, access modifiers, and more.
+## Class and object
 
----
+```csharp
+Person student = new("Ada");
+student.Score = 95;
+student.PrintSummary();
 
-**Classes & Objects:**
-- Blueprint (`class`), real thing (`object`)
-- Fields, properties, methods; creating new objects with `new`
-- Example:
-  ```csharp
-  class Person
-  {
-      public string Name;
-      public void SayHello()
-      {
-          Console.WriteLine($"Hello, my name is {Name}.");
-      }
-  }
-  Person p = new Person();
-  p.Name = "Sheila";
-  p.SayHello();
-  ```
+class Person
+{
+    public string Name { get; }
+    public int Score { get; set; }
 
----
+    public Person(string name)
+    {
+        Name = name;
+    }
 
-**Constructors:**
-- Special methods to set up new objects
-- Default and parameterized constructors
-- Example:
-  ```csharp
-  class Car
-  {
-      public string Model;
-      public Car(string model)
-      {
-          Model = model;
-      }
-  }
-  Car myCar = new Car("Toyota");
-  Console.WriteLine(myCar.Model); // Toyota
-  ```
+    public void PrintSummary()
+    {
+        Console.WriteLine($"{Name}: {Score}");
+    }
+}
+```
 
----
+`Person` is the type. `student` refers to one object created from that type.
 
-**Static vs. Instance:**
-- Static members belong to the class, not any object
-- Example:
-  ```csharp
-  class Counter
-  {
-      public static int Total;
-      public int Value;
-      public Counter()
-      {
-          Total++;
-      }
-  }
-  Counter c1 = new Counter();
-  Counter c2 = new Counter();
-  Console.WriteLine(Counter.Total); // 2
-  ```
+## Fields and properties
 
----
+A field stores data directly in a class. A property exposes an object's state through property syntax and can control reading or writing.
 
-**Namespaces & Fully Qualified Names:**
-- Organize code, prevent conflicts, tie to folders/files
-- Use `Project.ClassName` to disambiguate
-- Example:
-  ```csharp
-  namespace MyApp
-  {
-      class Widget {}
-  }
-  MyApp.Widget w = new MyApp.Widget();
-  ```
+Prefer properties for public state instead of exposing public mutable fields by default.
 
----
+## Constructors
 
-**File/Project Structure:**
-- One class per file, folders map to namespaces
-- Solution, project, file hierarchy in Visual Studio
+A constructor initializes a new object:
 
----
+```csharp
+public Person(string name)
+{
+    Name = name;
+}
+```
 
-**Access Modifiers:**
-- `public`, `private`, `protected`, `internal`, `protected internal`, `private protected`
-- "Who can touch your stuff"—focus on public/private for intro, explain with analogies
-- Example:
-  ```csharp
-  class BankAccount
-  {
-      private double balance;
-      public void Deposit(double amount)
-      {
-          balance += amount;
-      }
-      public double GetBalance()
-      {
-          return balance;
-      }
-  }
-  ```
+## Access modifiers
 
----
+The two most important modifiers at this stage are:
 
-**Inheritance:**
-- `: BaseClass`, derived classes inherit fields/methods
-- Use `base` to access parent stuff
-- When to use (code reuse, logic), when not to (don’t just inherit everything)
-- Simple overrides: `virtual`, `override` for methods
-- Example:
-  ```csharp
-  class Animal
-  {
-      public virtual void Speak() { Console.WriteLine("Animal sound"); }
-  }
-  class Dog : Animal
-  {
-      public override void Speak() { Console.WriteLine("Woof!"); }
-  }
-  Dog d = new Dog();
-  d.Speak(); // Woof!
-  ```
+- `private`: accessible only within the containing type
+- `public`: accessible from code that can access the type
 
----
+Other modifiers exist and are introduced when needed.
 
-**Class Libraries:**
-- Reusable collections of classes/methods; how to create, reference, and use
+## Static versus instance members
 
----
+An instance member belongs to an object. A static member belongs to the type itself. See [Static Members](static_variables_in_c_best_practice_beginner_level.md).
 
-**Partial Classes:**
-- Used by Visual Studio designer to split GUI and logic
+## Multiple source files
 
----
+A project can and should be split into multiple `.cs` files as it grows. A common course structure is one primary class per file. Folder and namespace organization can correspond, but C# does **not** require folders to map to namespaces.
 
-**Not Covered Yet:**
-- Interfaces, abstract classes—mention for curiosity, do in advanced
+## Inheritance
 
----
-
-**Why it Matters:**
-- OOP is how you build real, maintainable, and understandable programs
-- Good OOP = less pain when your projects grow
-
----
-
-**Practical:**
-- Practice creating classes and objects.
-- Try using constructors, access modifiers, and inheritance.
-- Organize your code with namespaces and separate files.
-- Experiment with static members and class libraries.
-
----
+Inheritance is useful background for later programming courses. It may be demonstrated in RCET 2265, but the priority here is learning to design and use ordinary classes correctly before building inheritance hierarchies.
 
 ## References
-- [C# Programming Guide: Classes and Objects](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/classes-and-objects)
-- [C# Programming Guide: Inheritance](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/inheritance)
-- [C# Programming Guide: Access Modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Classes and objects](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/classes)
+- [Access modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
+- [Inheritance](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/inheritance)
+- [Project Structure](../StyleGuide/ProjectStructure.md)

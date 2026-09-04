@@ -1,85 +1,55 @@
-# WinForms GUI in C#
+# Windows Forms GUI in C#
 
-## Introduction
+Windows Forms is a **Windows desktop** UI framework. It is useful in RCET 2265 for learning event-driven programming, controls, forms, and the separation between user-interface code and program logic.
 
-Windows Forms (WinForms) is a framework for building desktop applications with graphical user interfaces (GUIs) in C#. It lets you create windows, buttons, textboxes, menus, and more. WinForms is a great way for beginners to learn about event-driven programming and user interaction.
+## Controls and properties
 
----
+Common controls include:
 
-**Basic Controls:**
-- Labels, buttons, textboxes, checkboxes, radio buttons, combo boxes, list boxes
-- Example:
-  ```csharp
-  // Add a Button to your form and handle its click event
-  private void SubmitButton_Click(object sender, EventArgs e)
-  {
-      MessageBox.Show("Button clicked!");
-  }
-  ```
+- `Label`
+- `Button`
+- `TextBox`
+- `CheckBox`
+- `RadioButton`
+- `ComboBox`
+- `ListBox`
 
----
+Controls are objects with properties, methods, and events.
 
-**Menus & Context Menus:**
-- Main menu (MenuStrip), context menu (ContextMenuStrip) for right-click actions
-- Standard layout: File/Edit/Help, with appropriate commands
+## Events
 
----
+A GUI usually spends most of its time waiting for an event. A button click event handler might look like:
 
-**ToolTips & Access Keys:**
-- ToolTips for all controls (hover help)
-- Access keys (`&` in text for Alt+key shortcuts)
-- Accept button (Enter), Cancel button (Esc)
-- Set tab order for good keyboard navigation
+```csharp
+private void SubmitButton_Click(object? sender, EventArgs e)
+{
+    MessageBox.Show("Button clicked!");
+}
+```
 
----
+Keep event handlers focused. If the work is reusable or substantial, put it in another method or class and call it from the event handler.
 
-**Multiple Forms:**
-- Show/hide multiple forms (Show, ShowDialog)
-- Splash screen, dialog boxes vs main window
+## Forms and partial classes
 
----
+A Windows Form is a class. Visual Studio normally splits designer-generated code and your code using a partial class. Do not manually edit generated designer code unless you know exactly why you are doing it.
 
-**Dialog Boxes:**
-- OpenFileDialog, SaveFileDialog, ColorDialog, FontDialog, PrintDialog
-- Use results, error handling
+## Keyboard usability
 
----
+Learn to configure:
 
-**Naming Conventions:**
-- Files/forms: `MainForm.cs`, `SplashScreenForm.cs`
-- Controls: `SubmitButton`, `NameTextBox`, etc.
+- tab order
+- access keys
+- Accept button for Enter
+- Cancel button for Escape
+- appropriate focus behavior
 
----
+A GUI should not require the mouse for every action.
 
-**OOP Structure:**
-- Each form is a class; controls are objects
-- Event handlers: wire up, keep logic short, call other methods for real work
-- Partial classes: designer-generated code vs your logic
+## Dialogs
 
----
-
-**Events:**
-- Event-driven model: what, why, how; buttons, input, timers
-
----
-
-**Good Habits:**
-- Layout for readability and usability
-- Separate logic from UI (don’t cram everything into a button click)
-- Test with both mouse and keyboard
-
----
-
-**Practical:**
-- Create a simple form with a button and textbox. Handle the button click to show a message.
-- Add a menu and a context menu. Try using a dialog box.
-- Practice naming controls and organizing your code.
-
----
+Windows Forms provides dialogs such as `OpenFileDialog`, `SaveFileDialog`, `ColorDialog`, and `FontDialog`. Check the dialog result before using the selected value.
 
 ## References
-- [C# Programming Guide: Windows Forms](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/)
-- [C# Programming Guide: Event Handling](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/events-overview)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Windows Forms documentation](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/)
+- [Windows Forms control events](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/events)

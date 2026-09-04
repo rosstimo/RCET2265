@@ -1,48 +1,23 @@
-## 19. Not in This Course (Save for Advanced)
+# Topics Reserved for Advanced Programming
 
-Some topics are **deliberately left out** or only briefly mentioned in this intro class. You’ll see them (and much more pain) in the advanced course, but NOT here:
+RCET 2265 builds the foundation needed for later programming courses. Some useful topics are intentionally deferred so the introductory course can spend enough time on program flow, data, methods, classes, debugging, files, and basic event-driven programming.
 
-- **Interfaces:**
-  - `interface` keyword, designing contracts for classes, polymorphism
+Topics normally reserved for RCET 3371 or later work include:
 
-- **Abstract Classes & Methods:**
-  - `abstract` keyword, partial implementations, inheritance patterns
+- interfaces as an application-design tool
+- abstract classes and deeper polymorphism
+- LINQ beyond incidental examples
+- asynchronous programming with `async` / `await`
+- multithreading and synchronization
+- design patterns
+- network programming, HTTP clients, REST APIs, and sockets
+- database programming and ORMs
+- substantial serialization architectures
+- advanced Windows Forms custom controls
+- real-time/game rendering loops
+- dependency injection frameworks
+- large application architecture
 
-- **LINQ (Language Integrated Query):**
-  - Querying collections/objects with SQL-like syntax
+Some of these may appear briefly when they help explain a current example. A preview is not the same as a course requirement.
 
-- **Async/Await, Tasks, and Multithreading:**
-  - Asynchronous programming, background workers, parallel code
-
-- **Design Patterns:**
-  - MVC, MVVM, Singleton, Factory, etc.
-
-- **Complex Serialization:**
-  - JSON, XML, binary object persistence (beyond a basic demo)
-
-- **Networking & Web APIs:**
-  - HTTP clients, REST APIs, sockets, web programming
-
-- **Database Programming:**
-  - SQL, Entity Framework, connecting to and querying databases
-
-- **FileSystemWatcher:**
-  - Reacting to live file changes/events
-
-- **Custom Controls & Advanced WinForms/UI:**
-  - Owner-drawn controls, drag-and-drop, custom rendering
-
-- **Live Graphics/Game Loops:**
-  - GDI+ animation at game-level, real-time rendering
-
-- **Command Line Arguments:**
-  - Only demoed if time permits, not a requirement
-
-- **Exception Throwing (`throw`):**
-  - Creating and raising your own exceptions intentionally
-
-- **Advanced Access Modifiers:**
-  - `protected internal`, `private protected`, internal visibility across assemblies
-
-**If you want to learn these, take the advanced class, or come to office hours and I’ll show you what hell really looks like.**
-
+If an assignment explicitly introduces an item from this list, follow that assignment. Otherwise, focus first on the RCET 2265 foundations documented in the main [Topics index](README.md).

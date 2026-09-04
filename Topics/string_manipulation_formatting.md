@@ -1,88 +1,74 @@
-# String Manipulation & Formatting in C#
+# String Manipulation & Formatting
 
-## Introduction
+A `string` represents text. Strings are used for console input, messages, file contents, labels, and many other program values.
 
-Strings are used for text in your programs—names, messages, user input, and more. Learning to create, format, and manipulate strings is essential for almost every project. This section covers string creation, common methods, formatting, parsing, and fun assignments.
+## Creation and interpolation
 
----
+```csharp
+string firstName = "Ada";
+int score = 92;
+string message = $"{firstName} scored {score}.";
+Console.WriteLine(message);
+```
 
-**String Creation:**
-- Literal: `string name = "Sheila";`
-- Concatenation: `string full = first + " " + last;`
-- Interpolation: `$"Hi {name}, your score is {score}!"`
-- Example:
-  ```csharp
-  string first = "Sheila";
-  string last = "Rocks";
-  string full = first + " " + last;
-  string message = $"Hi {first}, welcome!";
-  Console.WriteLine(message);
-  ```
+String interpolation is usually easier to read than long chains of `+` concatenation.
 
----
+## Common operations
 
-**Common Methods:**
-- `ToUpper()`, `ToLower()`, `Substring()`, `IndexOf()`, `Contains()`, `Split()`, `Join()`
-- Example:
-  ```csharp
-  string input = "Yes";
-  if (input.ToLower().Contains("yes"))
-  {
-      Console.WriteLine("You said yes!");
-  }
-  string part = input.Substring(0, 1); // "Y"
-  ```
+```csharp
+string text = "  RCET 2265  ";
 
----
+Console.WriteLine(text.Trim());
+Console.WriteLine(text.ToUpper());
+Console.WriteLine(text.Contains("2265"));
+Console.WriteLine(text.IndexOf("2265"));
+```
 
-**Formatting and Padding:**
-- Align numbers/strings: `String.Format()`, `PadLeft()`, `PadRight()`, interpolation
-- Example:
-  ```csharp
-  int score = 42;
-  string formatted = String.Format("Score: {0,5}", score); // right-align
-  string padded = score.ToString().PadLeft(5, '0'); // "00042"
-  Console.WriteLine(formatted);
-  Console.WriteLine(padded);
-  ```
+Other useful members include `Substring`, `Split`, `Replace`, `StartsWith`, and `EndsWith`.
 
----
+## Comparing user input
 
-**Parsing and Conversion:**
-- `int.Parse()`, `double.Parse()`, `TryParse()` for safe conversions
-- Always check for invalid input, use `TryParse` inside a `try/catch` or if statement
-- Example:
-  ```csharp
-  string numberText = "123";
-  if (int.TryParse(numberText, out int number))
-  {
-      Console.WriteLine($"Parsed number: {number}");
-  }
-  else
-  {
-      Console.WriteLine("Invalid number!");
-  }
-  ```
+Do not use a substring test when you mean exact input. For example, `Contains("yes")` would also match unrelated words containing those letters.
 
----
+```csharp
+Console.Write("Continue? ");
+string? input = Console.ReadLine();
 
-**Why it Matters:**
-- Strings are everywhere—files, input, output
-- Learn to manipulate strings early = less pain later
+if (string.Equals(input?.Trim(), "yes", StringComparison.OrdinalIgnoreCase))
+{
+    Console.WriteLine("Continuing.");
+}
+```
 
----
+## Parsing numbers
 
-**Practical:**
-- Practice creating, formatting, and manipulating strings.
-- Try parsing user input and handling errors.
-- Build a simple MadLib or string reverser for fun.
+Use `TryParse` for normal user-input validation. Invalid input is expected and does not need to become an exception:
 
----
+```csharp
+Console.Write("Enter an integer: ");
+string? input = Console.ReadLine();
+
+if (int.TryParse(input, out int value))
+{
+    Console.WriteLine($"You entered {value}.");
+}
+else
+{
+    Console.WriteLine("Invalid integer.");
+}
+```
+
+## Formatting
+
+Interpolation supports alignment and format specifiers:
+
+```csharp
+double voltage = 3.2967;
+Console.WriteLine($"Voltage: {voltage:F2} V");
+```
 
 ## References
-- [C# Programming Guide: Strings](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [C# Programming Guide: Formatting Types](https://learn.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Strings in C#](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/strings/)
+- [String interpolation](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/strings/interpolation)
+- [`System.String` API](https://learn.microsoft.com/en-us/dotnet/api/system.string)

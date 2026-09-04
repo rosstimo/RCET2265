@@ -1,140 +1,43 @@
-# C# Course Topics & Subtopics Overview
+# RCET 2265 Course Topics Overview
 
-This document provides a high-level outline of all major topics and subtopics covered in the Intro to C# Programming course. Use this as a reference for planning, review, or navigation.
+This outline summarizes the concepts represented in the student-facing `Topics` folder. The course moves from small console programs toward structured programs, data collections, files, and event-driven graphical applications.
 
----
+## Foundations
 
-## 1. Tools, Setup & Workflow
-- Visual Studio setup and configuration
-- Project and solution structure
-- Git & GitHub basics
-- IDE habits and shortcuts
-- Documentation and error handling
+- development tools, projects, solutions, Git, and GitHub
+- source files, statements, expressions, comments, and program entry points
+- console input and output
+- variables, constants, built-in types, conversion, and validation
+- arithmetic, assignment, comparison, and Boolean operators
+- strings, formatting, and numeric calculations
 
-## 2. Program Structure & Syntax
-- Anatomy of a C# program (namespace, class, Main method)
-- Comments (single-line, multi-line)
+## Program flow and debugging
 
-## 3. Primitive Data Types
-- Core types: int, double, float, char, string, bool
-- Literal syntax and type suffixes
-- Extended types table (sbyte, byte, short, ushort, uint, long, ulong, decimal)
-- When/why to use each type
+- `if`, `else if`, `else`, and `switch`
+- compiler errors, runtime exceptions, and logic errors
+- breakpoints, stepping, variable inspection, and reading diagnostics
+- `for`, `foreach`, `while`, and `do` loops
 
-## 4. Getting Started & Console Fundamentals
-- Console basics (WriteLine, ReadLine, Beep, Clear)
-- Running programs and debugging
-- Documentation and help
+## Organizing data and code
 
-## 5. Variables & Constants
-- Declaring and initializing variables
-- Scope (local, class-level)
-- Explicit typing vs. var
-- Constants (naming, usage)
-- Good habits
+- arrays and common generic collections
+- methods, parameters, return values, scope, and lifetime
+- classes, objects, fields, properties, constructors, and access control
+- static versus instance members
+- splitting a project across multiple source files
 
-## 6. Math & The Math Class
-- Basic math operations
-- Math class methods
-- Order of operations
-- Real-world problems
+## Data and user interfaces
 
-## 7. Control Flow & Error Types
-- Conditionals (if, else if, else, switch)
-- Boolean logic
-- Error types (compiler, exceptions, logic, style)
-- Practical examples
+- text file input/output and path handling
+- Windows Forms controls and events
+- basic GDI+ drawing in Windows Forms
 
-## 8. Try/Catch & Debugging
-- Exception handling (try/catch)
-- Reading error messages
-- Debugging tools (breakpoints, step over/into, watches)
-- Why debugging matters
+## Course-wide habits
 
-## 9. Loops
-- Types of loops (for, while, do-while)
-- Loop control (break, continue, nested loops)
-- Common mistakes
-- Real tasks
+- readable naming and formatting
+- useful comments and documentation
+- source control
+- testing and debugging before submission
+- using official documentation to answer technical questions
 
-## 10. Collections & Data Structures
-- Arrays (declaration, initialization, access)
-- Lists (dynamic size, conversion, iteration)
-- Dictionaries (key/value pairs, lookup)
-- Stack & Queue (LIFO, FIFO)
-- Why data structures matter
-
-## 11. Methods & Functions
-- Subroutines (void)
-- Functions (return values)
-- Scope & lifetime
-- Argument passing (by value, by reference)
-- Overloading
-- Recursion
-
-## 12. Object-Oriented Programming (OOP)
-- Classes & objects
-- Constructors
-- Static vs. instance members
-- Namespaces & file/project structure
-- Access modifiers
-- Inheritance
-- Class libraries
-- Partial classes
-- Not covered: interfaces, abstract classes
-
-## 13. File I/O
-- Text file operations (read, write, append)
-- Dialogs (OpenFileDialog, SaveFileDialog, etc.)
-- Path handling
-- Advanced topics (binary files, serialization, async I/O)
-- Why file I/O matters
-
-## 14. Static Variables in C#: Best Practice
-- When and how to use static variables
-- Naming conventions
-- Accessing static members
-- TL;DR summary
-
-## 15. WinForms GUI
-- Basic controls (labels, buttons, textboxes, etc.)
-- Menus & context menus
-- ToolTips & access keys
-- Multiple forms and dialog boxes
-- Naming conventions
-- OOP structure and events
-- Good habits
-
-## 16. GDI+ Graphics (Etch-O-Sketch, etc)
-- What is GDI+
-- Drawing basics (Paint event, Graphics object, methods)
-- Drawing surface and user interaction
-- Animation & sound
-- Integration with UI
-- Why graphics matter
-
-## 17. Professionalism, Documentation & Habits
-- Commenting (intent, file headers, method summaries)
-- Git & version control
-- Assignment submission
-- Rubric adherence
-- Documentation & help
-- Why professionalism matters
-
-## 18. Not in This Course (Save for Advanced)
-- Interfaces
-- Abstract classes & methods
-- LINQ
-- Async/await, multithreading
-- Design patterns
-- Complex serialization
-- Networking & web APIs
-- Database programming
-- FileSystemWatcher
-- Custom controls & advanced UI
-- Live graphics/game loops
-- Command line arguments
-
----
-
-*For details and examples, see each topic's dedicated markdown file in this directory.*
+Some language and platform features are intentionally reserved for RCET 3371 or later work. See [Topics Reserved for Advanced Programming](not_in_this_course_save_for_advanced.md).
