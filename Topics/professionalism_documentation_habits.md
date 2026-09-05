@@ -12,15 +12,15 @@ Avoid comments that merely repeat the statement:
 count++; // increment count
 ```
 
-Course assignments may require file headers or XML documentation comments. Follow the assignment and [Commenting guide](../StyleGuide/Commenting.md).
+Course assignments may require file headers or XML documentation comments. Follow the assignment and the [RCET 2265 Style Guide: Comments](../StyleGuide/README.md#comments).
 
 ## Naming and formatting
 
 Use descriptive names and consistent formatting. Course rules are documented in the Style Guide:
 
-- [Naming Conventions](../StyleGuide/NamingConventions.md)
-- [Code Formatting](../StyleGuide/CodeFormatting.md)
-- [Indentation and Spacing](../StyleGuide/IndentationAndSpacing.md)
+- [Naming](../StyleGuide/README.md#naming)
+- [Indentation and Braces](../StyleGuide/README.md#indentation-and-braces)
+- [Spacing](../StyleGuide/README.md#spacing)
 
 ## Git
 
