@@ -1,84 +1,234 @@
-# RCET C# Style Guide
+# RCET 2265 C# Style Guide
 
-This directory contains the official style guide for RCET C# coursework. Use this README as a quick reference for the most important style rules. For full explanations and examples, follow the links in the table of contents below.
+This guide defines the C# coding style used in RCET 2265.
 
----
+The goal is readable, consistent code while learning programming fundamentals. Some requirements are deliberately more explicit than code you may see elsewhere.
 
-## Quick Reference Cheat Sheet
+If an assignment gives a specific requirement that differs from this guide, follow the assignment.
 
-**File & Project Structure:**
-- One public type per file; file name matches the type (e.g., `Product.cs` for `class Product`).
-- Folders mirror namespaces; avoid dumping files at the root.
-- Use PascalCase for all file and folder names; no spaces or underscores (e.g., `MyApp.Models`).
-- Use plural folder names for collections (e.g., `Models`, `Assignments`).
-- See: [ProjectStructure.md](ProjectStructure.md)
+## Program Structure
 
-**Commenting:**
-- Use `//` for short comments above the code they describe.
-- Comment the "why" not the "what"—explain intent, not obvious code.
-- Keep comments up to date; remove stale or misleading comments.
-- Use XML comments (`/// <summary>...</summary>`) for public APIs.
-- No commented-out code in releases.
-- See: [Commenting.md](Commenting.md)
+Use an explicit `Program` class and `Main` method.
 
-**Naming Conventions:**
-- Use PascalCase for types, classes, public members, and methods (e.g., `MyClass`, `CalculateSum`).
-- Use camelCase for local variables and parameters (e.g., `int count`, `string name`).
-- Private fields: camelCase with a leading underscore (e.g., `_count`).
-- Constants: ALL_CAPS with underscores (e.g., `MAX_RETRIES`, `DEFAULT_TIMEOUT`).
-- Boolean names should read like questions (e.g., `isReady`, `hasItems`).
-- No Hungarian notation or type/scope prefixes except `I` for interfaces and `_` for private fields.
-- Avoid abbreviations unless widely accepted (e.g., `URL`, `ID`).
-- See: [NamingConventions.md](NamingConventions.md)
+Do not use top-level statements in RCET 2265 assignments.
 
-**Indentation & Spacing:**
-- Indent code blocks by 4 spaces (never tabs).
-- Put a space after keywords (e.g. `if (` not `if(`).
-- Never mix tabs and spaces.
-- Indent continuation lines an extra 4 spaces.
-- Space after commas, no extra spaces inside parentheses/brackets.
-- No trailing whitespace.
-- See: [IndentationAndSpacing.md](IndentationAndSpacing.md)
+```csharp
+namespace HelloWorld
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, world!");
+        }
+    }
+}
+```
 
-**Formatting & Braces:**
-- Always put opening and closing braces `{}` on their own lines (Allman style). Example:
-  ```csharp
-  if (condition)
-  {
-      Console.WriteLine("Allman style");
-  }
-  ```
-- Always use braces, even for single-line `if` or loop bodies.
-- One statement and one declaration per line.
-- Use blank lines to separate logical sections (e.g., between methods).
-- See: [CodeFormatting.md](CodeFormatting.md)
+## Variables
 
-**Code Layout & Structure:**
-- One public type per file; file name matches the type.
-- Order members as follows: fields, properties, constructors, methods.
-- Explicitly specify access modifiers (e.g., `public`, `private`).
-- Use file-scoped namespaces at the top of the file. 
+Use explicit types.
 
-- See: [CodeLayoutAndStructure.md](CodeLayoutAndStructure.md)
+```csharp
+int studentCount;
+string userName;
+double averageScore;
+```
 
-**Git & GitHub:**
-- Commit often with clear messages.
-- Don’t commit commented-out code or temporary files.
-- Use branches for features and bug fixes.
-- See: [GitBestPractices.md](GitBestPractices.md)
+Do not use `var` unless specifically instructed.
 
----
+Declare the working variables for a method near the beginning of the method. This makes program state easier to identify while learning.
 
-## Table of Contents
+Use descriptive names.
 
-- [ProjectStructure.md](ProjectStructure.md) — Project Structure
-- [Commenting.md](Commenting.md) — Commenting
-- [NamingConventions.md](NamingConventions.md) — Naming Conventions
-- [IndentationAndSpacing.md](IndentationAndSpacing.md) — Indentation and Spacing
-- [CodeFormatting.md](CodeFormatting.md) — Code Formatting
-- [CodeLayoutAndStructure.md](CodeLayoutAndStructure.md) — Code Layout and Structure
-- [GitBestPractices.md](GitBestPractices.md) — Git & GitHub Best Practices
+```csharp
+string userInput;
+int firstNumber;
+int secondNumber;
+double averageScore;
+```
 
----
+Avoid names that do not explain what a value represents.
 
-For comprehensive explanations and more examples, follow the links above. All RCET C# assignments must follow these style rules.
+```csharp
+string x;
+int num1;
+int stuff;
+```
+
+A short loop counter may be named `index` or, when the scope is very small, `i`.
+
+## Naming
+
+| Program element | Style | Example |
+| --- | --- | --- |
+| Local variable | `camelCase` | `studentCount` |
+| Parameter | `camelCase` | `itemCount` |
+| Boolean variable | `camelCase`, reads like a condition | `isValid` |
+| Constant | `PascalCase` | `MaximumScore` |
+| Method | `PascalCase` | `CalculateAverage` |
+| Class | `PascalCase` | `StudentRecord` |
+| Property | `PascalCase` | `StudentName` |
+| Private field | `_camelCase` | `_currentScore` |
+
+Prefer names that describe what a value means rather than its data type.
+
+Use:
+
+```csharp
+string customerName;
+```
+
+instead of:
+
+```csharp
+string strName;
+```
+
+## Indentation and Braces
+
+Use four spaces for each indentation level.
+
+Use Allman-style braces. Opening and closing braces are placed on their own lines.
+
+Always use braces for `if`, `else`, loops, and other code blocks.
+
+```csharp
+if (score >= 70)
+{
+    Console.WriteLine("Passing");
+}
+else
+{
+    Console.WriteLine("Not passing");
+}
+```
+
+Do not write:
+
+```csharp
+if (score >= 70) Console.WriteLine("Passing");
+```
+
+## Spacing
+
+Put spaces around binary operators.
+
+```csharp
+total = firstNumber + secondNumber;
+
+if (score >= 70)
+{
+    Console.WriteLine("Passing");
+}
+```
+
+Put a space after commas.
+
+Do not add spaces just inside parentheses.
+
+```csharp
+CalculateTotal(firstNumber, secondNumber);
+```
+
+Write one statement per line and one declaration per line.
+
+```csharp
+int firstNumber;
+int secondNumber;
+
+firstNumber = 5;
+secondNumber = 10;
+```
+
+## Blank Lines
+
+Use blank lines to separate meaningful sections of code.
+
+Avoid both large blocks of unrelated statements and excessive blank lines.
+
+## Comments
+
+Comments should help another person understand something that is not obvious from the code.
+
+Good:
+
+```csharp
+// Convert the user's input before performing arithmetic.
+firstNumber = Convert.ToInt32(userInput);
+```
+
+Usually unnecessary:
+
+```csharp
+// Add one to count.
+count++;
+```
+
+Prefer readable code and meaningful names over large numbers of comments.
+
+Do not leave old code commented out in completed assignments. Git preserves previous versions.
+
+## Methods
+
+Method names use `PascalCase`.
+
+Parameters use `camelCase`.
+
+A method name should normally describe an action.
+
+```csharp
+static double CalculateAverage(int total, int count)
+{
+    double average;
+
+    average = (double)total / count;
+
+    return average;
+}
+```
+
+Use methods when separating part of a program makes the program easier to read, test, or reuse.
+
+## Classes
+
+Class names and property names use `PascalCase`.
+
+Private fields use `_camelCase`.
+
+Put the main class in a source file with the same name.
+
+```text
+StudentRecord.cs
+```
+
+```csharp
+internal class StudentRecord
+{
+    private int _score;
+
+    public string StudentName { get; set; }
+}
+```
+
+## Windows Forms
+
+Give controls names that describe both their purpose and control type.
+
+Examples:
+
+```text
+CustomerNameTextBox
+SubmitButton
+ResultsListBox
+StatusLabel
+```
+
+Do not manually edit generated `*.Designer.cs` files.
+
+Event handlers should remain readable. Move calculations or other substantial program logic into appropriately named methods when that improves the program structure.
+
+## References
+
+- [Microsoft C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+- [Microsoft C# Identifier Naming Rules and Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/identifier-names)
