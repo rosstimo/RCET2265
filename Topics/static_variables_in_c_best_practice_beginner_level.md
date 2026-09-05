@@ -12,13 +12,13 @@ Console.WriteLine(Counter.TotalCreated);  // 2
 
 class Counter
 {
-    private static int s_totalCreated;
+    private static int _totalCreated;
 
-    public static int TotalCreated => s_totalCreated;
+    public static int TotalCreated => _totalCreated;
 
     public Counter()
     {
-        s_totalCreated++;
+        _totalCreated++;
     }
 }
 ```
@@ -43,11 +43,7 @@ A static method can be useful when an operation does not require a particular ob
 
 C# does not support C-style or VB-style static local variables inside methods. Persistent shared state belongs in an appropriate field or object design.
 
-## Course naming
-
-The course style guide may use a distinct convention for private static fields. Follow the course guide for graded work.
-
 ## References
 
 - [Static classes and static class members](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members)
-- [Naming Conventions](../StyleGuide/NamingConventions.md)
+- [RCET 2265 Style Guide: Naming](../StyleGuide/README.md#naming)
