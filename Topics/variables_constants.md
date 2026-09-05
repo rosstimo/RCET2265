@@ -54,22 +54,22 @@ int count = 5;
 var otherCount = 5;   // compiler infers int
 ```
 
-**RCET 2265 course convention:** use explicit types unless an assignment or instructor example says otherwise. This is a teaching convention, not a limitation of C#.
+**RCET 2265 course convention:** use explicit types unless specifically instructed otherwise.
 
 ## Constants
 
 ```csharp
-const int MAX_SCORE = 100;
-const double INCHES_PER_FOOT = 12.0;
+const int MaximumScore = 100;
+const double InchesPerFoot = 12.0;
 ```
 
 A constant must be assigned when declared and cannot later be changed. For class members, constants are treated as static members, but you do not write the `static` modifier with `const`.
 
-**RCET 2265 course convention:** constant names use `ALL_CAPS` as specified in the course style guide.
+**RCET 2265 course convention:** constant names use `PascalCase` as specified in the course style guide.
 
 ## References
 
 - [C# language specification: variables](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/variables)
 - [Default values of C# types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values)
 - [Constants](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/constants)
-- [Naming Conventions](../StyleGuide/NamingConventions.md)
+- [RCET 2265 Style Guide: Naming](../StyleGuide/README.md#naming)
