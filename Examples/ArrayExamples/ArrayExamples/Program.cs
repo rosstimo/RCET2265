@@ -10,9 +10,9 @@
             measurements[4] = 47;
             measurements[0] = 55;
             
-            for (int i =0; i <= measurements.GetUpperBound(0); i++)
+            foreach (int measurement in measurements)
             {
-                Console.WriteLine(measurements[i]);
+                Console.WriteLine(measurement);
             }
 
            Console.WriteLine($"the array is {measurements.Length} elements long");
