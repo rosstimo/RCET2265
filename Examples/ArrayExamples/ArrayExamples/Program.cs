@@ -6,7 +6,7 @@
         {
             int[] measurements = { 47, 37, 63 };
 
-            Console.WriteLine(measurements[2]);
+            Console.WriteLine(measurements[3]);
 
         //pause
             Console.ReadLine();
