@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            int[] measurements = { 47, 37, 63 };
+            int[] measurements = new int[5];
+
+            measurements[2] = 34;
+            measurements[4] = 47;
+            measurements[0] = 55;
 
             Console.WriteLine(measurements[3]);
 
