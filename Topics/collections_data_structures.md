@@ -1,135 +1,79 @@
 # Collections & Data Structures in C#
 
-## Introduction
+Collections store groups of values. The useful question is not “which collection is best?” but “what operations does this problem need?”
 
-Collections and data structures let you store, organize, and work with groups of data in your programs. They are essential for everything from simple lists to complex databases. This section covers the most common types: arrays, lists, dictionaries, stacks, and queues, with examples for each.
+## Arrays
 
----
+Arrays have a fixed length and use zero-based indexes:
 
-**Arrays:**
-- Declare, initialize, access values
-  - Example:
-    ```csharp
-    int[] numbers = {1, 2, 3, 4};
-    Console.WriteLine(numbers[0]); // 1
-    ```
-- Loop through: `for`, `foreach`
-  - Example:
-    ```csharp
-    foreach (int n in numbers)
-    {
-        Console.WriteLine(n);
-    }
-    ```
-- Zero-based index, common bugs
-  - Remember: first item is at index 0
-- Multi-dimensional arrays (optional, demo)
-  - Example:
-    ```csharp
-    int[,] grid = new int[2, 2];
-    grid[0, 0] = 1;
-    grid[1, 1] = 2;
-    ```
+```csharp
+int[] measurements = { 10, 20, 30 };
+Console.WriteLine(measurements[0]);
+Console.WriteLine(measurements.Length);
+```
 
----
+## `List<T>`
 
-**Lists (`List<T>`):**
-- Dynamic size: `.Add()`, `.Remove()`, `.Count`
-  - Example:
-    ```csharp
-    List<string> names = new List<string>();
-    names.Add("Sheila");
-    names.Add("Alex");
-    Console.WriteLine(names.Count); // 2
-    names.Remove("Alex");
-    ```
-- Convert between arrays and lists
-  - Example:
-    ```csharp
-    string[] arr = {"a", "b"};
-    List<string> list = new List<string>(arr);
-    ```
-- Iterating with `foreach`
-  - Example:
-    ```csharp
-    foreach (string name in names)
-    {
-        Console.WriteLine(name);
-    }
-    ```
+A `List<T>` can grow and shrink:
 
----
+```csharp
+List<string> names = new();
+names.Add("Ada");
+names.Add("Grace");
+names.Remove("Ada");
 
-**Dictionaries:**
-- Key/value pairs: `Dictionary<string, int>`
-  - Example:
-    ```csharp
-    Dictionary<string, int> ages = new Dictionary<string, int>();
-    ages["Sheila"] = 30;
-    ages["Alex"] = 25;
-    Console.WriteLine(ages["Sheila"]); // 30
-    ```
-- Add, lookup, remove, `.ContainsKey`, `.TryGetValue`
-  - Example:
-    ```csharp
-    if (ages.ContainsKey("Alex"))
-    {
-        Console.WriteLine("Alex is in the dictionary.");
-    }
-    ages.Remove("Alex");
-    int value;
-    if (ages.TryGetValue("Sheila", out value))
-    {
-        Console.WriteLine($"Sheila's age is {value}");
-    }
-    ```
-- Real uses: phonebook, lookup table, word counter
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+```
 
----
+## `Dictionary<TKey,TValue>`
 
-**Stack & Queue:**
-- Stack (LIFO): `.Push()`, `.Pop()`, `.Peek()`
-  - Example:
-    ```csharp
-    Stack<int> stack = new Stack<int>();
-    stack.Push(1);
-    stack.Push(2);
-    Console.WriteLine(stack.Pop()); // 2
-    Console.WriteLine(stack.Peek()); // 1
-    ```
-- Queue (FIFO): `.Enqueue()`, `.Dequeue()`, `.Peek()`
-  - Example:
-    ```csharp
-    Queue<string> queue = new Queue<string>();
-    queue.Enqueue("First");
-    queue.Enqueue("Second");
-    Console.WriteLine(queue.Dequeue()); // First
-    Console.WriteLine(queue.Peek()); // Second
-    ```
-- Use cases: Undo/redo, print jobs, simulation
+A dictionary associates keys with values:
 
----
+```csharp
+Dictionary<string, int> scores = new();
+scores["Ada"] = 95;
+scores["Grace"] = 98;
 
-**Why it Matters:**
-- Data structures = how you actually do anything useful with code
-- Choosing the right tool makes code shorter, clearer, faster
+if (scores.TryGetValue("Ada", out int score))
+{
+    Console.WriteLine(score);
+}
+```
 
----
+Use `TryGetValue` when a key might not be present.
 
-**Practical:**
-- Practice creating and using arrays, lists, dictionaries, stacks, and queues.
-- Try looping through collections and accessing their elements.
-- Experiment with adding, removing, and looking up values.
-- Think about which data structure fits your problem best.
+## Stack and queue
 
----
+A `Stack<T>` is last-in, first-out. A `Queue<T>` is first-in, first-out.
+
+```csharp
+Stack<int> stack = new();
+stack.Push(10);
+stack.Push(20);
+Console.WriteLine(stack.Pop());   // 20
+
+Queue<int> queue = new();
+queue.Enqueue(10);
+queue.Enqueue(20);
+Console.WriteLine(queue.Dequeue()); // 10
+```
+
+## Selection questions
+
+Ask:
+
+- Is the size fixed or changing?
+- Do I access by numeric index or by a key?
+- Does insertion/removal order matter?
+- Do I need LIFO or FIFO behavior?
 
 ## References
-- [C# Programming Guide: Arrays](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/)
-- [C# Programming Guide: Collections](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections/)
-- [C# Programming Guide: Dictionaries](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections/dictionary-collection)
-- [C# Programming Guide: Stack and Queue](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections/stack-queue)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Collections](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/collections)
+- [`List<T>` API](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1)
+- [`Dictionary<TKey,TValue>` API](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2)
+- [`Stack<T>` API](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1)
+- [`Queue<T>` API](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1)

@@ -1,58 +1,53 @@
-# Tools, Setup & Workflow for C# Beginners
+# Tools, Setup & Workflow
 
-## Introduction
+RCET 2265 uses a real project workflow from the beginning: source files live in a project, the project is version controlled with Git, and the repository is pushed to GitHub.
 
-Setting up your tools and workflow is the first step to success in C#. This section covers installing Visual Studio, using Git, creating projects, and building good habits for working efficiently and safely.
+## Development environment
 
----
+For Windows desktop work, Visual Studio Community is the normal course environment. Install the .NET desktop development workload when Windows Forms is required.
 
-**Visual Studio:**
-- Download, install, and update. Community Edition is free and works great.
-- Configure basic settings: color scheme, fonts, line numbers, autosave.
-- Know the interface: Solution Explorer, Output window, Error List, Toolbox.
-- Use shortcuts: F5 (Run), F10 (Step Over), F11 (Step Into), Ctrl+K, Ctrl+C (comment).
+Use a supported .NET SDK. As of September 2026, .NET 10 is the current LTS release. Do not start new course projects on .NET 6, which is no longer supported.
 
----
+## Projects and solutions
 
-**Creating Projects:**
-- Start a new Console App (.NET 6+ recommended), pick sensible names.
-- Create a new Windows Forms App for GUIs.
-- Understand project, solution, and file structure.
+A C# project normally contains a `.csproj` file and one or more `.cs` source files. A Visual Studio solution can contain one or more projects.
 
----
+For early console work:
 
-**Git & GitHub:**
-- Install Git (or use built-in in VS).
-- Create local repositories, stage/commit, and push to remote (GitHub).
-- Clone, fork, and pull—know how to back up your code and not lose your work.
-- Solve common student problems with repos.
+1. Create a Console App project.
+2. Give the project a descriptive name.
+3. Build before making large changes.
+4. Run the program and confirm the output.
+5. Commit a working state before the next major change.
 
----
+Later projects may contain multiple source files and classes. Do not put an entire growing program into one giant source file just because it started that way.
 
-**IDE Habits:**
-- Set, hit, and clear breakpoints.
-- Step through code, use watches and locals to inspect variables.
-- Use Find All References, Go To Definition (F12), and Quick Actions (Ctrl+.) to move faster.
+## Git workflow
 
----
+A useful minimum cycle is:
 
-**Documentation:**
-- Use F1 and “Go to online docs” to survive.
-- Know where to find C# docs, MSDN, StackOverflow, and GitHub issues.
-- Get in the habit of reading error messages and documentation before asking for help.
+```text
+edit -> build/test -> git status -> git add -> git commit -> git push
+```
 
----
+Use `git status` often. A commit records a useful project state; GitHub is the remote copy and the submission/review point when the assignment says so.
 
-**Practical:**
-- Practice creating a new project and exploring the IDE.
-- Set up a Git repository and make your first commit.
-- Try using breakpoints and stepping through code.
+## Debugger habits
 
----
+Learn these early:
+
+- set and remove breakpoints
+- Step Over and Step Into
+- inspect local variables
+- read compiler and runtime messages before changing code
+- make one deliberate change at a time while troubleshooting
 
 ## References
-- [C# Programming Guide: Getting Started](https://learn.microsoft.com/en-us/dotnet/csharp/getting-started/)
-- [C# Programming Guide: Visual Studio](https://learn.microsoft.com/en-us/visualstudio/get-started/csharp/)
-- [StyleGuide/ProjectStructure.md](../StyleGuide/ProjectStructure.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Visual Studio documentation](https://learn.microsoft.com/en-us/visualstudio/)
+- [.NET downloads](https://dotnet.microsoft.com/en-us/download/dotnet)
+- [.NET support policy](https://dotnet.microsoft.com/en-us/platform/support/policy)
+- [Git documentation](https://git-scm.com/doc)
+- [GitHub: Get started](https://docs.github.com/en/get-started)
+- [Project Structure](../StyleGuide/ProjectStructure.md)
+- [Git Best Practices](../StyleGuide/GitBestPractices.md)

@@ -1,40 +1,41 @@
-# Topics Table of Contents
+# RCET 2265 Topics
 
-This directory contains core topics for the Intro to C# Programming course. Each topic is covered in its own markdown file. Click a topic below to jump to its section:
+These notes are student-facing references for **RCET 2265: Computer Fundamentals and Introduction to Programming**. They support lecture, examples, assignments, and lab work. They are not a substitute for assignment instructions or the course style guide.
 
-## Table of Contents
+The examples use modern C# and supported .NET. When an assignment starter project specifies a target framework or project structure, use the assignment requirements.
+
+## Topics
 
 1. [Tools, Setup & Workflow](tools_setup_workflow.md)
 2. [Program Structure & Syntax](program_structure_syntax.md)
-3. [Primitive Data Types](primitive_data_types.md)
-4. [Getting Started & Console Fundamentals](getting_started_console_fundamentals.md)
-5. [Variables & Constants](variables_constants.md)
-6. [Math & The Math Class](math_the_math_class.md)
-7. [Basic Operators](basic_operators.md)
-8. [Control Flow](control_flow.md)
-9. [Try/Catch & Debugging](try_catch_debugging.md)
-10. [Loops](loops.md)
-11. [Collections & Data Structures](collections_data_structures.md)
-12. [Methods & Functions](methods_functions.md)
-13. [Object-Oriented Programming (OOP)](object_oriented_programming_oop.md)
-14. [File I/O](file_i_o.md)
-15. [String Manipulation & Formatting](string_manipulation_formatting.md)
-16. [Static Variables in C#: Best Practice](static_variables_in_c_best_practice_beginner_level.md)
-17. [WinForms GUI](win_forms_gui.md)
-18. [GDI+ Graphics (Etch-O-Sketch, etc)](gdi_graphics_etch_o_sketch_etc.md)
-19. [Professionalism, Documentation & Habits](professionalism_documentation_habits.md)
-20. [Errors & Troubleshooting](errors_and_troubleshooting.md)
-21. [Not in This Course (Save for Advanced)](not_in_this_course_save_for_advanced.md)
+3. [Getting Started & Console Fundamentals](getting_started_console_fundamentals.md)
+4. [Variables & Constants](variables_constants.md)
+5. [Built-in and Primitive Data Types](primitive_data_types.md)
+6. [Basic Operators](basic_operators.md)
+7. [Math & the Math Class](math_the_math_class.md)
+8. [String Manipulation & Formatting](string_manipulation_formatting.md)
+9. [Control Flow](control_flow.md)
+10. [Errors & Troubleshooting](errors_and_troubleshooting.md)
+11. [Exceptions & Debugging](try_catch_debugging.md)
+12. [Loops](loops.md)
+13. [Collections & Data Structures](collections_data_structures.md)
+14. [Methods & Functions](methods_functions.md)
+15. [Object-Oriented Programming](object_oriented_programming_oop.md)
+16. [Static Members](static_variables_in_c_best_practice_beginner_level.md)
+17. [File I/O](file_i_o.md)
+18. [WinForms GUI](win_forms_gui.md)
+19. [GDI+ Graphics](gdi_graphics_etch_o_sketch_etc.md)
+20. [Professionalism, Documentation & Habits](professionalism_documentation_habits.md)
+21. [Topics Reserved for Advanced Programming](not_in_this_course_save_for_advanced.md)
 
----
+## Reference files
 
-### Reference & Support Files
-- [dotnet_documentation_links.md](dotnet_documentation_links.md)
-- [topic_update_workflow.md](topic_update_workflow.md)
-- [topics_overview.md](topics_overview.md)
-- [intro_to_c_programming_full_course_core_topics.md](intro_to_c_programming_full_course_core_topics.md)
-- [intro_to_c_programming_full_course_core_topics_final_draft.md](intro_to_c_programming_full_course_core_topics_final_draft.md)
+- [Course Topics Overview](topics_overview.md)
+- [.NET and C# Documentation References](dotnet_documentation_links.md)
+- [RCET 2265 Style Guide](../StyleGuide/README.md)
 
----
+## Documentation policy
 
-Each file contains detailed notes, examples, and best practices for the topic. Use this as a reference throughout the course!
+External links in this folder should point to first-party documentation whenever practical, primarily Microsoft Learn, .NET, Visual Studio, Git, and GitHub documentation. Course-specific conventions are identified as course rules rather than C# language requirements.
+
+Last full Topics review: **2026-09-04**.

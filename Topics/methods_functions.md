@@ -1,120 +1,57 @@
 # Methods & Functions in C#
 
-## Introduction
+In C#, the language term is **method**. In class discussion, “subroutine” may describe a method that returns `void`, while “function” may describe a method that returns a value.
 
-Methods and functions are blocks of code that perform specific tasks. They help you organize, reuse, and structure your programs. This section explains how to write methods, return values, pass arguments, and use features like overloading and recursion.
+## A method that returns `void`
 
----
+```csharp
+static void PrintGreeting(string name)
+{
+    Console.WriteLine($"Hello, {name}!");
+}
 
-**Subroutines (`void`):**
-- Methods that do something but return nothing
-- Syntax:
-  ```csharp
-  void SayHello()
-  {
-      Console.WriteLine("Hello!");
-  }
-  SayHello(); // Call the method
-  ```
+PrintGreeting("Ada");
+```
 
----
+## A method that returns a value
 
-**Functions (Return):**
-- Methods that return values
-- Syntax:
-  ```csharp
-  int Add(int x, int y)
-  {
-      return x + y;
-  }
-  int sum = Add(3, 4); // sum is 7
-  ```
-- Used for calculations, logic, transformations
+```csharp
+static int Add(int first, int second)
+{
+    return first + second;
+}
 
----
+int sum = Add(3, 4);
+Console.WriteLine(sum);
+```
 
-**Scope & Lifetime:**
-- Local variables: Exist only inside method/block
-- Class variables (fields): Exist as long as object exists
-- Static variables: Belong to the class, not instances
-- Example:
-  ```csharp
-  class Counter
-  {
-      int count = 0; // field
-      static int total = 0; // static field
-      void Increment()
-      {
-          count++;
-          total++;
-      }
-  }
-  ```
+## Parameters and arguments
 
----
+C# passes arguments **by value by default**.
 
-**Argument Passing:**
-- By value: default (makes a copy)
-- By reference: use `ref`/`out` (changes original); demo, but don’t overuse
-- Example:
-  ```csharp
-  void SetToTen(ref int number)
-  {
-      number = 10;
-  }
-  int myNum = 5;
-  SetToTen(ref myNum); // myNum is now 10
-  ```
+- For a value type such as `int`, the method receives a copy of the value.
+- For a reference type such as a class instance, the method receives a copy of the reference. Both references can refer to the same object, so the method can modify that object's members.
 
----
+`ref`, `out`, `in`, and `ref readonly` change parameter passing rules. RCET 2265 mainly uses normal value parameters first, then introduces the others when there is a reason for them.
 
-**Overloading:**
-- Same method name, different parameter list (C# picks the right one)
-- Makes APIs more flexible and code more readable
-- Example:
-  ```csharp
-  int Add(int x, int y) { return x + y; }
-  double Add(double x, double y) { return x + y; }
-  Console.WriteLine(Add(2, 3)); // 5
-  Console.WriteLine(Add(2.5, 3.5)); // 6.0
-  ```
+## Scope and lifetime
 
----
+Variables declared inside a method are local to the appropriate block. Parameters are local to the method call. Fields belong to an object or a type and therefore have a different lifetime.
 
-**Recursion:**
-- Method calls itself (with a base case, or you’ll crash)
-- Classic example: factorial, Fibonacci, sum array
-- Example:
-  ```csharp
-  int Factorial(int n)
-  {
-      if (n <= 1) return 1;
-      return n * Factorial(n - 1);
-  }
-  Console.WriteLine(Factorial(5)); // 120
-  ```
+## Overloading
 
----
+Methods can share a name when their parameter lists differ:
 
-**Why it Matters:**
-- Methods keep code organized, reusable, and readable
-- Understanding arguments, scope, and return values is core to all coding
+```csharp
+static int Add(int a, int b) => a + b;
+static double Add(double a, double b) => a + b;
+```
 
----
+## Recursion
 
-**Practical:**
-- Practice writing methods that do something and methods that return values.
-- Try passing arguments by value and by reference.
-- Experiment with method overloading and recursion.
-- Use methods to break up big problems into smaller, reusable pieces.
-
----
+Recursion is a useful concept but not a core RCET 2265 requirement unless assigned. A recursive method calls itself and must have a termination condition.
 
 ## References
-- [C# Programming Guide: Methods](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods/)
-- [C# Programming Guide: Parameters](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods/#parameters)
-- [C# Programming Guide: Recursion](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/recursion)
-- [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [StyleGuide/CodeFormatting.md](../StyleGuide/CodeFormatting.md)
-- [Topics/dotnet_documentation_links.md](dotnet_documentation_links.md)
 
+- [Methods](https://learn.microsoft.com/en-us/dotnet/csharp/methods)
+- [Method parameters and modifiers](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/method-parameters)
