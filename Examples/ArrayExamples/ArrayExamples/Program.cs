@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int[] measurements = { 47, 37, 63 };
+
+            Console.WriteLine(measurements[2]);
+
+        //pause
+            Console.ReadLine();
         }
     }
 }
