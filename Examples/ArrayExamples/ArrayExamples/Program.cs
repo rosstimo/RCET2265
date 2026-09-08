@@ -9,8 +9,13 @@
             measurements[2] = 34;
             measurements[4] = 47;
             measurements[0] = 55;
+            
+            for (int i =0; i < 5; i++)
+            {
+                Console.WriteLine(measurements[i]);
+            }
 
-            Console.WriteLine(measurements[3]);
+           Console.WriteLine($"the array is {measurements.Length} elements long");
 
         //pause
             Console.ReadLine();
