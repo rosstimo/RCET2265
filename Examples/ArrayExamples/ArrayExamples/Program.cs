@@ -10,7 +10,7 @@
             measurements[4] = 47;
             measurements[0] = 55;
             
-            for (int i =0; i < 5; i++)
+            for (int i =0; i <= measurements.GetUpperBound(0); i++)
             {
                 Console.WriteLine(measurements[i]);
             }
