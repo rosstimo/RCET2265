@@ -59,11 +59,16 @@
             //} while (!isValid);
             // Console.Clear();
 
+            int result = 0;
+            string output = "";
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    Console.Write("*");
+                    result = i + j;
+                    output = $"{result} |";
+                    output = output.PadLeft(5);
+                    Console.Write(output);
                 }
                 Console.WriteLine();
             }
