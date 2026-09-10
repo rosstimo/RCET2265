@@ -35,32 +35,41 @@
             //} while (userInput != "Q");
 
 
-            string userInput = "";
-            int firstNumber = 0;
-            bool isValid = false;
-            do
-            {
-                Console.WriteLine("Please enter a whole number:");
-                Console.WriteLine("Enter Q to quit:");
-                userInput = Console.ReadLine();
-                Console.WriteLine($"You entered {userInput}");
-                Console.Clear();
-                try
-                {
-                    firstNumber = int.Parse(userInput);
-                    isValid = true;
-                    Console.WriteLine("Success!");
-                }
-                catch (Exception)
-                {   
-                    isValid = false;
-                    Console.WriteLine("FAIL!!!");
-                }
-            } while (!isValid);
-
-
-
+            //string userInput = "";
+            //int firstNumber = 0;
+            //bool isValid = false;
+            //do
+            //{
+            //    Console.WriteLine("Please enter a whole number:");
+            //    Console.WriteLine("Enter Q to quit:");
+            //    userInput = Console.ReadLine();
+            //    Console.WriteLine($"You entered {userInput}");
+            //    Console.Clear();
+            //    try
+            //    {
+            //        firstNumber = int.Parse(userInput);
+            //        isValid = true;
+            //        Console.WriteLine("Success!");
+            //    }
+            //    catch (Exception)
+            //    {   
+            //        isValid = false;
+            //        Console.WriteLine("FAIL!!!");
+            //    }
+            //} while (!isValid);
             // Console.Clear();
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+
+
             Console.WriteLine("Have a nice day!");
             //pause
             Console.ReadLine();
