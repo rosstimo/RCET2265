@@ -2,71 +2,71 @@
 
 ## Purpose
 
-This assignment is about **writing and using a function**.
+This assignment practices writing a method that updates and returns persistent program state.
 
-Your job is to complete the `UserMessages` function so that it stores messages across multiple function calls.
+The starter project already provides the storage, menu, and test code. Your job is to complete the provided `UserMessages` method.
 
----
-
-## Starter Code
-
+## Starter Files
 
 Use the provided starter files:
 
 - [08-AccumulateMessagesStarter/Program.cs](08-AccumulateMessagesStarter/Program.cs)
 - [08-AccumulateMessagesStarter/Test.cs](08-AccumulateMessagesStarter/Test.cs)
 
-Do **not** rename the class, method, or files unless.
+Do not rename the provided files, classes, field, or method. Do not modify `Main` or the `Test` class.
 
+The starter code includes this class-level field:
+
+```csharp
+private static string messages = "";
+```
+
+That field is outside `UserMessages` on purpose. Its value remains available between separate calls to the method. You do not need to create another storage mechanism.
+
+Complete this method:
 
 ```csharp
 public static string UserMessages(string newMessage, bool clear)
 {
-   //Write your code here.
-   return messages;
+    // Write your code here.
+    return messages;
 }
 ```
 
----
+## Required Behavior
 
-## What Your Function Must Do
+Your method must satisfy all of the following rules:
 
-Write code for `UserMessages` so that it behaves as follows:
+1. If `clear` is `true`, erase all saved messages.
+2. When `clear` is `true`, do not save `newMessage` during that call.
+3. If `clear` is `false` and `newMessage` is not an empty string, add it to the saved messages.
+4. End each saved message with `Environment.NewLine`.
+5. Do not add anything when `newMessage` is an empty string.
+6. Always return all currently saved messages.
 
-1. The function must remember previously entered messages.
-2. All saved messages must be erased.
-3. Do not save empty messages.
-4. Each saved message should end with a newline.
-5. The function must return **all currently saved messages**.
+The method will be called many times. Its result therefore depends on both the current arguments and the messages saved by earlier calls.
 
----
+## Test Your Work
 
-## Important Rules
+The starter project provides two test modes.
 
-1. **You must use the provided function.**
-   - The required work belongs in `UserMessages`.
-   - There is no need to write any code outside of that function.
-   - do not change or modify any code in `Main` or `Test`.
+### Automatic test
 
-2. **Do not remove the test code.**
-   - The tests are there to help you verify that your function works.
+Run the program and choose `A`.
 
----
+The automatic tests check empty input, several sequential messages, clearing the saved messages, and clearing midway through a sequence. Continue until all tests pass.
 
-## How to Work on the Assignment
+### Manual test
 
-1. Open the starter project.
-2. Find the `UserMessages` function in `Program.cs`.
-3. Write your codeinside that function.
-4. Run the program with `Test.Auto();` enabled.
-5. Fix your code until all automatic tests pass.
-6. Optionally switch to `Test.Manual();` and try it yourself.
+Run the program and choose `M`.
 
----
+Use the menu to save messages, display them, clear them, and verify the behavior yourself.
+
+Do not remove or modify the provided test code to make a failing implementation appear to pass.
 
 ## Submission
 
-When your program is working:
+When the program is working:
 
 1. Save your work.
 2. Commit and push your code to your GitHub repository.
