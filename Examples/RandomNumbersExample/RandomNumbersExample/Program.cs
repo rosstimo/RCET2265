@@ -5,14 +5,32 @@
         static void Main(string[] args)
         {
             Random rnd = new();
+            int choice = 0;
 
-                Console.WriteLine(rnd.Next(3,7));
-                Console.WriteLine(rnd.Next(3,7));
-                Console.WriteLine(rnd.Next(3,7));
-                Console.WriteLine(rnd.Next(3,7));
-            Console.WriteLine(rnd.NextSingle());
-            Console.WriteLine(rnd.NextDouble());
+            for (int i = 0; i < 10000; i++)
+            {
+                choice = rnd.Next(10);
 
+                switch (choice)
+                {
+                    case 10:
+                        Console.WriteLine($"{choice} is 10");
+                        break;
+                    case < 5:
+                        Console.WriteLine($"{choice} is less than 5");
+                        break;
+                    case 5:
+                        Console.WriteLine($"{choice} is 5");
+                        break;
+                    case > 5:
+                        Console.WriteLine($"{choice} is greater than 5");
+                        break;
+                    default:
+                        Console.WriteLine($"Choice is {choice}. So something weird happened.");
+                        break;
+                }
+            }
+            Console.WriteLine("All done");
             Console.Read();
         }
     }
