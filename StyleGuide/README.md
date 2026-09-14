@@ -85,6 +85,19 @@ instead of:
 string strName;
 ```
 
+For electronics abbreviations inside your own C# identifiers, treat the abbreviation like a word and keep the normal casing for the identifier:
+
+```csharp
+int adcValue;
+int uartBaudRate;
+
+static void ConfigureUart()
+{
+}
+```
+
+Keep manufacturer-defined names exactly as documented when they identify an actual hardware symbol. For example, a register name such as `PORTB` should stay `PORTB` when you are referring to that register rather than inventing a new C# identifier.
+
 ## Indentation and Braces
 
 Use four spaces for each indentation level.
