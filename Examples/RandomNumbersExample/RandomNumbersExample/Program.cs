@@ -6,10 +6,13 @@
         {
             Random rnd = new();
 
-            for (int i = 0; i < 100; i++)
-            {
                 Console.WriteLine(rnd.Next(3,7));
-            }
+                Console.WriteLine(rnd.Next(3,7));
+                Console.WriteLine(rnd.Next(3,7));
+                Console.WriteLine(rnd.Next(3,7));
+            Console.WriteLine(rnd.NextSingle());
+            Console.WriteLine(rnd.NextDouble());
+                
 
             Console.Read();
         }
