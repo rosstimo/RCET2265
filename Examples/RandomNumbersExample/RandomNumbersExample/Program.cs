@@ -6,9 +6,9 @@
         {
             Random rnd = new();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1000; i++)
             {
-                Console.WriteLine(rnd.Next());
+                Console.WriteLine(rnd.Next(10));
             }
 
             Console.Read();
