@@ -12,7 +12,6 @@
                 Console.WriteLine(rnd.Next(3,7));
             Console.WriteLine(rnd.NextSingle());
             Console.WriteLine(rnd.NextDouble());
-                
 
             Console.Read();
         }
