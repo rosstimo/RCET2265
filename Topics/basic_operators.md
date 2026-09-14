@@ -22,6 +22,28 @@ double result = 9.0 / 4;
 Console.WriteLine(result);  // 2.25
 ```
 
+## Increment and decrement
+
+`++` adds 1 to a variable. `--` subtracts 1.
+
+```csharp
+int count = 3;
+
+count++;  // count is now 4
+count--;  // count is now 3
+```
+
+You will often see `i++` in a `for` loop because the loop counter increases by one after each iteration:
+
+```csharp
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+```
+
+C# also allows the operator before the variable, such as `++count`. Prefix and postfix forms can produce different values when they are part of a larger expression. In RCET 2265, keep the update as its own statement unless there is a clear reason to do otherwise.
+
 ## Assignment
 
 ```csharp
@@ -69,5 +91,6 @@ Use parentheses when they make the intended grouping easier to read.
 
 ## References
 
+- [Arithmetic operators](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators)
 - [C# operators](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/expressions/operators)
 - [C# language reference: operators](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/)

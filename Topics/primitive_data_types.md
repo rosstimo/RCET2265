@@ -25,6 +25,31 @@ char grade = 'A';
 string course = "RCET 2265";
 ```
 
+## Numeric size and range quick reference
+
+The fixed-size integer types are useful when you need to know exactly how many bits a value occupies.
+
+| C# type | Size | Range |
+|---|---:|---:|
+| `sbyte` | 8 bits | -128 to 127 |
+| `byte` | 8 bits | 0 to 255 |
+| `short` | 16 bits | -32,768 to 32,767 |
+| `ushort` | 16 bits | 0 to 65,535 |
+| `int` | 32 bits | -2,147,483,648 to 2,147,483,647 |
+| `uint` | 32 bits | 0 to 4,294,967,295 |
+| `long` | 64 bits | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| `ulong` | 64 bits | 0 to 18,446,744,073,709,551,615 |
+
+For floating-point and decimal types:
+
+| C# type | Size | Approximate range | Precision |
+|---|---:|---:|---:|
+| `float` | 32 bits | ±1.5 × 10^-45 to ±3.4 × 10^38 | about 6-9 digits |
+| `double` | 64 bits | ±5.0 × 10^-324 to ±1.7 × 10^308 | about 15-17 digits |
+| `decimal` | 128 bits | ±1.0 × 10^-28 to ±7.9228 × 10^28 | 28-29 digits |
+
+You do not need to memorize every range. Know the common types, know that integer types have fixed widths, and know where to look up the exact limits when they matter. Types such as `int` also expose constants such as `int.MinValue` and `int.MaxValue`.
+
 ## Integral types
 
 C# includes signed and unsigned integer types such as `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, and `ulong`. Choose a type because its meaning and range fit the data, not merely because a smaller type uses fewer bytes.
@@ -54,7 +79,8 @@ For value types, assignment copies the value. For reference types, assignment co
 
 ## References
 
+- [Integral numeric types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types)
+- [Floating-point numeric types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
 - [Value types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types)
 - [Reference types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types)
-- [Floating-point numeric types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
 - [Built-in reference types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types)
