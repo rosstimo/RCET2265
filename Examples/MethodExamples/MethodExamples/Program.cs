@@ -4,18 +4,14 @@
     {
         static void Main(string[] args)
         {
-            PrintGreeting();
-            PrintGreeting();
-            PrintGreeting();
-            PrintGreeting();
-            PrintGreeting();
+            PrintGreeting("Nancy");
             // pause
             Console.ReadLine();
         }
 
-        static void PrintGreeting()
+        static void PrintGreeting(string name)
         {
-            Console.WriteLine("hello from inside the method");
+            Console.WriteLine($"hello, {name}");
         }
     }
 }
