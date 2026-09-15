@@ -8,5 +8,10 @@
             // pause
             Console.ReadLine();
         }
+
+        static void PrintGreeting()
+        {
+            //code goes here
+        }
     }
 }
