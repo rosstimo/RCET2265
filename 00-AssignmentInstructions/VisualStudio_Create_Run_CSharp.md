@@ -60,7 +60,44 @@ namespace HelloWorld
 
 ![Visual Studio Target Framework and Options](../Images/VisialStudioAdditionalInformation.png)
 
-## 5. Build and Run
+## 5. Match the Course Editing / Console Behavior
+
+These settings are not C# language requirements, but they make classroom examples easier to follow.
+
+### Brace placement
+
+RCET 2265 examples use braces on a new line (Allman style):
+
+```csharp
+if (ready)
+{
+    Console.WriteLine("Ready");
+}
+```
+
+Visual Studio normally supports this formatting style through its C# formatting options. Microsoft also documents the EditorConfig setting:
+
+```ini
+csharp_new_line_before_open_brace = all
+```
+
+If Visual Studio keeps reformatting braces differently, check the C# formatting/New Lines settings. If a repository contains an `.editorconfig`, that project setting takes precedence over the matching user-level editor setting.
+
+### Keep console output visible
+
+If the console window disappears as soon as debugging stops, check Visual Studio's debugger option **Automatically close the console when debugging stops** and clear it when you want to inspect the final output.
+
+Some RCET 2265 examples also use:
+
+```csharp
+Console.ReadLine();
+```
+
+as an explicit pause. That is program behavior, while the Visual Studio debugger option is an IDE setting.
+
+The exact Options layout can vary slightly by Visual Studio version. Use the setting name in the Visual Studio Options search if you do not see the same path shown in class.
+
+## 6. Build and Run
 
 1. Build the project and correct any compiler errors.
 2. Run the program with the green **Start** button or `F5`.
@@ -68,7 +105,7 @@ namespace HelloWorld
 
 ![Visual Studio New Project Run](../Images/VisualStudioNewProjectRun.png)
 
-## 6. Put the Project on GitHub
+## 7. Put the Project on GitHub
 
 1. Open **Git > Git Changes**.
 2. If the project is not already a Git repository, select **Create Git Repository**.
@@ -81,7 +118,7 @@ namespace HelloWorld
 
 ![Visual Studio GitHub](../Images/VisualStudioGitHub.png)
 
-## 7. Normal Work Cycle
+## 8. Normal Work Cycle
 
 Do not treat Git as something you do only when the assignment is finished. A useful cycle is:
 
@@ -94,5 +131,7 @@ In Visual Studio, the **Git Changes** window lets you review changed files, writ
 ## References
 
 - [C# documentation](https://learn.microsoft.com/en-us/dotnet/csharp/)
+- [C# formatting options](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options)
+- [Visual Studio debugging options](https://learn.microsoft.com/en-us/visualstudio/debugger/debugging-options-dialog-box)
 - [Visual Studio documentation](https://learn.microsoft.com/en-us/visualstudio/)
 - [GitHub documentation for Visual Studio](https://docs.github.com/en/get-started/getting-started-with-git/getting-started-with-git-and-visual-studio)
