@@ -5,11 +5,16 @@
         static void Main(string[] args)
         {
             string[] names = { "Joe", "Nancy", "Jimmy", "Sally" , "Bob"};
+
+            // iterate through names and print greeting
             foreach (string name in names )
             {
                 PrintGreeting(name);
             }
-                Console.WriteLine(SumOf(5, 6));
+            
+            // demo return
+            Console.WriteLine(SumOf(5, 6));
+
             // pause
             Console.ReadLine();
         }
