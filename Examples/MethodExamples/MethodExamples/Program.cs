@@ -9,6 +9,7 @@
             {
                 PrintGreeting(name);
             }
+                Console.WriteLine(SumOf(5, 6));
             // pause
             Console.ReadLine();
         }
@@ -17,5 +18,11 @@
         {
             Console.WriteLine($"Hello, {name}!");
         }
+
+        static int SumOf(int firstNumber, int secondNumber)
+        {
+            return firstNumber + secondNumber;
+        }
+
     }
 }
