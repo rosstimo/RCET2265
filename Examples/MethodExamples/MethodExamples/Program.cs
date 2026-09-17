@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            string[] names = { "Joe", "Nancy", "Jimmy", "Sally" , "Bob"};
+            string[] names = {"Joe", "Nancy", "Jimmy", "Sally" , "Bob"};
             int value = 7;
             int someNumber = 10;
 
@@ -27,6 +27,8 @@
 
         static void PrintGreeting(string name)
         {
+            int localNumber = 0;
+            localNumber += 1;
             Console.WriteLine($"Hello, {name}!");
         }
 
