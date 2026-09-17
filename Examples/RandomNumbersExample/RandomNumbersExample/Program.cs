@@ -13,20 +13,32 @@
 
                 switch (choice)
                 {
-                    case 10:
-                        Console.WriteLine($"{choice} is 10");
+                    case 0:
+                        Console.WriteLine(choice);
                         break;
-                    case < 5:
-                        Console.WriteLine($"{choice} is less than 5");
+                    case 1:
+                        Console.WriteLine(choice);
+                        break;
+                    case 2:
+                        Console.WriteLine(choice);
+                        break;
+                    case 3:
+                        Console.WriteLine(choice);
+                        break;
+                    case 4:
+                        Console.WriteLine(choice);
                         break;
                     case 5:
-                        Console.WriteLine($"{choice} is 5");
+                        Console.WriteLine(choice);
                         break;
-                    case > 5:
-                        Console.WriteLine($"{choice} is greater than 5");
+                    case 6:
+                        Console.WriteLine(choice);
+                        break;
+                    case 7:
+                        Console.WriteLine(choice);
                         break;
                     default:
-                        Console.WriteLine($"Choice is {choice}. So something weird happened.");
+                        Console.WriteLine($"You rolled a {choice}. So something weird happened.");
                         break;
                 }
             }
