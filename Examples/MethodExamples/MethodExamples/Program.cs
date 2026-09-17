@@ -27,8 +27,6 @@
 
         static void PrintGreeting(string name)
         {
-            int localNumber = 0;
-            localNumber += 1;
             Console.WriteLine($"Hello, {name}!");
         }
 
