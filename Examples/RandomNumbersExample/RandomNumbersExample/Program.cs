@@ -6,41 +6,47 @@
         {
             Random rnd = new();
             int choice = 0;
+            int[] rolls = new int[8];
 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
-                choice = rnd.Next(10);
+                choice = rnd.Next(1,7);
 
-                switch (choice)
+                switch (choice) 
                 {
-                    case 0:
-                        Console.WriteLine(choice);
-                        break;
+                    //case 0:
+                    //    rolls[0]++;
+                    //    break;
                     case 1:
-                        Console.WriteLine(choice);
+                        rolls[1]++;
                         break;
                     case 2:
-                        Console.WriteLine(choice);
+                        rolls[2]++;
                         break;
                     case 3:
-                        Console.WriteLine(choice);
+                        rolls[3]++;
                         break;
                     case 4:
-                        Console.WriteLine(choice);
+                        rolls[4]++;
                         break;
                     case 5:
-                        Console.WriteLine(choice);
+                        rolls[5]++;
                         break;
                     case 6:
-                        Console.WriteLine(choice);
+                        rolls[6]++;
                         break;
-                    case 7:
-                        Console.WriteLine(choice);
-                        break;
+                    //case 7:
+                    //    rolls[7]++;
+                    //    break;
                     default:
                         Console.WriteLine($"You rolled a {choice}. So something weird happened.");
                         break;
                 }
+            }
+
+            foreach (int rollcount in rolls)
+            {
+                Console.WriteLine(rollcount);
             }
             Console.WriteLine("All done");
             Console.Read();
