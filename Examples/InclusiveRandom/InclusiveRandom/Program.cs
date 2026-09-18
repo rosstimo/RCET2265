@@ -18,9 +18,7 @@
         static int RandomNumberFrom(int max, int min)
         {
             Random randy = new Random();
-            int jimmy = randy.Next(min, max);
-
-            return jimmy;
+            return randy.Next(min, max);
         }
 
 
