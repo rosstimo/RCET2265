@@ -18,8 +18,9 @@
         static int RandomNumberFrom(int max, int min)
         {
             Random randy = new Random();
+            randy.Next(min, max);
 
-            return max + min;
+            return randy;
         }
 
 
