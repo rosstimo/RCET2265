@@ -17,7 +17,7 @@
 
         static int RandomNumberFrom(int max, int min)
         {
-            Random rnd = new Random();
+            Random randy = new Random();
 
             return max + min;
         }
