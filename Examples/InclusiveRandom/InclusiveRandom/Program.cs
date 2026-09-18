@@ -17,7 +17,7 @@
 
         static void RandomNumberFrom(int max, int min)
         {
-
+            return max + min;
         }
 
 
