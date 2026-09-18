@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-        
+            int myNumber = RandomNumberFrom(10, 3);
             // pause
             Console.ReadLine();
         }
@@ -14,5 +14,7 @@
         // [ ] returns and integer
         // [ ] takes two argument max, min in that order
         // [ ] later make max and min optional with reasonable default values
+
+
     }
 }
