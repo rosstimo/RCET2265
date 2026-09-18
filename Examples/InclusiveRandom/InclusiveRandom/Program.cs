@@ -4,9 +4,15 @@
     {
         static void Main(string[] args)
         {
-            int myNumber = RandomNumberFrom(10, 3);
+            TestRandomNumberInclusive();
             // pause
             Console.ReadLine();
+        }
+
+        static void TestRandomNumberInclusive()
+        {
+            int myNumber = RandomNumberFrom(10, 3);
+
         }
         
         // TODO
