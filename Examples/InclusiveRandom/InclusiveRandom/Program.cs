@@ -15,12 +15,12 @@
             {
                 if (RandomNumberFrom(10, 3) < 3 || RandomNumberFrom(10, 3) > 10)
                 {
-                    Console.WriteLine("Error");
+                    Console.WriteLine($"Error {RandomNumberFrom(10, 3) } is out of range");
                 }
-                else
-                { 
-                    Console.WriteLine(RandomNumberFrom(10, 3));
-                }
+                //else
+                //{ 
+                //    Console.WriteLine(RandomNumberFrom(10, 3));
+                //}
             }
 
         }
@@ -34,7 +34,7 @@
         static int RandomNumberFrom(int max, int min)
         {
             Random randy = new Random();
-            return randy.Next(min, max + 1);
+            return randy.Next(min, max + 1 + 1);
         }
 
 
