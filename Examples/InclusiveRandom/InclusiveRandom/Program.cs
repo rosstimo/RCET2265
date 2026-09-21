@@ -13,7 +13,7 @@
         {
             for (int i = 0; i < 1000; i++)
             {
-                if (i < 3 || i > 10)
+                if (RandomNumberFrom(10, 3) < 3 || RandomNumberFrom(10, 3) > 10)
                 {
                     Console.WriteLine("Error");
                 }
