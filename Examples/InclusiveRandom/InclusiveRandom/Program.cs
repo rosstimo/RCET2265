@@ -13,6 +13,11 @@
         {
             int myNumber = RandomNumberFrom(10, 3);
 
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.WriteLine(myNumber);
+            }
+
         }
         
         // TODO
@@ -24,7 +29,7 @@
         static int RandomNumberFrom(int max, int min)
         {
             Random randy = new Random();
-            return randy.Next(min, max);
+            return randy.Next(min, max + 1);
         }
 
 
