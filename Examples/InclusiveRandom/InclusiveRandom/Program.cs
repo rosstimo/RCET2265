@@ -11,12 +11,16 @@
 
         static void TestRandomNumberInclusive()
         {
-            int myNumber = RandomNumberFrom(10, 3);
-
             for (int i = 0; i < 1000; i++)
             {
-                myNumber = RandomNumberFrom(10, 3);
-                Console.WriteLine(myNumber);
+                if (i < 3 || i > 10)
+                {
+                    Console.WriteLine("Error");
+                }
+                else
+                { 
+                    Console.WriteLine(RandomNumberFrom(10, 3));
+                }
             }
 
         }
