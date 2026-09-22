@@ -37,11 +37,11 @@ public static class Program
         // [ ] - Make sure all auto tests pass.
     public static string UserMessages(string newMessage, bool clear)
     {
+        messages += newMessage + "\n";
         if (clear)
         {
             messages = "";
         }
-        messages += newMessage + "\n";
         return messages;
     }
 }
