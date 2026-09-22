@@ -37,7 +37,6 @@ public static class Program
         // [ ] - Make sure all auto tests pass.
     public static string UserMessages(string newMessage, bool clear)
     {
-        //Write your code here.
         if (clear)
         {
             messages = "";
@@ -45,6 +44,4 @@ public static class Program
         messages += newMessage + "\n";
         return messages;
     }
-
-
 }
