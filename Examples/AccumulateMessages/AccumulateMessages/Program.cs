@@ -30,7 +30,7 @@ public static class Program
         Console.ReadLine();
     }
         //TODO:
-        // [ ] - If clear is true, erase all saved messages.
+        // [?] - If clear is true, erase all saved messages.
         // [ ] - Do not save empty messages.
         // [x] - add a new line after each new message.
         // [x] - Always return currently saved messages.
@@ -38,6 +38,10 @@ public static class Program
     public static string UserMessages(string newMessage, bool clear)
     {
         //Write your code here.
+        if (clear)
+        {
+            messages = "";
+        }
         messages += newMessage + "\n";
         return messages;
     }
