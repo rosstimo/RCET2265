@@ -4,6 +4,8 @@ public static class Program
 {
     private static string messages = "";
 
+    public static object Envirnment { get; private set; }
+
     // Do not change the code in Main
     public static void Main(string[] args)
     {
@@ -30,17 +32,20 @@ public static class Program
         Console.ReadLine();
     }
         //TODO:
-        // [?] - If clear is true, erase all saved messages.
-        // [ ] - Do not save empty messages.
+        // [x] - If clear is true, erase all saved messages.
+        // [x] - Do not save empty messages.
         // [x] - add a new line after each new message.
         // [x] - Always return currently saved messages.
-        // [ ] - Make sure all auto tests pass.
+        // [x] - Make sure all auto tests pass.
     public static string UserMessages(string newMessage, bool clear)
     {
-        messages += newMessage + "\n";
         if (clear)
         {
             messages = "";
+        }
+        else if (newMessage != "")
+        {
+            messages += newMessage + Environment.NewLine; // can't simply use /n or /r/n because will not match ion all systems.
         }
         return messages;
     }
