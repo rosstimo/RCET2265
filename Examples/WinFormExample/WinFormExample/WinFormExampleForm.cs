@@ -21,7 +21,7 @@ namespace WinFormExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
+            this.Text = "Hello";
         }
     }
 }

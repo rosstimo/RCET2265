@@ -61,7 +61,7 @@
             SubmitButton.TabIndex = 2;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
-            SubmitButton.Click += SubmitButton_Click; 
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // WinFormExampleForm
             // 
@@ -72,7 +72,8 @@
             Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Name = "WinFormExampleForm";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "WinForm Example Form";
             ResumeLayout(false);
         }
 
