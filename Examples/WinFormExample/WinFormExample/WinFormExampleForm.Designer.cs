@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             ExitButton = new Button();
+            ClearButton = new Button();
+            SubmitButton = new Button();
             SuspendLayout();
             // 
             // ExitButton
@@ -40,11 +42,31 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(366, 299);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(100, 50);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            // 
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(260, 299);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(100, 50);
+            SubmitButton.TabIndex = 2;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            // 
             // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 361);
+            Controls.Add(SubmitButton);
+            Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Name = "WinFormExampleForm";
             Text = "Form1";
@@ -54,5 +76,7 @@
         #endregion
 
         private Button ExitButton;
+        private Button ClearButton;
+        private Button SubmitButton;
     }
 }
