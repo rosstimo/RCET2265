@@ -41,6 +41,7 @@
             ExitButton.TabIndex = 0;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // ClearButton
             // 
@@ -50,6 +51,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // SubmitButton
             // 
@@ -59,6 +61,7 @@
             SubmitButton.TabIndex = 2;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // WinFormExampleForm
             // 
