@@ -61,7 +61,7 @@
             SubmitButton.TabIndex = 2;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
-            SubmitButton.Click += SubmitButton_Click;
+            SubmitButton.Click += SubmitButton_Click; 
             // 
             // WinFormExampleForm
             // 
@@ -74,6 +74,11 @@
             Name = "WinFormExampleForm";
             Text = "Form1";
             ResumeLayout(false);
+        }
+
+        private void SubmitButton_Click1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
