@@ -11,7 +11,7 @@ namespace WinFormExample
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
