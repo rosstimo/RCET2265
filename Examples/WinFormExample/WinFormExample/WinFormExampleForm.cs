@@ -16,12 +16,12 @@ namespace WinFormExample
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            InfoTextBox.Text = "";
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            this.Text = "Hello";
+            this.Text = InfoTextBox.Text;
         }
     }
 }
