@@ -47,6 +47,8 @@
             LowerCaseRadioButton = new RadioButton();
             checkBox4 = new CheckBox();
             RemoveRadioButton = new RadioButton();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // ExitButton
@@ -54,7 +56,7 @@
             ExitButton.Location = new Point(472, 299);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(100, 50);
-            ExitButton.TabIndex = 5;
+            ExitButton.TabIndex = 11;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
@@ -64,7 +66,7 @@
             ClearButton.Location = new Point(366, 299);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(100, 50);
-            ClearButton.TabIndex = 4;
+            ClearButton.TabIndex = 10;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
@@ -74,7 +76,7 @@
             SubmitButton.Location = new Point(260, 299);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(100, 50);
-            SubmitButton.TabIndex = 3;
+            SubmitButton.TabIndex = 9;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
@@ -133,7 +135,7 @@
             checkBox1.Location = new Point(124, 224);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(82, 19);
-            checkBox1.TabIndex = 8;
+            checkBox1.TabIndex = 4;
             checkBox1.Text = "checkBox1";
             checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +145,7 @@
             DefaultRadioButton.Location = new Point(24, 223);
             DefaultRadioButton.Name = "DefaultRadioButton";
             DefaultRadioButton.Size = new Size(63, 19);
-            DefaultRadioButton.TabIndex = 9;
+            DefaultRadioButton.TabIndex = 3;
             DefaultRadioButton.TabStop = true;
             DefaultRadioButton.Text = "Default";
             DefaultRadioButton.UseVisualStyleBackColor = true;
@@ -151,18 +153,19 @@
             // ResultListBox
             // 
             ResultListBox.FormattingEnabled = true;
-            ResultListBox.Location = new Point(260, 64);
+            ResultListBox.Location = new Point(260, 94);
             ResultListBox.Name = "ResultListBox";
-            ResultListBox.Size = new Size(312, 229);
+            ResultListBox.Size = new Size(312, 199);
             ResultListBox.TabIndex = 10;
+            ResultListBox.TabStop = false;
             // 
             // UpperCaseRadioButton
             // 
             UpperCaseRadioButton.AutoSize = true;
-            UpperCaseRadioButton.Location = new Point(260, 16);
+            UpperCaseRadioButton.Location = new Point(6, 22);
             UpperCaseRadioButton.Name = "UpperCaseRadioButton";
             UpperCaseRadioButton.Size = new Size(85, 19);
-            UpperCaseRadioButton.TabIndex = 12;
+            UpperCaseRadioButton.TabIndex = 0;
             UpperCaseRadioButton.TabStop = true;
             UpperCaseRadioButton.Text = "Upper Case";
             UpperCaseRadioButton.UseVisualStyleBackColor = true;
@@ -170,10 +173,10 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(360, 17);
+            checkBox2.Location = new Point(106, 23);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(82, 19);
-            checkBox2.TabIndex = 11;
+            checkBox2.TabIndex = 1;
             checkBox2.Text = "checkBox2";
             checkBox2.UseVisualStyleBackColor = true;
             // 
@@ -194,14 +197,14 @@
             checkBox3.Location = new Point(124, 249);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(82, 19);
-            checkBox3.TabIndex = 13;
+            checkBox3.TabIndex = 5;
             checkBox3.Text = "checkBox3";
             checkBox3.UseVisualStyleBackColor = true;
             // 
             // LowerCaseRadioButton
             // 
             LowerCaseRadioButton.AutoSize = true;
-            LowerCaseRadioButton.Location = new Point(260, 39);
+            LowerCaseRadioButton.Location = new Point(6, 45);
             LowerCaseRadioButton.Name = "LowerCaseRadioButton";
             LowerCaseRadioButton.Size = new Size(82, 19);
             LowerCaseRadioButton.TabIndex = 16;
@@ -212,10 +215,10 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(360, 40);
+            checkBox4.Location = new Point(106, 46);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(82, 19);
-            checkBox4.TabIndex = 15;
+            checkBox4.TabIndex = 2;
             checkBox4.Text = "checkBox4";
             checkBox4.UseVisualStyleBackColor = true;
             // 
@@ -230,18 +233,27 @@
             RemoveRadioButton.Text = "Remove Spaces";
             RemoveRadioButton.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(UpperCaseRadioButton);
+            groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(LowerCaseRadioButton);
+            groupBox1.Controls.Add(checkBox4);
+            groupBox1.Location = new Point(260, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(312, 76);
+            groupBox1.TabIndex = 6;
+            groupBox1.TabStop = false;
+            // 
             // WinFormExampleForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 361);
+            Controls.Add(groupBox1);
             Controls.Add(RemoveRadioButton);
-            Controls.Add(LowerCaseRadioButton);
-            Controls.Add(checkBox4);
             Controls.Add(ReverseRadioButton);
             Controls.Add(checkBox3);
-            Controls.Add(UpperCaseRadioButton);
-            Controls.Add(checkBox2);
             Controls.Add(ResultListBox);
             Controls.Add(DefaultRadioButton);
             Controls.Add(checkBox1);
@@ -257,6 +269,8 @@
             Name = "WinFormExampleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WinForm Example Form";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,5 +301,6 @@
         private RadioButton LowerCaseRadioButton;
         private CheckBox checkBox4;
         private RadioButton RemoveRadioButton;
+        private GroupBox groupBox1;
     }
 }
