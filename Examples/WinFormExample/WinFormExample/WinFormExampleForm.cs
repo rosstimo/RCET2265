@@ -6,6 +6,7 @@ namespace WinFormExample
         {
             InitializeComponent();
             SetDefaults();
+            EvaluateFields();
         }
 
         static string userMessage = "";
@@ -25,6 +26,7 @@ namespace WinFormExample
             checkBox4.Checked = false;
 
             InfoTextBox.Select();
+
         }
 
         bool EvaluateFields()
@@ -34,28 +36,40 @@ namespace WinFormExample
             try
             {
                 int.Parse(AgeTextBox.Text);
+                AgeTextBox.BackColor = Color.White;
             }
             catch (Exception)
             {
                 valid = false;
-                AgeTextBox.Select();
+                //AgeTextBox.Select();
+                AgeTextBox.BackColor = Color.LightYellow;
                 userMessage += "Age must be a whole number\n";
             }
 
             if (NameTextBox.Text == "")
             {
                 valid = false;
-                NameTextBox.Select();
+                //NameTextBox.Select();
+                NameTextBox.BackColor = Color.LightYellow;
                 userMessage += "Name is required\n";
+            }
+            else
+            {
+                NameTextBox.BackColor = Color.White;
             }
 
             if (InfoTextBox.Text == "")
             {
                 valid = false;
-                InfoTextBox.Select();
-                userMessage +="Info is required\n";
+                //InfoTextBox.Select();
+                InfoTextBox.BackColor = Color.LightYellow;
+                userMessage += "Info is required\n";
             }
-
+            else
+            {
+                InfoTextBox.BackColor = Color.White;
+            }
+            SubmitButton.Enabled = valid;
             return valid;
         }
 
@@ -80,9 +94,24 @@ namespace WinFormExample
             }
             else
             {
-                MessageBox.Show(userMessage,"Invalid Input",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show(userMessage, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 userMessage = "";
             }
+        }
+
+        private void InfoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            EvaluateFields();
+        }
+
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            EvaluateFields();
+        }
+
+        private void AgeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            EvaluateFields();
         }
     }
 }

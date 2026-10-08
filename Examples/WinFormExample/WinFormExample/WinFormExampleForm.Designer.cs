@@ -96,6 +96,7 @@
             InfoTextBox.Name = "InfoTextBox";
             InfoTextBox.Size = new Size(158, 23);
             InfoTextBox.TabIndex = 0;
+            InfoTextBox.TextChanged += InfoTextBox_TextChanged;
             // 
             // NameTextBox
             // 
@@ -103,6 +104,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(158, 23);
             NameTextBox.TabIndex = 1;
+            NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
             // NameLabel
             // 
@@ -119,6 +121,7 @@
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(158, 23);
             AgeTextBox.TabIndex = 2;
+            AgeTextBox.TextChanged += AgeTextBox_TextChanged;
             // 
             // AgeLabel
             // 
