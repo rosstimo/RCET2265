@@ -25,6 +25,35 @@ namespace WinFormExample
             InfoTextBox.Select();
         }
 
+        bool EvaluateFields()
+        {
+            bool valid = true;
+
+            try
+            {
+                int.Parse(AgeTextBox.Text);
+            }
+            catch (Exception)
+            {
+                valid = false;
+                AgeTextBox.Select();
+            }
+
+            if (NameTextBox.Text == "")
+            {
+                valid = false;
+                NameTextBox.Select();
+            }
+
+            if (InfoTextBox.Text == "")
+            {
+                valid = false;
+                InfoTextBox.Select();
+            }
+
+            return valid;
+        }
+
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -38,9 +67,12 @@ namespace WinFormExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            string prettyText = "";
-            prettyText = $"{InfoTextBox.Text}, {NameTextBox.Text}, {AgeTextBox.Text}";
-            ResultListBox.Items.Add(prettyText);
+            if (EvaluateFields())
+            {
+                string prettyText = "";
+                prettyText = $"{InfoTextBox.Text}, {NameTextBox.Text}, {AgeTextBox.Text}";
+                ResultListBox.Items.Add(prettyText);
+            }
         }
     }
 }
