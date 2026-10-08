@@ -8,6 +8,8 @@ namespace WinFormExample
             SetDefaults();
         }
 
+        static string userMessage = "";
+
         void SetDefaults()
         {
             InfoTextBox.Text = "";
@@ -37,18 +39,21 @@ namespace WinFormExample
             {
                 valid = false;
                 AgeTextBox.Select();
+                userMessage += "Age must be a whole number\n";
             }
 
             if (NameTextBox.Text == "")
             {
                 valid = false;
                 NameTextBox.Select();
+                userMessage += "Name is required\n";
             }
 
             if (InfoTextBox.Text == "")
             {
                 valid = false;
                 InfoTextBox.Select();
+                userMessage +="Info is required\n";
             }
 
             return valid;
@@ -72,6 +77,11 @@ namespace WinFormExample
                 string prettyText = "";
                 prettyText = $"{InfoTextBox.Text}, {NameTextBox.Text}, {AgeTextBox.Text}";
                 ResultListBox.Items.Add(prettyText);
+            }
+            else
+            {
+                MessageBox.Show(userMessage,"Invalid Input",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                userMessage = "";
             }
         }
     }
