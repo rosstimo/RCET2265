@@ -6,7 +6,10 @@ namespace DataLoggingF26
         {
             InitializeComponent();
         }
+
+        Queue<int> buffer = new Queue<int>();
         
+        int lastX, lastY;
         void DrawLine(int x, int y)
         {
             // constructor for graphics objet that draws on picture box
@@ -18,14 +21,40 @@ namespace DataLoggingF26
 
             g.ScaleTransform(sx, -sy); // update scale and flip y +/- direction
             g.TranslateTransform(0, -1023); //move origin down to bottom left
-            g.DrawLine(myPen, 0, 0, x, y);
+            g.DrawLine(myPen, lastX, lastY, x, y);
+            lastX = x;
+            lastY = y;
 
             //free up resources
             g.Dispose();
             myPen.Dispose();
         }
 
-
+        void DrawBuffer()
+        {
+            DisplayPictureBox.Refresh();
+            lastX = 0;
+            lastY = 0;
+            for(int point = 0; point < buffer.Count; point++)
+            {
+                DrawLine(point, buffer.ElementAt(point));
+            }
+        }
+        
+        int GetFakeData()
+        {
+            Random randy = new Random();
+            return randy.Next(1024);
+        }
+        
+        void GetDataSample()
+        {
+            if (buffer.Count >= 100)
+            {
+                buffer.Dequeue();
+            }
+            buffer.Enqueue(GetFakeData());
+        }
 
 
         // Event handlers below here ******************************************
@@ -41,7 +70,9 @@ namespace DataLoggingF26
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            DrawLine(90,512);
+            //DrawLine(90,512);
+            GetDataSample();
+            DrawBuffer();
         }
     }
 }
