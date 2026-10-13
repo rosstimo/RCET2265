@@ -8,7 +8,7 @@ namespace DataLoggingF26
         }
 
         Queue<int> buffer = new Queue<int>();
-        
+
         int lastX, lastY;
         void DrawLine(int x, int y)
         {
@@ -32,21 +32,21 @@ namespace DataLoggingF26
 
         void DrawBuffer()
         {
-            DisplayPictureBox.Refresh();
+            //DisplayPictureBox.Refresh(); Too slow. flicker
             lastX = 0;
             lastY = 0;
-            for(int point = 0; point < buffer.Count; point++)
+            for (int point = 0; point < buffer.Count; point++)
             {
                 DrawLine(point, buffer.ElementAt(point));
             }
         }
-        
+
         int GetFakeData()
         {
             Random randy = new Random();
             return randy.Next(1024);
         }
-        
+
         void GetDataSample()
         {
             if (buffer.Count >= 100)
@@ -71,6 +71,19 @@ namespace DataLoggingF26
         private void DrawButton_Click(object sender, EventArgs e)
         {
             //DrawLine(90,512);
+
+            if (SampleTimer.Enabled)
+            {
+                SampleTimer.Enabled = false;
+            }
+            else
+            {
+                SampleTimer.Enabled= true;
+            }
+        }
+
+        private void SampleTimer_Tick(object sender, EventArgs e)
+        {
             GetDataSample();
             DrawBuffer();
         }
