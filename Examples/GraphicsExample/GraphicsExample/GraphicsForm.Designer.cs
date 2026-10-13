@@ -28,95 +28,159 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            pictureBox1 = new PictureBox();
-            menuStrip1 = new MenuStrip();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ButtonGroupBox = new GroupBox();
+            DrawButton = new Button();
+            ExitButton = new Button();
+            ClearButton = new Button();
+            DisplayPictureBox = new PictureBox();
+            TopMenuStrip = new MenuStrip();
+            FileTopMenuItem = new ToolStripMenuItem();
+            drawToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            EditTopMenuItem = new ToolStripMenuItem();
+            clearToolStripMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            ButtonGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
+            TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // ButtonGroupBox
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button6);
-            groupBox1.Controls.Add(button5);
-            groupBox1.Location = new Point(482, 326);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(281, 97);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            ButtonGroupBox.Controls.Add(DrawButton);
+            ButtonGroupBox.Controls.Add(ExitButton);
+            ButtonGroupBox.Controls.Add(ClearButton);
+            ButtonGroupBox.Location = new Point(491, 326);
+            ButtonGroupBox.Name = "ButtonGroupBox";
+            ButtonGroupBox.Size = new Size(281, 97);
+            ButtonGroupBox.TabIndex = 3;
+            ButtonGroupBox.TabStop = false;
             // 
-            // button4
+            // DrawButton
             // 
-            button4.Location = new Point(6, 22);
-            button4.Name = "button4";
-            button4.Size = new Size(79, 52);
-            button4.TabIndex = 0;
-            button4.Text = "button1";
-            button4.UseVisualStyleBackColor = true;
+            DrawButton.Location = new Point(6, 22);
+            DrawButton.Name = "DrawButton";
+            DrawButton.Size = new Size(79, 52);
+            DrawButton.TabIndex = 0;
+            DrawButton.Text = "&Draw";
+            DrawButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // ExitButton
             // 
-            button5.Location = new Point(91, 22);
-            button5.Name = "button5";
-            button5.Size = new Size(79, 52);
-            button5.TabIndex = 1;
-            button5.Text = "button2";
-            button5.UseVisualStyleBackColor = true;
+            ExitButton.Location = new Point(176, 22);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(79, 52);
+            ExitButton.TabIndex = 2;
+            ExitButton.Text = "E&xit";
+            ExitButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // ClearButton
             // 
-            button6.Location = new Point(176, 22);
-            button6.Name = "button6";
-            button6.Size = new Size(79, 52);
-            button6.TabIndex = 2;
-            button6.Text = "button3";
-            button6.UseVisualStyleBackColor = true;
+            ClearButton.Location = new Point(91, 22);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(79, 52);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "&Clear";
+            ClearButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // DisplayPictureBox
             // 
-            pictureBox1.Location = new Point(215, 152);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(352, 87);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            DisplayPictureBox.BackColor = Color.White;
+            DisplayPictureBox.Location = new Point(12, 27);
+            DisplayPictureBox.Name = "DisplayPictureBox";
+            DisplayPictureBox.Size = new Size(760, 293);
+            DisplayPictureBox.TabIndex = 4;
+            DisplayPictureBox.TabStop = false;
             // 
-            // menuStrip1
+            // TopMenuStrip
             // 
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
+            TopMenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, EditTopMenuItem, HelpTopMenuItem });
+            TopMenuStrip.Location = new Point(0, 0);
+            TopMenuStrip.Name = "TopMenuStrip";
+            TopMenuStrip.Size = new Size(784, 24);
+            TopMenuStrip.TabIndex = 5;
+            TopMenuStrip.Text = "menuStrip1";
+            // 
+            // FileTopMenuItem
+            // 
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { drawToolStripMenuItem, exitToolStripMenuItem });
+            FileTopMenuItem.Name = "FileTopMenuItem";
+            FileTopMenuItem.Size = new Size(37, 20);
+            FileTopMenuItem.Text = "&File";
+            // 
+            // drawToolStripMenuItem
+            // 
+            drawToolStripMenuItem.Name = "drawToolStripMenuItem";
+            drawToolStripMenuItem.Size = new Size(101, 22);
+            drawToolStripMenuItem.Text = "&Draw";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(101, 22);
+            exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // EditTopMenuItem
+            // 
+            EditTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clearToolStripMenuItem });
+            EditTopMenuItem.Name = "EditTopMenuItem";
+            EditTopMenuItem.Size = new Size(39, 20);
+            EditTopMenuItem.Text = "&Edit";
+            // 
+            // clearToolStripMenuItem
+            // 
+            clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            clearToolStripMenuItem.Size = new Size(101, 22);
+            clearToolStripMenuItem.Text = "&Clear";
+            // 
+            // HelpTopMenuItem
+            // 
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            HelpTopMenuItem.Name = "HelpTopMenuItem";
+            HelpTopMenuItem.Size = new Size(44, 20);
+            HelpTopMenuItem.Text = "&Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(107, 22);
+            aboutToolStripMenuItem.Text = "&About";
             // 
             // GraphicsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
-            Controls.Add(groupBox1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            ClientSize = new Size(784, 421);
+            Controls.Add(DisplayPictureBox);
+            Controls.Add(ButtonGroupBox);
+            Controls.Add(TopMenuStrip);
+            MainMenuStrip = TopMenuStrip;
             Name = "GraphicsForm";
-            Text = "Form1";
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Grapics";
+            ButtonGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            TopMenuStrip.ResumeLayout(false);
+            TopMenuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private GroupBox groupBox1;
-        private Button button4;
-        private Button button6;
-        private Button button5;
-        private PictureBox pictureBox1;
-        private MenuStrip menuStrip1;
+        private GroupBox ButtonGroupBox;
+        private Button DrawButton;
+        private Button ExitButton;
+        private Button ClearButton;
+        private PictureBox DisplayPictureBox;
+        private MenuStrip TopMenuStrip;
+        private ToolStripMenuItem FileTopMenuItem;
+        private ToolStripMenuItem EditTopMenuItem;
+        private ToolStripMenuItem HelpTopMenuItem;
+        private ToolStripMenuItem drawToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem clearToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
