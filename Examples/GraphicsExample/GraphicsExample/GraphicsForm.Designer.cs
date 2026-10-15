@@ -65,6 +65,7 @@
             DrawButton.TabIndex = 0;
             DrawButton.Text = "&Draw";
             DrawButton.UseVisualStyleBackColor = true;
+            DrawButton.Click += DrawButton_Click;
             // 
             // ExitButton
             // 
@@ -84,6 +85,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // DisplayPictureBox
             // 
