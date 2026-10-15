@@ -63,7 +63,7 @@ namespace GraphicsExample
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            
+            DisplayPictureBox.Refresh();
         }
 
         private void DrawButton_Click(object sender, EventArgs e)
