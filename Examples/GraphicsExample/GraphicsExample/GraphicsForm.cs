@@ -9,12 +9,13 @@ namespace GraphicsExample
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseMove;
         }
 
-
-        void DrawLine()
+        int lastX, lastY;
+        void DrawLine(int x, int y)
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
             Pen myPen = new Pen(Color.Black);
-            g.DrawLine(myPen, 0, 0, 100, 100);
+            g.DrawLine(myPen, lastX, lastY, x, y);
+
 
             g.Dispose();
             myPen.Dispose();
@@ -67,7 +68,7 @@ namespace GraphicsExample
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            DrawLine();
+            //DrawLine();
             DrawRectangle();
             DrawEllipse();
             DrawString(); 
@@ -75,6 +76,12 @@ namespace GraphicsExample
         private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
         {
             this.Text = $"({e.X},{e.Y}) Button: {e.Button}";
+            if (e.Button == MouseButtons.Left)
+            {
+                DrawLine(e.X, e.Y);
+            }
+            lastX = e.X;
+            lastY = e.Y;
         }
     }
 }
