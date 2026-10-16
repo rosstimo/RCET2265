@@ -75,8 +75,28 @@ namespace WinFormExample
 
         void WriteToFile()
         {
-            using StreamWriter fileThing = new StreamWriter("testFile.txt");
-            fileThing.Write("wake up neo...");
+            using (StreamWriter writer = File.CreateText("testFile.txt"))
+            {
+                writer.WriteLine("wake up neo...");
+            }
+        }
+
+        void AppendToFile()
+        {
+            using (StreamWriter writer = File.AppendText("testFile.txt"))
+            {
+                writer.WriteLine("follow the white rabbit...");
+            }
+        }
+        
+        void ReadFromFile()
+        {
+            using (StreamReader reader = new StreamReader("testFile.txt"))
+            {
+                ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+            }
         }
 
         // Event handlers below here ******************************************
@@ -103,7 +123,11 @@ namespace WinFormExample
                 MessageBox.Show(userMessage, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 userMessage = "";
             }
-            WriteToFile();
+            //WriteToFile();
+
+            //AppendToFile();
+
+            ReadFromFile();
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)
