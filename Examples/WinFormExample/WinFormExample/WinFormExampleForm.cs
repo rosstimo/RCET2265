@@ -96,6 +96,21 @@ namespace WinFormExample
                 ResultListBox.Items.Add(reader.ReadLine());
                 ResultListBox.Items.Add(reader.ReadLine());
                 ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+                ResultListBox.Items.Add(reader.ReadLine());
+            }
+        }
+
+        void ReadWholeFile()
+        {
+            using (StreamReader reader = new StreamReader("testFile.txt"))
+            {
+                while ( !reader.EndOfStream )
+                {
+                    ResultListBox.Items.Add(reader.ReadLine());
+                }
             }
         }
 
@@ -128,6 +143,8 @@ namespace WinFormExample
             //AppendToFile();
 
             ReadFromFile();
+
+            //ReadWholeFile();
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)
