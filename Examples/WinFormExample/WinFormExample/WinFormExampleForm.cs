@@ -73,6 +73,12 @@ namespace WinFormExample
             return valid;
         }
 
+        void WriteToFile()
+        {
+            using StreamWriter fileThing = new StreamWriter("testFile.txt");
+            fileThing.Write("wake up neo...");
+        }
+
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -97,6 +103,7 @@ namespace WinFormExample
                 MessageBox.Show(userMessage, "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 userMessage = "";
             }
+            WriteToFile();
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)
