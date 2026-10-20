@@ -48,6 +48,7 @@
             // 
             // ButtonGroupBox
             // 
+            ButtonGroupBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ButtonGroupBox.Controls.Add(DrawButton);
             ButtonGroupBox.Controls.Add(ExitButton);
             ButtonGroupBox.Controls.Add(ClearButton);
