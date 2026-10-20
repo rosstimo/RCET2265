@@ -90,6 +90,7 @@
             // 
             // DisplayPictureBox
             // 
+            DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DisplayPictureBox.BackColor = Color.White;
             DisplayPictureBox.Location = new Point(12, 27);
             DisplayPictureBox.Name = "DisplayPictureBox";
