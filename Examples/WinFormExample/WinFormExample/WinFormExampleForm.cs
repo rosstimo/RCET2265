@@ -142,9 +142,9 @@ namespace WinFormExample
 
             //AppendToFile();
 
-            ReadFromFile();
+            //ReadFromFile();
 
-            //ReadWholeFile();
+            ReadWholeFile();
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)

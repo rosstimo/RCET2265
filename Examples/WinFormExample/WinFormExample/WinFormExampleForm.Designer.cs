@@ -250,8 +250,10 @@
             // 
             // WinFormExampleForm
             // 
+            AcceptButton = SubmitButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = ClearButton;
             ClientSize = new Size(584, 361);
             Controls.Add(groupBox1);
             Controls.Add(RemoveRadioButton);
