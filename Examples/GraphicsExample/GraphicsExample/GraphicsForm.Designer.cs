@@ -51,9 +51,9 @@
             ButtonGroupBox.Controls.Add(DrawButton);
             ButtonGroupBox.Controls.Add(ExitButton);
             ButtonGroupBox.Controls.Add(ClearButton);
-            ButtonGroupBox.Location = new Point(491, 326);
+            ButtonGroupBox.Location = new Point(510, 326);
             ButtonGroupBox.Name = "ButtonGroupBox";
-            ButtonGroupBox.Size = new Size(281, 97);
+            ButtonGroupBox.Size = new Size(262, 83);
             ButtonGroupBox.TabIndex = 3;
             ButtonGroupBox.TabStop = false;
             // 
