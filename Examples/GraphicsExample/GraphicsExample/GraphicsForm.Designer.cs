@@ -28,21 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ButtonGroupBox = new GroupBox();
             DrawButton = new Button();
             ExitButton = new Button();
             ClearButton = new Button();
             DisplayPictureBox = new PictureBox();
+            ContextMenuStrip = new ContextMenuStrip(components);
+            DrawContextMenuItem = new ToolStripMenuItem();
+            ColorContextMenuItem = new ToolStripMenuItem();
+            BackGroundContextMenuItem = new ToolStripMenuItem();
+            SizeContextMenuItem = new ToolStripMenuItem();
+            ClearContextMenuItem = new ToolStripMenuItem();
+            ExitContextMenuItem = new ToolStripMenuItem();
             TopMenuStrip = new MenuStrip();
             FileTopMenuItem = new ToolStripMenuItem();
-            drawToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
+            DrawMenuItem = new ToolStripMenuItem();
+            ExitMenuItem = new ToolStripMenuItem();
             EditTopMenuItem = new ToolStripMenuItem();
-            clearToolStripMenuItem = new ToolStripMenuItem();
+            ClearTopMenuItem = new ToolStripMenuItem();
             HelpTopMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem = new ToolStripMenuItem();
+            AboutTopMenuItem = new ToolStripMenuItem();
+            ColorPickerDialog = new ColorDialog();
             ButtonGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
+            ContextMenuStrip.SuspendLayout();
             TopMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,11 +102,57 @@
             // 
             DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DisplayPictureBox.BackColor = Color.White;
+            DisplayPictureBox.ContextMenuStrip = ContextMenuStrip;
             DisplayPictureBox.Location = new Point(12, 27);
             DisplayPictureBox.Name = "DisplayPictureBox";
             DisplayPictureBox.Size = new Size(760, 293);
             DisplayPictureBox.TabIndex = 4;
             DisplayPictureBox.TabStop = false;
+            // 
+            // ContextMenuStrip
+            // 
+            ContextMenuStrip.Items.AddRange(new ToolStripItem[] { DrawContextMenuItem, ColorContextMenuItem, BackGroundContextMenuItem, SizeContextMenuItem, ClearContextMenuItem, ExitContextMenuItem });
+            ContextMenuStrip.Name = "ContextMenuStrip";
+            ContextMenuStrip.Size = new Size(139, 136);
+            // 
+            // DrawContextMenuItem
+            // 
+            DrawContextMenuItem.Name = "DrawContextMenuItem";
+            DrawContextMenuItem.Size = new Size(138, 22);
+            DrawContextMenuItem.Text = "Draw";
+            // 
+            // ColorContextMenuItem
+            // 
+            ColorContextMenuItem.Name = "ColorContextMenuItem";
+            ColorContextMenuItem.Size = new Size(138, 22);
+            ColorContextMenuItem.Text = "Color";
+            ColorContextMenuItem.Click += ColorContextMenuItem_Click;
+            // 
+            // BackGroundContextMenuItem
+            // 
+            BackGroundContextMenuItem.Name = "BackGroundContextMenuItem";
+            BackGroundContextMenuItem.Size = new Size(138, 22);
+            BackGroundContextMenuItem.Text = "Background";
+            BackGroundContextMenuItem.Click += BackGroundContextMenuItem_Click;
+            // 
+            // SizeContextMenuItem
+            // 
+            SizeContextMenuItem.Name = "SizeContextMenuItem";
+            SizeContextMenuItem.Size = new Size(138, 22);
+            SizeContextMenuItem.Text = "Size";
+            SizeContextMenuItem.Click += SizeContextMenuItem_Click;
+            // 
+            // ClearContextMenuItem
+            // 
+            ClearContextMenuItem.Name = "ClearContextMenuItem";
+            ClearContextMenuItem.Size = new Size(138, 22);
+            ClearContextMenuItem.Text = "Clear";
+            // 
+            // ExitContextMenuItem
+            // 
+            ExitContextMenuItem.Name = "ExitContextMenuItem";
+            ExitContextMenuItem.Size = new Size(138, 22);
+            ExitContextMenuItem.Text = "Exit";
             // 
             // TopMenuStrip
             // 
@@ -109,48 +165,48 @@
             // 
             // FileTopMenuItem
             // 
-            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { drawToolStripMenuItem, exitToolStripMenuItem });
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { DrawMenuItem, ExitMenuItem });
             FileTopMenuItem.Name = "FileTopMenuItem";
             FileTopMenuItem.Size = new Size(37, 20);
             FileTopMenuItem.Text = "&File";
             // 
-            // drawToolStripMenuItem
+            // DrawMenuItem
             // 
-            drawToolStripMenuItem.Name = "drawToolStripMenuItem";
-            drawToolStripMenuItem.Size = new Size(101, 22);
-            drawToolStripMenuItem.Text = "&Draw";
+            DrawMenuItem.Name = "DrawMenuItem";
+            DrawMenuItem.Size = new Size(101, 22);
+            DrawMenuItem.Text = "&Draw";
             // 
-            // exitToolStripMenuItem
+            // ExitMenuItem
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(101, 22);
-            exitToolStripMenuItem.Text = "E&xit";
+            ExitMenuItem.Name = "ExitMenuItem";
+            ExitMenuItem.Size = new Size(101, 22);
+            ExitMenuItem.Text = "E&xit";
             // 
             // EditTopMenuItem
             // 
-            EditTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clearToolStripMenuItem });
+            EditTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ClearTopMenuItem });
             EditTopMenuItem.Name = "EditTopMenuItem";
             EditTopMenuItem.Size = new Size(39, 20);
             EditTopMenuItem.Text = "&Edit";
             // 
-            // clearToolStripMenuItem
+            // ClearTopMenuItem
             // 
-            clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            clearToolStripMenuItem.Size = new Size(101, 22);
-            clearToolStripMenuItem.Text = "&Clear";
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(101, 22);
+            ClearTopMenuItem.Text = "&Clear";
             // 
             // HelpTopMenuItem
             // 
-            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
             HelpTopMenuItem.Name = "HelpTopMenuItem";
             HelpTopMenuItem.Size = new Size(44, 20);
             HelpTopMenuItem.Text = "&Help";
             // 
-            // aboutToolStripMenuItem
+            // AboutTopMenuItem
             // 
-            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(107, 22);
-            aboutToolStripMenuItem.Text = "&About";
+            AboutTopMenuItem.Name = "AboutTopMenuItem";
+            AboutTopMenuItem.Size = new Size(107, 22);
+            AboutTopMenuItem.Text = "&About";
             // 
             // GraphicsForm
             // 
@@ -166,6 +222,7 @@
             Text = "Grapics";
             ButtonGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            ContextMenuStrip.ResumeLayout(false);
             TopMenuStrip.ResumeLayout(false);
             TopMenuStrip.PerformLayout();
             ResumeLayout(false);
@@ -183,9 +240,17 @@
         private ToolStripMenuItem FileTopMenuItem;
         private ToolStripMenuItem EditTopMenuItem;
         private ToolStripMenuItem HelpTopMenuItem;
-        private ToolStripMenuItem drawToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem clearToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem DrawMenuItem;
+        private ToolStripMenuItem ExitMenuItem;
+        private ToolStripMenuItem ClearTopMenuItem;
+        private ToolStripMenuItem AboutTopMenuItem;
+        private ContextMenuStrip ContextMenuStrip;
+        private ToolStripMenuItem DrawContextMenuItem;
+        private ToolStripMenuItem ColorContextMenuItem;
+        private ToolStripMenuItem BackGroundContextMenuItem;
+        private ToolStripMenuItem SizeContextMenuItem;
+        private ToolStripMenuItem ClearContextMenuItem;
+        private ToolStripMenuItem ExitContextMenuItem;
+        private ColorDialog ColorPickerDialog;
     }
 }

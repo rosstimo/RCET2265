@@ -7,13 +7,18 @@ namespace GraphicsExample
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseMove;
+            DrawContextMenuItem.Click += DrawButton_Click;
+            ClearContextMenuItem.Click += ClearButton_Click;
+            ExitContextMenuItem.Click += ExitButton_Click;
         }
+        private int penSize = 1;
+        private Color penColor = Color.Black, backgroundColor = Color.White;
 
         int lastX, lastY;
         void DrawLine(int x, int y)
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
-            Pen myPen = new Pen(Color.Black);
+            Pen myPen = new Pen(penColor, penSize);
             g.DrawLine(myPen, lastX, lastY, x, y);
 
 
@@ -37,7 +42,7 @@ namespace GraphicsExample
             Graphics g = DisplayPictureBox.CreateGraphics();
             Pen myPen = new Pen(Color.Blue);
 
-            g.DrawEllipse(myPen,100,100, 200, 200);
+            g.DrawEllipse(myPen, 100, 100, 200, 200);
 
             g.Dispose();
             myPen.Dispose();
@@ -71,7 +76,7 @@ namespace GraphicsExample
             //DrawLine();
             DrawRectangle();
             DrawEllipse();
-            DrawString(); 
+            DrawString();
         }
         private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
         {
@@ -80,8 +85,30 @@ namespace GraphicsExample
             {
                 DrawLine(e.X, e.Y);
             }
+            else if (e.Button == MouseButtons.Middle) 
+            {
+                ColorPickerDialog.ShowDialog();
+                penColor = ColorPickerDialog.Color;
+            }
             lastX = e.X;
             lastY = e.Y;
+        }
+
+        private void ColorContextMenuItem_Click(object sender, EventArgs e)
+        {
+            //change pen color in dialogue
+            ColorPickerDialog.ShowDialog();
+            penColor = ColorPickerDialog.Color;
+        }
+
+        private void BackGroundContextMenuItem_Click(object sender, EventArgs e)
+        {
+            //change background color in dialogue
+        }
+
+        private void SizeContextMenuItem_Click(object sender, EventArgs e)
+        {
+            //change pen size in dialogue
         }
     }
 }
