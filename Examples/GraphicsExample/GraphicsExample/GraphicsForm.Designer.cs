@@ -205,8 +205,9 @@
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(107, 22);
+            AboutTopMenuItem.Size = new Size(180, 22);
             AboutTopMenuItem.Text = "&About";
+            AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
             // GraphicsForm
             // 

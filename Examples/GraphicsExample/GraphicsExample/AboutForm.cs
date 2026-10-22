@@ -14,5 +14,10 @@ namespace GraphicsExample
         {
             InitializeComponent();
         }
+
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

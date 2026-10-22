@@ -11,6 +11,8 @@ namespace GraphicsExample
             ClearContextMenuItem.Click += ClearButton_Click;
             ExitContextMenuItem.Click += ExitButton_Click;
         }
+
+
         private int penSize = 1;
         private Color penColor = Color.Black, backgroundColor = Color.White;
 
@@ -85,7 +87,7 @@ namespace GraphicsExample
             {
                 DrawLine(e.X, e.Y);
             }
-            else if (e.Button == MouseButtons.Middle) 
+            else if (e.Button == MouseButtons.Middle)
             {
                 ColorPickerDialog.ShowDialog();
                 penColor = ColorPickerDialog.Color;
@@ -110,5 +112,19 @@ namespace GraphicsExample
         {
             //change pen size in dialogue
         }
+
+        private void AboutTopMenuItem_Click(object sender, EventArgs e)
+        {
+            //instantiate a new instance of an AboutForm
+            AboutForm about = new AboutForm();
+
+            //hide main form
+            this.Hide();
+            //show about and wait here
+            about.ShowDialog();
+            //show main form again when about form closes
+            this.Show();
+        }
+
     }
 }
