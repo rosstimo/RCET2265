@@ -10,6 +10,7 @@ namespace GraphicsExample
             DrawContextMenuItem.Click += DrawButton_Click;
             ClearContextMenuItem.Click += ClearButton_Click;
             ExitContextMenuItem.Click += ExitButton_Click;
+            ShowSplashForm();
         }
 
 
@@ -62,6 +63,19 @@ namespace GraphicsExample
             brush.Dispose();
         }
 
+        void ShowSplashForm()
+        {
+            //instantiate a new instance of an AboutForm
+            SplashForm splash = new SplashForm();
+
+            //hide main form
+            this.Hide();
+            //show about and wait here
+            splash.ShowDialog();
+            //show main form again when about form closes
+            this.Show();
+        }
+
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -79,6 +93,7 @@ namespace GraphicsExample
             DrawRectangle();
             DrawEllipse();
             DrawString();
+            ShowSplashForm();
         }
         private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
         {

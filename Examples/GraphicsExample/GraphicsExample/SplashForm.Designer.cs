@@ -28,12 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            SplashTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
+            // 
+            // SplashTimer
+            // 
+            SplashTimer.Enabled = true;
+            SplashTimer.Interval = 3000;
+            SplashTimer.Tick += SplashTimer_Tick;
             // 
             // SplashForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Fuchsia;
+            BackgroundImage = Properties.Resources.StanSplashImage;
+            BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(800, 450);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -43,9 +54,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SplashForm";
             TopMost = true;
+            TransparencyKey = Color.Fuchsia;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer SplashTimer;
     }
 }
