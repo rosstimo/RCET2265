@@ -83,7 +83,7 @@ namespace WinFormExample
 
         void AppendToFile()
         {
-            using (StreamWriter writer = File.AppendText("testFile.txt"))
+            using (StreamWriter writer = File.AppendText("..\\..\\..\\testFile.txt"))
             {
                 writer.WriteLine("follow the white rabbit...");
             }
@@ -105,12 +105,27 @@ namespace WinFormExample
 
         void ReadWholeFile()
         {
-            using (StreamReader reader = new StreamReader("testFile.txt"))
+            try
             {
-                while ( !reader.EndOfStream )
+                using (StreamReader reader = new StreamReader("../../../email.txt"))
                 {
-                    ResultListBox.Items.Add(reader.ReadLine());
+                    while ( !reader.EndOfStream )
+                    {
+                        ResultListBox.Items.Add(reader.ReadLine());
+                    }
+                    reader.ReadLine();
+                    reader.ReadLine();
+                    reader.ReadLine();
                 }
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                MessageBox.Show("oops!");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                MessageBox.Show(e.StackTrace);
             }
         }
 
