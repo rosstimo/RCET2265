@@ -107,15 +107,12 @@ namespace WinFormExample
         {
             try
             {
-                using (StreamReader reader = new StreamReader("../../../email.txt"))
+                using (StreamReader reader = new StreamReader("..\\..\\..\\email.txt"))
                 {
                     while ( !reader.EndOfStream )
                     {
                         ResultListBox.Items.Add(reader.ReadLine());
                     }
-                    reader.ReadLine();
-                    reader.ReadLine();
-                    reader.ReadLine();
                 }
             }
             catch (System.IO.FileNotFoundException e)
@@ -128,7 +125,26 @@ namespace WinFormExample
                 MessageBox.Show(e.StackTrace);
             }
         }
-
+        int CountLinesIn(string path)
+        {
+            int count = 0;  
+            try
+            {
+                using (StreamReader reader = new StreamReader(path))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        reader.ReadLine();
+                        ++count;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                //pass
+            }
+            return count;
+        }
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -159,7 +175,9 @@ namespace WinFormExample
 
             //ReadFromFile();
 
-            ReadWholeFile();
+            //ReadWholeFile();
+
+            MessageBox.Show(CountLinesIn("testFile.txt").ToString());
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)
