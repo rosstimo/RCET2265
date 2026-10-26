@@ -13,6 +13,8 @@ namespace WinFormExample
         static string userMessage = "";
         static string currentFile = "none";
 
+        static string[] customerRecords = new string[CountLinesIn(currentFile)];
+
 
 
 
@@ -139,7 +141,7 @@ namespace WinFormExample
                 MessageBox.Show(e.StackTrace);
             }
         }
-        int CountLinesIn(string path)
+        static int CountLinesIn(string path)
         {
             int count = 0;  
             try
@@ -156,6 +158,7 @@ namespace WinFormExample
             catch (Exception e)
             {
                 //pass
+                MessageBox.Show(e.Message, "Error");
             }
             return count;
         }
