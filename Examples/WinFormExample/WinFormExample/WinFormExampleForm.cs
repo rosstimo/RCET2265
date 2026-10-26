@@ -7,10 +7,16 @@ namespace WinFormExample
             InitializeComponent();
             SetDefaults();
             EvaluateFields();
+            FilePathStatusLabel.Text = currentFile;
         }
-
+        // global/class level variables ***************************************
         static string userMessage = "";
+        static string currentFile = "none";
 
+
+
+
+        // helper methods *****************************************************
         void SetDefaults()
         {
             InfoTextBox.Text = "";
@@ -107,7 +113,7 @@ namespace WinFormExample
         {
             try
             {
-                using (StreamReader reader = new StreamReader("..\\..\\..\\email.txt"))
+                using (StreamReader reader = new StreamReader(currentFile))
                 {
                     while ( !reader.EndOfStream )
                     {
@@ -117,7 +123,15 @@ namespace WinFormExample
             }
             catch (System.IO.FileNotFoundException e)
             {
-                MessageBox.Show("oops!");
+                //MessageBox.Show("oops!");
+                //OpenCurrentFileDialog.InitialDirectory = "c:\\"; force directory
+                OpenCurrentFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|C# Files (*.cs)|*.cs"; ;
+                OpenCurrentFileDialog.FilterIndex = 1;
+                OpenCurrentFileDialog.FileName = "";
+                OpenCurrentFileDialog.ShowDialog();
+                currentFile = OpenCurrentFileDialog.FileName;
+                FilePathStatusLabel.Text = currentFile;
+                //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
             }
             catch (Exception e)
             {
@@ -175,9 +189,9 @@ namespace WinFormExample
 
             //ReadFromFile();
 
-            //ReadWholeFile();
+            ReadWholeFile();
 
-            MessageBox.Show(CountLinesIn("testFile.txt").ToString());
+            //MessageBox.Show(CountLinesIn("testFile.txt").ToString());
         }
 
         private void InfoTextBox_TextChanged(object sender, EventArgs e)

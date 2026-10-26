@@ -48,7 +48,11 @@
             checkBox4 = new CheckBox();
             RemoveRadioButton = new RadioButton();
             groupBox1 = new GroupBox();
+            OpenCurrentFileDialog = new OpenFileDialog();
+            BottomStatusStrip = new StatusStrip();
+            FilePathStatusLabel = new ToolStripStatusLabel();
             groupBox1.SuspendLayout();
+            BottomStatusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // ExitButton
@@ -248,13 +252,33 @@
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             // 
+            // OpenCurrentFileDialog
+            // 
+            OpenCurrentFileDialog.FileName = "openFileDialog1";
+            // 
+            // BottomStatusStrip
+            // 
+            BottomStatusStrip.Items.AddRange(new ToolStripItem[] { FilePathStatusLabel });
+            BottomStatusStrip.Location = new Point(0, 355);
+            BottomStatusStrip.Name = "BottomStatusStrip";
+            BottomStatusStrip.Size = new Size(582, 22);
+            BottomStatusStrip.TabIndex = 19;
+            BottomStatusStrip.Text = "statusStrip1";
+            // 
+            // FilePathStatusLabel
+            // 
+            FilePathStatusLabel.Name = "FilePathStatusLabel";
+            FilePathStatusLabel.Size = new Size(118, 17);
+            FilePathStatusLabel.Text = "toolStripStatusLabel1";
+            // 
             // WinFormExampleForm
             // 
             AcceptButton = SubmitButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
-            ClientSize = new Size(584, 361);
+            ClientSize = new Size(582, 377);
+            Controls.Add(BottomStatusStrip);
             Controls.Add(groupBox1);
             Controls.Add(RemoveRadioButton);
             Controls.Add(ReverseRadioButton);
@@ -276,6 +300,8 @@
             Text = "WinForm Example Form";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            BottomStatusStrip.ResumeLayout(false);
+            BottomStatusStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -307,5 +333,8 @@
         private CheckBox checkBox4;
         private RadioButton RemoveRadioButton;
         private GroupBox groupBox1;
+        private OpenFileDialog OpenCurrentFileDialog;
+        private StatusStrip BottomStatusStrip;
+        private ToolStripStatusLabel FilePathStatusLabel;
     }
 }
