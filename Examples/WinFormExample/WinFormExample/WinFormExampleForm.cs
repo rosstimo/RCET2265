@@ -8,14 +8,16 @@ namespace WinFormExample
             SetDefaults();
             EvaluateFields();
             UpdateCurrentFile();
-            customerRecords = new string[CountLinesIn(currentFile)];
+            customerRecords = new string[CountLinesIn(currentFile),4];
             FilePathStatusLabel.Text = currentFile;
+            ReadWholeFile();
+            DisplayCustomerRecords();
         }
         // global/class level variables ***************************************
         static string userMessage = "";
         static string currentFile = "none";
 
-        static string[] customerRecords; //= new string[0];
+        static string[,] customerRecords; //= new string[0];
 
 
 
@@ -116,6 +118,7 @@ namespace WinFormExample
         void ReadWholeFile()
         {
             int index = 0;
+            string[] temp;
             try
             {
                 using (StreamReader reader = new StreamReader(currentFile))
@@ -123,8 +126,13 @@ namespace WinFormExample
                     while ( !reader.EndOfStream )
                     {
                         //ResultListBox.Items.Add(reader.ReadLine());
-                        customerRecords[index] = reader.ReadLine();
-                        index++;
+                        temp = reader.ReadLine().Split(',');
+                        customerRecords[index,0] = temp[0]; //on malformed record temp may not have the correct number of elements - TJR
+                        customerRecords[index,1] = temp[1];
+                        customerRecords[index,2] = temp[2];
+                        customerRecords[index,3] = temp[3];
+
+                       index++;
                     }
                 }
                 this.Text = index.ToString();
@@ -175,6 +183,14 @@ namespace WinFormExample
                 currentFile = OpenCurrentFileDialog.FileName;
                 FilePathStatusLabel.Text = currentFile;
                 //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
+        }
+
+        void DisplayCustomerRecords()
+        {
+            foreach (string record in customerRecords)
+            {
+                ResultListBox.Items.Add(record);
+            }
         }
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
