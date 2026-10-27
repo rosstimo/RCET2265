@@ -7,13 +7,15 @@ namespace WinFormExample
             InitializeComponent();
             SetDefaults();
             EvaluateFields();
+            UpdateCurrentFile();
+            customerRecords = new string[CountLinesIn(currentFile)];
             FilePathStatusLabel.Text = currentFile;
         }
         // global/class level variables ***************************************
         static string userMessage = "";
         static string currentFile = "none";
 
-        static string[] customerRecords = new string[CountLinesIn(currentFile)];
+        static string[] customerRecords; //= new string[0];
 
 
 
@@ -113,27 +115,24 @@ namespace WinFormExample
 
         void ReadWholeFile()
         {
+            int index = 0;
             try
             {
                 using (StreamReader reader = new StreamReader(currentFile))
                 {
                     while ( !reader.EndOfStream )
                     {
-                        ResultListBox.Items.Add(reader.ReadLine());
+                        //ResultListBox.Items.Add(reader.ReadLine());
+                        customerRecords[index] = reader.ReadLine();
+                        index++;
                     }
                 }
+                this.Text = index.ToString();
             }
             catch (System.IO.FileNotFoundException e)
             {
                 //MessageBox.Show("oops!");
-                //OpenCurrentFileDialog.InitialDirectory = "c:\\"; force directory
-                OpenCurrentFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|C# Files (*.cs)|*.cs"; ;
-                OpenCurrentFileDialog.FilterIndex = 1;
-                OpenCurrentFileDialog.FileName = "";
-                OpenCurrentFileDialog.ShowDialog();
-                currentFile = OpenCurrentFileDialog.FileName;
-                FilePathStatusLabel.Text = currentFile;
-                //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
+                UpdateCurrentFile();
             }
             catch (Exception e)
             {
@@ -141,7 +140,7 @@ namespace WinFormExample
                 MessageBox.Show(e.StackTrace);
             }
         }
-        static int CountLinesIn(string path)
+        int CountLinesIn(string path)
         {
             int count = 0;  
             try
@@ -155,12 +154,27 @@ namespace WinFormExample
                     }
                 }
             }
+            catch (System.IO.FileNotFoundException e)
+            {
+                UpdateCurrentFile();
+            }
             catch (Exception e)
             {
                 //pass
                 MessageBox.Show(e.Message, "Error");
             }
             return count;
+        }
+        void UpdateCurrentFile()
+        {
+                //OpenCurrentFileDialog.InitialDirectory = "c:\\"; force directory
+                OpenCurrentFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|C# Files (*.cs)|*.cs"; ;
+                OpenCurrentFileDialog.FilterIndex = 1;
+                OpenCurrentFileDialog.FileName = "";
+                OpenCurrentFileDialog.ShowDialog();
+                currentFile = OpenCurrentFileDialog.FileName;
+                FilePathStatusLabel.Text = currentFile;
+                //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
         }
         // Event handlers below here ******************************************
         private void ExitButton_Click(object sender, EventArgs e)
