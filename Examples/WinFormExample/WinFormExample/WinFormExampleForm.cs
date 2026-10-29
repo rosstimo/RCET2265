@@ -194,12 +194,9 @@ namespace WinFormExample
         {
             try
             {
-                foreach (string record in customerRecords)
+                for (int i = 0; i < customerRecords.GetUpperBound(0); i++)
                 {
-                    if (record != null)
-                    {
-                        ResultListBox.Items.Add(record);
-                    }
+                    ResultListBox.Items.Add($"{customerRecords[i,1]}, {customerRecords[i,0]}");
                 }
             }
             //catch (System.ArgumentNullException)
