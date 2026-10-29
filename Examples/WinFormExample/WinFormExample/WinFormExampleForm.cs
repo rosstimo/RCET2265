@@ -127,12 +127,15 @@ namespace WinFormExample
                     {
                         //ResultListBox.Items.Add(reader.ReadLine());
                         temp = reader.ReadLine().Split(',');
-                        customerRecords[index,0] = temp[0]; //on malformed record temp may not have the correct number of elements - TJR
-                        customerRecords[index,1] = temp[1];
-                        customerRecords[index,2] = temp[2];
-                        customerRecords[index,3] = temp[3];
+                        if (temp.Length == 5)
+                        {
+                            customerRecords[index,0] = temp[0]; 
+                            customerRecords[index,1] = temp[1];
+                            customerRecords[index,2] = temp[2];
+                            customerRecords[index,3] = temp[3];
+                            index++;
+                        }
 
-                       index++;
                     }
                 }
                 this.Text = index.ToString();
@@ -187,9 +190,24 @@ namespace WinFormExample
 
         void DisplayCustomerRecords()
         {
-            foreach (string record in customerRecords)
+            try
             {
-                ResultListBox.Items.Add(record);
+                foreach (string record in customerRecords)
+                {
+                    if (record != null)
+                    {
+                        ResultListBox.Items.Add(record);
+                    }
+                }
+            }
+            //catch (System.ArgumentNullException)
+            //{
+            //    // pass if customer record is null
+            //}
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                MessageBox.Show(e.StackTrace);
             }
         }
         // Event handlers below here ******************************************
