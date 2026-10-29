@@ -129,9 +129,11 @@ namespace WinFormExample
                         temp = reader.ReadLine().Split(',');
                         if (temp.Length == 5)
                         {
+                            temp[0] = temp[0].Replace("\"$$", ""); //clean first name text
                             customerRecords[index,0] = temp[0]; 
                             customerRecords[index,1] = temp[1];
                             customerRecords[index,2] = temp[2];
+                            temp[3] = temp[3].Replace("\"", ""); //clean email text
                             customerRecords[index,3] = temp[3];
                             index++;
                         }
