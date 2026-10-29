@@ -8,7 +8,7 @@ namespace WinFormExample
             SetDefaults();
             EvaluateFields();
             UpdateCurrentFile();
-            customerRecords = new string[CountLinesIn(currentFile),4];
+            customerRecords = new string[CountLinesIn(currentFile), 4];
             FilePathStatusLabel.Text = currentFile;
             ReadWholeFile();
             DisplayCustomerRecords();
@@ -100,7 +100,7 @@ namespace WinFormExample
                 writer.WriteLine("follow the white rabbit...");
             }
         }
-        
+
         void ReadFromFile()
         {
             using (StreamReader reader = new StreamReader("testFile.txt"))
@@ -123,18 +123,18 @@ namespace WinFormExample
             {
                 using (StreamReader reader = new StreamReader(currentFile))
                 {
-                    while ( !reader.EndOfStream )
+                    while (!reader.EndOfStream)
                     {
                         //ResultListBox.Items.Add(reader.ReadLine());
                         temp = reader.ReadLine().Split(',');
                         if (temp.Length == 5)
                         {
                             temp[0] = temp[0].Replace("\"$$", ""); //clean first name text
-                            customerRecords[index,0] = temp[0]; 
-                            customerRecords[index,1] = temp[1];
-                            customerRecords[index,2] = temp[2];
+                            customerRecords[index, 0] = temp[0];
+                            customerRecords[index, 1] = temp[1];
+                            customerRecords[index, 2] = temp[2];
                             temp[3] = temp[3].Replace("\"", ""); //clean email text
-                            customerRecords[index,3] = temp[3];
+                            customerRecords[index, 3] = temp[3];
                             index++;
                         }
 
@@ -155,7 +155,7 @@ namespace WinFormExample
         }
         int CountLinesIn(string path)
         {
-            int count = 0;  
+            int count = 0;
             try
             {
                 using (StreamReader reader = new StreamReader(path))
@@ -180,14 +180,14 @@ namespace WinFormExample
         }
         void UpdateCurrentFile()
         {
-                //OpenCurrentFileDialog.InitialDirectory = "c:\\"; force directory
-                OpenCurrentFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|C# Files (*.cs)|*.cs"; ;
-                OpenCurrentFileDialog.FilterIndex = 1;
-                OpenCurrentFileDialog.FileName = "";
-                OpenCurrentFileDialog.ShowDialog();
-                currentFile = OpenCurrentFileDialog.FileName;
-                FilePathStatusLabel.Text = currentFile;
-                //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
+            //OpenCurrentFileDialog.InitialDirectory = "c:\\"; force directory
+            OpenCurrentFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|C# Files (*.cs)|*.cs"; ;
+            OpenCurrentFileDialog.FilterIndex = 1;
+            OpenCurrentFileDialog.FileName = "";
+            OpenCurrentFileDialog.ShowDialog();
+            currentFile = OpenCurrentFileDialog.FileName;
+            FilePathStatusLabel.Text = currentFile;
+            //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
         }
 
         void DisplayCustomerRecords()
@@ -196,7 +196,7 @@ namespace WinFormExample
             {
                 for (int i = 0; i < customerRecords.GetUpperBound(0); i++)
                 {
-                    ResultListBox.Items.Add($"{customerRecords[i,1]}, {customerRecords[i,0]}");
+                    ResultListBox.Items.Add($"{customerRecords[i, 1]}, {customerRecords[i, 0]}");
                 }
             }
             //catch (System.ArgumentNullException)
@@ -257,6 +257,13 @@ namespace WinFormExample
         private void AgeTextBox_TextChanged(object sender, EventArgs e)
         {
             EvaluateFields();
+        }
+
+        private void ResultListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Text = ResultListBox.SelectedIndex.ToString();
+            InfoTextBox.Text = customerRecords[ResultListBox.SelectedIndex, 2];
+            NameTextBox.Text = $"{customerRecords[ResultListBox.SelectedIndex, 0]} {customerRecords[ResultListBox.SelectedIndex, 1]}";
         }
     }
 }

@@ -165,6 +165,7 @@
             ResultListBox.Size = new Size(312, 199);
             ResultListBox.TabIndex = 10;
             ResultListBox.TabStop = false;
+            ResultListBox.SelectedIndexChanged += ResultListBox_SelectedIndexChanged;
             // 
             // UpperCaseRadioButton
             // 
