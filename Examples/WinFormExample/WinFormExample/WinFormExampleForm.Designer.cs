@@ -48,9 +48,11 @@
             checkBox4 = new CheckBox();
             RemoveRadioButton = new RadioButton();
             groupBox1 = new GroupBox();
+            FilterComboBox = new ComboBox();
             OpenCurrentFileDialog = new OpenFileDialog();
             BottomStatusStrip = new StatusStrip();
             FilePathStatusLabel = new ToolStripStatusLabel();
+            FilterLabel = new Label();
             groupBox1.SuspendLayout();
             BottomStatusStrip.SuspendLayout();
             SuspendLayout();
@@ -243,6 +245,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(FilterLabel);
+            groupBox1.Controls.Add(FilterComboBox);
             groupBox1.Controls.Add(UpperCaseRadioButton);
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(LowerCaseRadioButton);
@@ -252,6 +256,14 @@
             groupBox1.Size = new Size(312, 76);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
+            // 
+            // FilterComboBox
+            // 
+            FilterComboBox.FormattingEnabled = true;
+            FilterComboBox.Location = new Point(185, 42);
+            FilterComboBox.Name = "FilterComboBox";
+            FilterComboBox.Size = new Size(121, 23);
+            FilterComboBox.TabIndex = 17;
             // 
             // OpenCurrentFileDialog
             // 
@@ -271,6 +283,15 @@
             FilePathStatusLabel.Name = "FilePathStatusLabel";
             FilePathStatusLabel.Size = new Size(118, 17);
             FilePathStatusLabel.Text = "toolStripStatusLabel1";
+            // 
+            // FilterLabel
+            // 
+            FilterLabel.AutoSize = true;
+            FilterLabel.Location = new Point(188, 23);
+            FilterLabel.Name = "FilterLabel";
+            FilterLabel.Size = new Size(74, 15);
+            FilterLabel.TabIndex = 18;
+            FilterLabel.Text = "Filter by city:";
             // 
             // WinFormExampleForm
             // 
@@ -337,5 +358,7 @@
         private OpenFileDialog OpenCurrentFileDialog;
         private StatusStrip BottomStatusStrip;
         private ToolStripStatusLabel FilePathStatusLabel;
+        private ComboBox FilterComboBox;
+        private Label FilterLabel;
     }
 }
