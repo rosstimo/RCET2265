@@ -11,6 +11,7 @@ namespace WinFormExample
             customerRecords = new string[CountLinesIn(currentFile), 4];
             FilePathStatusLabel.Text = currentFile;
             ReadWholeFile();
+            LoadCityFilter();
             DisplayCustomerRecords();
         }
         // global/class level variables ***************************************
@@ -188,6 +189,32 @@ namespace WinFormExample
             currentFile = OpenCurrentFileDialog.FileName;
             FilePathStatusLabel.Text = currentFile;
             //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
+        }
+        
+        void LoadCityFilter()
+        {
+            try
+            {
+                for (int i = 0; i < customerRecords.GetUpperBound(0); i++)
+                {
+                    if (!FilterComboBox.Items.Contains(customerRecords[i, 2]))
+                    {
+                        FilterComboBox.Items.Add(customerRecords[i, 2]);
+                    }
+                }
+                FilterComboBox.Sorted = true;
+                FilterComboBox.Items.Insert(0, "~Select City~");
+                FilterComboBox.SelectedIndex = 0;
+            }
+            //catch (System.ArgumentNullException)
+            //{
+            //    // pass if customer record is null
+            //}
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                MessageBox.Show(e.StackTrace);
+            }
         }
 
         void DisplayCustomerRecords()
