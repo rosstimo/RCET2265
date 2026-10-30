@@ -17,8 +17,8 @@ namespace WinFormExample
         // global/class level variables ***************************************
         static string userMessage = "";
         static string currentFile = "none";
-
         static string[,] customerRecords; //= new string[0];
+        static string filterDefault = "~Select All~";
 
 
 
@@ -190,7 +190,7 @@ namespace WinFormExample
             FilePathStatusLabel.Text = currentFile;
             //OpenCurrentFileDialog.RestoreDirectory = false; does not seem to do anything - TJR
         }
-        
+
         void LoadCityFilter()
         {
             try
@@ -203,7 +203,7 @@ namespace WinFormExample
                     }
                 }
                 FilterComboBox.Sorted = true;
-                FilterComboBox.Items.Insert(0, "~Select City~");
+                FilterComboBox.Items.Insert(0, filterDefault);
                 FilterComboBox.SelectedIndex = 0;
             }
             //catch (System.ArgumentNullException)
@@ -219,11 +219,15 @@ namespace WinFormExample
 
         void DisplayCustomerRecords()
         {
+            ResultListBox.Items.Clear();
             try
             {
                 for (int i = 0; i < customerRecords.GetUpperBound(0); i++)
                 {
-                    ResultListBox.Items.Add($"{customerRecords[i, 1]}, {customerRecords[i, 0]}");
+                    if (FilterComboBox.SelectedItem == filterDefault || FilterComboBox.SelectedItem == customerRecords[i, 2])
+                    {
+                        ResultListBox.Items.Add($"{customerRecords[i, 1]}, {customerRecords[i, 0]}");
+                    }
                 }
             }
             //catch (System.ArgumentNullException)
@@ -291,6 +295,11 @@ namespace WinFormExample
             this.Text = ResultListBox.SelectedIndex.ToString();
             InfoTextBox.Text = customerRecords[ResultListBox.SelectedIndex, 2];
             NameTextBox.Text = $"{customerRecords[ResultListBox.SelectedIndex, 0]} {customerRecords[ResultListBox.SelectedIndex, 1]}";
+        }
+
+        private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayCustomerRecords();
         }
     }
 }

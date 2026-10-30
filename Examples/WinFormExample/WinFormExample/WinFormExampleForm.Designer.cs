@@ -48,11 +48,11 @@
             checkBox4 = new CheckBox();
             RemoveRadioButton = new RadioButton();
             groupBox1 = new GroupBox();
+            FilterLabel = new Label();
             FilterComboBox = new ComboBox();
             OpenCurrentFileDialog = new OpenFileDialog();
             BottomStatusStrip = new StatusStrip();
             FilePathStatusLabel = new ToolStripStatusLabel();
-            FilterLabel = new Label();
             groupBox1.SuspendLayout();
             BottomStatusStrip.SuspendLayout();
             SuspendLayout();
@@ -257,6 +257,15 @@
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             // 
+            // FilterLabel
+            // 
+            FilterLabel.AutoSize = true;
+            FilterLabel.Location = new Point(188, 23);
+            FilterLabel.Name = "FilterLabel";
+            FilterLabel.Size = new Size(74, 15);
+            FilterLabel.TabIndex = 18;
+            FilterLabel.Text = "Filter by city:";
+            // 
             // FilterComboBox
             // 
             FilterComboBox.FormattingEnabled = true;
@@ -264,6 +273,7 @@
             FilterComboBox.Name = "FilterComboBox";
             FilterComboBox.Size = new Size(121, 23);
             FilterComboBox.TabIndex = 17;
+            FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
             // 
             // OpenCurrentFileDialog
             // 
@@ -283,15 +293,6 @@
             FilePathStatusLabel.Name = "FilePathStatusLabel";
             FilePathStatusLabel.Size = new Size(118, 17);
             FilePathStatusLabel.Text = "toolStripStatusLabel1";
-            // 
-            // FilterLabel
-            // 
-            FilterLabel.AutoSize = true;
-            FilterLabel.Location = new Point(188, 23);
-            FilterLabel.Name = "FilterLabel";
-            FilterLabel.Size = new Size(74, 15);
-            FilterLabel.TabIndex = 18;
-            FilterLabel.Text = "Filter by city:";
             // 
             // WinFormExampleForm
             // 
